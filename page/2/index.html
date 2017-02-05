@@ -229,146 +229,6 @@
           </a>
         </li>
       
-
-      <!-- 自定义High一下的功能 -->
-      <li> <a title="把这个链接拖到你的Chrome收藏夹工具栏中" href='javascript:(function() {
-    function c() {
-        var e = document.createElement("link");
-        e.setAttribute("type", "text/css");
-        e.setAttribute("rel", "stylesheet");
-        e.setAttribute("href", f);
-        e.setAttribute("class", l);
-        document.body.appendChild(e)
-    }
-    function h() {
-        var e = document.getElementsByClassName(l);
-        for (var t = 0; t < e.length; t++) {
-            document.body.removeChild(e[t])
-        }
-    }
-    function p() {
-        var e = document.createElement("div");
-        e.setAttribute("class", a);
-        document.body.appendChild(e);
-        setTimeout(function() {
-            document.body.removeChild(e)
-        }, 100)
-    }
-    function d(e) {
-        return {
-            height : e.offsetHeight,
-            width : e.offsetWidth
-        }
-    }
-    function v(i) {
-        var s = d(i);
-        return s.height > e && s.height < n && s.width > t && s.width < r
-    }
-    function m(e) {
-        var t = e;
-        var n = 0;
-        while (!!t) {
-            n += t.offsetTop;
-            t = t.offsetParent
-        }
-        return n
-    }
-    function g() {
-        var e = document.documentElement;
-        if (!!window.innerWidth) {
-            return window.innerHeight
-        } else if (e && !isNaN(e.clientHeight)) {
-            return e.clientHeight
-        }
-        return 0
-    }
-    function y() {
-        if (window.pageYOffset) {
-            return window.pageYOffset
-        }
-        return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
-    }
-    function E(e) {
-        var t = m(e);
-        return t >= w && t <= b + w
-    }
-    function S() {
-        var e = document.createElement("audio");
-        e.setAttribute("class", l);
-        e.src = i;
-        e.loop = false;
-        e.addEventListener("canplay", function() {
-            setTimeout(function() {
-                x(k)
-            }, 500);
-            setTimeout(function() {
-                N();
-                p();
-                for (var e = 0; e < O.length; e++) {
-                    T(O[e])
-                }
-            }, 15500)
-        }, true);
-        e.addEventListener("ended", function() {
-            N();
-            h()
-        }, true);
-        e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
-        document.body.appendChild(e);
-        e.play()
-    }
-    function x(e) {
-        e.className += " " + s + " " + o
-    }
-    function T(e) {
-        e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
-    }
-    function N() {
-        var e = document.getElementsByClassName(s);
-        var t = new RegExp("\\b" + s + "\\b");
-        for (var n = 0; n < e.length; ) {
-            e[n].className = e[n].className.replace(t, "")
-        }
-    }
-    var e = 30;
-    var t = 30;
-    var n = 350;
-    var r = 350;
-    var i = "//7xuupy.com1.z0.glb.clouddn.com/tongxingSibel%20-%20Im%20Sorry.mp3";
-    var s = "mw-harlem_shake_me";
-    var o = "im_first";
-    var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
-    var a = "mw-strobe_light";
-    var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
-    var l = "mw_added_css";
-    var b = g();
-    var w = y();
-    var C = document.getElementsByTagName("*");
-    var k = null;
-    for (var L = 0; L < C.length; L++) {
-        var A = C[L];
-        if (v(A)) {
-            if (E(A)) {
-                k = A;
-                break
-            }
-        }
-    }
-    if (A === null) {
-        console.warn("Could not find a node of the right size. Please try a different page.");
-        return
-    }
-    c();
-    S();
-    var O = [];
-    for (var L = 0; L < C.length; L++) {
-        var A = C[L];
-        if (v(A)) {
-            O.push(A)
-        }
-    }
-    })()    '>High一下</a> </li>
-          <!-- end High一下 -->
     </ul>
   
 
@@ -396,117 +256,6 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2015/09/03/common/" itemprop="url">
-                  Common tips
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-09-03T12:25:24Z" content="2015-09-03">
-              2015-09-03
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/JS/" itemprop="url" rel="index">
-                    <span itemprop="name">JS</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="JS经典案例"><a href="#JS经典案例" class="headerlink" title="JS经典案例"></a>JS经典案例</h1><h3 id="图片轮播jquery"><a href="#图片轮播jquery" class="headerlink" title="图片轮播jquery"></a>图片轮播jquery</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">	&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">	&lt;title&gt;图片轮播&lt;/title&gt;</div><div class="line">	&lt;style&gt;</div><div class="line">		body,div,span,img,a&#123;margin:0;padding: 0;text-decoration: none;&#125;</div><div class="line">		#container&#123;position: relative;width: 400px;height: 450px;overflow: hidden;margin: 20px auto;border:3px solid red;&#125;</div><div class="line">		#list&#123;width: 2800px;height: 450px;position: absolute;z-index: 1;&#125;</div><div class="line">		#list img&#123;width: 400px;height: 450px;float: left;&#125;</div><div class="line">		#buttons&#123;position: absolute;float: left;width: 100px;height: 10px;bottom:50px;left:175px;z-index: 2;&#125;</div><div class="line">		#buttons span&#123;float:left;height: 10px;width: 10px;margin-right: 5px;cursor: pointer;border:1px solid #000;border-radius: 50%;background: #ccc;z-index: 2;&#125;</div><div class="line">		#buttons .on&#123;background: red;&#125;</div><div class="line">		.arrow&#123;cursor: pointer; display: none;position:absolute;height: 30px;width: 30px;top:175px;font-size: 25px;line-height: 25px;text-align:center;color: #ccc;z-index: 2;background-color: RGBA(0,0,0,.3);&#125;</div><div class="line">		.arrow:hover&#123;background-color: RGBA(0,0,0,.6);&#125;</div><div class="line">		#container:hover .arrow&#123;display: block;&#125;</div><div class="line">		#prev&#123;left: 25px;&#125;</div><div class="line">		#next&#123;right: 25px;&#125;</div><div class="line">	&lt;/style&gt;</div><div class="line">	&lt;script&gt;</div><div class="line">		window.onload=function () &#123;//页面加载调用</div><div class="line">			var container=document.getElementById(&apos;container&apos;);</div><div class="line">			var list=document.getElementById(&apos;list&apos;);</div><div class="line">			var buttons=document.getElementById(&apos;buttons&apos;).getElementsByTagName(&apos;span&apos;);</div><div class="line">			var prev=document.getElementById(&apos;prev&apos;);</div><div class="line">			var next=document.getElementById(&apos;next&apos;);</div><div class="line">			var index=1;//用于索引当前按钮</div><div class="line">			var len=5;//图片数量</div><div class="line">			var animated = false;//判断切换是否进行</div><div class="line">			var interval = 3000;//自动播放计时器3s</div><div class="line">			var timer;//定时器</div><div class="line">			 function animate (offset) &#123;//动画切换</div><div class="line">			 	animated=true;//切换进行中</div><div class="line">			 	var time=300;//位移总时间</div><div class="line">			 	var inteval=10;//位移时间间隔</div><div class="line">			 	var times=time/inteval;//位移次数</div><div class="line">                var speed = offset/times;//位移速度</div><div class="line">			 	var left= parseInt(list.style.left)+offset;//目标值</div><div class="line"></div><div class="line"></div><div class="line">			 	var go=function () &#123;</div><div class="line">			 		//这两种情况表示还在切换中</div><div class="line">                    if ( (speed &gt; 0 &amp;&amp; parseInt(list.style.left) &lt; left) || (speed &lt; 0 &amp;&amp; parseInt(list.style.left) &gt; left)) &#123;</div><div class="line">                        list.style.left = parseInt(list.style.left) + speed + &apos;px&apos;;</div><div class="line">                        setTimeout(go, inteval);//继续执行切换go()函数  </div><div class="line">                    &#125;</div><div class="line">                    else &#123;</div><div class="line">                        list.style.left = left+ &apos;px&apos;;</div><div class="line">		                if(left&lt;-400*len)&#123;</div><div class="line">		                	list.style.left=&quot;-400px&quot;;</div><div class="line">		                &#125;</div><div class="line">		                if(left&gt;-400)&#123;</div><div class="line">		                	list.style.left=-400*len+&quot;px&quot;;</div><div class="line">		                &#125;</div><div class="line">                        animated = false;//切换完成 </div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">                go();</div><div class="line">			 	&#125;</div><div class="line">                </div><div class="line">           </div><div class="line">           //用于为按钮添加样式</div><div class="line">		    function showButton() &#123;     </div><div class="line">		       //先找出原来有.on类的按钮，并移除其类</div><div class="line">		        for (var i = 0; i &lt; buttons.length ; i++) &#123;  </div><div class="line">		                  if( buttons[i].className == &apos;on&apos;)&#123;</div><div class="line">		                buttons[i].className = &apos;&apos;;     </div><div class="line">		                           break;</div><div class="line">		            &#125;</div><div class="line">		        &#125;        </div><div class="line">		        //为当前按钮添加类，索引下标从0开始，故需减1</div><div class="line">		        buttons[index - 1].className = &apos;on&apos;;</div><div class="line">		    &#125;</div><div class="line"></div><div class="line">//自动播放</div><div class="line">            function play() &#123;</div><div class="line">                timer = setTimeout(function () &#123;</div><div class="line">                    next.onclick();</div><div class="line">                    play();</div><div class="line">                &#125;, interval);</div><div class="line">            &#125;</div><div class="line">            //清除定时器</div><div class="line">            function stop() &#123;</div><div class="line">                clearTimeout(timer);</div><div class="line">            &#125;</div><div class="line">//右点击</div><div class="line">           next.onclick = function () &#123;</div><div class="line">           		if (animated) &#123;//如果切换还在进行，则直接结束，直到切换完成</div><div class="line">                    return;</div><div class="line">                &#125;</div><div class="line">           		if(index==5)&#123;</div><div class="line">           			index=1;</div><div class="line">           			&#125;</div><div class="line">           			else&#123;</div><div class="line">           				index+=1;</div><div class="line">           			&#125;           		</div><div class="line">                animate(-400);</div><div class="line">                showButton();</div><div class="line">            &#125;</div><div class="line"> //左点击          </div><div class="line">            prev.onclick = function () &#123;</div><div class="line">    			if (animated) &#123;//如果切换还在进行，则直接结束，直到切换完成</div><div class="line">    	         return;</div><div class="line">        	     &#125;</div><div class="line">            	if(index==1)&#123;</div><div class="line">            		index=5;</div><div class="line">            		&#125;</div><div class="line">            		else&#123;</div><div class="line">            			index-=1;</div><div class="line">            		&#125;</div><div class="line">            	</div><div class="line">                animate(400);</div><div class="line">                showButton(); </div><div class="line">                &#125;</div><div class="line">               </div><div class="line">            //通过循环为按钮添加点击事件</div><div class="line">            for (var i=0;i&lt;buttons.length;i++) &#123;</div><div class="line">            	buttons[i].onclick=function() &#123;</div><div class="line">            		if (animated) &#123;//如果切换还在进行，则直接结束，直到切换完成</div><div class="line">	    	         return;</div><div class="line">	        	     &#125;</div><div class="line">                  	//当继续点击按钮时不切换</div><div class="line">                  	if(this.className==&apos;on&apos;)&#123;</div><div class="line">                  		return;</div><div class="line">                  	&#125;</div><div class="line">                  	//通过获取按钮的标签自定义属性index，得到索引值，再计算差值</div><div class="line">                  	var myIndex=parseInt(this.getAttribute(&apos;index&apos;));</div><div class="line">                  	//真正的偏移量</div><div class="line">                  	var offset=-400*(myIndex-index);</div><div class="line">                  	animate(offset);</div><div class="line">                  	//将点击按钮的index属性置为当前</div><div class="line">                  	index=myIndex;</div><div class="line">                  	showButton();</div><div class="line">                  &#125;  </div><div class="line">              &#125; </div><div class="line">	//父容器的移入移出事件</div><div class="line">            container.onmouseover = stop;</div><div class="line">            container.onmouseout = play;</div><div class="line">            play();//自动播放</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	&lt;/script&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">	&lt;div id=&quot;container&quot;&gt;</div><div class="line">		&lt;div id=&apos;list&apos; style=&apos;left: -400px&apos;&gt;</div><div class="line">			&lt;img src=&quot;img/5.jpg&quot; alt=&quot;&quot;&gt;</div><div class="line">			&lt;img src=&quot;img/1.jpg&quot; alt=&quot;&quot;&gt;</div><div class="line">			&lt;img src=&quot;img/2.jpg&quot; alt=&quot;&quot;&gt;</div><div class="line">			&lt;img src=&quot;img/3.jpg&quot; alt=&quot;&quot;&gt;</div><div class="line">			&lt;img src=&quot;img/4.jpg&quot; alt=&quot;&quot;&gt;</div><div class="line">			&lt;img src=&quot;img/5.jpg&quot; alt=&quot;&quot;&gt;</div><div class="line">			&lt;img src=&quot;img/1.jpg&quot; alt=&quot;&quot;&gt;</div><div class="line">		&lt;/div&gt;</div><div class="line">		&lt;div id=&apos;buttons&apos;&gt;</div><div class="line">			&lt;span index=&apos;1&apos; class=&quot;on&quot;&gt;&lt;/span&gt;</div><div class="line">			&lt;span index=&apos;2&apos;&gt;&lt;/span&gt;</div><div class="line">			&lt;span index=&apos;3&apos;&gt;&lt;/span&gt;</div><div class="line">			&lt;span index=&apos;4&apos;&gt;&lt;/span&gt;</div><div class="line">			&lt;span index=&apos;5&apos;&gt;&lt;/span&gt;</div><div class="line">		&lt;/div&gt;</div><div class="line">		&lt;a href=&quot;javascript:;&quot; id=&apos;prev&apos; class=&quot;arrow&quot;&gt;&amp;lt;&lt;/a&gt;</div><div class="line">		&lt;a href=&quot;javascript:;&quot; id=&apos;next&apos; class=&quot;arrow&quot;&gt;&amp;gt;&lt;/a&gt;		</div><div class="line">	&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
-<h3 id="瀑布流js"><a href="#瀑布流js" class="headerlink" title="瀑布流js"></a>瀑布流js</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
     
       
 
@@ -1018,7 +767,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-count">12</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1026,7 +775,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>

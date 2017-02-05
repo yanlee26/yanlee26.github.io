@@ -4,124 +4,6 @@
   
     
     <entry>
-      <title><![CDATA[2017年前端技能规划]]></title>
-      <url>https://yanlee26.github.io/2016/12/09/frontend-shedule/</url>
-      <content type="html"><![CDATA[<h3 id="2017年前端技能规划"><a href="#2017年前端技能规划" class="headerlink" title="2017年前端技能规划"></a>2017年前端技能规划</h3><ol>
-<li>结合公司业务需求，补充、完善、更新自身技术栈；在前端（尤其移动端）方面，做到<br>基本功扎实并立足于行业技术前沿；如有余力，熟悉一门后台语言（php，python,java）,以<br>更加完善软件开发的知识技能储备。</li>
-<li>熟悉，深刻了解公司产品特点及业务需求特征；在保证功能的前提下，做到代码优雅，命名<br>规范，逻辑缜密，以提高复用性及方便日后的维护，提高前端开发效率。</li>
-<li><a href="http://www.xmind.net/m/4AFt" target="_blank" rel="external">技能XMind</a></li>
-</ol>
-<ul>
-<li><p>###技术栈</p>
-<p>| 类型          |                主要内容          |<br>| :———— |:—————————-:    |<br>|Core|html（html5）,css（css3）,js（es6）,component|<br>|UI Frameworks |bootstrap,ionic,mui,               |<br>|CSS Preprocessors|sass,scss,less                  |<br>|JS Frameworks|jquery,zepto,vue/react/angular,three|<br>|JS Preprocessors |babel,typescript                |<br>|Back End|node php                                 |<br>|Http Test|Postman                                 |<br>|Template|Jade,Haml                                |<br>|Code Quality|JSLint,EsLint                        |<br>|Process Automation|gulp,grunt                     |<br>|Package Managers|npm,webpack,bower                |<br>|Building Tools|webpack,requireJS                  |<br>|FrontEnd Performance|WebPagetest                  |<br>|Testing|Karma                                     |<br>|Version Control|git ,svn                          |<br>|Text Editors|sublime,webstorm                     |</p>
-</li>
-<li><h3 id="熟悉常见软件开发模式"><a href="#熟悉常见软件开发模式" class="headerlink" title="熟悉常见软件开发模式"></a>熟悉常见软件开发模式</h3><blockquote>
-<p>未来只有两种软件工程师:端工程师+ 云工程师</p>
-</blockquote>
-<p>| 分类          | 内容           |     备注       |<br>| :———— |:————–:|:————–:|<br>|MVC|Model-管理数据，View-视图展现，Controller（backbone没有），Router|2010年，web2.0时代|<br>|MVVM|视图与数据模型强耦合。数据的变化实时反映在 view 上，不需要手动处理|View-Model简化的 Controller,|<br>|SPA| Single-page application|vue,react,angular|<br>|前后端分离| Ajax -前端应用兴起；智能手机 -多终端支持|前端不再是后端 MVC 中的 V，而是单独的一层；REST前后端分离后之间的通信接口|<br>|NODE|JS+操作系统API0|JS成为唯一的浏览器和服务器都支持的语言，前端开发模式的根本改变|<br>|全端|传统技能（JS+HTML+CSS；一门后端语言；移动开发；数据库等|发展成全栈工程师|</p>
-</li>
-<li><h3 id="熟悉前端工程化"><a href="#熟悉前端工程化" class="headerlink" title="熟悉前端工程化"></a>熟悉前端工程化</h3><blockquote>
-<p>前端开发转移到后端环境，意味着可以适用标准的软件工程流程。</p>
-</blockquote>
-</li>
-</ul>
-<ol>
-<li>持续集成Continuous integration（简称 CI）<blockquote>
-<p>开发代码频繁地合并进主干，始终保持可发布状态的这个过程。<br>优点:快速发现错误\防止分支大幅偏离主干\让产品可以快速迭代，同时还能保持高质量</p>
-</blockquote>
-</li>
-</ol>
-<ul>
-<li>流程<ul>
-<li>本地开发（developing）</li>
-<li>静态代码检查（linting）</li>
-<li>单元测试（testing）</li>
-<li>合并进入主干（merging）</li>
-<li>自动构建（building）</li>
-<li>自动发布（publishing）</li>
-</ul>
-</li>
-</ul>
-<ol>
-<li>静态代码检查及测试<blockquote>
-<p>发现语法错误,发现风格错误,自动纠正错误<br>Web 应用越来越复杂，意味着更可能出错。测试是提高代码质量、降低错误的最好方法之一。<br>测试可以确保得到预期结果。</p>
-</blockquote>
-</li>
-</ol>
-<ul>
-<li>测试类型<ul>
-<li>单元测试（unit testing）</li>
-<li>功能测试（feature testing）<blockquote>
-<p>功能测试指的是，站在外部用户的角度，测试软件的某项功能。<br>与内部代码实现无关，只测试功能是否正常。<br>很多时候，单元测试都可以通过，但是整体功能会失败。        </p>
-</blockquote>
-</li>
-<li>集成测试（integration testing）</li>
-<li>端对端测试 (End-to-End testing）</li>
-</ul>
-</li>
-<li>以测试为导向的开发模式<ul>
-<li>TDD：测试驱动的开发（Test-Driven Development）</li>
-<li>BDD：行为驱动的开发（Behavior-Driven Development）</li>
-<li>是目前最常用的测试框架：Mocha </li>
-</ul>
-</li>
-</ul>
-<ol>
-<li>移动平台的自动化测试 ,最常见的方案是使用 Appium。  <ul>
-<li>基于 WebDriver</li>
-<li>采用 客户端/服务器架构</li>
-<li>可以在模拟器运行，也可以在真机运行</li>
-</ul>
-</li>
-</ol>
-<ul>
-<li><h3 id="技术补充资源"><a href="#技术补充资源" class="headerlink" title="技术补充资源"></a>技术补充资源</h3><ul>
-<li>JS部分<ul>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript" target="_blank" rel="external">A_re-introduction_to_JavaScript</a></li>
-<li><a href="http://es6.ruanyifeng.com/#docs/module" target="_blank" rel="external">ECMAScript 6 入门</a>  </li>
-<li><a href="https://vuejs.org/v2/guide/" target="_blank" rel="external">https://vuejs.org/v2/guide/</a></li>
-<li><a href="https://facebook.github.io/react/" target="_blank" rel="external">https://facebook.github.io/react/</a></li>
-<li><a href="https://nodejs.org/en/" target="_blank" rel="external">https://nodejs.org/en/</a></li>
-<li><a href="http://expressjs.com/" target="_blank" rel="external">http://expressjs.com/</a></li>
-<li><a href="http://babeljs.cn/" target="_blank" rel="external">http://babeljs.cn/</a></li>
-<li><a href="https://threejs.org/" target="_blank" rel="external">https://threejs.org/</a></li>
-</ul>
-</li>
-<li>CSS部分<ul>
-<li><a href="http://getbootstrap.com/" target="_blank" rel="external">http://getbootstrap.com/</a></li>
-<li><a href="http://compass-style.org/" target="_blank" rel="external">http://compass-style.org/</a></li>
-</ul>
-</li>
-<li>前端规范<ul>
-<li><a href="http://www.w3schools.com/" target="_blank" rel="external">http://www.w3schools.com/</a></li>
-</ul>
-</li>
-<li>打包工具<ul>
-<li><a href="http://webpack.github.io/" target="_blank" rel="external">http://webpack.github.io/</a></li>
-</ul>
-</li>
-<li>前端自动化<ul>
-<li><a href="http://www.gulpjs.com.cn/" target="_blank" rel="external">http://www.gulpjs.com.cn/</a></li>
-</ul>
-</li>
-<li>包管理工具<ul>
-<li><a href="https://www.npmjs.com/" target="_blank" rel="external">https://www.npmjs.com/</a></li>
-</ul>
-</li>
-<li>其它<ul>
-<li><a href="https://visualgo.net/" target="_blank" rel="external">数据结构</a></li>
-<li><a href="https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/" target="_blank" rel="external">how browsers work</a></li>
-<li><a href="https://platform.html5.org/" target="_blank" rel="external">https://platform.html5.org/</a></li>
-<li><a href="http://www.imooc.com/u/2916001" target="_blank" rel="external">慕课网</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-]]></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[Node--文件及网络操作]]></title>
       <url>https://yanlee26.github.io/2016/11/04/node--http&amp;https/</url>
       <content type="html"><![CDATA[<h1 id="Node–文件及网络操作"><a href="#Node–文件及网络操作" class="headerlink" title="Node–文件及网络操作"></a>Node–文件及网络操作</h1><blockquote>
@@ -130,8 +12,8 @@
 <h2 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h2><h3 id="文件监视"><a href="#文件监视" class="headerlink" title="文件监视"></a>文件监视</h3><h4 id="利用文件监视实现自动-markdown-文件转换"><a href="#利用文件监视实现自动-markdown-文件转换" class="headerlink" title="利用文件监视实现自动 markdown 文件转换"></a>利用文件监视实现自动 markdown 文件转换</h4><ul>
 <li><p>相关链接：</p>
 <ol>
-<li><a href="https://github.com/chjj/marked">https://github.com/chjj/marked</a></li>
-<li><a href="https://github.com/Browsersync/browser-sync">https://github.com/Browsersync/browser-sync</a> </li>
+<li><a href="https://github.com/chjj/marked" target="_blank" rel="external">https://github.com/chjj/marked</a></li>
+<li><a href="https://github.com/Browsersync/browser-sync" target="_blank" rel="external">https://github.com/Browsersync/browser-sync</a> </li>
 </ol>
 </li>
 <li><p>实现思路：</p>
@@ -303,13 +185,13 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.time(<span class="string">'sync'</span>);</div><div class="line"><span class="keyword">try</span> &#123;</div><div class="line">  <span class="keyword">var</span> data = fs.readFileSync(path.join(<span class="string">'C:\\Users\\iceStone\\Downloads'</span>, <span class="string">'H.mp4'</span>));</div><div class="line">  <span class="comment">// console.log(data);</span></div><div class="line">&#125; <span class="keyword">catch</span> (error) &#123;</div><div class="line">  <span class="keyword">throw</span> error;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.timeEnd(<span class="string">'sync'</span>);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.time(<span class="string">'async'</span>);</div><div class="line">fs.readFile(path.join(<span class="string">'C:\\Users\\iceStone\\Downloads'</span>, <span class="string">'H.mp4'</span>), (error, data) =&gt; &#123;</div><div class="line">  <span class="keyword">if</span> (error) <span class="keyword">throw</span> error;</div><div class="line">  <span class="comment">// console.log(data);</span></div><div class="line">&#125;);</div><div class="line"><span class="built_in">console</span>.timeEnd(<span class="string">'async'</span>);</div></pre></td></tr></table></figure>
 <h3 id="路径模块"><a href="#路径模块" class="headerlink" title="路径模块"></a>路径模块</h3><p>在文件操作的过程中，都必须使用物理路径（绝对路径），path模块提供了一系列与路径相关的 API</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="string">'join用于拼接多个路径部分，并转化为正常格式'</span>);</div><div class="line"><span class="keyword">const</span> temp = path.join(__dirname, <span class="string">'..'</span>, <span class="string">'lyrics'</span>, <span class="string">'./友谊之光.lrc'</span>);</div><div class="line"><span class="built_in">console</span>.log(temp);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'获取路径中的文件名'</span>);</div><div class="line"><span class="built_in">console</span>.log(path.basename(temp));</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'获取路径中的文件名并排除扩展名'</span>);</div><div class="line"><span class="built_in">console</span>.log(path.basename(temp, <span class="string">'.lrc'</span>));</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'===================================='</span>);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'获取不同操作系统的路径分隔符'</span>);</div><div class="line"><span class="built_in">console</span>.log(process.platform + <span class="string">'的分隔符为 '</span> + path.delimiter);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'一般用于分割环境变量'</span>);</div><div class="line"><span class="built_in">console</span>.log(process.env.PATH.split(path.delimiter));</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'===================================='</span>);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'获取一个路径中的目录部分'</span>);</div><div class="line"><span class="built_in">console</span>.log(path.dirname(temp));</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'===================================='</span>);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'获取一个路径中最后的扩展名'</span>);</div><div class="line"><span class="built_in">console</span>.log(path.extname(temp));</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'===================================='</span>);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'将一个路径解析成一个对象的形式'</span>);</div><div class="line"><span class="keyword">const</span> pathObject = path.parse(temp);</div><div class="line"><span class="built_in">console</span>.log(pathObject);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'===================================='</span>);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'将一个路径对象再转换为一个字符串的形式'</span>);</div><div class="line"><span class="comment">// pathObject.name = '我终于失去了你';</span></div><div class="line">pathObject.base = <span class="string">'我终于失去了你.lrc'</span>;</div><div class="line"><span class="built_in">console</span>.log(pathObject);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(path.format(pathObject));</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'===================================='</span>);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'获取一个路径是不是绝对路径'</span>);</div><div class="line"><span class="built_in">console</span>.log(path.isAbsolute(temp));</div><div class="line"><span class="built_in">console</span>.log(path.isAbsolute(<span class="string">'../lyrics/爱的代价.lrc'</span>));</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'===================================='</span>);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'将一个路径转换为当前系统默认的标准格式，并解析其中的./和../'</span>);</div><div class="line"><span class="built_in">console</span>.log(path.normalize(<span class="string">'c:/develop/demo\\hello/../world/./a.txt'</span>));</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'===================================='</span>);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'获取第二个路径相对第一个路径的相对路径'</span>);</div><div class="line"><span class="built_in">console</span>.log(path.relative(__dirname, temp));</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'===================================='</span>);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'以类似命令行cd命令的方式拼接路径'</span>);</div><div class="line"><span class="built_in">console</span>.log(path.resolve(temp, <span class="string">'c:/'</span>, <span class="string">'./develop'</span>, <span class="string">'../application'</span>));</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'===================================='</span>);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'获取不同平台中路径的分隔符（默认）'</span>);</div><div class="line"><span class="built_in">console</span>.log(path.sep);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'===================================='</span>);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'允许在任意平台下以WIN32的方法调用PATH对象'</span>);</div><div class="line"><span class="comment">// console.log(path.win32);</span></div><div class="line"><span class="built_in">console</span>.log(path === path.win32);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'===================================='</span>);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'允许在任意平台下以POSIX的方法调用PATH对象'</span>);</div><div class="line"><span class="built_in">console</span>.log(path === path.posix);</div></pre></td></tr></table></figure>
-<p>源码地址：<br><a href="https://github.com/nodejs/node/blob/master/lib/path.js">https://github.com/nodejs/node/blob/master/lib/path.js</a></p>
+<p>源码地址：<br><a href="https://github.com/nodejs/node/blob/master/lib/path.js" target="_blank" rel="external">https://github.com/nodejs/node/blob/master/lib/path.js</a></p>
 <h3 id="文件读取"><a href="#文件读取" class="headerlink" title="文件读取"></a>文件读取</h3><p>Node中文件读取的方式主要有：</p>
 <h4 id="fs-readFile-file-options-callback-error-data"><a href="#fs-readFile-file-options-callback-error-data" class="headerlink" title="fs.readFile(file[, options], callback(error, data))"></a>fs.readFile(file[, options], callback(error, data))</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">fs.readFile(<span class="string">'c:\\demo\1.txt'</span>, <span class="string">'utf8'</span>, (err, data) =&gt; &#123;</div><div class="line">  <span class="keyword">if</span> (err) <span class="keyword">throw</span> err;</div><div class="line">  <span class="built_in">console</span>.log(data);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <h4 id="fs-readFileSync-file-options"><a href="#fs-readFileSync-file-options" class="headerlink" title="fs.readFileSync(file[, options])"></a>fs.readFileSync(file[, options])</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">try</span> &#123;</div><div class="line">  <span class="keyword">const</span> data = fs.readFileSync(<span class="string">'c:\\demo\1.txt'</span>, <span class="string">'utf8'</span>);</div><div class="line">  <span class="built_in">console</span>.log(data);</div><div class="line">&#125; <span class="keyword">catch</span>(e) &#123;</div><div class="line">  <span class="comment">// 文件不存在，或者权限错误</span></div><div class="line">  <span class="keyword">throw</span> e;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h4 id="fs-createReadStream-path-options"><a href="#fs-createReadStream-path-options" class="headerlink" title="fs.createReadStream(path[, options])"></a>fs.createReadStream(path[, options])</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> stream = fs.createReadStream(<span class="string">'c:\\demo\1.txt'</span>);</div><div class="line"><span class="keyword">let</span> data = <span class="string">''</span></div><div class="line">stream.on(<span class="string">'data'</span>, (trunk) =&gt; &#123;</div><div class="line">  data += trunk;</div><div class="line">&#125;);</div><div class="line">stream.on(<span class="string">'end'</span>, () =&gt; &#123;</div><div class="line">  <span class="built_in">console</span>.log(data);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <blockquote>
-<p><em>由于Windows平台下默认文件编码是GBK，在Node中不支持，可以通过<a href="https://github.com/ashtuchkin/iconv-lite">iconv-lite</a>解决</em></p>
+<p><em>由于Windows平台下默认文件编码是GBK，在Node中不支持，可以通过<a href="https://github.com/ashtuchkin/iconv-lite" target="_blank" rel="external">iconv-lite</a>解决</em></p>
 </blockquote>
 <h3 id="Readline模块逐行读取文本内容"><a href="#Readline模块逐行读取文本内容" class="headerlink" title="Readline模块逐行读取文本内容"></a>Readline模块逐行读取文本内容</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> readline = <span class="built_in">require</span>(<span class="string">'readline'</span>);</div><div class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</div><div class="line"></div><div class="line"><span class="keyword">const</span> rl = readline.createInterface(&#123;</div><div class="line">  <span class="attr">input</span>: fs.createReadStream(<span class="string">'sample.txt'</span>)</div><div class="line">&#125;);</div><div class="line"></div><div class="line">rl.on(<span class="string">'line'</span>, (line) =&gt; &#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'Line from file:'</span>, line);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <h3 id="文件写入"><a href="#文件写入" class="headerlink" title="文件写入"></a>文件写入</h3><p>Node中文件写入的方式主要有：</p>
@@ -352,8 +234,8 @@
 <h3 id="文件监视"><a href="#文件监视" class="headerlink" title="文件监视"></a>文件监视</h3><h4 id="利用文件监视实现自动-markdown-文件转换"><a href="#利用文件监视实现自动-markdown-文件转换" class="headerlink" title="利用文件监视实现自动 markdown 文件转换"></a>利用文件监视实现自动 markdown 文件转换</h4><ul>
 <li><p>相关链接：</p>
 <ol>
-<li><a href="https://github.com/chjj/marked">https://github.com/chjj/marked</a></li>
-<li><a href="https://github.com/Browsersync/browser-sync">https://github.com/Browsersync/browser-sync</a> </li>
+<li><a href="https://github.com/chjj/marked" target="_blank" rel="external">https://github.com/chjj/marked</a></li>
+<li><a href="https://github.com/Browsersync/browser-sync" target="_blank" rel="external">https://github.com/Browsersync/browser-sync</a> </li>
 </ol>
 </li>
 <li><p>实现思路：</p>
@@ -494,7 +376,7 @@
 </blockquote>
 <p>由于以后的开发工作可能会在多个Node版本中测试，而且Node的版本也比较多，所以需要这么款工具来管理</p>
 <h4 id="安装操作步骤"><a href="#安装操作步骤" class="headerlink" title="安装操作步骤"></a>安装操作步骤</h4><ol>
-<li>下载：<a href="https://github.com/coreybutler/nvm-windows/releases/download/1.1.0/nvm-noinstall.zip">nvm-windows</a></li>
+<li>下载：<a href="https://github.com/coreybutler/nvm-windows/releases/download/1.1.0/nvm-noinstall.zip" target="_blank" rel="external">nvm-windows</a></li>
 <li>解压到一个全英文路径</li>
 <li><p>编辑解压目录下的<code>settings.txt</code>文件（不存在则新建）</p>
 <ul>
@@ -515,7 +397,7 @@
 </li>
 <li><p>NVM使用说明：</p>
 <ul>
-<li><a href="https://github.com/coreybutler/nvm-windows/">https://github.com/coreybutler/nvm-windows/</a></li>
+<li><a href="https://github.com/coreybutler/nvm-windows/" target="_blank" rel="external">https://github.com/coreybutler/nvm-windows/</a></li>
 </ul>
 </li>
 <li><p>NPM的目录之后使用再配置</p>

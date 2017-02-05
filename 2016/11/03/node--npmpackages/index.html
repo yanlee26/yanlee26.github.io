@@ -113,7 +113,7 @@ path：处理文件路径。
 fs：操作文件系统。
 child_proc">
 <meta property="og:image" content="https://yanlee26.github.io/./img/npm.png">
-<meta property="og:updated_time" content="2017-02-05T00:56:10.258Z">
+<meta property="og:updated_time" content="2017-02-05T01:26:06.043Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Node--常用模块初探">
 <meta name="twitter:description" content="Node–常用模块初探
@@ -266,146 +266,6 @@ child_proc">
           </a>
         </li>
       
-
-      <!-- 自定义High一下的功能 -->
-      <li> <a title="把这个链接拖到你的Chrome收藏夹工具栏中" href='javascript:(function() {
-    function c() {
-        var e = document.createElement("link");
-        e.setAttribute("type", "text/css");
-        e.setAttribute("rel", "stylesheet");
-        e.setAttribute("href", f);
-        e.setAttribute("class", l);
-        document.body.appendChild(e)
-    }
-    function h() {
-        var e = document.getElementsByClassName(l);
-        for (var t = 0; t < e.length; t++) {
-            document.body.removeChild(e[t])
-        }
-    }
-    function p() {
-        var e = document.createElement("div");
-        e.setAttribute("class", a);
-        document.body.appendChild(e);
-        setTimeout(function() {
-            document.body.removeChild(e)
-        }, 100)
-    }
-    function d(e) {
-        return {
-            height : e.offsetHeight,
-            width : e.offsetWidth
-        }
-    }
-    function v(i) {
-        var s = d(i);
-        return s.height > e && s.height < n && s.width > t && s.width < r
-    }
-    function m(e) {
-        var t = e;
-        var n = 0;
-        while (!!t) {
-            n += t.offsetTop;
-            t = t.offsetParent
-        }
-        return n
-    }
-    function g() {
-        var e = document.documentElement;
-        if (!!window.innerWidth) {
-            return window.innerHeight
-        } else if (e && !isNaN(e.clientHeight)) {
-            return e.clientHeight
-        }
-        return 0
-    }
-    function y() {
-        if (window.pageYOffset) {
-            return window.pageYOffset
-        }
-        return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
-    }
-    function E(e) {
-        var t = m(e);
-        return t >= w && t <= b + w
-    }
-    function S() {
-        var e = document.createElement("audio");
-        e.setAttribute("class", l);
-        e.src = i;
-        e.loop = false;
-        e.addEventListener("canplay", function() {
-            setTimeout(function() {
-                x(k)
-            }, 500);
-            setTimeout(function() {
-                N();
-                p();
-                for (var e = 0; e < O.length; e++) {
-                    T(O[e])
-                }
-            }, 15500)
-        }, true);
-        e.addEventListener("ended", function() {
-            N();
-            h()
-        }, true);
-        e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
-        document.body.appendChild(e);
-        e.play()
-    }
-    function x(e) {
-        e.className += " " + s + " " + o
-    }
-    function T(e) {
-        e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
-    }
-    function N() {
-        var e = document.getElementsByClassName(s);
-        var t = new RegExp("\\b" + s + "\\b");
-        for (var n = 0; n < e.length; ) {
-            e[n].className = e[n].className.replace(t, "")
-        }
-    }
-    var e = 30;
-    var t = 30;
-    var n = 350;
-    var r = 350;
-    var i = "//7xuupy.com1.z0.glb.clouddn.com/tongxingSibel%20-%20Im%20Sorry.mp3";
-    var s = "mw-harlem_shake_me";
-    var o = "im_first";
-    var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
-    var a = "mw-strobe_light";
-    var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
-    var l = "mw_added_css";
-    var b = g();
-    var w = y();
-    var C = document.getElementsByTagName("*");
-    var k = null;
-    for (var L = 0; L < C.length; L++) {
-        var A = C[L];
-        if (v(A)) {
-            if (E(A)) {
-                k = A;
-                break
-            }
-        }
-    }
-    if (A === null) {
-        console.warn("Could not find a node of the right size. Please try a different page.");
-        return
-    }
-    c();
-    S();
-    var O = [];
-    for (var L = 0; L < C.length; L++) {
-        var A = C[L];
-        if (v(A)) {
-            O.push(A)
-        }
-    }
-    })()    '>High一下</a> </li>
-          <!-- end High一下 -->
     </ul>
   
 
@@ -607,13 +467,13 @@ child_proc">
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.time(<span class="string">'sync'</span>);</div><div class="line"><span class="keyword">try</span> &#123;</div><div class="line">  <span class="keyword">var</span> data = fs.readFileSync(path.join(<span class="string">'C:\\Users\\iceStone\\Downloads'</span>, <span class="string">'H.mp4'</span>));</div><div class="line">  <span class="comment">// console.log(data);</span></div><div class="line">&#125; <span class="keyword">catch</span> (error) &#123;</div><div class="line">  <span class="keyword">throw</span> error;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.timeEnd(<span class="string">'sync'</span>);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.time(<span class="string">'async'</span>);</div><div class="line">fs.readFile(path.join(<span class="string">'C:\\Users\\iceStone\\Downloads'</span>, <span class="string">'H.mp4'</span>), (error, data) =&gt; &#123;</div><div class="line">  <span class="keyword">if</span> (error) <span class="keyword">throw</span> error;</div><div class="line">  <span class="comment">// console.log(data);</span></div><div class="line">&#125;);</div><div class="line"><span class="built_in">console</span>.timeEnd(<span class="string">'async'</span>);</div></pre></td></tr></table></figure>
 <h3 id="路径模块"><a href="#路径模块" class="headerlink" title="路径模块"></a>路径模块</h3><p>在文件操作的过程中，都必须使用物理路径（绝对路径），path模块提供了一系列与路径相关的 API</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="string">'join用于拼接多个路径部分，并转化为正常格式'</span>);</div><div class="line"><span class="keyword">const</span> temp = path.join(__dirname, <span class="string">'..'</span>, <span class="string">'lyrics'</span>, <span class="string">'./友谊之光.lrc'</span>);</div><div class="line"><span class="built_in">console</span>.log(temp);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'获取路径中的文件名'</span>);</div><div class="line"><span class="built_in">console</span>.log(path.basename(temp));</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'获取路径中的文件名并排除扩展名'</span>);</div><div class="line"><span class="built_in">console</span>.log(path.basename(temp, <span class="string">'.lrc'</span>));</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'===================================='</span>);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'获取不同操作系统的路径分隔符'</span>);</div><div class="line"><span class="built_in">console</span>.log(process.platform + <span class="string">'的分隔符为 '</span> + path.delimiter);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'一般用于分割环境变量'</span>);</div><div class="line"><span class="built_in">console</span>.log(process.env.PATH.split(path.delimiter));</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'===================================='</span>);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'获取一个路径中的目录部分'</span>);</div><div class="line"><span class="built_in">console</span>.log(path.dirname(temp));</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'===================================='</span>);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'获取一个路径中最后的扩展名'</span>);</div><div class="line"><span class="built_in">console</span>.log(path.extname(temp));</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'===================================='</span>);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'将一个路径解析成一个对象的形式'</span>);</div><div class="line"><span class="keyword">const</span> pathObject = path.parse(temp);</div><div class="line"><span class="built_in">console</span>.log(pathObject);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'===================================='</span>);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'将一个路径对象再转换为一个字符串的形式'</span>);</div><div class="line"><span class="comment">// pathObject.name = '我终于失去了你';</span></div><div class="line">pathObject.base = <span class="string">'我终于失去了你.lrc'</span>;</div><div class="line"><span class="built_in">console</span>.log(pathObject);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(path.format(pathObject));</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'===================================='</span>);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'获取一个路径是不是绝对路径'</span>);</div><div class="line"><span class="built_in">console</span>.log(path.isAbsolute(temp));</div><div class="line"><span class="built_in">console</span>.log(path.isAbsolute(<span class="string">'../lyrics/爱的代价.lrc'</span>));</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'===================================='</span>);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'将一个路径转换为当前系统默认的标准格式，并解析其中的./和../'</span>);</div><div class="line"><span class="built_in">console</span>.log(path.normalize(<span class="string">'c:/develop/demo\\hello/../world/./a.txt'</span>));</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'===================================='</span>);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'获取第二个路径相对第一个路径的相对路径'</span>);</div><div class="line"><span class="built_in">console</span>.log(path.relative(__dirname, temp));</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'===================================='</span>);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'以类似命令行cd命令的方式拼接路径'</span>);</div><div class="line"><span class="built_in">console</span>.log(path.resolve(temp, <span class="string">'c:/'</span>, <span class="string">'./develop'</span>, <span class="string">'../application'</span>));</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'===================================='</span>);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'获取不同平台中路径的分隔符（默认）'</span>);</div><div class="line"><span class="built_in">console</span>.log(path.sep);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'===================================='</span>);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'允许在任意平台下以WIN32的方法调用PATH对象'</span>);</div><div class="line"><span class="comment">// console.log(path.win32);</span></div><div class="line"><span class="built_in">console</span>.log(path === path.win32);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'===================================='</span>);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'允许在任意平台下以POSIX的方法调用PATH对象'</span>);</div><div class="line"><span class="built_in">console</span>.log(path === path.posix);</div></pre></td></tr></table></figure>
-<p>源码地址：<br><a href="https://github.com/nodejs/node/blob/master/lib/path.js">https://github.com/nodejs/node/blob/master/lib/path.js</a></p>
+<p>源码地址：<br><a href="https://github.com/nodejs/node/blob/master/lib/path.js" target="_blank" rel="external">https://github.com/nodejs/node/blob/master/lib/path.js</a></p>
 <h3 id="文件读取"><a href="#文件读取" class="headerlink" title="文件读取"></a>文件读取</h3><p>Node中文件读取的方式主要有：</p>
 <h4 id="fs-readFile-file-options-callback-error-data"><a href="#fs-readFile-file-options-callback-error-data" class="headerlink" title="fs.readFile(file[, options], callback(error, data))"></a>fs.readFile(file[, options], callback(error, data))</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">fs.readFile(<span class="string">'c:\\demo\1.txt'</span>, <span class="string">'utf8'</span>, (err, data) =&gt; &#123;</div><div class="line">  <span class="keyword">if</span> (err) <span class="keyword">throw</span> err;</div><div class="line">  <span class="built_in">console</span>.log(data);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <h4 id="fs-readFileSync-file-options"><a href="#fs-readFileSync-file-options" class="headerlink" title="fs.readFileSync(file[, options])"></a>fs.readFileSync(file[, options])</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">try</span> &#123;</div><div class="line">  <span class="keyword">const</span> data = fs.readFileSync(<span class="string">'c:\\demo\1.txt'</span>, <span class="string">'utf8'</span>);</div><div class="line">  <span class="built_in">console</span>.log(data);</div><div class="line">&#125; <span class="keyword">catch</span>(e) &#123;</div><div class="line">  <span class="comment">// 文件不存在，或者权限错误</span></div><div class="line">  <span class="keyword">throw</span> e;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h4 id="fs-createReadStream-path-options"><a href="#fs-createReadStream-path-options" class="headerlink" title="fs.createReadStream(path[, options])"></a>fs.createReadStream(path[, options])</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> stream = fs.createReadStream(<span class="string">'c:\\demo\1.txt'</span>);</div><div class="line"><span class="keyword">let</span> data = <span class="string">''</span></div><div class="line">stream.on(<span class="string">'data'</span>, (trunk) =&gt; &#123;</div><div class="line">  data += trunk;</div><div class="line">&#125;);</div><div class="line">stream.on(<span class="string">'end'</span>, () =&gt; &#123;</div><div class="line">  <span class="built_in">console</span>.log(data);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <blockquote>
-<p><em>由于Windows平台下默认文件编码是GBK，在Node中不支持，可以通过<a href="https://github.com/ashtuchkin/iconv-lite">iconv-lite</a>解决</em></p>
+<p><em>由于Windows平台下默认文件编码是GBK，在Node中不支持，可以通过<a href="https://github.com/ashtuchkin/iconv-lite" target="_blank" rel="external">iconv-lite</a>解决</em></p>
 </blockquote>
 <h3 id="Readline模块逐行读取文本内容"><a href="#Readline模块逐行读取文本内容" class="headerlink" title="Readline模块逐行读取文本内容"></a>Readline模块逐行读取文本内容</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> readline = <span class="built_in">require</span>(<span class="string">'readline'</span>);</div><div class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</div><div class="line"></div><div class="line"><span class="keyword">const</span> rl = readline.createInterface(&#123;</div><div class="line">  <span class="attr">input</span>: fs.createReadStream(<span class="string">'sample.txt'</span>)</div><div class="line">&#125;);</div><div class="line"></div><div class="line">rl.on(<span class="string">'line'</span>, (line) =&gt; &#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'Line from file:'</span>, line);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <h3 id="文件写入"><a href="#文件写入" class="headerlink" title="文件写入"></a>文件写入</h3><p>Node中文件写入的方式主要有：</p>
@@ -656,8 +516,8 @@ child_proc">
 <h3 id="文件监视"><a href="#文件监视" class="headerlink" title="文件监视"></a>文件监视</h3><h4 id="利用文件监视实现自动-markdown-文件转换"><a href="#利用文件监视实现自动-markdown-文件转换" class="headerlink" title="利用文件监视实现自动 markdown 文件转换"></a>利用文件监视实现自动 markdown 文件转换</h4><ul>
 <li><p>相关链接：</p>
 <ol>
-<li><a href="https://github.com/chjj/marked">https://github.com/chjj/marked</a></li>
-<li><a href="https://github.com/Browsersync/browser-sync">https://github.com/Browsersync/browser-sync</a> </li>
+<li><a href="https://github.com/chjj/marked" target="_blank" rel="external">https://github.com/chjj/marked</a></li>
+<li><a href="https://github.com/Browsersync/browser-sync" target="_blank" rel="external">https://github.com/Browsersync/browser-sync</a> </li>
 </ol>
 </li>
 <li><p>实现思路：</p>
@@ -845,7 +705,7 @@ child_proc">
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-count">12</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -853,7 +713,7 @@ child_proc">
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
