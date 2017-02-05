@@ -1,0 +1,1580 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo,Next," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="web events(值均为script)PC端
+window事件属性（适用于body标签）
+
+
+
+
+Properties
+Description
+Mark
+
+
+
+
+onafterprint
+在打印文档之后运行脚本
+New
+
+
+onbeforeprint
+在文档打印之前运行脚本
+New
+
+
+onbeforeonload
+在文档加载之前运行脚本
+New
+
+
+onblur
+当窗口失去焦点时运行脚本">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Events">
+<meta property="og:url" content="https://yanlee26.github.io/2016/03/03/events/index.html">
+<meta property="og:site_name" content="Frank_Lyan's Blog">
+<meta property="og:description" content="web events(值均为script)PC端
+window事件属性（适用于body标签）
+
+
+
+
+Properties
+Description
+Mark
+
+
+
+
+onafterprint
+在打印文档之后运行脚本
+New
+
+
+onbeforeprint
+在文档打印之前运行脚本
+New
+
+
+onbeforeonload
+在文档加载之前运行脚本
+New
+
+
+onblur
+当窗口失去焦点时运行脚本">
+<meta property="og:updated_time" content="2017-02-05T00:56:10.155Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Events">
+<meta name="twitter:description" content="web events(值均为script)PC端
+window事件属性（适用于body标签）
+
+
+
+
+Properties
+Description
+Mark
+
+
+
+
+onafterprint
+在打印文档之后运行脚本
+New
+
+
+onbeforeprint
+在文档打印之前运行脚本
+New
+
+
+onbeforeonload
+在文档加载之前运行脚本
+New
+
+
+onblur
+当窗口失去焦点时运行脚本">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"hide"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6382889515761010000,
+      author: 'Author'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="https://yanlee26.github.io/2016/03/03/events/"/>
+
+  <title> Events | Frank_Lyan's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Frank_Lyan's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">progressive programing</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-commenting"></i> <br />
+            
+            留言
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+
+      <!-- 自定义High一下的功能 -->
+      <li> <a title="把这个链接拖到你的Chrome收藏夹工具栏中" href='javascript:(function() {
+    function c() {
+        var e = document.createElement("link");
+        e.setAttribute("type", "text/css");
+        e.setAttribute("rel", "stylesheet");
+        e.setAttribute("href", f);
+        e.setAttribute("class", l);
+        document.body.appendChild(e)
+    }
+    function h() {
+        var e = document.getElementsByClassName(l);
+        for (var t = 0; t < e.length; t++) {
+            document.body.removeChild(e[t])
+        }
+    }
+    function p() {
+        var e = document.createElement("div");
+        e.setAttribute("class", a);
+        document.body.appendChild(e);
+        setTimeout(function() {
+            document.body.removeChild(e)
+        }, 100)
+    }
+    function d(e) {
+        return {
+            height : e.offsetHeight,
+            width : e.offsetWidth
+        }
+    }
+    function v(i) {
+        var s = d(i);
+        return s.height > e && s.height < n && s.width > t && s.width < r
+    }
+    function m(e) {
+        var t = e;
+        var n = 0;
+        while (!!t) {
+            n += t.offsetTop;
+            t = t.offsetParent
+        }
+        return n
+    }
+    function g() {
+        var e = document.documentElement;
+        if (!!window.innerWidth) {
+            return window.innerHeight
+        } else if (e && !isNaN(e.clientHeight)) {
+            return e.clientHeight
+        }
+        return 0
+    }
+    function y() {
+        if (window.pageYOffset) {
+            return window.pageYOffset
+        }
+        return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
+    }
+    function E(e) {
+        var t = m(e);
+        return t >= w && t <= b + w
+    }
+    function S() {
+        var e = document.createElement("audio");
+        e.setAttribute("class", l);
+        e.src = i;
+        e.loop = false;
+        e.addEventListener("canplay", function() {
+            setTimeout(function() {
+                x(k)
+            }, 500);
+            setTimeout(function() {
+                N();
+                p();
+                for (var e = 0; e < O.length; e++) {
+                    T(O[e])
+                }
+            }, 15500)
+        }, true);
+        e.addEventListener("ended", function() {
+            N();
+            h()
+        }, true);
+        e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
+        document.body.appendChild(e);
+        e.play()
+    }
+    function x(e) {
+        e.className += " " + s + " " + o
+    }
+    function T(e) {
+        e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
+    }
+    function N() {
+        var e = document.getElementsByClassName(s);
+        var t = new RegExp("\\b" + s + "\\b");
+        for (var n = 0; n < e.length; ) {
+            e[n].className = e[n].className.replace(t, "")
+        }
+    }
+    var e = 30;
+    var t = 30;
+    var n = 350;
+    var r = 350;
+    var i = "//7xuupy.com1.z0.glb.clouddn.com/tongxingSibel%20-%20Im%20Sorry.mp3";
+    var s = "mw-harlem_shake_me";
+    var o = "im_first";
+    var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
+    var a = "mw-strobe_light";
+    var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
+    var l = "mw_added_css";
+    var b = g();
+    var w = y();
+    var C = document.getElementsByTagName("*");
+    var k = null;
+    for (var L = 0; L < C.length; L++) {
+        var A = C[L];
+        if (v(A)) {
+            if (E(A)) {
+                k = A;
+                break
+            }
+        }
+    }
+    if (A === null) {
+        console.warn("Could not find a node of the right size. Please try a different page.");
+        return
+    }
+    c();
+    S();
+    var O = [];
+    for (var L = 0; L < C.length; L++) {
+        var A = C[L];
+        if (v(A)) {
+            O.push(A)
+        }
+    }
+    })()    '>High一下</a> </li>
+          <!-- end High一下 -->
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search fa-lg"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Events
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-03-03T20:11:38+08:00" content="2016-03-03">
+              2016-03-03
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/JS/" itemprop="url" rel="index">
+                    <span itemprop="name">JS</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+
+          
+
+          
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv">热度
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>℃
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="web-events-值均为script"><a href="#web-events-值均为script" class="headerlink" title="web events(值均为script)"></a>web events(值均为script)</h1><h3 id="PC端"><a href="#PC端" class="headerlink" title="PC端"></a>PC端</h3><ol>
+<li>window事件属性（适用于body标签）</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Properties</th>
+<th style="text-align:center">Description</th>
+<th style="text-align:right">Mark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">onafterprint</td>
+<td style="text-align:center">在打印文档之后运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">onbeforeprint</td>
+<td style="text-align:center">在文档打印之前运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">onbeforeonload</td>
+<td style="text-align:center">在文档加载之前运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">onblur</td>
+<td style="text-align:center">当窗口失去焦点时运行脚本</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">onerror</td>
+<td style="text-align:center">当错误发生时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">onfocus</td>
+<td style="text-align:center">当窗口获得焦点时运行脚本</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">onhaschange</td>
+<td style="text-align:center">当文档改变时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">onload</td>
+<td style="text-align:center">当文档加载时运行脚本</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">onmessage</td>
+<td style="text-align:center">当触发消息时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">onoffline</td>
+<td style="text-align:center">当文档离线时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">ononline</td>
+<td style="text-align:center">当文档上线时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">onpagehide</td>
+<td style="text-align:center">当窗口隐藏时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">onpageshow</td>
+<td style="text-align:center">当窗口可见时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">onpopstate</td>
+<td style="text-align:center">当文档执行再执行操作（redo）时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">onresize</td>
+<td style="text-align:center">当调整窗口大小时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">onstorage</td>
+<td style="text-align:center">当文档加载加载时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">onundo</td>
+<td style="text-align:center">当 Web Storage 区域更新时（存储空间中的数据发生变化时）</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">onunload</td>
+<td style="text-align:center">当用户离开文档时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li><p>form事件属性(适用于所有h5元素，常用于表单)<br>| Properties    | Description | Mark|<br>| :———— |:————–:|—–:|<br>| onblur  | 当元素失去焦点时运行脚本||<br>| onchange  | 当元素改变时运行脚本||<br>| oncontextmenu  | 当触发上下文菜单时运行脚本|New|<br>| onfocus  | 当元素获得焦点时运行脚本|New|<br>| onformchange  | 当表单改变时运行脚本|New|<br>| onforminput  | 当表单获得用户输入时运行脚本|New|<br>| oninput  | 当元素获得用户输入时运行脚本|New|<br>| oninvalid  | 当元素无效时运行脚本|New|<br>| onreset  | 当表单重置时运行脚本。HTML 5 不支持||<br>| onselect  | 当选取元素时运行脚本||<br>| onsubmit  | 当提交表单时运行脚本||</p>
+</li>
+<li><p>keyboard事件(适用于所有h5元素)<br>| Properties    | Description | Mark|<br>| :———— |:————–:|—–:|<br>| onkeydown  | 当按下按键时运行脚本||<br>| onkeypress  | 当按下并松开按键时运行脚本||<br>| onkeyup  | 当松开按键时运行脚本||</p>
+</li>
+<li>mouse事件(适用于所有h5元素)</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Properties</th>
+<th style="text-align:center">Description</th>
+<th style="text-align:right">Mark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">onclick</td>
+<td style="text-align:center">当单击鼠标时运行脚本</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">ondblclick</td>
+<td style="text-align:center">当双击鼠标时运行脚本</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">ondrag</td>
+<td style="text-align:center">当拖动元素时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">ondragend</td>
+<td style="text-align:center">当拖动操作结束时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">ondragenter</td>
+<td style="text-align:center">当元素被拖动至有效的拖放目标时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">ondragleave</td>
+<td style="text-align:center">当元素离开有效拖放目标时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">ondragover</td>
+<td style="text-align:center">当元素被拖动至有效拖放目标上方时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">ondragstart</td>
+<td style="text-align:center">当拖动操作开始时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">ondrop</td>
+<td style="text-align:center">当被拖动元素正在被拖放时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">onmousedown</td>
+<td style="text-align:center">当按下鼠标按钮时运行脚本</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">onmousemove</td>
+<td style="text-align:center">当鼠标指针移动时运行脚本</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">onmouseout</td>
+<td style="text-align:center">当鼠标指针移出元素时运行脚本</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">onmouseover</td>
+<td style="text-align:center">当鼠标指针移至元素之上时运行脚本</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">onmouseup</td>
+<td style="text-align:center">当松开鼠标按钮时运行脚本</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">onmousewheel</td>
+<td style="text-align:center">当转动鼠标滚轮时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">onscroll</td>
+<td style="text-align:center">当滚动元素滚动元素的滚动条时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>media事件(适用于所有h5元素,常用于媒体元素)</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Properties</th>
+<th style="text-align:center">Description</th>
+<th style="text-align:right">Mark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">onabort</td>
+<td style="text-align:center">当发生中止事件时运行脚本</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">oncanplay</td>
+<td style="text-align:center">当媒介能够开始播放但可能因缓冲而需要停止时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">oncanplaythrough</td>
+<td style="text-align:center">当媒介能够无需因缓冲而停止即可播放至结尾时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">ondurationchange</td>
+<td style="text-align:center">当媒介长度改变时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">onemptied</td>
+<td style="text-align:center">当媒介资源元素突然为空时（网络错误、加载错误等）运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">onended</td>
+<td style="text-align:center">当媒介已抵达结尾时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">onerror</td>
+<td style="text-align:center">当在元素加载期间发生错误时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">onloadeddata</td>
+<td style="text-align:center">当加载媒介数据时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">onloadedmetadata</td>
+<td style="text-align:center">当媒介元素的持续时间以及其他媒介数据已加载时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">onloadstart</td>
+<td style="text-align:center">当浏览器开始加载媒介数据时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">onpause</td>
+<td style="text-align:center">当媒介数据暂停时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">onplay</td>
+<td style="text-align:center">当媒介数据将要开始播放时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">onplaying</td>
+<td style="text-align:center">当媒介数据已开始播放时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">onprogress</td>
+<td style="text-align:center">当浏览器正在取媒介数据时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">onratechange</td>
+<td style="text-align:center">当媒介数据的播放速率改变时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">onreadystatechange</td>
+<td style="text-align:center">当就绪状态（ready-state）改变时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">onseeked</td>
+<td style="text-align:center">当媒介元素的定位属性 [1] 不再为真且定位已结束时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">onseeking</td>
+<td style="text-align:center">当媒介元素的定位属性为真且定位已开始时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">onstalled</td>
+<td style="text-align:center">当取回媒介数据过程中（延迟）存在错误时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">onsuspend</td>
+<td style="text-align:center">当浏览器已在取媒介数据但在取回整个媒介文件之前停止时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">ontimeupdate</td>
+<td style="text-align:center">当媒介改变其播放位置时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">onvolumechange</td>
+<td style="text-align:center">当媒介改变音量亦或当音量被设置为静音时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">onwaiting</td>
+<td style="text-align:center">当媒介已停止播放但打算继续播放时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>其它事件</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Properties</th>
+<th style="text-align:center">Description</th>
+<th style="text-align:right">Mark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">onshow</td>
+<td style="text-align:center">当 <menu> 元素在上下文显示时触发</menu></td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">ontoggle</td>
+<td style="text-align:center">当用户打开或关闭 <details> 元素时触发</details></td>
+</tr>
+</tbody>
+</table>
+<h3 id="移动端"><a href="#移动端" class="headerlink" title="移动端"></a>移动端</h3><blockquote>
+<p> 理解click的300ms的延迟响应<br>   Click事件在移动手机开发中有300ms的延迟，因为在手机早期，浏览器系统有放大和缩放功能，用户在屏幕上点击两次之后，<br>   系统会触发放大或者缩放功能，因此系统做了一个处理，当触摸一次后，在300ms这段时间内有没有触摸第二次，<br>   如果触摸了第二次的话，说明是触发放大或缩放功能，否则的话是click事件。因此当click时候，所有用户必须等待于300ms后才<br>   会触发click事件。所以当在移动端使用click事件的时候，会感觉到有300ms的迟钝。</p>
+</blockquote>
+<ol>
+<li>touch事件</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Properties</th>
+<th style="text-align:center">Description</th>
+<th style="text-align:right">Mark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">touchstart</td>
+<td style="text-align:center">当手指放在屏幕上触发</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">touchmove</td>
+<td style="text-align:center">当手指在屏幕上滑动时，连续地触发</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">touchend</td>
+<td style="text-align:center">当手指从屏幕上离开时触发</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">touchcancel</td>
+<td style="text-align:center">当系统停止跟踪时触发; 该事件暂时使用不到</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">touches</td>
+<td style="text-align:center">表示当前跟踪的触摸操作的touch对象的数组</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">targetTouches</td>
+<td style="text-align:center">特定于事件目标的touch对象的数组</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">changedTouches</td>
+<td style="text-align:center">上次触摸以来发生了什么改变的touch对象的数组</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>gesture事件</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Properties</th>
+<th style="text-align:center">Description</th>
+<th style="text-align:right">Mark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">gesturestart</td>
+<td style="text-align:center">当一个手指已经按在屏幕上，而另一个手指又触摸在屏幕时触发</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">gesturechange</td>
+<td style="text-align:center">当触摸屏幕的任何一个手指的位置发生改变的时候触发</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">gestureend</td>
+<td style="text-align:center">当任何一个手指从屏幕上面移开时触发</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>触摸事件和手势事件的之间关系：<br>当一个手指放在屏幕上时，会触发touchstart事件，而另一个手指触摸在屏幕上时<br>触发gesturestart事件，随后触发基于该手指的touchstart事件。<br>如果一个或两个手指在屏幕上滑动时，将会触发gesturechange事件，但是只要有一个手指移开时候，则会触发gestureend事件，<br>紧接着会触发touchend事件。<br>手势的专有属性:<br>rotation: 表示手指变化引起的旋转角度，负值表示逆时针，正值表示顺时针，从0开始；<br>scale: 表示2个手指之间的距离情况，向内收缩会缩短距离，这个值从1开始的，并随距离拉大而增长。</p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/wg.jpg" alt="Yan Li wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，查看更多分享！</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+<blockquote class="blockquote-center">
+    完
+</blockquote>
+
+  <span id="inline-green" style="border-radius:3px;">作者</span>：<a class="link-blue" href="https://github.com/yanlee26" target="_blank">Frank</a><br/>有问题请 <a class="link-blue" href="https://yanlee26.github.io/guestbook" target="_blank">留言</a> 或者私信我的 <a class="link-blue" href="http://weibo.com/franklyan" target="_blank">微博</a>。
+
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>满分是100分的话，这篇文章你给多少分</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/w.jpg" alt="Yan Li WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/z.jpg" alt="Yan Li Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Hexo/" rel="tag">#Hexo</a>
+          
+            <a href="/tags/Next/" rel="tag">#Next</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/12/01/cssskills/" rel="next" title="CSS skills">
+                <i class="fa fa-chevron-left"></i> CSS skills
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/06/04/prefesional/" rel="prev" title="Prefessional JS resharpe">
+                Prefessional JS resharpe <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/03/03/events/"
+     data-title="Events"
+     data-content=""
+     data-url="https://yanlee26.github.io/2016/03/03/events/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><span class="ds-more">分享到：</span></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+      <li><a class="ds-facebook" href="javascript:void(0);" data-service="facebook">Facebook</a></li>
+      <li><a class="ds-google" href="javascript:void(0);" data-service="google">Google</a></li>
+    </ul>
+    <!--
+      <div class="ds-share-icons-more">
+      </div>
+    -->
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="Yan Li" />
+          <p class="site-author-name" itemprop="name">Yan Li</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/yanlee26" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  Github
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/franklyan" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://stackoverflow.com/users/7261459/yan" target="_blank" title="stackoverflow">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  stackoverflow
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://home.cnblogs.com/u/frank26/" title="cnblogs" target="_blank">cnblogs</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://twitter.com/?request_context=signup" title="Twitter" target="_blank">Twitter</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#web-events-值均为script"><span class="nav-number">1.</span> <span class="nav-text">web events(值均为script)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#PC端"><span class="nav-number">1.0.1.</span> <span class="nav-text">PC端</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#移动端"><span class="nav-number">1.0.2.</span> <span class="nav-text">移动端</span></a></li></ol></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">您是第<span class="busuanzi-value" id="busuanzi_value_site_uv"></span>个小伙伴</span>
+  
+
+  
+    <span class="site-pv">本站总浏览<span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次</span>
+  
+  
+</div>
+
+
+
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yan Li</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io" rel="external nofollow">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" rel="external nofollow">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"yanlee24"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementById('footer')
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+<script type="text/javascript" async src="//push.zhanzhang.baidu.com/push.js">
+</script>
+
+
+  <!-- 背景动画 -->
+  <script type="text/javascript" src="/js/src/particle.js"></script>
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/src/love.js"></script>
+
+</body>
+</html>

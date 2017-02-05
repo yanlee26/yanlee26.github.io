@@ -1,0 +1,1269 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo,Next," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="js 常用封装总结`//自制框架//定义一个对象 - 名字是$$var $$ = function () {};//第二种写法$$.prototype = {    $q:function (str) {        return document.querySelector(str)    },    $qa:function (str) {        return document.qu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Framework resharpe">
+<meta property="og:url" content="https://yanlee26.github.io/2016/06/04/framework/index.html">
+<meta property="og:site_name" content="Frank_Lyan's Blog">
+<meta property="og:description" content="js 常用封装总结`//自制框架//定义一个对象 - 名字是$$var $$ = function () {};//第二种写法$$.prototype = {    $q:function (str) {        return document.querySelector(str)    },    $qa:function (str) {        return document.qu">
+<meta property="og:updated_time" content="2017-02-05T00:56:10.195Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Framework resharpe">
+<meta name="twitter:description" content="js 常用封装总结`//自制框架//定义一个对象 - 名字是$$var $$ = function () {};//第二种写法$$.prototype = {    $q:function (str) {        return document.querySelector(str)    },    $qa:function (str) {        return document.qu">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"hide"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6382889515761010000,
+      author: 'Author'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="https://yanlee26.github.io/2016/06/04/framework/"/>
+
+  <title> Framework resharpe | Frank_Lyan's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Frank_Lyan's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">progressive programing</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-commenting"></i> <br />
+            
+            留言
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+
+      <!-- 自定义High一下的功能 -->
+      <li> <a title="把这个链接拖到你的Chrome收藏夹工具栏中" href='javascript:(function() {
+    function c() {
+        var e = document.createElement("link");
+        e.setAttribute("type", "text/css");
+        e.setAttribute("rel", "stylesheet");
+        e.setAttribute("href", f);
+        e.setAttribute("class", l);
+        document.body.appendChild(e)
+    }
+    function h() {
+        var e = document.getElementsByClassName(l);
+        for (var t = 0; t < e.length; t++) {
+            document.body.removeChild(e[t])
+        }
+    }
+    function p() {
+        var e = document.createElement("div");
+        e.setAttribute("class", a);
+        document.body.appendChild(e);
+        setTimeout(function() {
+            document.body.removeChild(e)
+        }, 100)
+    }
+    function d(e) {
+        return {
+            height : e.offsetHeight,
+            width : e.offsetWidth
+        }
+    }
+    function v(i) {
+        var s = d(i);
+        return s.height > e && s.height < n && s.width > t && s.width < r
+    }
+    function m(e) {
+        var t = e;
+        var n = 0;
+        while (!!t) {
+            n += t.offsetTop;
+            t = t.offsetParent
+        }
+        return n
+    }
+    function g() {
+        var e = document.documentElement;
+        if (!!window.innerWidth) {
+            return window.innerHeight
+        } else if (e && !isNaN(e.clientHeight)) {
+            return e.clientHeight
+        }
+        return 0
+    }
+    function y() {
+        if (window.pageYOffset) {
+            return window.pageYOffset
+        }
+        return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
+    }
+    function E(e) {
+        var t = m(e);
+        return t >= w && t <= b + w
+    }
+    function S() {
+        var e = document.createElement("audio");
+        e.setAttribute("class", l);
+        e.src = i;
+        e.loop = false;
+        e.addEventListener("canplay", function() {
+            setTimeout(function() {
+                x(k)
+            }, 500);
+            setTimeout(function() {
+                N();
+                p();
+                for (var e = 0; e < O.length; e++) {
+                    T(O[e])
+                }
+            }, 15500)
+        }, true);
+        e.addEventListener("ended", function() {
+            N();
+            h()
+        }, true);
+        e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
+        document.body.appendChild(e);
+        e.play()
+    }
+    function x(e) {
+        e.className += " " + s + " " + o
+    }
+    function T(e) {
+        e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
+    }
+    function N() {
+        var e = document.getElementsByClassName(s);
+        var t = new RegExp("\\b" + s + "\\b");
+        for (var n = 0; n < e.length; ) {
+            e[n].className = e[n].className.replace(t, "")
+        }
+    }
+    var e = 30;
+    var t = 30;
+    var n = 350;
+    var r = 350;
+    var i = "//7xuupy.com1.z0.glb.clouddn.com/tongxingSibel%20-%20Im%20Sorry.mp3";
+    var s = "mw-harlem_shake_me";
+    var o = "im_first";
+    var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
+    var a = "mw-strobe_light";
+    var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
+    var l = "mw_added_css";
+    var b = g();
+    var w = y();
+    var C = document.getElementsByTagName("*");
+    var k = null;
+    for (var L = 0; L < C.length; L++) {
+        var A = C[L];
+        if (v(A)) {
+            if (E(A)) {
+                k = A;
+                break
+            }
+        }
+    }
+    if (A === null) {
+        console.warn("Could not find a node of the right size. Please try a different page.");
+        return
+    }
+    c();
+    S();
+    var O = [];
+    for (var L = 0; L < C.length; L++) {
+        var A = C[L];
+        if (v(A)) {
+            O.push(A)
+        }
+    }
+    })()    '>High一下</a> </li>
+          <!-- end High一下 -->
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search fa-lg"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Framework resharpe
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-04T07:22:22+08:00" content="2016-06-03">
+              2016-06-03
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/JS/" itemprop="url" rel="index">
+                    <span itemprop="name">JS</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+
+          
+
+          
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv">热度
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>℃
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="js-常用封装总结"><a href="#js-常用封装总结" class="headerlink" title="js 常用封装总结"></a>js 常用封装总结</h1><p>`<br>//自制框架<br>//定义一个对象 - 名字是$$<br>var $$ = function () {<br>};<br>//第二种写法<br>$$.prototype = {<br>    $q:function (str) {<br>        return document.querySelector(str)<br>    },<br>    $qa:function (str) {<br>        return document.querySelectorAll(str)<br>    },<br>    $id: function (str) {<br>        return document.getElementById(str)<br>    },<br>    $tag: function (tag) {<br>        return document.getElementsByTagName(tag)<br>    },<br>    //去除左边空格<br>    ltrim: function (str) {<br>        return str.replace(/(^\s<em>)/g, ‘’);<br>    },<br>    //去除右边空格<br>    rtrim: function (str) {<br>        return str.replace(/(\s</em>$)/g, ‘’);<br>    },<br>    //去除空格<br>    trim: function (str) {<br>        return str.replace(/(^\s<em>)|(\s</em>$)/g, ‘’);<br>    },<br>    //ajax<br>    myAjax: function (URL, fn) {<br>        var xhr = createXHR();    //返回了一个对象，这个对象IE6兼容。<br>        xhr.onreadystatechange = function () {<br>            if (xhr.readyState === 4) {<br>                if (xhr.status &gt;= 200 &amp;&amp; xhr.status &lt; 300 || xhr.status == 304) {<br>                    fn(xhr.responseText);<br>                } else {<br>                    alert(“错误的文件！”);<br>                }<br>            }<br>        };<br>        xhr.open(“get”, URL, true);<br>        xhr.send();<br>        //闭包形式，因为这个函数只服务于ajax函数，所以放在里面<br>        function createXHR() {<br>            if (typeof XMLHttpRequest != “undefined”) {<br>                return new XMLHttpRequest();<br>            } else if (typeof ActiveXObject != “undefined”) {<br>                if (typeof arguments.callee.activeXString != “string”) {<br>                    var versions = [“MSXML2.XMLHttp.6.0”, “MSXML2.XMLHttp.3.0”,<br>                            “MSXML2.XMLHttp”<br>                        ],<br>                        i, len;<br>                    for (i = 0, len = versions.length; i &lt; len; i++) {<br>                        try {<br>                            new ActiveXObject(versions[i]);<br>                            arguments.callee.activeXString = versions[i];<br>                            break;<br>                        } catch (ex) {<br>                            //skip<br>                        }<br>                    }<br>                }<br>                return new ActiveXObject(arguments.callee.activeXString);<br>            } else {<br>                throw new Error(“No XHR object available.”);<br>            }<br>        }<br>    },<br>    //tab<br>    tab: function (id) {<br>        var box = document.getElementById(id);<br>        var spans = box.getElementsByTagName(‘span’);<br>        var lis = box.getElementsByTagName(‘li’);<br>        for (var i = 0; i &lt; spans.length; i++) {<br>            spans[i].index = i;<br>            spans[i].onmouseover = function () {<br>                for (var i = 0; i &lt; spans.length; i++) {<br>                    spans[i].className = ‘’;<br>                    lis[i].className = ‘’;<br>                }<br>                this.className = ‘select’;<br>                lis[this.index].className = ‘select’;<br>            }<br>        }<br>    },<br>    //简单的数据绑定formateString<br>    formateString: function (str, data) {<br>        return str.replace(/@((\w+))/g, function (match, key) {<br>            return typeof data[key] === “undefined” ? ‘’ : data[key]<br>        });<br>    },<br>    //给一个对象扩充功能<br>    extendMany: function () {<br>        var key, i = 0, len = arguments.length, target = null, copy;<br>        if (len === 0) {<br>            return;<br>        } else if (len === 1) {<br>            target = this;<br>        } else {<br>            i++;<br>            target = arguments[0];<br>        }<br>        for (; i &lt; len; i++) {<br>            for (key in arguments[i]) {<br>                copy = arguments[i][key];<br>                target[key] = copy;<br>            }<br>        }<br>        return target;<br>    },<br>    extend: function (tar, source) {<br>        for (var i in source) {<br>            tar[i] = source[i];<br>        }<br>        return tar;<br>    },<br>    random: function (begin, end) {<br>        return Math.floor(Math.random() <em> (end - begin)) + begin;<br>    },<br>    isNumber: function (val) {<br>        return typeof val === ‘number’ &amp;&amp; isFinite(val)<br>    },<br>    isBoolean: function (val) {<br>        return typeof val === “boolean”;<br>    },<br>    isString: function (val) {<br>        return typeof val === “string”;<br>    },<br>    isUndefined: function (val) {<br>        return typeof val === “undefined”;<br>    },<br>    isObj: function (str) {<br>        if (str === null || typeof str === ‘undefined’) {<br>            return false;<br>        }<br>        return typeof str === ‘object’;<br>    },<br>    isNull: function (val) {<br>        return val === null;<br>    },<br>    isArray: function (arr) {<br>        if (arr === null || typeof arr === ‘undefined’) {<br>            return false;<br>        }<br>        return arr.constructor === Array;<br>    }<br>};<br>//在框架中实例化<br>$$ = new $$();<br>$$.extend($$, {<br>    $id: function(id) {<br>        return document.getElementById(id);<br>    },<br>    $tag: function(tag, context) {<br>        if (typeof context == ‘string’) {<br>            context = $$.$id(context);<br>        }<br>        if (context) {<br>            return context.getElementsByTagName(tag);<br>        } else {<br>            return document.getElementsByTagName(tag);<br>        }<br>    },<br>    $class: function(className, context) {<br>        var i = 0,<br>            len, dom = [],<br>            arr = [];<br>        if ($$.isString(context)) {<br>            context = document.getElementById(context);<br>        } else {<br>            context = document;<br>        }<br>        if (context.getElementsByClassName) {<br>            return context.getElementsByClassName(className);<br>        } else {<br>            dom = context.getElementsByTagName(‘</em>‘);<br>            for (i; len = dom.length, i &lt; len; i++) {<br>                if (dom[i].className) {<br>                    arr.push(dom[i]);<br>                }<br>            }<br>        }<br>        return arr;<br>    },<br>    $group: function(content) {<br>        var result = [],<br>            doms = [];<br>        var arr = $$.trim(content).split(‘,’);<br>        for (var i = 0, len = arr.length; i &lt; len; i++) {<br>            var item = $$.trim(arr[i])<br>            var first = item.charAt(0)<br>            var index = item.indexOf(first)<br>            if (first === ‘.’) {<br>                doms = $$.$class(item.slice(index + 1));<br>                pushArray(doms, result)<br>            } else if (first === ‘#’) {<br>                doms = [$$.$id(item.slice(index + 1))] ;<br>                pushArray(doms, result)<br>            } else {<br>                doms = $$.$tag(item);<br>                pushArray(doms, result)<br>            }<br>        }<br>        return result;<br>        function pushArray(doms, result) {<br>            for (var j = 0, domlen = doms.length; j &lt; domlen; j++) {<br>                result.push(doms[j])<br>            }<br>        }<br>    },<br>    $cengci: function(select) {<br>        var sel = $$.trim(select).split(‘ ‘);<br>        var result = [];<br>        var context = [];<br>        for (var i = 0, len = sel.length; i &lt; len; i++) {<br>            result = [];<br>            var item = $$.trim(sel[i]);<br>            var first = sel[i].charAt(0)<br>            var index = item.indexOf(first)<br>            if (first === ‘#’) {<br>                pushArray([$$.$id(item.slice(index + 1))]);<br>                context = result;<br>            } else if (first === ‘.’) {<br>                if (context.length) {<br>                    for (var j = 0, contextLen = context.length; j &lt; contextLen; j++) {<br>                        pushArray($$.$class(item.slice(index + 1), context[j]));<br>                    }<br>                } else {<br>                    pushArray($$.$class(item.slice(index + 1)));<br>                }<br>                context = result;<br>            } else {<br>                if (context.length) {<br>                    for (var j = 0, contextLen = context.length; j &lt; contextLen; j++) {<br>                        pushArray($$.$tag(item, context[j]));<br>                    }<br>                } else {<br>                    pushArray($$.$tag(item));<br>                }<br>                context = result;<br>            }<br>        }</p>
+<pre><code>    return context;
+    function pushArray(doms) {
+        for (var j = 0, domlen = doms.length; j &lt; domlen; j++) {
+            result.push(doms[j])
+        }
+    }
+},
+$select: function(str) {
+    var result = [];
+    var item = $$.trim(str).split(&apos;,&apos;);
+    for (var i = 0, glen = item.length; i &lt; glen; i++) {
+        var select = $$.trim(item[i]);
+        var context = [];
+        context = $$.$cengci(select);
+        pushArray(context);
+
+    }
+    return result;
+    function pushArray(doms) {
+        for (var j = 0, domlen = doms.length; j &lt; domlen; j++) {
+            result.push(doms[j])
+        }
+    }
+},
+$all: function(selector, context) {
+    context = context || document;
+    return context.querySelectorAll(selector);
+},
+</code></pre><p>});<br>$$.extend($$, {<br>    css: function(context, key, value) {<br>        console.log(‘dfdfd’)<br>        var dom = $$.isString(context) ? $$.$all(context) : context;<br>        //Èç¹ûÊÇÊý×é<br>        if (dom.length) {<br>            //ÏÈ¹Ç¼Ü¹Ç¼Ü – Èç¹ûÊÇ»ñÈ¡Ä£Ê½ – Èç¹ûÊÇÉèÖÃÄ£Ê½<br>            //Èç¹ûvalue²»Îª¿Õ£¬Ôò±íÊ¾ÉèÖÃ<br>            if (value) {<br>                for (var i = dom.length - 1; i &gt;= 0; i–) {<br>                    setStyle(dom[i], key, value);<br>                }<br>                //            Èç¹ûvalueÎª¿Õ£¬Ôò±íÊ¾»ñÈ¡<br>            } else {<br>                return getStyle(dom[0]);<br>            }<br>            //Èç¹û²»ÊÇÊý×é<br>        } else {<br>            if (value) {<br>                setStyle(dom, key, value);<br>            } else {<br>                return getStyle(dom);<br>            }<br>        }</p>
+<pre><code>    function getStyle(dom) {
+        if (dom.currentStyle) {
+            return dom.currentStyle[key];
+        } else {
+            return getComputedStyle(dom, null)[key];
+        }
+    }
+
+    function setStyle(dom, key, value) {
+        dom.style[key] = value;
+    }
+},
+cssNum: function(context, key) {
+    return parseFloat($$.css(context, key))
+},
+show: function(content) {
+    var doms = $$.$all(content)
+    for (var i = 0, len = doms.length; i &lt; len; i++) {
+        $$.css(doms[i], &apos;display&apos;, &apos;block&apos;);
+    }
+},
+hide: function(content) {
+    var doms = $$.$all(content)
+    for (var i = 0, len = doms.length; i &lt; len; i++) {
+        $$.css(doms[i], &apos;display&apos;, &apos;none&apos;);
+    }
+},
+Width: function(id) {
+    return $$.$id(id).clientWidth
+},
+Height: function(id) {
+    return $$.$id(id).clientHeight
+},
+scrollWidth: function(id) {
+    return $$.$id(id).scrollWidth
+},
+scrollHeight: function(id) {
+    return $$.$id(id).scrollHeight
+},
+scrollTop: function(id) {
+    return $$.$id(id).scrollTop
+},
+scrollLeft: function(id) {
+    return $$.$id(id).scrollLeft
+},
+screenHeight: function() {
+    return window.screen.height
+},
+screenWidth: function() {
+    return window.screen.width
+},
+wWidth: function() {
+    return document.documentElement.clientWidth
+},
+wHeight: function() {
+    return document.documentElement.clientHeight
+},
+wScrollHeight: function() {
+    return document.body.scrollHeight
+},
+wScrollWidth: function() {
+    return document.body.scrollWidth
+},
+wScrollTop: function() {
+    var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+    return scrollTop
+},
+wScrollLeft: function() {
+    var scrollLeft = document.body.scrollLeft || (document.documentElement &amp;&amp; document.documentElement.scrollLeft);
+    return scrollLeft
+}
+</code></pre><p>})<br>$$.extend($$, {<br>    attr: function(content, key, value) {<br>        var dom = $$.$all(content);<br>        if (dom.length) {<br>            if (value) {<br>                for (var i = 0, len = dom.length; i &lt; len; i++) {<br>                    dom[i].setAttribute(key, value);<br>                }<br>            } else {<br>                return dom[0].getAttribute(key);<br>            }<br>        } else {<br>            if (value) {<br>                dom.setAttribute(key, value);<br>            } else {<br>                return dom.getAttribute(key);<br>            }<br>        }<br>    },<br>    addClass: function(context, name) {<br>        var doms = $$.$all(context);<br>        if (doms.length) {<br>            for (var i = 0, len = doms.length; i &lt; len; i++) {<br>                addName(doms[i]);<br>            }<br>        } else {<br>            addName(doms);<br>        }<br>        function addName(dom) {<br>            dom.className = dom.className + ‘ ‘ + name;<br>        }<br>    },<br>    removeClass: function(context, name) {<br>        var doms = $$.$all(context);<br>        if (doms.length) {<br>            for (var i = 0, len = doms.length; i &lt; len; i++) {<br>                removeName(doms[i]);<br>            }<br>        } else {<br>            removeName(doms);<br>        }<br>        function removeName(dom) {<br>            dom.className = dom.className.replace(name, ‘’);<br>        }<br>    },<br>    hasClass: function(context, name) {<br>        var doms = $$.$all(context)<br>        var flag = true;<br>        for (var i = 0, len = doms.length; i &lt; len; i++) {<br>            flag = flag &amp;&amp; check(doms[i], name)<br>        }</p>
+<pre><code>    return flag;
+    //ÅÐ¶¨µ¥¸öÔªËØ
+    function check(element, name) {
+        return -1 &lt; (&quot; &quot; + element.className + &quot; &quot;).indexOf(&quot; &quot; + name + &quot; &quot;)
+    }
+},
+getClass: function(id) {
+    var doms = $$.$all(id)
+    return $$.trim(doms[0].className).split(&quot; &quot;)
+}
+</code></pre><p>})<br>$$.extend($$, {<br>    html: function(context, value) {<br>        var doms = $$.$all(context);<br>        if (value) {<br>            for (var i = 0, len = doms.length; i &lt; len; i++) {<br>                doms[i].innerHTML = value;<br>            }<br>        } else {<br>            return doms[0].innerHTML<br>        }<br>    }<br>});<br>$$.extend($$, {<br>    on: function (id, type, fn) {<br>        var dom = $$.isString(id) ? document.getElementById(id) : id;<br>        if (dom.addEventListener) {<br>            dom.addEventListener(type, fn, false);<br>        } else if (dom.attachEvent) {<br>            dom.attachEvent(‘on’ + type, fn);<br>        }<br>    },<br>    un: function (id, type, fn) {<br>        var dom = $$.isString(id) ? document.getElementById(id) : id;<br>        if (dom.removeEventListener) {<br>            dom.removeEventListener(type, fn);<br>        } else if (dom.detachEvent) {<br>            dom.detachEvent(type, fn);<br>        }<br>    },<br>    click: function (id, fn) {<br>        this.on(id, ‘click’, fn);<br>    },<br>    mouseover: function (id, fn) {<br>        this.on(id, ‘mouseover’, fn);<br>    },<br>    mouseout: function (id, fn) {<br>        this.on(id, ‘mouseout’, fn);<br>    },<br>    hover: function (id, fnOver, fnOut) {<br>        if (fnOver) {<br>            this.on(id, “mouseover”, fnOver);<br>        }<br>        if (fnOut) {<br>            this.on(id, “mouseout”, fnOut);<br>        }<br>    },<br>    delegate: function (pid, eventType, selector, fn) {<br>        //参数处理<br>        var parent = $$.$id(pid);<br>        function handle(e) {<br>            var target = $$.GetTarget(e);<br>            if (target.nodeName.toLowerCase() === selector || target.id === selector || target.className.indexOf(selector) != -1) {<br>                fn.call(target);<br>            }<br>        }<br>        parent[eventType] = handle;<br>    },<br>    //事件基础<br>    getEvent: function (event) {<br>        return event ? event : window.event;<br>    },<br>    //获取目标<br>    GetTarget: function (event) {<br>        var e = $$.getEvent(event);<br>        return e.target || e.srcElement;<br>    },<br>    //组织默认行为<br>    preventDefault: function (event) {<br>        var event = $$.getEvent(event);<br>        if (event.preventDefault) {<br>            event.preventDefault();<br>        } else {<br>            event.returnValue = false;<br>        }<br>    },<br>    //阻止冒泡<br>    stopPropagation: function (event) {<br>        var event = $$.getEvent(event);<br>        if (event.stopPropagation) {<br>            event.stopPropagation();<br>        } else {<br>            event.cancelBubble = true;<br>        }<br>    }<br>})<br>$$.extend($$, {<br>    eq: function() {},<br>    first: function() {},<br>    last: function() {},<br>    append: function() {},<br>    empty: function() {},<br>    remove: function() {},<br>    clone: function() {}<br>});<br>$$.extend($$, {<br>    sjson: function(json) {<br>        return JSON.stringify(json);<br>    },<br>    json: function(str) {<br>        return eval(str);<br>    }<br>});<br>$$.cache = {<br>    data: [],<br>    get: function(key) {<br>        console.log(‘111’)<br>        var value = null;<br>        console.log(this.data)<br>        for (var i = 0, len = this.data.length; i &lt; len; i++) {<br>            var item = this.data[i]<br>            if (key == item.key) {<br>                value = item.value;<br>            }<br>        }<br>        console.log(‘get’ + value)<br>        return value;<br>    },<br>    add: function(key, value) {<br>        var json = { key: key, value: value };<br>        this.data.push(json);<br>    },<br>    delete: function(key) {<br>        var status = false;<br>        for (var i = 0, len = this.data.length; i &lt; len; i++) {<br>            var item = this.data[i]<br>            if (item.key.trim() == key) {<br>                this.data.splice(i, 1);<br>                status = true;<br>                break;<br>            }<br>        }<br>        return status;<br>    },<br>    update: function(key, value) {<br>        var status = false;<br>        for (var i = 0, len = this.data.length; i &lt; len; i++) {<br>            var item = this.data[i]<br>            if (item.key.trim() === key.trim()) {<br>                item.value = value.trim();<br>                status = true;<br>                break;<br>            }<br>        }<br>        return status;<br>    },<br>    isExist: function(key) {<br>        for (var i = 0, len = this.data.length; i &lt; len; i++) {<br>            var item = this.data[i]<br>            if (key === item.key) {<br>                return true;<br>            } else {<br>                return false;<br>            }<br>        }<br>    }<br>}<br>$$.cookie = {<br>    setCookie: function(name, value, days, path) {<br>        var name = escape(name);<br>        var value = escape(value);<br>        var expires = new Date();<br>        expires.setTime(expires.getTime() + days <em> 24 </em> 60 <em> 60 </em> 1000);<br>        path = path == “” ? “” : “;path=” + path;<br>        _expires = (typeof hours) == “string” ? “” : “;expires=” + expires.toUTCString();<br>        document.cookie = name + “=” + value + _expires + path;<br>    },<br>    getCookie: function(name) {<br>        var name = escape(name);<br>        var allcookies = document.cookie;<br>        name += “=”;<br>        var pos = allcookies.indexOf(name);<br>        if (pos != -1) {<br>            var start = pos + name.length;<br>            var end = allcookies.indexOf(“;”, start);<br>            if (end == -1) end = allcookies.length;<br>            var value = allcookies.substring(start, end);<br>            return unescape(value);<br>        } else return “”;<br>    },<br>    deleteCookie: function(name, path) {<br>        var name = escape(name);<br>        var expires = new Date(0);<br>        path = path == “” ? “” : “;path=” + path;<br>        document.cookie = name + “=” + “;expires=” + expires.toUTCString() + path;<br>    }<br>}<br>$$.store = (function() {<br>    var api = {},<br>        win = window,<br>        doc = win.document,<br>        localStorageName = ‘localStorage’,<br>        globalStorageName = ‘globalStorage’,<br>        storage;<br>    api.set = function(key, value) {};<br>    api.get = function(key) {};<br>    api.remove = function(key) {};<br>    api.clear = function() {};</p>
+<pre><code>if (localStorageName in win &amp;&amp; win[localStorageName]) {
+    storage = win[localStorageName];
+    api.set = function(key, val) { storage.setItem(key, val) };
+    api.get = function(key) {
+        return storage.getItem(key) };
+    api.remove = function(key) { storage.removeItem(key) };
+    api.clear = function() { storage.clear() };
+
+} else if (globalStorageName in win &amp;&amp; win[globalStorageName]) {
+    storage = win[globalStorageName][win.location.hostname];
+    api.set = function(key, val) { storage[key] = val };
+    api.get = function(key) {
+        return storage[key] &amp;&amp; storage[key].value };
+    api.remove = function(key) { delete storage[key] };
+    api.clear = function() {
+        for (var key in storage) { delete storage[key] } };
+
+} else if (doc.documentElement.addBehavior) {
+    function getStorage() {
+        if (storage) {
+            return storage }
+        storage = doc.body.appendChild(doc.createElement(&apos;div&apos;));
+        storage.style.display = &apos;none&apos;;
+        // See http://msdn.microsoft.com/en-us/library/ms531081(v=VS.85).aspx
+        // and http://msdn.microsoft.com/en-us/library/ms531424(v=VS.85).aspx
+        storage.addBehavior(&apos;#default#userData&apos;);
+        storage.load(localStorageName);
+        return storage;
+    }
+    api.set = function(key, val) {
+        var storage = getStorage();
+        storage.setAttribute(key, val);
+        storage.save(localStorageName);
+    };
+    api.get = function(key) {
+        var storage = getStorage();
+        return storage.getAttribute(key);
+    };
+    api.remove = function(key) {
+        var storage = getStorage();
+        storage.removeAttribute(key);
+        storage.save(localStorageName);
+    }
+    api.clear = function() {
+        var storage = getStorage();
+        var attributes = storage.XMLDocument.documentElement.attributes;;
+        storage.load(localStorageName);
+        for (var i = 0, attr; attr = attributes[i]; i++) {
+            storage.removeAttribute(attr.name);
+        }
+        storage.save(localStorageName);
+    }
+}
+return api;
+</code></pre><p>})();<br>var store = (function () {<br>    var api               = {},<br>        win               = window,<br>        doc               = win.document,<br>        localStorageName  = ‘localStorage’,<br>        globalStorageName = ‘globalStorage’,<br>        storage;<br>    api.set    = function (key, value) {};<br>    api.get    = function (key)        {};<br>    api.remove = function (key)        {};<br>    api.clear  = function ()           {};<br>    if (localStorageName in win &amp;&amp; win[localStorageName]) {<br>        storage    = win[localStorageName];<br>        api.set    = function (key, val) { storage.setItem(key, val) };<br>        api.get    = function (key)      { return storage.getItem(key) };<br>        api.remove = function (key)      { storage.removeItem(key) };<br>        api.clear  = function ()         { storage.clear() };</p>
+<pre><code>} else if (globalStorageName in win &amp;&amp; win[globalStorageName]) {
+    storage    = win[globalStorageName][win.location.hostname];
+    api.set    = function (key, val) { storage[key] = val };
+    api.get    = function (key)      { return storage[key] &amp;&amp; storage[key].value };
+    api.remove = function (key)      { delete storage[key] };
+    api.clear  = function ()         { for (var key in storage ) { delete storage[key] } };
+
+} else if (doc.documentElement.addBehavior) {
+    function getStorage() {
+        if (storage) { return storage }
+        storage = doc.body.appendChild(doc.createElement(&apos;div&apos;));
+        storage.style.display = &apos;none&apos;;
+        // See http://msdn.microsoft.com/en-us/library/ms531081(v=VS.85).aspx
+        // and http://msdn.microsoft.com/en-us/library/ms531424(v=VS.85).aspx
+        storage.addBehavior(&apos;#default#userData&apos;);
+        storage.load(localStorageName);
+        return storage;
+    }
+    api.set = function (key, val) {
+        var storage = getStorage();
+        storage.setAttribute(key, val);
+        storage.save(localStorageName);
+    };
+    api.get = function (key) {
+        var storage = getStorage();
+        return storage.getAttribute(key);
+    };
+    api.remove = function (key) {
+        var storage = getStorage();
+        storage.removeAttribute(key);
+        storage.save(localStorageName);
+    }
+    api.clear = function () {
+        var storage = getStorage();
+        var attributes = storage.XMLDocument.documentElement.attributes;;
+        storage.load(localStorageName);
+        for (var i=0, attr; attr = attributes[i]; i++) {
+            storage.removeAttribute(attr.name);
+        }
+        storage.save(localStorageName);
+    }
+}
+return api;
+</code></pre><p>})();<br>Function.prototype.before = function( func ) {<br>    var <strong>self = this;<br>    return function() {<br>        if ( func.apply( this, arguments ) === false ) {<br>            return false;<br>        }<br>        return </strong>self.apply( this, arguments );<br>    }<br>}<br>Function.prototype.after = function( func ) {<br>    var <strong>self = this;<br>    return function() {<br>        var ret = </strong>self.apply( this, arguments );<br>        if( ret === false) {<br>            return false;<br>        }<br>        func.apply( this, arguments );<br>        return ret;<br>    }<br>}<br>`</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/wg.jpg" alt="Yan Li wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，查看更多分享！</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+<blockquote class="blockquote-center">
+    完
+</blockquote>
+
+  <span id="inline-green" style="border-radius:3px;">作者</span>：<a class="link-blue" href="https://github.com/yanlee26" target="_blank">Frank</a><br/>有问题请 <a class="link-blue" href="https://yanlee26.github.io/guestbook" target="_blank">留言</a> 或者私信我的 <a class="link-blue" href="http://weibo.com/franklyan" target="_blank">微博</a>。
+
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>满分是100分的话，这篇文章你给多少分</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/w.jpg" alt="Yan Li WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/z.jpg" alt="Yan Li Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Hexo/" rel="tag">#Hexo</a>
+          
+            <a href="/tags/Next/" rel="tag">#Next</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/04/prefesional/" rel="next" title="Prefessional JS resharpe">
+                <i class="fa fa-chevron-left"></i> Prefessional JS resharpe
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/06/08/Prefessional JS/" rel="prev" title="Prefesional JS">
+                Prefesional JS <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/06/04/framework/"
+     data-title="Framework resharpe"
+     data-content=""
+     data-url="https://yanlee26.github.io/2016/06/04/framework/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><span class="ds-more">分享到：</span></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+      <li><a class="ds-facebook" href="javascript:void(0);" data-service="facebook">Facebook</a></li>
+      <li><a class="ds-google" href="javascript:void(0);" data-service="google">Google</a></li>
+    </ul>
+    <!--
+      <div class="ds-share-icons-more">
+      </div>
+    -->
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="Yan Li" />
+          <p class="site-author-name" itemprop="name">Yan Li</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/yanlee26" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  Github
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/franklyan" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://stackoverflow.com/users/7261459/yan" target="_blank" title="stackoverflow">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  stackoverflow
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://home.cnblogs.com/u/frank26/" title="cnblogs" target="_blank">cnblogs</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://twitter.com/?request_context=signup" title="Twitter" target="_blank">Twitter</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#js-常用封装总结"><span class="nav-number">1.</span> <span class="nav-text">js 常用封装总结</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">您是第<span class="busuanzi-value" id="busuanzi_value_site_uv"></span>个小伙伴</span>
+  
+
+  
+    <span class="site-pv">本站总浏览<span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次</span>
+  
+  
+</div>
+
+
+
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yan Li</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io" rel="external nofollow">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" rel="external nofollow">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"yanlee24"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementById('footer')
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+<script type="text/javascript" async src="//push.zhanzhang.baidu.com/push.js">
+</script>
+
+
+  <!-- 背景动画 -->
+  <script type="text/javascript" src="/js/src/particle.js"></script>
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/src/love.js"></script>
+
+</body>
+</html>

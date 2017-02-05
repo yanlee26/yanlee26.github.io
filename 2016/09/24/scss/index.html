@@ -1,0 +1,1258 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo,Next," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="SASSget started…
+变量
+定义变量以便于维护
+
+
+
+$fontStack:    Helvetica, sans-serif;
+$primaryColor: #333;
+body {
+  font-family: $fontStack;
+  color: $primaryColor;
+}
+// css
+body {
+  font-family: Helvetica, sans-ser">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SCSS">
+<meta property="og:url" content="https://yanlee26.github.io/2016/09/24/scss/index.html">
+<meta property="og:site_name" content="Frank_Lyan's Blog">
+<meta property="og:description" content="SASSget started…
+变量
+定义变量以便于维护
+
+
+
+$fontStack:    Helvetica, sans-serif;
+$primaryColor: #333;
+body {
+  font-family: $fontStack;
+  color: $primaryColor;
+}
+// css
+body {
+  font-family: Helvetica, sans-ser">
+<meta property="og:updated_time" content="2017-02-05T00:56:10.325Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SCSS">
+<meta name="twitter:description" content="SASSget started…
+变量
+定义变量以便于维护
+
+
+
+$fontStack:    Helvetica, sans-serif;
+$primaryColor: #333;
+body {
+  font-family: $fontStack;
+  color: $primaryColor;
+}
+// css
+body {
+  font-family: Helvetica, sans-ser">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"hide"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6382889515761010000,
+      author: 'Author'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="https://yanlee26.github.io/2016/09/24/scss/"/>
+
+  <title> SCSS | Frank_Lyan's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Frank_Lyan's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">progressive programing</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-commenting"></i> <br />
+            
+            留言
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+
+      <!-- 自定义High一下的功能 -->
+      <li> <a title="把这个链接拖到你的Chrome收藏夹工具栏中" href='javascript:(function() {
+    function c() {
+        var e = document.createElement("link");
+        e.setAttribute("type", "text/css");
+        e.setAttribute("rel", "stylesheet");
+        e.setAttribute("href", f);
+        e.setAttribute("class", l);
+        document.body.appendChild(e)
+    }
+    function h() {
+        var e = document.getElementsByClassName(l);
+        for (var t = 0; t < e.length; t++) {
+            document.body.removeChild(e[t])
+        }
+    }
+    function p() {
+        var e = document.createElement("div");
+        e.setAttribute("class", a);
+        document.body.appendChild(e);
+        setTimeout(function() {
+            document.body.removeChild(e)
+        }, 100)
+    }
+    function d(e) {
+        return {
+            height : e.offsetHeight,
+            width : e.offsetWidth
+        }
+    }
+    function v(i) {
+        var s = d(i);
+        return s.height > e && s.height < n && s.width > t && s.width < r
+    }
+    function m(e) {
+        var t = e;
+        var n = 0;
+        while (!!t) {
+            n += t.offsetTop;
+            t = t.offsetParent
+        }
+        return n
+    }
+    function g() {
+        var e = document.documentElement;
+        if (!!window.innerWidth) {
+            return window.innerHeight
+        } else if (e && !isNaN(e.clientHeight)) {
+            return e.clientHeight
+        }
+        return 0
+    }
+    function y() {
+        if (window.pageYOffset) {
+            return window.pageYOffset
+        }
+        return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
+    }
+    function E(e) {
+        var t = m(e);
+        return t >= w && t <= b + w
+    }
+    function S() {
+        var e = document.createElement("audio");
+        e.setAttribute("class", l);
+        e.src = i;
+        e.loop = false;
+        e.addEventListener("canplay", function() {
+            setTimeout(function() {
+                x(k)
+            }, 500);
+            setTimeout(function() {
+                N();
+                p();
+                for (var e = 0; e < O.length; e++) {
+                    T(O[e])
+                }
+            }, 15500)
+        }, true);
+        e.addEventListener("ended", function() {
+            N();
+            h()
+        }, true);
+        e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
+        document.body.appendChild(e);
+        e.play()
+    }
+    function x(e) {
+        e.className += " " + s + " " + o
+    }
+    function T(e) {
+        e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
+    }
+    function N() {
+        var e = document.getElementsByClassName(s);
+        var t = new RegExp("\\b" + s + "\\b");
+        for (var n = 0; n < e.length; ) {
+            e[n].className = e[n].className.replace(t, "")
+        }
+    }
+    var e = 30;
+    var t = 30;
+    var n = 350;
+    var r = 350;
+    var i = "//7xuupy.com1.z0.glb.clouddn.com/tongxingSibel%20-%20Im%20Sorry.mp3";
+    var s = "mw-harlem_shake_me";
+    var o = "im_first";
+    var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
+    var a = "mw-strobe_light";
+    var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
+    var l = "mw_added_css";
+    var b = g();
+    var w = y();
+    var C = document.getElementsByTagName("*");
+    var k = null;
+    for (var L = 0; L < C.length; L++) {
+        var A = C[L];
+        if (v(A)) {
+            if (E(A)) {
+                k = A;
+                break
+            }
+        }
+    }
+    if (A === null) {
+        console.warn("Could not find a node of the right size. Please try a different page.");
+        return
+    }
+    c();
+    S();
+    var O = [];
+    for (var L = 0; L < C.length; L++) {
+        var A = C[L];
+        if (v(A)) {
+            O.push(A)
+        }
+    }
+    })()    '>High一下</a> </li>
+          <!-- end High一下 -->
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search fa-lg"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                SCSS
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-24T03:45:24+08:00" content="2016-09-23">
+              2016-09-23
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+
+          
+
+          
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv">热度
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>℃
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="SASS"><a href="#SASS" class="headerlink" title="SASS"></a>SASS</h1><h3 id="get-started…"><a href="#get-started…" class="headerlink" title="get started…"></a>get started…</h3><ol>
+<li>变量<blockquote>
+<p>定义变量以便于维护</p>
+</blockquote>
+</li>
+</ol>
+<p><code>$fontStack:    Helvetica, sans-serif;
+$primaryColor: #333;
+body {
+  font-family: $fontStack;
+  color: $primaryColor;
+}
+// css
+body {
+  font-family: Helvetica, sans-serif;
+  color: #333;
+}</code></p>
+<ol>
+<li>嵌套<blockquote>
+<p>选择器嵌套，层次分明</p>
+</blockquote>
+</li>
+</ol>
+<p>`<br>nav {<br>  ul {<br>    margin: 0;<br>    padding: 0;<br>    list-style: none;<br>  }<br>  li { display: inline-block; }<br>  a {<br>    display: block;<br>    padding: 6px 12px;<br>    text-decoration: none;<br>  }<br>}<br>//css<br>nav ul {<br>  margin: 0;<br>  padding: 0;<br>  list-style: none;<br>}</p>
+<p>nav li {<br>  display: inline-block;<br>}</p>
+<p>nav a {<br>  display: block;<br>  padding: 6px 12px;<br>  text-decoration: none;<br>}<br>`</p>
+<ol>
+<li>导入<blockquote>
+<p>导入其它sass文件，优于css的@import</p>
+</blockquote>
+</li>
+</ol>
+<p><code>//_reset.scss
+html,
+body,
+ul,
+ol {
+   margin: 0;
+  padding: 0;
+}
+//base.scss
+@import &#39;reset&#39;;
+body {
+  font-size: 100% Helvetica, sans-serif;
+  background-color: #efefef;
+}</code></p>
+<ol>
+<li>mixin<blockquote>
+<p>让css3的编写锦上添花</p>
+</blockquote>
+</li>
+</ol>
+<p><code>@mixin box-sizing ($sizing) {
+    -webkit-box-sizing:$sizing;     
+       -moz-box-sizing:$sizing;
+            box-sizing:$sizing;
+}
+.box-border{
+    border:1px solid #ccc;
+    @include box-sizing(border-box);
+}
+//css
+.box-border {
+  border: 1px solid #ccc;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}</code></p>
+<ol>
+<li>扩展/继承<blockquote>
+<p>@extend 优雅实现代码组合声明</p>
+</blockquote>
+</li>
+</ol>
+<p>`<br>.message {<br>  border: 1px solid #ccc;<br>  padding: 10px;<br>  color: #333;<br>}<br>.success {<br>  @extend .message;<br>  border-color: green;<br>}<br>.error {<br>  @extend .message;<br>  border-color: red;<br>}<br>//css<br>.message, .success, .error, .warning {<br>  border: 1px solid #cccccc;<br>  padding: 10px;<br>  color: #333;<br>}</p>
+<p>.success {<br>  border-color: green;<br>}</p>
+<p>.error {<br>  border-color: red;<br>}</p>
+<p>.warning {<br>  border-color: yellow;<br>}<br>`</p>
+<ol>
+<li>四则运算<br>`<br>.container { width: 100%; }</li>
+</ol>
+<p>article[role=”main”] {<br>  float: left;<br>  width: 600px / 960px * 100%;<br>}</p>
+<p>aside[role=”complimentary”] {<br>  float: right;<br>  width: 300px / 960px * 100%;<br>}<br>//css<br>.container {<br>  width: 100%;<br>}</p>
+<p>article[role=”main”] {<br>  float: left;<br>  width: 62.5%;<br>}</p>
+<p>aside[role=”complimentary”] {<br>  float: right;<br>  width: 31.25%;<br>}<br>`</p>
+<ol>
+<li>颜色变换<br><code>$linkColor: #08c;
+a {
+ text-decoration:none;
+ color:$linkColor;
+ &amp;:hover{
+   color:darken($linkColor,10%);
+ }
+}
+//css
+a {
+text-decoration: none;
+color: #0088cc;
+}
+a:hover {
+color: #006699;
+}</code><h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3></li>
+<li>文件后缀名<ul>
+<li>sass:不使用{}及；</li>
+<li>scss:同css，首选</li>
+</ul>
+</li>
+<li>导入<code>@import</code><blockquote>
+<p>导入css和css用法一样不再编译，导入scss会合并编译</p>
+</blockquote>
+</li>
+<li>注释<code>标准注释/**/，编译到css；单行注释//不编译</code></li>
+<li>变量<blockquote>
+<p>$开头紧跟变量名，变量名值以：分隔，！表示默认值</p>
+</blockquote>
+</li>
+</ol>
+<p>`<br>$fontSize: 12px;<br>body{<br>    font-size:$fontSize;<br>}<br>$baseLineHeight:        2;</p>
+<p>$baseLineHeight:        1.5 !default;<br>body{<br>    line-height: $baseLineHeight;<br>}<br>//css<br>body{<br>    line-height:2;<br>}<br>//特殊变量：变量作为属性或在某些特殊情况下等则必须要以#{$variables}形式使用<br>$borderDirection:       top !default;<br>$baseFontSize:          12px !default;<br>$baseLineHeight:        1.5 !default;</p>
+<p>//应用于class和属性<br>.border-#{$borderDirection}{<br>  border-#{$borderDirection}:1px solid #ccc;<br>}<br>//应用于复杂的属性值<br>body{<br>    font:#{$baseFontSize}/#{$baseLineHeight};<br>}<br>`</p>
+<ol>
+<li><p>多值变量</p>
+<blockquote>
+<p>多值类型分list和map类型，list类似js数组，map类似对象<br>`<br>$linkColor:         #08c #333 !default;//第一个值为默认值，第二个鼠标滑过值<br>a{<br>color:nth($linkColor,1);</p>
+</blockquote>
+<p>&amp;:hover{<br> color:nth($linkColor,2);<br>}<br>}<br>//css<br>a{<br>color:#08c;<br>}<br>a:hover{<br>color:#333;<br>}<br>$headings: (h1: 2em, h2: 1.5em, h3: 1.2em);<br>@each $header, $size in $headings {<br>#{$header} {<br> font-size: $size;<br>}<br>}<br>//css<br>h1 {<br>font-size: 2em;<br>}<br>h2 {<br>font-size: 1.5em;<br>}<br>h3 {<br>font-size: 1.2em;<br>}<br>`</p>
+</li>
+<li>全局变量：！global</li>
+<li>嵌套与挑出@at-root,@at-root (without: …)和@at-root (with: …)</li>
+<li>混合@mixin<br>`<br>@mixin center-block {<br> margin-left:auto;<br> margin-right:auto;<br>}<br>.demo{<br> @include center-block;<br>}<br>@mixin opacity($opacity:50) {<br>opacity: $opacity / 100;<br>filter: alpha(opacity=$opacity);<br>}<br>@mixin opacity($opacity:50) {<br>opacity: $opacity / 100;<br>filter: alpha(opacity=$opacity);<br>}</li>
+</ol>
+<p>//css style<br>.opacity{<br>  @include opacity; //参数使用默认值<br>}<br>.opacity-80{<br>  @include opacity(80); //传递参数<br>}<br>//多个参数<br>@mixin horizontal-line($border:1px dashed #ccc, $padding:10px){<br>    border-bottom:$border;<br>    padding-top:$padding;<br>    padding-bottom:$padding;<br>}<br>.imgtext-h li{<br>    @include horizontal-line(1px solid #ccc);<br>}<br>.imgtext-h–product li{<br>    @include horizontal-line($padding:15px);<br>}<br>//@content<br>@mixin max-screen($res){<br>  @media only screen and ( max-width: $res )<br>  {<br>    @content;<br>  }<br>}</p>
+<p>@include max-screen(480px) {<br>  body { color: red }<br>}<br>`</p>
+<ol>
+<li>继承@extent</li>
+<li>占位选择器%<blockquote>
+<p>如果不调用则不会有任何多余的css文件，避免了以前在一些基础的文件中预定义了很多基础的样式，然后实际应用中<br>不管是否使用了@extend去继承相应的样式，都会解析出来所有的样式。占位选择器以%标识定义，通过@extend调用。</p>
+</blockquote>
+</li>
+</ol>
+<p>`<br>%ir{<br>  color: transparent;<br>  text-shadow: none;<br>  background-color: transparent;<br>  border: 0;<br>}<br>%clearfix{<br>  @if $lte7 {<br>    *zoom: 1;<br>  }<br>  &amp;:before,<br>  &amp;:after {<br>    content: “”;<br>    display: table;<br>    font: 0/0 a;<br>  }<br>  &amp;:after {<br>    clear: both;<br>  }<br>}</p>
+<p>#header{<br>  h1{<br>    @extend %ir;<br>    width:300px;<br>  }<br>}<br>.ir{<br>  @extend %ir;<br>}<br>//css</p>
+<p>#header h1,<br>.ir{<br>  color: transparent;<br>  text-shadow: none;<br>  background-color: transparent;<br>  border: 0;<br>}<br>`</p>
+<ol>
+<li>函数<br>`<br>$baseFontSize:      10px !default;<br>$gray:              #ccc !defualt;        </li>
+</ol>
+<p>// pixels to rems<br>@function pxToRem($px) {<br>  @return $px / $baseFontSize * 1rem;<br>}</p>
+<p>body{<br>  font-size:$baseFontSize;<br>  color:lighten($gray,10%);<br>}<br>.test{<br>  font-size:pxToRem(16px);<br>  color:darken($gray,10%);<br>}<br>`</p>
+<ol>
+<li>运算<br>$baseFontSize:          14px !default;<br>$baseLineHeight:        1.5 !default;<br>$baseGap:               $baseFontSize * $baseLineHeight !default;<br>$halfBaseGap:           $baseGap / 2  !default;<br>$samllFontSize:         $baseFontSize - 2px  !default;</li>
+</ol>
+<p>//grid<br>$_columns:                     12 !default;      // Total number of columns<br>$_column-width:                60px !default;   // Width of a single column<br>$_gutter:                      20px !default;     // Width of the gutter<br>$_gridsystem-width:            $_columns * ($_column-width + $_gutter); //grid system width<code>
+</code></p>
+<ol>
+<li>条件和循环<br>`<br>$lte7: true;<br>$type: monster;<br>.ib{<br>display:inline-block;<br>@if $lte7 {<pre><code>*display:inline;
+*zoom:1;
+</code></pre>}<br>}<br>p {<br>@if $type == ocean {<br>color: blue;<br>} @else if $type == matador {<br>color: red;<br>} @else if $type == monster {<br>color: green;<br>} @else {<br>color: black;<br>}<br>}<br>//css<br>.ib{<br>display:inline-block;<br><em>display:inline;
+</em>zoom:1;<br>}<br>p {<br>color: green;<br>}<br>//三目运算<br>if($condition, $if_true, $if_false)<br>//for:@for $var from <start> through <end>和@for $var from <start> to <end><br>@for $i from 1 through 3 {<br>.item-#{$i} { width: 2em * $i; }<br>}<br>//css<br>.item-1 {<br>width: 2em;<br>}<br>.item-2 {<br>width: 4em;<br>}<br>.item-3 {<br>width: 6em;<br>}<br>//each:@each $var in <list or="" map=""><br>$animal-list: puma, sea-slug, egret, salamander;<br>@each $animal in $animal-list {<br>.#{$animal}-icon {<br>background-image: url(‘/images/#{$animal}.png’);<br>}<br>}<br>`</list></end></start></end></start></li>
+</ol>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/wg.jpg" alt="Yan Li wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，查看更多分享！</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+<blockquote class="blockquote-center">
+    完
+</blockquote>
+
+  <span id="inline-green" style="border-radius:3px;">作者</span>：<a class="link-blue" href="https://github.com/yanlee26" target="_blank">Frank</a><br/>有问题请 <a class="link-blue" href="https://yanlee26.github.io/guestbook" target="_blank">留言</a> 或者私信我的 <a class="link-blue" href="http://weibo.com/franklyan" target="_blank">微博</a>。
+
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>满分是100分的话，这篇文章你给多少分</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/w.jpg" alt="Yan Li WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/z.jpg" alt="Yan Li Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Hexo/" rel="tag">#Hexo</a>
+          
+            <a href="/tags/Next/" rel="tag">#Next</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/08/Prefessional JS/" rel="next" title="Prefesional JS">
+                <i class="fa fa-chevron-left"></i> Prefesional JS
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/11/01/node--getstarted/" rel="prev" title="Node--get started">
+                Node--get started <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/09/24/scss/"
+     data-title="SCSS"
+     data-content=""
+     data-url="https://yanlee26.github.io/2016/09/24/scss/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><span class="ds-more">分享到：</span></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+      <li><a class="ds-facebook" href="javascript:void(0);" data-service="facebook">Facebook</a></li>
+      <li><a class="ds-google" href="javascript:void(0);" data-service="google">Google</a></li>
+    </ul>
+    <!--
+      <div class="ds-share-icons-more">
+      </div>
+    -->
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="Yan Li" />
+          <p class="site-author-name" itemprop="name">Yan Li</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/yanlee26" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  Github
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/franklyan" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://stackoverflow.com/users/7261459/yan" target="_blank" title="stackoverflow">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  stackoverflow
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://home.cnblogs.com/u/frank26/" title="cnblogs" target="_blank">cnblogs</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://twitter.com/?request_context=signup" title="Twitter" target="_blank">Twitter</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SASS"><span class="nav-number">1.</span> <span class="nav-text">SASS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#get-started…"><span class="nav-number">1.0.1.</span> <span class="nav-text">get started…</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#语法"><span class="nav-number">1.0.2.</span> <span class="nav-text">语法</span></a></li></ol></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">您是第<span class="busuanzi-value" id="busuanzi_value_site_uv"></span>个小伙伴</span>
+  
+
+  
+    <span class="site-pv">本站总浏览<span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次</span>
+  
+  
+</div>
+
+
+
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yan Li</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io" rel="external nofollow">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" rel="external nofollow">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"yanlee24"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementById('footer')
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+<script type="text/javascript" async src="//push.zhanzhang.baidu.com/push.js">
+</script>
+
+
+  <!-- 背景动画 -->
+  <script type="text/javascript" src="/js/src/particle.js"></script>
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/src/love.js"></script>
+
+</body>
+</html>

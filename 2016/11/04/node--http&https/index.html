@@ -1,0 +1,1181 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo,Next," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="Node–文件及网络操作
+文件流、网络操作、服务端Web开发基础
+
+文件操作文件监视利用文件监视实现自动 markdown 文件转换
+相关链接：
+
+https://github.com/chjj/marked
+https://github.com/Browsersync/browser-sync 
+
+
+实现思路：
+
+利用fs模块的文件监视功能监视指定MD文件
+当文件发生变化后，借助marked包提">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Node--文件及网络操作">
+<meta property="og:url" content="https://yanlee26.github.io/2016/11/04/node--http&https/index.html">
+<meta property="og:site_name" content="Frank_Lyan's Blog">
+<meta property="og:description" content="Node–文件及网络操作
+文件流、网络操作、服务端Web开发基础
+
+文件操作文件监视利用文件监视实现自动 markdown 文件转换
+相关链接：
+
+https://github.com/chjj/marked
+https://github.com/Browsersync/browser-sync 
+
+
+实现思路：
+
+利用fs模块的文件监视功能监视指定MD文件
+当文件发生变化后，借助marked包提">
+<meta property="og:image" content="https://yanlee26.github.io/./img/01.png">
+<meta property="og:image" content="https://yanlee26.github.io/./img/02.png">
+<meta property="og:updated_time" content="2017-02-05T00:56:10.242Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Node--文件及网络操作">
+<meta name="twitter:description" content="Node–文件及网络操作
+文件流、网络操作、服务端Web开发基础
+
+文件操作文件监视利用文件监视实现自动 markdown 文件转换
+相关链接：
+
+https://github.com/chjj/marked
+https://github.com/Browsersync/browser-sync 
+
+
+实现思路：
+
+利用fs模块的文件监视功能监视指定MD文件
+当文件发生变化后，借助marked包提">
+<meta name="twitter:image" content="https://yanlee26.github.io/./img/01.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"hide"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6382889515761010000,
+      author: 'Author'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="https://yanlee26.github.io/2016/11/04/node--http&https/"/>
+
+  <title> Node--文件及网络操作 | Frank_Lyan's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Frank_Lyan's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">progressive programing</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-commenting"></i> <br />
+            
+            留言
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+
+      <!-- 自定义High一下的功能 -->
+      <li> <a title="把这个链接拖到你的Chrome收藏夹工具栏中" href='javascript:(function() {
+    function c() {
+        var e = document.createElement("link");
+        e.setAttribute("type", "text/css");
+        e.setAttribute("rel", "stylesheet");
+        e.setAttribute("href", f);
+        e.setAttribute("class", l);
+        document.body.appendChild(e)
+    }
+    function h() {
+        var e = document.getElementsByClassName(l);
+        for (var t = 0; t < e.length; t++) {
+            document.body.removeChild(e[t])
+        }
+    }
+    function p() {
+        var e = document.createElement("div");
+        e.setAttribute("class", a);
+        document.body.appendChild(e);
+        setTimeout(function() {
+            document.body.removeChild(e)
+        }, 100)
+    }
+    function d(e) {
+        return {
+            height : e.offsetHeight,
+            width : e.offsetWidth
+        }
+    }
+    function v(i) {
+        var s = d(i);
+        return s.height > e && s.height < n && s.width > t && s.width < r
+    }
+    function m(e) {
+        var t = e;
+        var n = 0;
+        while (!!t) {
+            n += t.offsetTop;
+            t = t.offsetParent
+        }
+        return n
+    }
+    function g() {
+        var e = document.documentElement;
+        if (!!window.innerWidth) {
+            return window.innerHeight
+        } else if (e && !isNaN(e.clientHeight)) {
+            return e.clientHeight
+        }
+        return 0
+    }
+    function y() {
+        if (window.pageYOffset) {
+            return window.pageYOffset
+        }
+        return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
+    }
+    function E(e) {
+        var t = m(e);
+        return t >= w && t <= b + w
+    }
+    function S() {
+        var e = document.createElement("audio");
+        e.setAttribute("class", l);
+        e.src = i;
+        e.loop = false;
+        e.addEventListener("canplay", function() {
+            setTimeout(function() {
+                x(k)
+            }, 500);
+            setTimeout(function() {
+                N();
+                p();
+                for (var e = 0; e < O.length; e++) {
+                    T(O[e])
+                }
+            }, 15500)
+        }, true);
+        e.addEventListener("ended", function() {
+            N();
+            h()
+        }, true);
+        e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
+        document.body.appendChild(e);
+        e.play()
+    }
+    function x(e) {
+        e.className += " " + s + " " + o
+    }
+    function T(e) {
+        e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
+    }
+    function N() {
+        var e = document.getElementsByClassName(s);
+        var t = new RegExp("\\b" + s + "\\b");
+        for (var n = 0; n < e.length; ) {
+            e[n].className = e[n].className.replace(t, "")
+        }
+    }
+    var e = 30;
+    var t = 30;
+    var n = 350;
+    var r = 350;
+    var i = "//7xuupy.com1.z0.glb.clouddn.com/tongxingSibel%20-%20Im%20Sorry.mp3";
+    var s = "mw-harlem_shake_me";
+    var o = "im_first";
+    var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
+    var a = "mw-strobe_light";
+    var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
+    var l = "mw_added_css";
+    var b = g();
+    var w = y();
+    var C = document.getElementsByTagName("*");
+    var k = null;
+    for (var L = 0; L < C.length; L++) {
+        var A = C[L];
+        if (v(A)) {
+            if (E(A)) {
+                k = A;
+                break
+            }
+        }
+    }
+    if (A === null) {
+        console.warn("Could not find a node of the right size. Please try a different page.");
+        return
+    }
+    c();
+    S();
+    var O = [];
+    for (var L = 0; L < C.length; L++) {
+        var A = C[L];
+        if (v(A)) {
+            O.push(A)
+        }
+    }
+    })()    '>High一下</a> </li>
+          <!-- end High一下 -->
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search fa-lg"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Node--文件及网络操作
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-11-04T07:25:33+08:00" content="2016-11-03">
+              2016-11-03
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/NODE/" itemprop="url" rel="index">
+                    <span itemprop="name">NODE</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+
+          
+
+          
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv">热度
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>℃
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Node–文件及网络操作"><a href="#Node–文件及网络操作" class="headerlink" title="Node–文件及网络操作"></a>Node–文件及网络操作</h1><blockquote>
+<p>文件流、网络操作、服务端Web开发基础</p>
+</blockquote>
+<h2 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h2><h3 id="文件监视"><a href="#文件监视" class="headerlink" title="文件监视"></a>文件监视</h3><h4 id="利用文件监视实现自动-markdown-文件转换"><a href="#利用文件监视实现自动-markdown-文件转换" class="headerlink" title="利用文件监视实现自动 markdown 文件转换"></a>利用文件监视实现自动 markdown 文件转换</h4><ul>
+<li><p>相关链接：</p>
+<ol>
+<li><a href="https://github.com/chjj/marked">https://github.com/chjj/marked</a></li>
+<li><a href="https://github.com/Browsersync/browser-sync">https://github.com/Browsersync/browser-sync</a> </li>
+</ol>
+</li>
+<li><p>实现思路：</p>
+<ol>
+<li>利用<code>fs</code>模块的文件监视功能监视指定MD文件</li>
+<li>当文件发生变化后，借助<code>marked</code>包提供的<code>markdown</code> to <code>html</code>功能将改变后的MD文件转换为HTML</li>
+<li>再将得到的HTML替换到模版中</li>
+<li>最后利用BrowserSync模块实现浏览器自动刷新<br>browsersync需要用到Python</li>
+</ol>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</div><div class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</div><div class="line"><span class="keyword">var</span> marked = <span class="built_in">require</span>(<span class="string">'marked'</span>);</div><div class="line"><span class="keyword">var</span> bs = <span class="built_in">require</span>(<span class="string">'browser-sync'</span>).create();</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">var</span> target = path.join(__dirname, process.argv[<span class="number">2</span>] || <span class="string">'./README.md'</span>);</div><div class="line"><span class="keyword">var</span> filename = path.basename(target, path.extname(target)) + <span class="string">'.html'</span>;</div><div class="line"><span class="keyword">var</span> targetHtml = path.join(path.dirname(target), filename);</div><div class="line"></div><div class="line">bs.init(&#123;</div><div class="line">  <span class="attr">server</span>: path.dirname(target),</div><div class="line">  <span class="attr">index</span>: filename,</div><div class="line">  <span class="attr">notify</span>: <span class="literal">false</span></div><div class="line">&#125;);</div><div class="line"></div><div class="line">bs.reload(filename);</div><div class="line"></div><div class="line"><span class="keyword">var</span> template = <span class="string">`&lt;!DOCTYPE html&gt;</span></div><div class="line">&lt;html lang="en"&gt;</div><div class="line">&lt;head&gt;</div><div class="line">  &lt;meta charset="UTF-8"&gt;</div><div class="line">  &lt;title&gt;&lt;/title&gt;</div><div class="line">  &lt;style&gt;&#123;&#123;&#123;styles&#125;&#125;&#125;&lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">  &lt;article class="markdown"&gt;</div><div class="line">    &#123;&#123;&#123;body&#125;&#125;&#125;</div><div class="line">  &lt;/article&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div><div class="line">`;</div><div class="line"></div><div class="line">fs.readFile(path.join(__dirname, <span class="string">'./markdown.css'</span>), <span class="string">'utf8'</span>, (error, css) =&gt; &#123;</div><div class="line">  <span class="keyword">if</span> (error) <span class="keyword">throw</span> error;</div><div class="line">  template = template.replace(<span class="string">'&#123;&#123;&#123;styles&#125;&#125;&#125;'</span>, css);</div><div class="line">  <span class="keyword">var</span> handler = <span class="function">(<span class="params">current, previous</span>) =&gt;</span> &#123;</div><div class="line">    fs.readFile(target, <span class="string">'utf8'</span>, (error, content) =&gt; &#123;</div><div class="line">      <span class="keyword">var</span> html = template.replace(<span class="string">'&#123;&#123;&#123;body&#125;&#125;&#125;'</span>, marked(content));</div><div class="line">      fs.writeFile(targetHtml, html, (error) =&gt; &#123;</div><div class="line">        <span class="keyword">if</span> (!error) &#123;</div><div class="line">          <span class="built_in">console</span>.log(<span class="string">`updated@<span class="subst">$&#123;<span class="keyword">new</span> <span class="built_in">Date</span>()&#125;</span>`</span>);</div><div class="line">          bs.reload(filename);</div><div class="line">        &#125;</div><div class="line">      &#125;);</div><div class="line">    &#125;);</div><div class="line">  &#125;;</div><div class="line">  handler();</div><div class="line">  fs.watchFile(target, &#123; <span class="attr">interval</span>: <span class="number">100</span> &#125;, handler);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<hr>
+<h2 id="文件流"><a href="#文件流" class="headerlink" title="文件流"></a>文件流</h2><h3 id="什么是流"><a href="#什么是流" class="headerlink" title="什么是流"></a>什么是流</h3><p><img src="./img/01.png" alt="二进制的世界"></p>
+<ul>
+<li><p>现实过程的流</p>
+<ul>
+<li>水流，人流</li>
+</ul>
+</li>
+<li><p>在程序开发的概念中</p>
+<ul>
+<li>流是程序输入或输出的一个连续的字节序列</li>
+<li>文件流、网络流</li>
+<li>设备(例如鼠标、键盘、磁盘、屏幕、调制解调器和打印机)的输入和输出都是用流来处理的。</li>
+</ul>
+</li>
+</ul>
+<h3 id="Node中的流操作"><a href="#Node中的流操作" class="headerlink" title="Node中的流操作"></a>Node中的流操作</h3><p><img src="./img/02.png" alt="流的操作"></p>
+<p>在 Node 核心模块 fs 中定义了一些与流相关的 API</p>
+<ul>
+<li>fs.createReadStream()<ul>
+<li>=&gt; 得到一个ReadableStream</li>
+</ul>
+</li>
+<li>fs.createWriteStream()<ul>
+<li>=&gt; 得到一个WritableStream</li>
+</ul>
+</li>
+</ul>
+<h3 id="读取流常用-API"><a href="#读取流常用-API" class="headerlink" title="读取流常用 API"></a>读取流常用 API</h3><h4 id="Event："><a href="#Event：" class="headerlink" title="Event："></a>Event：</h4><ul>
+<li>data</li>
+<li>end</li>
+<li>error</li>
+</ul>
+<h4 id="Method："><a href="#Method：" class="headerlink" title="Method："></a>Method：</h4><ul>
+<li>read([size])、</li>
+<li>pause()、</li>
+<li>isPause()、</li>
+<li>resume()、</li>
+<li>setEncoding(encoding)、</li>
+<li>pipe(destination[, options])、</li>
+<li>unpipe([destination])</li>
+</ul>
+<h3 id="写入流常用-API"><a href="#写入流常用-API" class="headerlink" title="写入流常用 API"></a>写入流常用 API</h3><h4 id="Event"><a href="#Event" class="headerlink" title="Event:"></a>Event:</h4><ul>
+<li>error</li>
+<li>pipe</li>
+</ul>
+<h4 id="Method：-1"><a href="#Method：-1" class="headerlink" title="Method："></a>Method：</h4><ul>
+<li>write(chunk[, encoding][, callback])</li>
+<li>end([chunk][, encoding][, callback])</li>
+<li>setDefaultEncoding(encoding)</li>
+</ul>
+<hr>
+<h2 id="网络操作"><a href="#网络操作" class="headerlink" title="网络操作"></a>网络操作</h2><p>如何计算循环节长度呢？</p>
+<p>想想我们手算，如果余数比除数小，我们会在后面补0然后再除。也就是说补零之后的数是下一次的被除数。如果被除数重复出现，除数确定的，那么商和余数也就是一样的。这时，循环节就出现了。</p>
+<p>下面的函数分为两部分，</p>
+<p>补零操作<br>查找有没有同样的被除数存在，如果有，就找到了循环节，计算循环节长度并返回。在没有找到的前提下，把当前被除数记录下来，并得到余数作为下一次的被除数。<br>这里需要注意，如果某一次出现了除尽的情况，说明该分数是有限小数，循环节长度是0。<br>`<br>JavaScript</p>
+<p>console.log(foo(11, 3));<br>console.log(foo(1, 7));;<br>console.log(foo(2, 10));;<br>function foo(a, b) {<br>  if (!(a % b)) {<br>    return <code>${a}÷${b}:${a / b}</code>;<br>  }<br>  var all = (a / b).toString().split(‘.’);<br>  var i = getCycleSection(a, b);<br>  if(i)<br>    return <code>${a}÷${b}: ${all[0]}.{${all[1].substr(0, i) }}</code>;<br>    return <code>${a}÷${b}: ${a / b}</code>;</p>
+<p>}<br>function getCycleSection(n, m) {<br>  var temp = [];<br>  while (true) {<br>    while (n &lt; m) {<br>      n *= 10;<br>    }<br>    var index = temp.indexOf(n);<br>    if (index &gt;= 0) {<br>      return temp.length - index;<br>    }<br>    temp.push(n);<br>    n %= m;<br>    if (!n)<br>      return 0;<br>  }<br>}</p>
+<p>`</p>
+<blockquote>
+<p>HTTP协议，http、url、querystring、模块、网络爬虫，创建文件服务器</p>
+</blockquote>
+<h2 id="Socket"><a href="#Socket" class="headerlink" title="Socket"></a>Socket</h2><h2 id="收发有格式的数据"><a href="#收发有格式的数据" class="headerlink" title="收发有格式的数据"></a>收发有格式的数据</h2><h2 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h2><h2 id="Node中与HTTP相关的模块"><a href="#Node中与HTTP相关的模块" class="headerlink" title="Node中与HTTP相关的模块"></a>Node中与HTTP相关的模块</h2><h2 id="网络爬虫爬取页面内容"><a href="#网络爬虫爬取页面内容" class="headerlink" title="网络爬虫爬取页面内容"></a>网络爬虫爬取页面内容</h2>
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/wg.jpg" alt="Yan Li wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，查看更多分享！</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+<blockquote class="blockquote-center">
+    完
+</blockquote>
+
+  <span id="inline-green" style="border-radius:3px;">作者</span>：<a class="link-blue" href="https://github.com/yanlee26" target="_blank">Frank</a><br/>有问题请 <a class="link-blue" href="https://yanlee26.github.io/guestbook" target="_blank">留言</a> 或者私信我的 <a class="link-blue" href="http://weibo.com/franklyan" target="_blank">微博</a>。
+
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>满分是100分的话，这篇文章你给多少分</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/w.jpg" alt="Yan Li WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/z.jpg" alt="Yan Li Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Hexo/" rel="tag">#Hexo</a>
+          
+            <a href="/tags/Next/" rel="tag">#Next</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/11/03/node--npmpackages/" rel="next" title="Node--常用模块初探">
+                <i class="fa fa-chevron-left"></i> Node--常用模块初探
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/12/09/frontend-shedule/" rel="prev" title="2017年前端技能规划">
+                2017年前端技能规划 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/11/04/node--http&https/"
+     data-title="Node--文件及网络操作"
+     data-content=""
+     data-url="https://yanlee26.github.io/2016/11/04/node--http&https/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><span class="ds-more">分享到：</span></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+      <li><a class="ds-facebook" href="javascript:void(0);" data-service="facebook">Facebook</a></li>
+      <li><a class="ds-google" href="javascript:void(0);" data-service="google">Google</a></li>
+    </ul>
+    <!--
+      <div class="ds-share-icons-more">
+      </div>
+    -->
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="Yan Li" />
+          <p class="site-author-name" itemprop="name">Yan Li</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/yanlee26" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  Github
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/franklyan" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://stackoverflow.com/users/7261459/yan" target="_blank" title="stackoverflow">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  stackoverflow
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://home.cnblogs.com/u/frank26/" title="cnblogs" target="_blank">cnblogs</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://twitter.com/?request_context=signup" title="Twitter" target="_blank">Twitter</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Node–文件及网络操作"><span class="nav-number">1.</span> <span class="nav-text">Node–文件及网络操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#文件操作"><span class="nav-number">1.1.</span> <span class="nav-text">文件操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文件监视"><span class="nav-number">1.1.1.</span> <span class="nav-text">文件监视</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#利用文件监视实现自动-markdown-文件转换"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">利用文件监视实现自动 markdown 文件转换</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件流"><span class="nav-number">1.2.</span> <span class="nav-text">文件流</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是流"><span class="nav-number">1.2.1.</span> <span class="nav-text">什么是流</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Node中的流操作"><span class="nav-number">1.2.2.</span> <span class="nav-text">Node中的流操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#读取流常用-API"><span class="nav-number">1.2.3.</span> <span class="nav-text">读取流常用 API</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Event："><span class="nav-number">1.2.3.1.</span> <span class="nav-text">Event：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Method："><span class="nav-number">1.2.3.2.</span> <span class="nav-text">Method：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#写入流常用-API"><span class="nav-number">1.2.4.</span> <span class="nav-text">写入流常用 API</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Event"><span class="nav-number">1.2.4.1.</span> <span class="nav-text">Event:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Method：-1"><span class="nav-number">1.2.4.2.</span> <span class="nav-text">Method：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网络操作"><span class="nav-number">1.3.</span> <span class="nav-text">网络操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Socket"><span class="nav-number">1.4.</span> <span class="nav-text">Socket</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#收发有格式的数据"><span class="nav-number">1.5.</span> <span class="nav-text">收发有格式的数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP"><span class="nav-number">1.6.</span> <span class="nav-text">HTTP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Node中与HTTP相关的模块"><span class="nav-number">1.7.</span> <span class="nav-text">Node中与HTTP相关的模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网络爬虫爬取页面内容"><span class="nav-number">1.8.</span> <span class="nav-text">网络爬虫爬取页面内容</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">您是第<span class="busuanzi-value" id="busuanzi_value_site_uv"></span>个小伙伴</span>
+  
+
+  
+    <span class="site-pv">本站总浏览<span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次</span>
+  
+  
+</div>
+
+
+
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yan Li</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io" rel="external nofollow">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" rel="external nofollow">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"yanlee24"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementById('footer')
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+<script type="text/javascript" async src="//push.zhanzhang.baidu.com/push.js">
+</script>
+
+
+  <!-- 背景动画 -->
+  <script type="text/javascript" src="/js/src/particle.js"></script>
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/src/love.js"></script>
+
+</body>
+</html>
