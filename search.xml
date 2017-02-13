@@ -2256,712 +2256,157 @@ return api;
     </entry>
     
     <entry>
-      <title><![CDATA[Prefessional JS resharpe]]></title>
-      <url>https://yanlee26.github.io/2016/06/04/prefesional/</url>
-      <content type="html"><![CDATA[<h1 id="高程封装总结"><a href="#高程封装总结" class="headerlink" title="高程封装总结"></a>高程封装总结</h1><p>`<br>/**</p>
-<ul>
-<li><p>Created by 立 on 2016-12-24.<br>*/<br>//C 5 对象按某一项比较<br>function createComparisonFunction(propertyName) {</p>
-<p> return function(object1, object2){</p>
-<pre><code>var value1 = object1[propertyName];
-var value2 = object2[propertyName];
-
-if (value1 &lt; value2){
-    return -1;
-} else if (value1 &gt; value2){
-    return 1;
-} else {
-    return 0;
-}
-</code></pre><p> };<br>}</p>
-</li>
-</ul>
-<p>//C 8跨浏览器取得窗口左边和上边位置<br>var leftPos = (typeof window.screenLeft == “number”) ?<br>    window.screenLeft : window.screenX;<br>var topPos = (typeof window.screenTop == “number”) ?<br>    window.screenTop : window.screenY;</p>
-<p>//size<br>if (typeof pageWidth != “number”){<br>    if (document.compatMode == “CSS1Compat”){<br>        pageWidth = document.documentElement.clientWidth;<br>        pageHeight = document.documentElement.clientHeight;<br>    } else {<br>        pageWidth = document.body.clientWidth;<br>        pageHeight = document.body.clientHeight;<br>    }<br>}<br>//C9 客户端代理检测<br>var client = function(){</p>
-<pre><code>//rendering engines
-var engine = {
-    ie: 0,
-    gecko: 0,
-    webkit: 0,
-    khtml: 0,
-    opera: 0,
-
-    //complete version
-    ver: null
-};
-
-//browsers
-var browser = {
-
-    //browsers
-    ie: 0,
-    firefox: 0,
-    safari: 0,
-    konq: 0,
-    opera: 0,
-    chrome: 0,
-
-    //specific version
-    ver: null
-};
-
-
-//platform/device/OS
-var system = {
-    win: false,
-    mac: false,
-    x11: false,
-
-    //mobile devices
-    iphone: false,
-    ipod: false,
-    ipad: false,
-    ios: false,
-    android: false,
-    nokiaN: false,
-    winMobile: false,
-
-    //game systems
-    wii: false,
-    ps: false
-};
-
-//detect rendering engines/browsers
-var ua = navigator.userAgent;
-if (window.opera){
-    engine.ver = browser.ver = window.opera.version();
-    engine.opera = browser.opera = parseFloat(engine.ver);
-} else if (/AppleWebKit\/(\S+)/.test(ua)){
-    engine.ver = RegExp[&quot;$1&quot;];
-    engine.webkit = parseFloat(engine.ver);
-
-    //figure out if it&apos;s Chrome or Safari
-    if (/Chrome\/(\S+)/.test(ua)){
-        browser.ver = RegExp[&quot;$1&quot;];
-        browser.chrome = parseFloat(browser.ver);
-    } else if (/Version\/(\S+)/.test(ua)){
-        browser.ver = RegExp[&quot;$1&quot;];
-        browser.safari = parseFloat(browser.ver);
-    } else {
-        //approximate version
-        var safariVersion = 1;
-        if (engine.webkit &lt; 100){
-            safariVersion = 1;
-        } else if (engine.webkit &lt; 312){
-            safariVersion = 1.2;
-        } else if (engine.webkit &lt; 412){
-            safariVersion = 1.3;
-        } else {
-            safariVersion = 2;
-        }
-
-        browser.safari = browser.ver = safariVersion;
-    }
-} else if (/KHTML\/(\S+)/.test(ua) || /Konqueror\/([^;]+)/.test(ua)){
-    engine.ver = browser.ver = RegExp[&quot;$1&quot;];
-    engine.khtml = browser.konq = parseFloat(engine.ver);
-} else if (/rv:([^\)]+)\) Gecko\/\d{8}/.test(ua)){
-    engine.ver = RegExp[&quot;$1&quot;];
-    engine.gecko = parseFloat(engine.ver);
-
-    //determine if it&apos;s Firefox
-    if (/Firefox\/(\S+)/.test(ua)){
-        browser.ver = RegExp[&quot;$1&quot;];
-        browser.firefox = parseFloat(browser.ver);
-    }
-} else if (/MSIE ([^;]+)/.test(ua)){
-    engine.ver = browser.ver = RegExp[&quot;$1&quot;];
-    engine.ie = browser.ie = parseFloat(engine.ver);
-}
-
-//detect browsers
-browser.ie = engine.ie;
-browser.opera = engine.opera;
-
-
-//detect platform
-var p = navigator.platform;
-system.win = p.indexOf(&quot;Win&quot;) == 0;
-system.mac = p.indexOf(&quot;Mac&quot;) == 0;
-system.x11 = (p == &quot;X11&quot;) || (p.indexOf(&quot;Linux&quot;) == 0);
-
-//detect windows operating systems
-if (system.win){
-    if (/Win(?:dows )?([^do]{2})\s?(\d+\.\d+)?/.test(ua)){
-        if (RegExp[&quot;$1&quot;] == &quot;NT&quot;){
-            switch(RegExp[&quot;$2&quot;]){
-                case &quot;5.0&quot;:
-                    system.win = &quot;2000&quot;;
-                    break;
-                case &quot;5.1&quot;:
-                    system.win = &quot;XP&quot;;
-                    break;
-                case &quot;6.0&quot;:
-                    system.win = &quot;Vista&quot;;
-                    break;
-                case &quot;6.1&quot;:
-                    system.win = &quot;7&quot;;
-                    break;
-                default:
-                    system.win = &quot;NT&quot;;
-                    break;
-            }
-        } else if (RegExp[&quot;$1&quot;] == &quot;9x&quot;){
-            system.win = &quot;ME&quot;;
-        } else {
-            system.win = RegExp[&quot;$1&quot;];
-        }
-    }
-}
-
-//mobile devices
-system.iphone = ua.indexOf(&quot;iPhone&quot;) &gt; -1;
-system.ipod = ua.indexOf(&quot;iPod&quot;) &gt; -1;
-system.ipad = ua.indexOf(&quot;iPad&quot;) &gt; -1;
-system.nokiaN = ua.indexOf(&quot;NokiaN&quot;) &gt; -1;
-
-//windows mobile
-if (system.win == &quot;CE&quot;){
-    system.winMobile = system.win;
-} else if (system.win == &quot;Ph&quot;){
-    if(/Windows Phone OS (\d+.\d+)/.test(ua)){;
-        system.win = &quot;Phone&quot;;
-        system.winMobile = parseFloat(RegExp[&quot;$1&quot;]);
-    }
-}
-
-
-//determine iOS version
-if (system.mac &amp;&amp; ua.indexOf(&quot;Mobile&quot;) &gt; -1){
-    if (/CPU (?:iPhone )?OS (\d+_\d+)/.test(ua)){
-        system.ios = parseFloat(RegExp.$1.replace(&quot;_&quot;, &quot;.&quot;));
-    } else {
-        system.ios = 2;  //can&apos;t really detect - so guess
-    }
-}
-
-//determine Android version
-if (/Android (\d+\.\d+)/.test(ua)){
-    system.android = parseFloat(RegExp.$1);
-}
-
-//gaming systems
-system.wii = ua.indexOf(&quot;Wii&quot;) &gt; -1;
-system.ps = /playstation/i.test(ua);
-
-//return it
-return {
-    engine:     engine,
-    browser:    browser,
-    system:     system
-};
-</code></pre><p>}();<br>//闭包应用实例<br>var Counter = (function() {<br>  var privateCounter = 0;<br>  function changeBy(val) {<br>    privateCounter += val;<br>  }<br>  return {<br>    increment: function() {<br>      changeBy(1);<br>    },<br>    decrement: function() {<br>      changeBy(-1);<br>    },<br>    value: function() {<br>      return privateCounter;<br>    }<br>  }<br>})();<br>// C11 matchesSelector()<br>function matchesSelector(element, selector){<br>    if (element.matchesSelector){<br>        return element.matchesSelector(selector);<br>    } else if (element.msMatchesSelector){<br>        return element.msMatchesSelector(selector);<br>    } else if (element.mozMatchesSelector){<br>        return element.mozMatchesSelector(selector);<br>    } else if (element.webkitMatchesSelector){<br>        return element.webkitMatchesSelector(selector);<br>    } else {<br>        throw new Error(“Not supported.”);<br>    }<br>}</p>
-<p>if (matchesSelector(document.body, “body”)){<br>    alert(“It’s page 1!”);<br>}//C13跨浏览器事件处理程序<br>var EventUtil = {</p>
-<pre><code>addHandler: function(element, type, handler){
-    if (element.addEventListener){
-        element.addEventListener(type, handler, false);
-    } else if (element.attachEvent){
-        element.attachEvent(&quot;on&quot; + type, handler);
-    } else {
-        element[&quot;on&quot; + type] = handler;
-    }
-},
-
-getButton: function(event){
-    if (document.implementation.hasFeature(&quot;MouseEvents&quot;, &quot;2.0&quot;)){
-        return event.button;
-    } else {
-        switch(event.button){
-            case 0:
-            case 1:
-            case 3:
-            case 5:
-            case 7:
-                return 0;
-            case 2:
-            case 6:
-                return 2;
-            case 4: return 1;
-        }
-    }
-},
-
-getCharCode: function(event){
-    if (typeof event.charCode == &quot;number&quot;){
-        return event.charCode;
-    } else {
-        return event.keyCode;
-    }
-},
-
-getClipboardText: function(event){
-    var clipboardData =  (event.clipboardData || window.clipboardData);
-    return clipboardData.getData(&quot;text&quot;);
-},
-
-getEvent: function(event){
-    return event ? event : window.event;
-},
-
-getRelatedTarget: function(event){
-    if (event.relatedTarget){
-        return event.relatedTarget;
-    } else if (event.toElement){
-        return event.toElement;
-    } else if (event.fromElement){
-        return event.fromElement;
-    } else {
-        return null;
-    }
-
-},
-
-getTarget: function(event){
-    return event.target || event.srcElement;
-},
-
-getWheelDelta: function(event){
-    if (event.wheelDelta){
-        return (client.engine.opera &amp;&amp; client.engine.opera &lt; 9.5 ? -event.wheelDelta : event.wheelDelta);
-    } else {
-        return -event.detail * 40;
-    }
-},
-
-preventDefault: function(event){
-    if (event.preventDefault){
-        event.preventDefault();
-    } else {
-        event.returnValue = false;
-    }
-},
-
-removeHandler: function(element, type, handler){
-    if (element.removeEventListener){
-        element.removeEventListener(type, handler, false);
-    } else if (element.detachEvent){
-        element.detachEvent(&quot;on&quot; + type, handler);
-    } else {
-        element[&quot;on&quot; + type] = null;
-    }
-},
-
-setClipboardText: function(event, value){
-    if (event.clipboardData){
-        event.clipboardData.setData(&quot;text/plain&quot;, value);
-    } else if (window.clipboardData){
-        window.clipboardData.setData(&quot;text&quot;, value);
-    }
-},
-
-stopPropagation: function(event){
-    if (event.stopPropagation){
-        event.stopPropagation();
-    } else {
-        event.cancelBubble = true;
-    }
-}
-</code></pre><p>};<br>    //通过一个函数处理多个事件<br>var handler = function(event){<br>    switch(event.type){<br>        case “click”:<br>            alert(“Clicked”);<br>            break;</p>
-<pre><code>    case &quot;mouseover&quot;:
-        event.target.style.backgroundColor = &quot;red&quot;;
-        break;
-
-    case &quot;mouseout&quot;:
-        event.target.style.backgroundColor = &quot;&quot;;
-        break;
-}
-</code></pre><p>};<br>    //touch事件<br>function handleTouchEvent(event){<br>    //only for one touch<br>    if (event.touches.length == 1){</p>
-<pre><code>    var output = document.getElementById(&quot;output&quot;);
-    switch(event.type){
-        case &quot;touchstart&quot;:
-            output.innerHTML = &quot;Touch started (&quot; + event.touches[0].clientX + &quot;,&quot; + event.touches[0].clientY + &quot;)&quot;;
-            break;
-        case &quot;touchend&quot;:
-            output.innerHTML += &quot;&lt;br&gt;Touch ended (&quot; + event.changedTouches[0].clientX + &quot;,&quot; + event.changedTouches[0].clientY + &quot;)&quot;;
-            break;
-        case &quot;touchmove&quot;:
-            event.preventDefault();  //prevent scrolling
-            output.innerHTML += &quot;&lt;br&gt;Touch moved (&quot; + event.changedTouches[0].clientX + &quot;,&quot; + event.changedTouches[0].clientY + &quot;)&quot;;
-            break;
-    }
-}
-</code></pre><p>}<br>document.addEventListener(“touchstart”, handleTouchEvent, false);<br>document.addEventListener(“touchend”, handleTouchEvent, false);<br>document.addEventListener(“touchmove”, handleTouchEvent, false);<br>    //EventDelegation事件委托<br>(function(){<br>var list = document.getElementById(“myLinks”);</p>
-<p>EventUtil.addHandler(list, “click”, function(event){<br>    event = EventUtil.getEvent(event);<br>    var target = EventUtil.getTarget(event);</p>
-<pre><code>switch(target.id){
-    case &quot;doSomething&quot;:
-        document.title = &quot;I changed the document&apos;s title&quot;;
-        break;
-
-    case &quot;goSomewhere&quot;:
-        location.href = &quot;http://www.wrox.com&quot;;
-        break;
-
-    case &quot;sayHi&quot;:
-        alert(&quot;hi&quot;);
-        break;
-}
-</code></pre><p>});</p>
-<p>})();<br>// C14 表单自动切换焦点<br>(function(){</p>
-<pre><code>function tabForward(event){
-    event = EventUtil.getEvent(event);
-    var target = EventUtil.getTarget(event);
-
-    if (target.value.length == target.maxLength){
-        var form = target.form;
-
-        for (var i=0, len=form.elements.length; i &lt; len; i++) {
-            if (form.elements[i] == target) {
-                if (form.elements[i+1]){
-                    form.elements[i+1].focus();
-                }
-                return;
-            }
-        }
-    }
-}
-
-var textbox1 = document.getElementById(&quot;txtTel1&quot;),
-    textbox2 = document.getElementById(&quot;txtTel2&quot;),
-    textbox3 = document.getElementById(&quot;txtTel3&quot;);
-
-EventUtil.addHandler(textbox1, &quot;keyup&quot;, tabForward);
-EventUtil.addHandler(textbox2, &quot;keyup&quot;, tabForward);
-EventUtil.addHandler(textbox3, &quot;keyup&quot;, tabForward);
-</code></pre><p>})();<br>    //表单序列化<br>function serialize(form){<br>    var parts = [],<br>        field = null,<br>        i,<br>        len,<br>        j,<br>        optLen,<br>        option,<br>        optValue;</p>
-<pre><code>for (i=0, len=form.elements.length; i &lt; len; i++){
-    field = form.elements[i];
-
-    switch(field.type){
-        case &quot;select-one&quot;:
-        case &quot;select-multiple&quot;:
-
-            if (field.name.length){
-                for (j=0, optLen = field.options.length; j &lt; optLen; j++){
-                    option = field.options[j];
-                    if (option.selected){
-                        optValue = &quot;&quot;;
-                        if (option.hasAttribute){
-                            optValue = (option.hasAttribute(&quot;value&quot;) ? option.value : option.text);
-                        } else {
-                            optValue = (option.attributes[&quot;value&quot;].specified ? option.value : option.text);
-                        }
-                        parts.push(encodeURIComponent(field.name) + &quot;=&quot; + encodeURIComponent(optValue));
-                    }
-                }
-            }
-            break;
-
-        case undefined:     //fieldset
-        case &quot;file&quot;:        //file input
-        case &quot;submit&quot;:      //submit button
-        case &quot;reset&quot;:       //reset button
-        case &quot;button&quot;:      //custom button
-            break;
-
-        case &quot;radio&quot;:       //radio button
-        case &quot;checkbox&quot;:    //checkbox
-            if (!field.checked){
-                break;
-            }
-        /* falls through */
-
-        default:
-            //don&apos;t include form fields without names
-            if (field.name.length){
-                parts.push(encodeURIComponent(field.name) + &quot;=&quot; + encodeURIComponent(field.value));
-            }
-    }
-}
-return parts.join(&quot;&amp;&quot;);
-</code></pre><p>}<br>var btn = document.getElementById(“serialize-btn”);<br>EventUtil.addHandler(btn, “click”, function(event){<br>    var form = document.forms[0];<br>    alert(serialize(form));<br>});<br>// C21 XHR兼容性判断<br>function createXHR(){<br>    if (typeof XMLHttpRequest != “undefined”){<br>        return new XMLHttpRequest();<br>    } else if (typeof ActiveXObject != “undefined”){<br>        if (typeof arguments.callee.activeXString != “string”){<br>            var versions = [“MSXML2.XMLHttp.6.0”, “MSXML2.XMLHttp.3.0”,<br>                    “MSXML2.XMLHttp”],<br>                i, len;</p>
-<pre><code>        for (i=0,len=versions.length; i &lt; len; i++){
-            try {
-                new ActiveXObject(versions[i]);
-                arguments.callee.activeXString = versions[i];
-                break;
-            } catch (ex){
-                //skip
-            }
-        }
-    }
-
-    return new ActiveXObject(arguments.callee.activeXString);
-} else {
-    throw new Error(&quot;No XHR object available.&quot;);
-}
-</code></pre><p>}<br>var xhr = createXHR();<br>xhr.open(“get”, “example.txt”, false);<br>xhr.send(null);<br>if ((xhr.status &gt;= 200 &amp;&amp; xhr.status &lt; 300) || xhr.status == 304){<br>    alert(xhr.statusText);<br>    alert(xhr.responseText);<br>} else {<br>    alert(“Request was unsuccessful: “ + xhr.status);<br>}<br>    //POST请求<br>(function(){<br>    function createXHR(){<br>        if (typeof XMLHttpRequest != “undefined”){<br>            return new XMLHttpRequest();<br>        } else if (typeof ActiveXObject != “undefined”){<br>            if (typeof arguments.callee.activeXString != “string”){<br>                var versions = [“MSXML2.XMLHttp.6.0”, “MSXML2.XMLHttp.3.0”,<br>                        “MSXML2.XMLHttp”],<br>                    i, len;</p>
-<pre><code>            for (i=0,len=versions.length; i &lt; len; i++){
-                try {
-                    var xhr = new ActiveXObject(versions[i]);
-                    arguments.callee.activeXString = versions[i];
-                    return xhr;
-                } catch (ex){
-                    //skip
-                }
-            }
-        }
-
-        return new ActiveXObject(arguments.callee.activeXString);
-    } else {
-        throw new Error(&quot;No XHR object available.&quot;);
-    }
-}
-
-function serialize(form){
-    var parts = new Array();
-    var field = null;
-
-    for (var i=0, len=form.elements.length; i &lt; len; i++){
-        field = form.elements[i];
-
-        switch(field.type){
-            case &quot;select-one&quot;:
-            case &quot;select-multiple&quot;:
-                for (var j=0, optLen = field.options.length; j &lt; optLen; j++){
-                    var option = field.options[j];
-                    if (option.selected){
-                        var optValue = &quot;&quot;;
-                        if (option.hasAttribute){
-                            optValue = (option.hasAttribute(&quot;value&quot;) ?
-                                option.value : option.text);
-                        } else {
-                            optValue = (option.attributes[&quot;value&quot;].specified ?
-                                option.value : option.text);
-                        }
-                        parts.push(encodeURIComponent(field.name) + &quot;=&quot; +
-                            encodeURIComponent(optValue));
-                    }
-                }
-                break;
-
-            case undefined:     //fieldset
-            case &quot;file&quot;:        //file input
-            case &quot;submit&quot;:      //submit button
-            case &quot;reset&quot;:       //reset button
-            case &quot;button&quot;:      //custom button
-                break;
-
-            case &quot;radio&quot;:       //radio button
-            case &quot;checkbox&quot;:    //checkbox
-                if (!field.checked){
-                    break;
-                }
-            /* falls through */
-
-            default:
-                parts.push(encodeURIComponent(field.name) + &quot;=&quot; +
-                    encodeURIComponent(field.value));
-        }
-    }
-    return parts.join(&quot;&amp;&quot;);
-}
-
-function submitData(){
-    var xhr = createXHR();
-    xhr.onreadystatechange = function(event){
-        if (xhr.readyState == 4){
-            if ((xhr.status &gt;= 200 &amp;&amp; xhr.status &lt; 300) || xhr.status == 304){
-                alert(xhr.responseText);
-            } else {
-                alert(&quot;Request was unsuccessful: &quot; + xhr.status);
-            }
-        }
-    };
-
-    xhr.open(&quot;post&quot;, &quot;postexample.php&quot;, true);
-    xhr.setRequestHeader(&quot;Content-Type&quot;, &quot;application/x-www-form-urlencoded&quot;);
-    var form = document.getElementById(&quot;user-info&quot;);
-    xhr.send(serialize(form));
-}
-</code></pre><p>})()<br>// C22高级技巧<br>//在任何值上调用Object原生的toString（）都会返回一个[[object NativeConstructorName]],<br>//每个类内部都有一个[[Class]]属性，就指定了上述字符串中的构造函数名。<br>//判断类型函数<br>function isArray(value){<br>    return Object.prototype.toString.call(value)===”[object Array]”<br>}<br>function isFunction(value){<br>    return Object.prototype.toString.call(value)===”[object Function]”<br>}<br>function isRegExp(value){<br>    return Object.prototype.toString.call(value)===”[object RegExp]”<br>}<br>function isString(value){<br>    return Object.prototype.toString.call(value)===”[object String]”<br>}<br>function isNumber(value){<br>    return Object.prototype.toString.call(value)===”[object Number]”<br>}<br>    //检测非原生?<br>function isNativeJSON(value){<br>    return window.JSON&amp;&amp;Object.prototype.call(value)===”[object JSON]”<br>}<br>    //作用域安全的构造函数<br>function Person(name, age, job){<br>    if (this instanceof Person){<br>        this.name = name;<br>        this.age = age;<br>        this.job = job;<br>    } else {<br>        return new Person(name, age, job);<br>    }<br>}<br>    //组合使用原型链或者寄生组合<br>function Polygon(sides){<br>    if (this instanceof Polygon) {<br>        this.sides = sides;<br>        this.getArea = function(){<br>            return 0;<br>        };<br>    } else {<br>        return new Polygon(sides);<br>    }<br>}<br>function Rectangle(width, height){<br>    Polygon.call(this, 2);<br>    this.width = width;<br>    this.height = height;<br>    this.getArea = function(){<br>        return this.width * this.height;<br>    };<br>}<br>Rectangle.prototype = new Polygon();<br>    //惰性载入<br>function createXHR(){<br>    if (typeof XMLHttpRequest != “undefined”){<br>        createXHR = function(){<br>            return new XMLHttpRequest();<br>        };<br>    } else if (typeof ActiveXObject != “undefined”){<br>        createXHR = function(){<br>            if (typeof arguments.callee.activeXString != “string”){<br>                var versions = [“MSXML2.XMLHttp.6.0”, “MSXML2.XMLHttp.3.0”,<br>                        “MSXML2.XMLHttp”],<br>                    i, len;</p>
-<pre><code>            for (i=0,len=versions.length; i &lt; len; i++){
-                try {
-                    new ActiveXObject(versions[i]);
-                    arguments.callee.activeXString = versions[i];
-                } catch (ex){
-                    //skip
-                }
-            }
-        }
-
-        return new ActiveXObject(arguments.callee.activeXString);
-    };
-} else {
-    createXHR = function(){
-        throw new Error(&quot;No XHR object available.&quot;);
-    };
-}
-
-return createXHR();
-</code></pre><p>}<br>var createXHR = (function(){<br>    if (typeof XMLHttpRequest != “undefined”){<br>        return function(){<br>            return new XMLHttpRequest();<br>        };<br>    } else if (typeof ActiveXObject != “undefined”){<br>        return function(){<br>            if (typeof arguments.callee.activeXString != “string”){<br>                var versions = [“MSXML2.XMLHttp.6.0”, “MSXML2.XMLHttp.3.0”,<br>                        “MSXML2.XMLHttp”],<br>                    i, len;</p>
-<pre><code>            for (i=0,len=versions.length; i &lt; len; i++){
-                try {
-                    new ActiveXObject(versions[i]);
-                    arguments.callee.activeXString = versions[i];
-                    break;
-                } catch (ex){
-                    //skip
-                }
-            }
-        }
-
-        return new ActiveXObject(arguments.callee.activeXString);
-    };
-} else {
-    return function(){
-        throw new Error(&quot;No XHR object available.&quot;);
-    };
-}
-</code></pre><p>})();<br>    //函数柯里化<br>function curry(fn){<br>    var args = Array.prototype.slice.call(arguments, 1);<br>    return function(){<br>        var innerArgs = Array.prototype.slice.call(arguments),<br>            finalArgs = args.concat(innerArgs);<br>        return fn.apply(null, finalArgs);<br>    };<br>}<br>function bind(fn, context){<br>    var args = Array.prototype.slice.call(arguments, 2);<br>    return function(){<br>        var innerArgs = Array.prototype.slice.call(arguments),<br>            finalArgs = args.concat(innerArgs);<br>        return fn.apply(context, finalArgs);<br>    };<br>}<br>// C23 离线应用与客户端存储<br>var CookieUtil = {</p>
-<pre><code>get: function (name){
-    var cookieName = encodeURIComponent(name) + &quot;=&quot;,
-        cookieStart = document.cookie.indexOf(cookieName),
-        cookieValue = null,
-        cookieEnd;
-
-    if (cookieStart &gt; -1){
-        cookieEnd = document.cookie.indexOf(&quot;;&quot;, cookieStart);
-        if (cookieEnd == -1){
-            cookieEnd = document.cookie.length;
-        }
-        cookieValue = decodeURIComponent(document.cookie.substring(cookieStart + cookieName.length, cookieEnd));
-    }
-
-    return cookieValue;
-},
-
-set: function (name, value, expires, path, domain, secure) {
-    var cookieText = encodeURIComponent(name) + &quot;=&quot; + encodeURIComponent(value);
-
-    if (expires instanceof Date) {
-        cookieText += &quot;; expires=&quot; + expires.toGMTString();
-    }
-
-    if (path) {
-        cookieText += &quot;; path=&quot; + path;
-    }
-
-    if (domain) {
-        cookieText += &quot;; domain=&quot; + domain;
-    }
-
-    if (secure) {
-        cookieText += &quot;; secure&quot;;
-    }
-
-    document.cookie = cookieText;
-},
-
-unset: function (name, path, domain, secure){
-    this.set(name, &quot;&quot;, new Date(0), path, domain, secure);
-}
-</code></pre><p>};<br>var SubCookieUtil = {</p>
-<pre><code>get: function (name, subName){
-    var subCookies = this.getAll(name);
-    if (subCookies){
-        return subCookies[subName];
-    } else {
-        return null;
-    }
-},
-
-getAll: function(name){
-    var cookieName = encodeURIComponent(name) + &quot;=&quot;,
-        cookieStart = document.cookie.indexOf(cookieName),
-        cookieValue = null,
-        cookieEnd,
-        subCookies,
-        i,
-        parts,
-        result = {};
-
-    if (cookieStart &gt; -1){
-        cookieEnd = document.cookie.indexOf(&quot;;&quot;, cookieStart)
-        if (cookieEnd == -1){
-            cookieEnd = document.cookie.length;
-        }
-        cookieValue = document.cookie.substring(cookieStart + cookieName.length, cookieEnd);
-
-        if (cookieValue.length &gt; 0){
-            subCookies = cookieValue.split(&quot;&amp;&quot;);
-
-            for (i=0, len=subCookies.length; i &lt; len; i++){
-                parts = subCookies[i].split(&quot;=&quot;);
-                result[decodeURIComponent(parts[0])] = decodeURIComponent(parts[1]);
-            }
-
-            return result;
-        }
-    }
-
-    return null;
-},
-
-set: function (name, subName, value, expires, path, domain, secure) {
-
-    var subcookies = this.getAll(name) || {};
-    subcookies[subName] = value;
-    this.setAll(name, subcookies, expires, path, domain, secure);
-
-},
-
-setAll: function(name, subcookies, expires, path, domain, secure){
-
-    var cookieText = encodeURIComponent(name) + &quot;=&quot;,
-        subcookieParts = new Array(),
-        subName;
-
-    for (subName in subcookies){
-        if (subName.length &gt; 0 &amp;&amp; subcookies.hasOwnProperty(subName)){
-            subcookieParts.push(encodeURIComponent(subName) + &quot;=&quot; + encodeURIComponent(subcookies[subName]));
-        }
-    }
-
-    if (subcookieParts.length &gt; 0){
-        cookieText += subcookieParts.join(&quot;&amp;&quot;);
-
-        if (expires instanceof Date) {
-            cookieText += &quot;; expires=&quot; + expires.toGMTString();
-        }
-
-        if (path) {
-            cookieText += &quot;; path=&quot; + path;
-        }
-
-        if (domain) {
-            cookieText += &quot;; domain=&quot; + domain;
-        }
-
-        if (secure) {
-            cookieText += &quot;; secure&quot;;
-        }
-    } else {
-        cookieText += &quot;; expires=&quot; + (new Date(0)).toGMTString();
-    }
-
-    document.cookie = cookieText;
-
-},
-
-unset: function (name, subName, path, domain, secure){
-    var subcookies = this.getAll(name);
-    if (subcookies){
-        delete subcookies[subName];
-        this.setAll(name, subcookies, null, path, domain, secure);
-    }
-},
-
-unsetAll: function(name, path, domain, secure){
-    this.setAll(name, null, new Date(0), path, domain, secure);
-}
-</code></pre><p>};<br>function getLocalStorage(){<br>    if (typeof localStorage == “object”){<br>        return localStorage;<br>    } else if (typeof globalStorage == “object”){<br>        return globalStorage[location.host];<br>    } else {<br>        throw new Error(“Local storage not available.”);<br>    }<br>}</p>
-<p>`</p>
+      <title><![CDATA[道德经：人生之向导，智慧之源泉]]></title>
+      <url>https://yanlee26.github.io/2016/06/04/bibleInLife/</url>
+      <content type="html"><![CDATA[<h1 id="【道德经】"><a href="#【道德经】" class="headerlink" title="【道德经】"></a><center>【道德经】</center></h1><blockquote>
+<p>老子</p>
+<p>###【第一章】<br>　　道可道，非常道。名可名，非常名。<br>　　无名天地之始；有名万物之母。<br>　　故常无，欲以观其妙；常有，欲以观其徼。<br>　　此两者，同出而异名，同谓之玄。玄之又玄，众妙之门。</p>
+<p>###【第二章】<br>　　天下皆知美之为美，斯恶已。皆知善之为善，斯不善已。<br>　　有无相生，难易相成，长短相形，高下相盈，音声相和，前后相随。恒也。<br>　　是以圣人处无为之事，行不言之教；万物作而弗始，生而弗有，为而弗恃，功成而不居。夫唯弗居，是以不去。</p>
+<p>###【第三章】<br>　　不尚贤，使民不争；不贵难得之货，使民不为盗；不见可欲，使民心不乱。<br>　　是以圣人之治，虚其心，实其腹，弱其志，强其骨。常使民无知无欲。使夫智者不敢为也。为无为，则无不治。</p>
+<p>###【第四章】<br>　　道冲，而用之或不盈。渊兮，似万物之宗；湛兮，似或存。吾不知谁之子，象帝之先[1]。</p>
+<p>###【第五章】<br>　　天地不仁，以万物为刍狗；圣人不仁，以百姓为刍狗。<br>　　天地之间，其犹橐龠乎？虚而不屈，动而愈出。<br>　　多言数穷，不如守中。</p>
+<p>###【第六章】<br>　　谷神不死，是谓玄牝。玄牝之门，是谓天地根。绵绵若存，用之不勤。</p>
+<p>###【第七章】<br>　　天长地久。天地所以能长且久者，以其不自生，故能长生。<br>　　是以圣人后其身而身先；外其身而身存。非以其无私邪？故能成其私。</p>
+<p>###【第八章】<br>　　上善若水。水善利万物而不争，处众人之所恶，故几于道。<br>　　居善地，心善渊，与善仁，言善信，政善治，事善能，动善时。夫唯不争，故无尤。</p>
+<p>###【第九章】<br>　　持而盈之，不如其已；<br>　　揣而锐之，不可长保。<br>　　金玉满堂，莫之能守；<br>　　富贵而骄，自遗其咎。<br>　　功遂身退，天之道也。</p>
+<p>###【第十章】<br>　　载营魄抱一，能无离乎？<br>　　专气致柔，能如婴儿乎？<br>　　涤除玄鉴，能如疵乎？<br>　　爱国治民，能无为乎？<br>　　天门开阖，能为雌乎？<br>　　明白四达，能无知乎？<br>    生之蓄之，生而不有，为而不恃，长而不宰，是谓玄德。</p>
+<p> ###【第十一章】<br>　　三十辐，共一毂，当其无，有车之用。<br>　　埏埴以为器，当其无，有器之用。<br>　　凿户牖以为室，当其无，有室之用。<br>　　故有之以为利，无之以为用。</p>
+<p>###【第十二章】<br>　　五色令人目盲；<br>    五音令人耳聋；<br>    五味令人口爽；<br>    驰骋畋猎，令人心发狂；<br>    难得之货，令人行妨。<br>    是以圣人为腹不为目，故去彼取此。</p>
+<p>###【第十三章】<br>　　宠辱若惊，贵大患若身。<br>　　何谓宠辱若惊？宠为下，得之若惊，失之若惊，是谓宠辱若惊。<br>　　何谓贵大患若身？吾所以有大患者，为吾有身，及吾无身，吾有何患？<br>　　故贵以身为天下，若可寄天下；爱以身为天下，若可托天下。</p>
+<p>###【第十四章】<br>　　视之不见，名曰夷；听之不闻，名曰希；搏之不得，名曰微。此三者不可致诘[1]，故混而为一。其上不曒，其下不昧。绳绳兮不可名，复归于物。是谓无状之状，无物之象，是谓惚恍。迎之不见其首，随之不见其后。<br>　　执古之道，以御今之有。能知古始，是谓道纪。</p>
+<p>###【第十五章】<br>　　古之善为道者，微妙玄通，深不可识。夫唯不可识，故强为之容：<br>　　豫兮若冬涉川；<br>　　犹兮若畏四邻；<br>　　俨兮其若客；<br>　　涣兮若冰之将释；<br>　　敦兮其若朴；<br>　　旷兮其若谷；<br>　　混兮其若浊；<br>　　（澹兮其若海；<br>　　□兮若无止。）<br>　　孰能浊以静之？徐清；孰能安以动之？徐生。<br>　　保此道者，不欲盈。夫唯不盈，故能蔽而新成。</p>
+</blockquote>
+<p>###【第十六章】<br>　　致虚极，守静笃。万物并作，吾以观复。<br>　　夫物芸芸，各复归其根。归根曰静，静曰复命。复命曰常[1]，知常曰明。不知常，妄作凶。<br>　　知常容，容乃公，公乃全，全乃天，天乃道，道乃久，没身不殆。</p>
+<p>###【第十七章】<br>　　太上，不知有之；其次，亲而誉之；其次，畏之；其次，侮之。信不足焉，有不信焉。<br>　　悠兮其贵言。功成事遂，百姓皆谓：「我自然」。</p>
+<p>###【第十八章】<br>　　大道废，有仁义；智慧出，有大伪；六亲不和，有孝慈；国家昏乱，有忠臣。</p>
+<p>###【第十九章】<br>　　绝圣弃智，民利百倍；绝仁弃义，民复孝慈；绝巧弃利，盗贼无有。<br>　　　　此三者以为文，不足。故令有所属：见素抱朴，少思寡欲，绝学无忧。</p>
+<p>###【第二十章】<br>　　唯之与阿，相去几何？美之与恶，相去若何？人之所畏，不可不畏。<br>　　荒兮，其未央哉！<br>　　众人熙熙，如享太牢，如春登台。<br>　　我独泊兮，其未兆；<br>　　沌沌兮，如婴儿之未孩；<br>　　累累兮，若无所归。<br>　　众人皆有馀，而我独若遗。我愚人之心也哉！<br>　　俗人昭昭，我独昏昏。<br>　　俗人察察，我独闷闷。<br>　　澹兮其若海，　兮若无止。<br>　　众人皆有以，而我独顽且鄙。<br>　　我独异于人，而贵食母。</p>
+<p>###【第二十一章】<br>　　孔德之容，惟道是从。<br>　　道之为物，惟恍惟惚。惚兮恍兮，其中有象；恍兮惚兮，其中有物。窈兮冥兮，其中有精；其精甚真，其中有信。<br>　　自今及古，其名不去，以阅众甫。吾何以知众甫之状哉？以此。</p>
+<p>###【第二十二章】<br>　　曲则全，枉则直，洼则盈，敝则新，少则多，多则惑。<br>　　是以圣人抱一为天下式[1]。不自见，故明；不自是，故彰；不自伐，故有功；不自矜，故长。<br>　　夫唯不争，故天下莫能与之争。古之所谓「曲则全」者，岂虚言哉！诚全而归之。</p>
+<p>###【第二十三章】<br>　　希言自然。<br>　　故飘风不终朝，骤雨不终日。孰为此者？天地。天地尚不能久，而况于人乎？故从事于道者，同于道；德者，同于德；失者，同于失。同于道者，道亦乐得之；同于德者，德亦乐得之；同于失者，失亦乐得之。<br>　　信不足焉，有不信焉。</p>
+<p>###【第二十四章】<br>　　企者不立；跨者不行；自见者不明；自是者不彰；自伐者无功；自矜者不长。<br>　　其在道也，曰：馀食赘形。物或恶之，故有道者不处。</p>
+<p>###【第二十五章】<br>　　有物混成，先天地生。寂兮寥兮，独立而不改，周行而不殆，可以为天地母。吾不知其名，强字之曰道，强为之名曰大。大曰逝，逝曰远，远曰反。<br>　　故道大，天大，地大，人亦大。域中有四大，而人居其一焉。<br>　　人法地，地法天，天法道，道法自然。</p>
+<p>###【第二十六章】<br>　　重为轻根，静为躁君。<br>　　是以君子终日行不离辎重。虽有荣观，燕处超然。奈何万乘之主，而以身轻天下？<br>　　轻则失根，躁则失君。</p>
+<p>###【第二十七章】<br>　　善行无辙迹，善言无瑕谪；善数不用筹策；善闭无关楗而不可开，善结无绳约而不可解。<br>　　是以圣人常善救人，故无弃人；常善救物，故无弃物。是谓袭明。<br>　　故善人者，不善人之师；不善人者，善人之资。不贵其师，不爱其资，虽智大迷，是谓要妙。</p>
+<p>###【第二十八章】<br>　　知其雄，守其雌，为天下溪。为天下溪，常德不离，复归于婴儿。<br>　　知其白，知其白，守其黑，为天下式。为天下式，常德不忒，复归于无极。<br>　　知其荣，守其辱，为天下谷。为天下谷，常德乃足，复归于朴。<br>　　朴散则为器，圣人用之，则为官长。<br>　　故大智不割。</p>
+<p> ###【第二十九章】<br>　　将欲取天下而为之，吾见其不得已。天下神器，不可为也，不可执也。为者败之，执者失之。是以圣人无为，故无败；无执，故无失。<br>　　夫物或行或随；或嘘或吹；或强或羸；或载或隳。<br>　　是以圣人去甚，去奢，去泰。</p>
+<p> ###【第三十章】<br>　　以道佐人主者，不以兵强天下。其事好远。师之所处，荆棘生焉。大军之后，必有凶年。<br>　　善有果而已，不以取强。果而勿矜，果而勿伐，果而勿骄。果而不得已，果而勿强。<br>　　物壮则老，是谓不道，不道早已。</p>
+<p>###【第三十一章】<br>　　兵者不祥之器，非君子之器。不得已而用之，恬淡为上，胜而不美。而美 之者，是乐杀人。夫乐杀人者，则不可得志于天下矣。<br>　　夫兵者，不祥之器，物或恶之，故有道者不处。君子居则贵左，用兵则贵右。吉事尚左， 凶事尚右。偏将军居左，上将军居右，言以丧礼处之。杀人之众，以悲哀泣之，战胜以丧 礼处之。</p>
+<p>###【第三十二章】<br>　　道常无名。朴虽小，天下莫能臣。侯王若能守之，万物将自宾。<br>　　天地相合，以降甘露，民莫之令而自均。<br>　　始制有名，名亦既有，夫亦将知止，知止可以不殆。<br>　　譬道之在天下，犹川谷之于江海。</p>
+<p> ###【第三十三章】<br>　　知人者智，自知者明。<br>　　胜人者有力，自胜者强。<br>　　知足者富。<br>　　强行者有志。<br>　　不失其所者久。<br>　　死而不亡者寿。</p>
+<p> ###【第三十四章】<br>　　大道泛兮，其可左右。万物恃之以生而不辞，功成而不有。衣养万物而不为主，可名于小；万物归焉而不为主，可名为大。以其终不自为大，故能成其大。</p>
+<p>###【第三十五章】<br>　　执大象，天下往。往而不害，安平泰。<br>　　乐与饵，过客止。道之出口，淡乎其无味，视之不足见，听之不足闻，用之不足既。</p>
+<p> ###【第三十六章】<br>　　将欲歙之，必故张之；将欲弱之，必故强之；将欲废之，必故兴之；将欲取之，必故与之。是谓微明。<br>　　柔弱胜刚强。鱼不可脱于渊，国之利器不可以示人。</p>
+<p>###【第三十七章】<br>　　道常无为而无不为。侯王若能守之，万物将自化。化而欲作，吾将镇之以无名之朴。镇之以无名之朴，夫将不欲。不欲以静，天下将自正。</p>
+<p>###【第三十八章】<br>　　上德不德，是以有德；下德不失德，是以无德。<br>　　上德无为而无以为；下德无为而有以为。<br>　　上仁为之而无以为；上义为之而有以为。<br>　　上礼为之而莫之应，则攘臂而扔之。<br>　　故失道而后德，失德而后仁，失仁而后义，失义而后礼。夫礼者，忠信之薄，而乱之首。<br>　　前识者，道之华，而愚之始。是以大丈夫处其厚，不居其薄；处其实，不居其华。故去彼取此。</p>
+<p>###【第三十九章】<br>　　昔之得一者：天得一以清；地得一以宁；神得一以灵；谷得一以生；侯得一以为天下正。<br>　　其致之也，谓天无以清，将恐裂；地无以宁，将恐废；神无以灵，将恐歇；谷无以盈，将恐竭；万物无以生，将恐灭；侯王无以正，将恐蹶。<br>　　故贵以贱为本，高以下为基。是以侯王自称孤、寡、不谷。此非以贱为本邪？非乎？故致誉无誉。是故不欲琭琭如玉，珞珞如石。</p>
+<p>###【第四十章】<br>　　反者道之动[1]；弱者道之用。<br>　　天下万物生于有，有生于无。</p>
+<blockquote>
+<p>反，有相反、返归二意。二意相通：反于世界，返归于道。详见第三部一章一则”反”。</p>
+</blockquote>
+<p>###【第四十一章】<br>　　上士闻道，勤而行之。中士闻道，若存若亡。下士闻道，大笑之。不笑不足以为道。故建言有之：<br>　　明道若昧，进道若退，夷道若类，<br>　　上德若谷，大白若辱，<br>　　广德若不足，建德若偷，质真若渝，<br>　　大方无隅，大器晚成，<br>　　大音希声，大象无形。<br>　　道隐无名。夫唯道，善贷且成。 </p>
+<p> ###【第四十二章】<br>　　道生一，一生二，二生三，三生万物[1]。<br>　　万物负阴而抱阳，冲气以为和[2]。<br>　　人之所恶，唯孤、寡、不谷，而王公以为称。<br>　　故物或损之而益，或益之而损。<br>　　人之所教，我亦教之：强梁者不得其死，吾将以为教父。</p>
+<blockquote>
+<p>[1]后人的解释要么依据唯物辩证法，要么依据阴阳学说，均非本意，在《》其他任何一章中也找不到任何一节来证明。庄子对此早有精妙的解释，在通篇中都可以找到佐证。庄子说：”既然是｀一＇了，还有什么好说的呢？然而，既然称之为｀一＇了，岂不是已经说出口了吗？这个｀一＇，与我们对它的言说，就是｀二＇了。｀二＇，再加上｀一＇原本的存在，就是｀三＇。所以从无到有，到｀三＇为止（《大宗师》）”。庄子所说的三个”一”，很绕口，其实就是”道的表像、道的名份、道的实在”这三者。此处译文即根据庄子，以道解道。王弼亦明显参考了庄子。道的名、实、像及其三者的关系，在《》一、四、六、九、十四、二十一 、二十五、三十二、四十一和四十二章等，都有论及。详见第一部二章一节之三”辨析一二三”，五章三节之二”名实像、三合一”、之三”谈名实像”。<br>[2]道是「其上不　、其下不昧」的纯粹光明，是「一」。万物却有向光与背光的两面，故曰「抱阳而负阴」。向道与背道这两面相互激荡，靠「气」（灵？）而平和。</p>
+<p>###【第四十三章】<br>　　天下之至柔，驰骋天下之至坚。无有入无间。<br>　　吾是以知无为之有益。<br>　　不言之教，无为之益，天下希及之。</p>
+<p>###【第四十四章】<br>　　名与身孰亲？身与货孰多？得与亡孰病？<br>　　甚爱必大费；多藏必厚亡。<br>　　故知足不辱，知止不殆，可以长久。</p>
+<p>###【第四十五章】<br>　　大成若缺，其用不弊。大盈若冲，其用不穷。<br>　　大直若屈，大巧若拙，大辩若讷。<br>　　静胜躁，寒胜热。清静，为天下正。</p>
+<p>###【第四十六章】<br>　　天下有道，却走马以粪。天下无道，戎马生于郊。<br>　　祸莫大于不知足；咎莫大于欲得。故知足之足，常足矣。</p>
+<p>###【第四十七章】<br>　　不出户，知天下；不窥牖，见天道。其出弥远，其知弥少。<br>　　是以圣人不行而知，不见而明，不为而成。</p>
+<p>###【第四十八章】<br>　　为学日益，为道日损。损之又损，以至于无为。<br>　　无为而无不为。取天下常以无事，及其有事，不足以取天下。</p>
+<p>###【第四十九章】<br>　　圣人常无心[1]，以百姓心为心。<br>　　善者，吾善之；不善者，吾亦善之；德善。<br>　　信者，吾信之；不信者，吾亦信之；德信。<br>　　圣人在天下，歙歙焉[2]，为天下浑其心，百姓皆注其耳目，圣人皆孩之。<br>[1]「无常心」，有本作「常无心」、「无心」，即无私心。马王堆本「常」为「恒」，「无恒心」亦即不固执一己之心。<br>[2]「歙」，音「吸」，纳气入内。「歙歙焉」，有灵气运行、并非人意之状。</p>
+<p>###【第五十章】<br>　　出生入死。生之徒，十有三；死之徒，十有三；人之生，动之于死地，亦十有三[1]。<br>　　夫何故？以其生之厚。盖闻善摄生者，路行不遇兕虎，入军不被甲兵；兕无所投其角，虎无所用其爪，兵无所容其刃。夫何故？以其无死地。<br>[1]从韩非子注。不论生死，人皆有四肢九窍；送生致死，亦以此四肢九窍。联系上句「出生入死」的总概括，以及后面的「夫何故？以其生生之厚」的总结论，此意顺达。有人将「十有三」译为「十分之三」，不和此章深意。</p>
+<p>###【第五十一章】<br>　　道生之，德畜之[1]，物形之，势成之。<br>　　是以万物莫不尊道而贵德。<br>　　道之尊，德之贵，夫莫之命而常自然。<br>　　故道生之，德畜之；长之育之；成之熟之；养之覆之。生而不有，为而不恃，长而不宰。是谓玄德。<br>[1]「德」，有品德、恩德、得著、感德、属性等意。用于大道者，当是恩德。</p>
+<p>###【第五十二章】<br>　　天下有始，以为天下母。既得其母，以知其子，复守其母，没身不殆。<br>　　塞其兑，闭其门，终身不勤。开其兑，济其事，终身不救。见小曰明，守柔曰强。用其光，复归其明，无遗身殃；是为袭常。</p>
+<p>###【第五十三章】<br>　　使我介然有知，行于大道，唯施是畏。<br>　　大道甚夷，而人好径。朝甚除，田甚芜，仓甚虚；服文采，带利剑，厌饮食，财货有馀；是为盗夸。非道也哉！</p>
+<p>###【第五十四章】<br>　　善建者不拔，善抱者不脱，子孙以祭祀不辍。<br>　　修之于身，其德乃真；修之于家，其德乃馀；修之于乡，其德乃长；修之于邦，其德乃丰；修之于天下，其德乃普。<br>　　故以身观身，以家观家，以乡观乡，以邦观邦，以天下观天下。吾何以知天下然哉？以此。</p>
+<p>###【第五十五章】<br>　　含「德」之厚，比于赤子。毒虫不螫，猛兽不据，玃鸟不搏。骨弱筋柔而握固。未知牝牡之合而全作，精之至也。终日号而不嗄，和之至也。<br>　　知和曰「常」，知常曰「明」。益生曰祥。心使气曰强。物壮则老，谓之不道，不道早已。</p>
+<p>###【第五十六章】<br>　　知者不言，言者不知。<br>　　塞其兑，闭其门，挫其锐，解其纷，和其光，同其尘，是谓玄同。<br>　　故不可得而亲，不可得而疏，不可得而利，不可得而害，不可得而贵，不可得而贱。故为 天下贵。</p>
+<p>###【第五十七章】<br>　　以正治国，以奇用兵，以无事取天下。吾何以知其然哉？以此：<br>　　天下多忌讳，而民弥贫；人多利器，国家滋昏；人多伎巧，奇物滋起；法令滋彰，盗贼多有。<br>　　故圣人云：「我无为，而民自化；我好静，而民自正；我无事，而民自富；我无欲，而民自朴。」</p>
+<p>###【第五十八章】<br>　　其政闷闷，其民淳淳。其政察察，其民缺缺。<br>　　祸兮福之所倚，福兮祸之所伏。孰知其极？<br>　　正复为奇，善复为妖。人之迷，其日固久。<br>　　是以圣人方而不割，廉而不刿，直而不肆，光而不耀。</p>
+<p>###【第五十九章】<br>　　治人事天，莫若啬。<br>　　夫为啬，是谓早服；早服谓之重积德；重积德则无不克；无不克则莫知其极；莫知其极，可以有国；有国之母，可以长久；是谓深根固柢，长生久视之道。</p>
+<p>###【第六十章】<br>　　治大国，若烹小鲜。<br>　　以道莅天下，其鬼不神；非其鬼不神，其神不伤人；非其神不伤人，圣人亦不伤人。夫两不相伤，故德交归焉。</p>
+<p>###【第六十一章】<br>　　大国者若下流，天下之交，天下之牝。牝常以静胜牡，以静为下。<br>　　故大国以下小国，则取小国。小国以下大国，则取大国。故或下以取，或下而取。大国不 过欲兼蓄人，小国不过欲入事人。夫两者各得其所欲，大者宜为下。</p>
+<p>###【第六十二章】<br>　　道者万物之奥[1]。善人之宝，不善人之所保[2]。<br>　　美言可以市尊，美行可以加人。人之不善，何弃之有？故立天子，置三公，虽有拱璧以先驷马，不如坐进此道。<br>　　古之所以贵此道者何？不曰：求以得，有罪以免邪？故为天下贵。<br>[1]”奥”字，河上公注为”藏”，王弼注为”庇荫”，马王堆汉墓出土的帛书甲、乙本均作”注”，读作”主”。其实，道作为万物之”主”，已将”保藏、庇荫”万物的意思涵括进去了。<br>[2]”保”字,任继愈和陈鼓应的译文，均依河上公”道者，不善人之所宝倚也”，说”道也是恶人所要处处保持的”。</p>
+<p>###【第六十三章】<br>　　为无为，事无事，味无味。<br>　　大小多少，抱怨以德。<br>　　图难于其易，为大于其细。天下难事，必作于易，天下大事，必作于细。<br>　　是以圣人终不为大，故能成其大。夫轻诺必寡信，多易必多难。是以圣人犹难之，故终无难矣。</p>
+<p>###【第六十四章】<br>　　其安易持，其未兆易谋。其脆易泮，其微易散。为之于未有，治之于未乱。<br>　　合抱之木，生于毫末；九层之台，起于累土；千里之行，始于足下。<br>　　为者败之，执者失之。是以圣人无为故无败，无执故无失。<br>　　民之从事，常于几成而败之。慎终如始，则无败事。<br>　　是以圣人欲不欲，不贵难得之货；学不学，复众人之所过。以辅万物之自然，而不敢为。 </p>
+<p> ###【第六十五章】<br>　　古之善为道者，非以明民，将以愚之。<br>　　民之难治，以其智多。故以智治国，国之贼；不以智治国，国之福。<br>　　知此两者亦稽式。常知稽式，是谓「玄德」。「玄德」深矣，远矣，与物反矣，然后乃至大顺。</p>
+<p>###【第六十六章】<br>　　江海之所以能为百谷王者，以其善下之，故能为百谷王。<br>　　是以圣人欲上民，必以言下之；欲先民，必以身后之。是以圣人处上而民不重，处前而民不害。是以天下乐推而不厌。以其不争，故天下莫能与之争。</p>
+<p>###【第六十六章】<br>　　江海之所以能为百谷王者，以其善下之，故能为百谷王。<br>　　是以圣人欲上民，必以言下之；欲先民，必以身后之。是以圣人处上而民不重，处前而民不害。是以天下乐推而不厌。以其不争，故天下莫能与之争。</p>
+<p>###【第六十七章】<br>　　天下皆谓我道大，似不肖。夫唯大，故似不肖。若肖，久矣其细也夫！<br>　　我有三宝，持而保之。一曰慈，二曰俭，三曰不敢为天下先。<br>　　慈故能勇；俭故能广；不敢为天下先，故能成器长。<br>　　今舍慈且勇；舍俭且广；舍后且先；死矣！<br>　　夫慈以战则胜，以守则固。天将救之，以慈卫之。</p>
+<p>###【第六十八章】<br>　　善为士者，不武；善战者，不怒；善胜敌者，不与；善用人者，为之下。是谓不争之德，是谓用人之力，是谓配天古之极。</p>
+<p>###【第六十九章】<br>　　用兵有言：「吾不敢为主，而为客；不敢进寸，而退尺。」是谓行无行；攘无臂；扔无敌；执无兵。<br>　　祸莫大于轻敌，轻敌几丧吾宝。<br>　　故抗兵相若，哀者胜矣。</p>
+<p>###【第七十章】<br>　　吾言甚易知，甚易行。天下莫能知，莫能行。<br>　　言有宗，事有君。夫唯无知，是以不我知。<br>　　知我者希，则我者贵。是以圣人被褐而怀玉。</p>
+<p>###【第七十一章】<br>　　知不知，尚矣；不知知，病也。圣人不病，以其病病。夫唯病病，是以不病。</p>
+<p>###【第七十二章】<br>　　民不畏威，则大威至。<br>　　无狎其所居，无厌其所生。夫唯不厌，是以不厌。<br>　　是以圣人自知不自见；自爱不自贵。故去彼取此。</p>
+<p>###【第七十三章】<br>　　勇于敢则杀，勇于不敢则活。此两者，或利或害。天之所恶，孰知其故？<br>　　天之道，不争而善胜，不言而善应，不召而自来，繟然而善谋。天网恢恢，疏而不失。</p>
+<p>###【第七十四章】<br>　　民不畏死，奈何以死惧之？若使民常畏死，而为奇者，吾得执而杀之，孰敢？<br>　　常有司杀者杀。夫代司杀者杀，是谓代大匠斲，夫代大匠斲者，希有不伤其手矣。</p>
+<p>###【第七十五章】<br>　　民之饥，以其上食税之多，是以饥。<br>　　民之难治，以其上之有为，是以难治。<br>　　民之轻死，以其上求生之厚，是以轻死。<br>　　夫唯无以生为者，是贤于贵生。</p>
+<p>###【第七十六章】<br>　　人之生也柔弱，其死也坚强。<br>　　草木之生也柔脆，其死也枯槁。<br>　　故坚强者死之徒，柔弱者生之徒。<br>　　是以兵强则灭，木强则折。<br>　　强大处下，柔弱处上。</p>
+<p>###【第七十七章】<br>　　天之道，其犹张弓欤？高者抑之，下者举之；有馀者损之，不足者补之。<br>　　天之道，损有馀而补不足。人之道，则不然，损不足以奉有馀。<br>　　孰能有馀以奉天下？唯有道者。<br>　　是以圣人为而不恃，功成而不处，其不欲见贤。</p>
+<p>###【第七十八章】<br>　　天下莫柔弱于水，而攻坚强者莫之能胜，以其无以易之。<br>　　弱之胜强，柔之胜刚，天下莫不知，莫能行。<br>　　是以圣人云：「受国之垢，是谓社稷主；受国不祥，是为天下王[1]。」正言若反。</p>
+<p>###【第七十九章】<br>　　和大怨，必有馀怨；报怨以德，安可以为善？<br>　　是以圣人执左契，而不责于人。有德司契，无德司彻[1]。<br>　　天道无亲，常与善人。</p>
+<p>###【第八十章】<br>　　小国寡民。使有什伯之器而不用；使民重死而不远徙。虽有舟舆，无所乘之，虽有甲兵，无所陈之。<br>　　使民复结绳而用之。甘其食，美其服，安其居，乐其俗。邻国相望，鸡犬之声相闻，民至老死，不相往来。</p>
+<p> ###【第八十一章】<br>　　信言不美，美言不信。<br>　　善者不辩，辩者不善。<br>　　知者不博，博者不知。<br>　　圣人不积，既以为人己愈有，既以与人己愈多。<br>　　天之道，利而不害；圣人之道，为而不争。<br>老子：<br>　　中国先秦时期思想家，道家学派创始人。关于的姓字，历来说法不一。《庄子》称他为老聃，书中的内篇《德充符》，外篇《天地》、《天运》、《田子方》、《知北游》等都把视为前辈，这是战国中晚期道家学派笔下的。秦汉之际成书的《礼记》中《曾子问》篇也把视为与孔子同时代的知礼守礼的长者。《史记韩非列传》大体上把描写为道家，其中搀入老莱子和太史儋两个名字。也有学者认为可能「老」是的姓或氏，其名为聃，故称老聃。但其他一些学者对《》一书是否为老聃所作也有疑问。当今学术界不少人认为其人可能生活于春秋末年，《》一书却是战国时期的作品。但探讨哲学，只能以《》一书为依据。<br>　　哲学思想<br>　　道是思想体系的核心，他说：「道生一，一生二，二生三，三生万物」（《》四十二章），认为一切由道生出。关于道，《》有多种解释。①道的特征是「无状之状，无象之象」。《》第二十一章说：「道之为物，惟恍惟惚，惚兮恍兮，其中有象；恍兮惚兮，其中有物。」第十四章又说：「无状之状，无象之象，是谓惚恍。」②道是世界万物的本原。第二十五章说：「有物混成，先天地生，寂兮寥兮，独立而不改，周行而不殆，可以为天下母。」③道是无。第四十章说：「天下万物生于有，有生于无。」在这里生于「无」即是生于「道」，「道」就是「无」。<br>　　朴素辩证法思想<br>　　认为自然界和人类社会都是变动不居的。他观察到天地间万物万事存在着互相矛盾的两个对立面，例如有无、刚柔、强弱、祸福、兴废等等，它们都是互相依存、互相联结的。所以说：「有无相生，难易相成，长短相形。」还说：「贵以贱为本，高以下为基」，「祸兮福所倚，福兮祸所伏」，表明了对立面双方的同一性。还认识到对立面不是一成不变的，它们在向相反的一面转化，他说：「正复为奇，善复为妖」，「曲则全，枉则直，洼则盈，敝则新，少则得，多则惑」。承认转化，但强调「圣人之道，为而不争」，「以其不争，故天下莫能与之争」。<br>　　的辩证法思想在军事战略战术的运用方面也很突出。在战术上，他主张「以奇用兵」，还要注意「将欲弱之，以固强之」，「将欲夺之，必固与之」。在战略上，他提出「柔弱胜刚强」的指导思想，他说天下没有比水更柔弱的东西，但攻坚的力量莫过于它。这种战略思想有防止盲目骄傲的一面，但也具有极大的片面性。<br>　　认识论<br>　　否认人的认识来源于感觉经验，「不出户，知天下；不窥牖，知天道。其出弥远，其知弥少。是以圣人不行而知，不见而名，不为而成」。他还宣扬「涤除玄览」的直观方法，教人们洗心内照。他站在统治者的立场上，反对启迪民智，要人们做到「绝圣弃智」，「绝学无忧」。他认为，「古之善为道者，非以明民，将以愚之。民之难治，以其智多」。因此，主张「常使民无知无欲」。<br>　　社会历史观<br>　　主张「小国寡民，使民有什伯之器而不用，使民重死而不远徙。虽有舟舆，无所乘之；虽有甲兵，无所陈之；使人复结绳而用之」，「邻国相望，鸡犬之声相闻，民至老死不相往来」。他向往结绳记事的原始社会，认为在这种社会中人民会「甘其食，美其服，安其居，乐其俗」，表现出复古倒退的消极思想。<br>　　对中国哲学的影响<br>　　首先提出了「道」这一最高的哲学概念，以「道」为天地万物存在的本原，对于历代的思想家曾产生过深刻的影响。战国末年的韩非，利用并改造了关于「道」的学说，认为「道」是万事万物的总法则。战国时期形成到汉初盛行的道家学派的黄老之学，也利用的「道」缔造自己的学说体系。将「道」和法家思想直接联系起来。导源于的黄老自然主义对无神论思想产生了很大的影响。东汉唯物主义者王充著《论衡》，亦取道家自然之说。<br>　　东汉时，道教形成，五斗米道规定信徒诵习《》五千文。道教发挥《》原有长生久视之说，河上公《章句》着重宣扬「自然长生之道」。《想尔注》亦言「不知长生之道，身皆尸行耳」。练形长生，成为道教哲学的中心思想。魏晋玄学盛行时，《》为三玄之一，何晏作《道德论》，王弼撰《注》，发挥唯心主义本体论。</p>
+<h2 id="魏晋以后，引道入儒，儒、道合流，思想对后世儒家特别是革新派改良派如王安石、魏源、严复等产生一定影响。2000多年来，对哲学历代有各种各样的解说和注评，有的接近原著本义，有的不拘原著，肆意发挥。哲学作为中国古代思想的重要遗产，它在哲学、政治、人生诸方面，都曾发生过积极的或消极的重大影响。"><a href="#魏晋以后，引道入儒，儒、道合流，思想对后世儒家特别是革新派改良派如王安石、魏源、严复等产生一定影响。2000多年来，对哲学历代有各种各样的解说和注评，有的接近原著本义，有的不拘原著，肆意发挥。哲学作为中国古代思想的重要遗产，它在哲学、政治、人生诸方面，都曾发生过积极的或消极的重大影响。" class="headerlink" title="　　魏晋以后，引道入儒，儒、道合流，思想对后世儒家特别是革新派改良派如王安石、魏源、严复等产生一定影响。2000多年来，对哲学历代有各种各样的解说和注评，有的接近原著本义，有的不拘原著，肆意发挥。哲学作为中国古代思想的重要遗产，它在哲学、政治、人生诸方面，都曾发生过积极的或消极的重大影响。"></a>　　魏晋以后，引道入儒，儒、道合流，思想对后世儒家特别是革新派改良派如王安石、魏源、严复等产生一定影响。2000多年来，对哲学历代有各种各样的解说和注评，有的接近原著本义，有的不拘原著，肆意发挥。哲学作为中国古代思想的重要遗产，它在哲学、政治、人生诸方面，都曾发生过积极的或消极的重大影响。</h2><p>【《老子》：”祸兮福之所倚，福兮祸之所伏”】<br>　　“祸兮福之所倚，福兮祸之所伏。”意思是，祸是造成福的前提，而福又含有祸的因素。也就是说，好事和坏事是可以互相转化的，在一定的条件下，福就会变成祸，祸也能变成福。说的这句名言，是很有道理的。<br>　　是中国，也是全世界最早具有辩证法思想的哲学家之一。关于其人、其书及其”道论”历来有争论。根据司马迁在《史记》一书中给他写的一个简单的传记来看，他是春秋时著名的思想家、道家学派的创始人。，姓李名耳，字聃，楚国苦县（今河南鹿邑县）厉乡曲仁里人。””是人们对他的称呼，”老”是年高德重的意思，”子”是古代对男子的美称。他的生卒年月不详。<br>　　做过周朝的”守藏室史”（相当于现在的国家图书馆馆长或历史博物馆馆长），所以他谙于掌故，熟于礼制，不仅有丰富的历史知识，并有广泛的自然科学知识。<br>　　公元前520年，周王室发生争夺王位的内战，这年4月，周景王卒，大夫刘耿立王子猛为悼王。王子朝杀悼王自立。晋人攻王子朝，立王子匄为敬王。这次内战达5年之久，公元前516年，王子朝失败，席卷周室典籍，逃奔楚国；所掌握的图书亦被带走。于是，遂被罢免而归居。形势的变化，使的地位发生变化，使他的思想起了大转变，由守礼转向反礼。<br>　　由于身受奴隶主贵族当权者的迫害，为了避免祸害，不得不”自隐无名”，流落四方，后来，他西行去秦国。经过函谷关（今河南灵宝县西南）时，关令尹喜知道将远走隐去，便请留言。于是写下了5000字的《》。相传出关时，骑着青牛飘然而去。<br>　　的思想主张，大都保存在《》一书中。《》共81章，分上下两篇，共5000多字。因为它所讲的是道与德的问题，后来人们又称它为《道德经》。现在我们所见到的《》一书，并不是的原著，因有战国时人增益的文字，但其中的主要思想却是属于的。<br>　　《》一书，文词简短，艰深难懂，因此后人作了许多注解。最通行的有西汉时道学家河上公（姓名不详）注，三国时魏国哲学家王弼注，还有清朝时魏源的《本义》，等等。下面我们就通过《》这本书，来了解的哲学和政治思想。<br>　　“道”是天地万物的本源。是我国第一个力图从自然本身来解释世界，而不求助于超自然的主宰──天帝的意志的哲学家。在之前，人们以为宇宙间的万物都有神在统治着，最高的神就是天，又称天帝。这种观念，到了社会大变革的春秋时期才开始了变化。就是较早的从哲学方面有意识地、明确地否认天帝的思想家。他在《周易》的基础上，进一步阐明”道”是天地万物的本源。”道论”的中心思想是：”道即自然，自然即道”。他说，”道”是万物之母：”道可道，非常道。名可名，非常名。无，名天地之始。<br>　　有，名万物之母。”（《第一章》）这就是说，作为宇宙的本源就是道，它是永远存在的。道的运行是自由的、必然的，即按其自身的规律而运行。天地万物都是由它产生的，它是宇宙的母体。<br>　　认为，道产生了天地，德是道的性能，天地生养着万物，万物各成其形，各备其用。所以万物没有不尊道而贵德的。道的尊崇，德的贵重，不是有谁给它爵位，而是自然而然的。所以道产生天地，德畜养万物，长育万物，成熟万物，覆盖万物。他说：”道生之，德畜之，物形之，器成之。<br>　　是以万物莫不尊道而贵德。道之尊，德之贵，夫莫之爵，而常自然。故道生之，德畜之，长之育之，亭之毒之，盖之覆之。”（《第五十一章》）这样，遂把自然创造的根源归于自然本身，从而摧毁了一切超自然的主宰，一切宗教和唯心论的基础。因此，的天道自然观，在当时有很大的进步意义，它打倒了宗教的天帝，否认了鬼神的威灵。当然，的”道论”刚从传统的宗教解放出来，还未能完全摆脱宗教的影响；他的自然决定论，使人完全听命于自然，轻视了人对自然界的反作用。后来有的哲学家把它发展为定命论，为害颇大。<br>　　“无为而治”。的”道论”，基本上可概括为”天道自然观”。所以的人生哲学和政治哲学基本上是人当法道，顺其自然。至于如何治理国家呢？他认为最好是采取”无为而治”的办法，让人民去过自由自在的生活，用无所作为听其自然发展的办法，来达到治理好国家的目的。在看来，无为正是有所作为，”无为而无不为”，就是这个意思。反对用刑、礼、智这些来治理国家，他反对加重人民税收，反对拥有强大的兵力，他说过：”乐杀人者，则不可以得志于天下。”（《第三十一章》）他同时也反对工商业，反对知识和文化。他说：”绝圣弃智，民利百倍。绝仁弃义，民复孝慈。绝巧弃利，盗贼无有。此三者以为文不足。故令有所属。见素抱扑，少私寡欲，绝学无忧。”（《第十九章》）在看来，人类社会不要”圣智”、”仁义”、”巧利”，国家就大治了。这三种东西不足以治国，最好的办法是，使人们着意于”朴素”，少有”私欲”，不求知识，就可以没有忧患了。<br>　　的社会历史观是不现实的，他为了反对当时的剥削制度，从而反对一切社会制度。为了反对剥削阶级的文化，从而反对一切文化。为了反对欺诈，从而反对一切知识。这是他消极的一面。他以为只有抛弃了智慧，人民才有百倍的利益，只有抛弃了文化学问，才能免于忧虑，这种愚民政策，也被后世的统治阶级所利用。<br>　　那么，所向往的理想世界是什么呢？是小国寡民的原始社会。他说：”小国寡民，使民有什伯之器而不用，使民重死而不远徙。虽有舟舆，无所乘之。虽有甲兵，无所陈之。<br>　　使民复结绳而用之。甘其食，美其服，安其居，乐其俗，邻国相望，鸡犬之声闻，民至老死不相往来。”（《第八十章》）<br>　　这一设想，在一定程度上反映了当时人民迫切要求休养生息和减轻剥削的愿望。说过，人民为什么过着饥寒的生活呢？是因为他们的君主取赋税多的缘故。”民之饥，以其上食税之多”（《第七十五章》）。又说”民不畏死，奈何以死惧之？”（《第七十四章》）这反映了政治思想中的进步因素。但是，小国寡民的理想，却是幻想，它是违反社会历史发展规律的。但我们应当看到，的这一举动是抨击奴隶社会制度的不合理，它对后世的进步思想家、空想的社会改革家却有着深远的影响。<br>　　相反相成。学说的精髓，是他光辉的辩证法思想。观察了自然界的变化，生与死、新与旧的相互关系，观察了社会历史与政治的成与败、福与祸等对立的双方的相互关系，发现了事物内部所具有的一些辩证规律。《》一书中，还深刻地论证了相反相成和物极必反的道理。说过，有和无是彼此相生的，难和易是彼此相成的，长和短只有彼此比较才能显现出来，不同的声音产生谐和，前后互相对立而有了顺序。总之，承认事物是在矛盾中发展的。<br>　　物极必反，是说事物在变化中向它相反的方面过渡，到了一定的时候就完全成为相反的东西。因此，一再告诫统治者，必须去掉那些极端的、过分的措施，否则，就会使事物走向另一个极端，结果就会丧失天下。他认为，高明的统治者必须懂得以柔弱胜刚强的道理。为了证明以弱胜强，以柔胜刚的道理，他举了许多的例子。他经常用水来比喻自然力量的伟大，比喻人类高尚的品质。他说：”天下莫柔弱于水，而攻坚强者莫之能胜。其无以易之。柔之胜刚，弱之胜强，天下莫不知，莫能行。”（《第七十八章》）意思是说，天下万物没有比水更柔弱的了，而攻击坚强的力量没有能胜过水的，这个事实是无法改变的。柔的战胜刚的，弱的战胜强的，天下没有人不懂的，可是没有人能做到。又举军队强大了就会破灭，树木强大就会摧折的例子。但他把弱能胜强，柔能胜刚，当作绝对的规律，没能认识到这种互相转化不是无条件的，而是有条件的。尽管如此，认为在发展过程中柔弱的是不可战胜的，这对于促使人们认识新生的力量是不可战胜的道理是有着积极意义的。所处的时代，是动荡不安、战争频繁的春秋末期，正是由奴隶社会向封建社会过渡的时代，他提出这一观点，也具有积极的现实意义。<br>　　还初步意识到量的积累可以引起质的变化。他说过，大树是由细小的萌芽产生的；九层的高台，是由一堆泥土筑起的；千里的远行，必须从脚下的第一步开始。（见《第六十四章》）<br>　　当然，的自然辩证观是直观的、原始的、朴素的、缺乏科学的论证。同时，他的辩证观还缺乏不可调和的斗争精神。这是他受了时代和阶级的限制。尽管如此，《》一书中上述的这些光辉的思想火花，是很值得我们珍视的一份历史遗产。</p>
+</blockquote>
 ]]></content>
     </entry>
     
     <entry>
       <title><![CDATA[Events]]></title>
       <url>https://yanlee26.github.io/2016/03/03/events/</url>
-      <content type="html"><![CDATA[<h1 id="web-events-值均为script"><a href="#web-events-值均为script" class="headerlink" title="web events(值均为script)"></a>web events(值均为script)</h1><h3 id="PC端"><a href="#PC端" class="headerlink" title="PC端"></a>PC端</h3><ol>
+      <content type="html"><![CDATA[<h1 id="web-events-值均为script"><a href="#web-events-值均为script" class="headerlink" title="web events(值均为script)"></a>web events(值均为script)</h1><h3 id="事件类型（DOM3级）"><a href="#事件类型（DOM3级）" class="headerlink" title="事件类型（DOM3级）"></a>事件类型（DOM3级）</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">type</th>
+<th style="text-align:center">Description</th>
+<th style="text-align:right">Mark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">UI事件</td>
+<td style="text-align:center">用户与页面上元素交互</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">焦点事件</td>
+<td style="text-align:center">元素得失焦点触发</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">鼠标事件</td>
+<td style="text-align:center">用户用鼠标与页面交互</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">滚轮事件</td>
+<td style="text-align:center">用户用鼠标滚轮与页面交互</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">文本事件</td>
+<td style="text-align:center">用户在文档中输入文本</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">键盘事件</td>
+<td style="text-align:center">用户用键盘与页面交互</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">合成事件</td>
+<td style="text-align:center">当为IME(输入法编辑器)输入字符时触发</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">变动事件</td>
+<td style="text-align:center">底层DOM结构变动时触发</td>
+</tr>
+</tbody>
+</table>
+<h3 id="PC端"><a href="#PC端" class="headerlink" title="PC端"></a>PC端</h3><ol>
 <li>window事件属性（适用于body标签）</li>
 </ol>
 <table>
@@ -3066,10 +2511,102 @@ unsetAll: function(name, path, domain, secure){
 </tbody>
 </table>
 <ol>
-<li><p>form事件属性(适用于所有h5元素，常用于表单)<br>| Properties    | Description | Mark|<br>| :———— |:————–:|—–:|<br>| onblur  | 当元素失去焦点时运行脚本||<br>| onchange  | 当元素改变时运行脚本||<br>| oncontextmenu  | 当触发上下文菜单时运行脚本|New|<br>| onfocus  | 当元素获得焦点时运行脚本|New|<br>| onformchange  | 当表单改变时运行脚本|New|<br>| onforminput  | 当表单获得用户输入时运行脚本|New|<br>| oninput  | 当元素获得用户输入时运行脚本|New|<br>| oninvalid  | 当元素无效时运行脚本|New|<br>| onreset  | 当表单重置时运行脚本。HTML 5 不支持||<br>| onselect  | 当选取元素时运行脚本||<br>| onsubmit  | 当提交表单时运行脚本||</p>
-</li>
-<li><p>keyboard事件(适用于所有h5元素)<br>| Properties    | Description | Mark|<br>| :———— |:————–:|—–:|<br>| onkeydown  | 当按下按键时运行脚本||<br>| onkeypress  | 当按下并松开按键时运行脚本||<br>| onkeyup  | 当松开按键时运行脚本||</p>
-</li>
+<li>form事件属性(适用于所有h5元素，常用于表单)</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Properties</th>
+<th style="text-align:center">Description</th>
+<th style="text-align:right">Mark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">onblur</td>
+<td style="text-align:center">当元素失去焦点时运行脚本</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">onchange</td>
+<td style="text-align:center">当元素改变时运行脚本</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">oncontextmenu</td>
+<td style="text-align:center">当触发上下文菜单时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">onfocus</td>
+<td style="text-align:center">当元素获得焦点时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">onformchange</td>
+<td style="text-align:center">当表单改变时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">onforminput</td>
+<td style="text-align:center">当表单获得用户输入时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">oninput</td>
+<td style="text-align:center">当元素获得用户输入时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">oninvalid</td>
+<td style="text-align:center">当元素无效时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">onreset</td>
+<td style="text-align:center">当表单重置时运行脚本。HTML 5 不支持</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">onselect</td>
+<td style="text-align:center">当选取元素时运行脚本</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">onsubmit</td>
+<td style="text-align:center">当提交表单时运行脚本</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>keyboard事件(适用于所有h5元素)</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Properties</th>
+<th style="text-align:center">Description</th>
+<th style="text-align:right">Mark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">onkeydown</td>
+<td style="text-align:center">当按下按键时运行脚本</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">onkeypress</td>
+<td style="text-align:center">当按下并松开按键时运行脚本</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">onkeyup</td>
+<td style="text-align:center">当松开按键时运行脚本</td>
+</tr>
+</tbody>
+</table>
+<ol>
 <li>mouse事件(适用于所有h5元素)</li>
 </ol>
 <table>
@@ -3397,6 +2934,339 @@ unsetAll: function(name, path, domain, secure){
 <blockquote>
 <p>触摸事件和手势事件的之间关系：<br>当一个手指放在屏幕上时，会触发touchstart事件，而另一个手指触摸在屏幕上时<br>触发gesturestart事件，随后触发基于该手指的touchstart事件。<br>如果一个或两个手指在屏幕上滑动时，将会触发gesturechange事件，但是只要有一个手指移开时候，则会触发gestureend事件，<br>紧接着会触发touchend事件。<br>手势的专有属性:<br>rotation: 表示手指变化引起的旋转角度，负值表示逆时针，正值表示顺时针，从0开始；<br>scale: 表示2个手指之间的距离情况，向内收缩会缩短距离，这个值从1开始的，并随距离拉大而增长。</p>
 </blockquote>
+<h3 id="常用事件"><a href="#常用事件" class="headerlink" title="常用事件"></a>常用事件</h3><ul>
+<li>PC端</li>
+</ul>
+<ol>
+<li>window事件属性（适用于body标签）</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Properties</th>
+<th style="text-align:center">Description</th>
+<th style="text-align:right">Mark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">onblur</td>
+<td style="text-align:center">当窗口失去焦点时运行脚本</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">onerror</td>
+<td style="text-align:center">当错误发生时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">onfocus</td>
+<td style="text-align:center">当窗口获得焦点时运行脚本</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">onload</td>
+<td style="text-align:center">当文档加载时运行脚本</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">onresize</td>
+<td style="text-align:center">当调整窗口大小时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>form事件属性(适用于所有h5元素，常用于表单)</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Properties</th>
+<th style="text-align:center">Description</th>
+<th style="text-align:right">Mark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">onblur</td>
+<td style="text-align:center">当元素失去焦点时运行脚本</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">onchange</td>
+<td style="text-align:center">当元素改变时运行脚本</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">onfocus</td>
+<td style="text-align:center">当元素获得焦点时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">oninput</td>
+<td style="text-align:center">当元素获得用户输入时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">onreset</td>
+<td style="text-align:center">当表单重置时运行脚本。HTML 5 不支持</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">onselect</td>
+<td style="text-align:center">当选取元素时运行脚本</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">onsubmit</td>
+<td style="text-align:center">当提交表单时运行脚本</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>keyboard事件(适用于所有h5元素)</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Properties</th>
+<th style="text-align:center">Description</th>
+<th style="text-align:right">Mark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">onkeydown</td>
+<td style="text-align:center">当按下按键时运行脚本</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">onkeypress</td>
+<td style="text-align:center">当按下并松开按键时运行脚本</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">onkeyup</td>
+<td style="text-align:center">当松开按键时运行脚本</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>mouse事件(适用于所有h5元素)</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Properties</th>
+<th style="text-align:center">Description</th>
+<th style="text-align:right">Mark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">onclick</td>
+<td style="text-align:center">当单击鼠标时运行脚本</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">ondblclick</td>
+<td style="text-align:center">当双击鼠标时运行脚本</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">ondrag</td>
+<td style="text-align:center">当拖动元素时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">ondragend</td>
+<td style="text-align:center">当拖动操作结束时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">ondragenter</td>
+<td style="text-align:center">当元素被拖动至有效的拖放目标时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">ondragleave</td>
+<td style="text-align:center">当元素离开有效拖放目标时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">ondragover</td>
+<td style="text-align:center">当元素被拖动至有效拖放目标上方时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">ondragstart</td>
+<td style="text-align:center">当拖动操作开始时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">ondrop</td>
+<td style="text-align:center">当被拖动元素正在被拖放时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">onmousedown</td>
+<td style="text-align:center">当按下鼠标按钮时运行脚本</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">onmousemove</td>
+<td style="text-align:center">当鼠标指针移动时运行脚本</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">onmouseout</td>
+<td style="text-align:center">当鼠标指针移出元素时运行脚本</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">onmouseover</td>
+<td style="text-align:center">当鼠标指针移至元素之上时运行脚本</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">onmouseup</td>
+<td style="text-align:center">当松开鼠标按钮时运行脚本</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">onmousewheel</td>
+<td style="text-align:center">当转动鼠标滚轮时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">onscroll</td>
+<td style="text-align:center">当滚动元素滚动元素的滚动条时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>media事件(适用于所有h5元素,常用于媒体元素)</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Properties</th>
+<th style="text-align:center">Description</th>
+<th style="text-align:right">Mark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">onabort</td>
+<td style="text-align:center">当发生中止事件时运行脚本</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">onerror</td>
+<td style="text-align:center">当在元素加载期间发生错误时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">onloadeddata</td>
+<td style="text-align:center">当加载媒介数据时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">onpause</td>
+<td style="text-align:center">当媒介数据暂停时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">onplay</td>
+<td style="text-align:center">当媒介数据将要开始播放时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">onplaying</td>
+<td style="text-align:center">当媒介数据已开始播放时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">onwaiting</td>
+<td style="text-align:center">当媒介已停止播放但打算继续播放时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>移动端<blockquote>
+<p> 理解click的300ms的延迟响应<br> Click事件在移动手机开发中有300ms的延迟，因为在手机早期，浏览器系统有放大和缩放功能，用户在屏幕上点击两次之后，<br> 系统会触发放大或者缩放功能，因此系统做了一个处理，当触摸一次后，在300ms这段时间内有没有触摸第二次，<br> 如果触摸了第二次的话，说明是触发放大或缩放功能，否则的话是click事件。因此当click时候，所有用户必须等待于300ms后才<br> 会触发click事件。所以当在移动端使用click事件的时候，会感觉到有300ms的迟钝。</p>
+</blockquote>
+</li>
+</ul>
+<ol>
+<li>touch事件</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Properties</th>
+<th style="text-align:center">Description</th>
+<th style="text-align:right">Mark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">touchstart</td>
+<td style="text-align:center">当手指放在屏幕上触发</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">touchmove</td>
+<td style="text-align:center">当手指在屏幕上滑动时，连续地触发</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">touchend</td>
+<td style="text-align:center">当手指从屏幕上离开时触发</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">touchcancel</td>
+<td style="text-align:center">当系统停止跟踪时触发; 该事件暂时使用不到</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">touches</td>
+<td style="text-align:center">表示当前跟踪的触摸操作的touch对象的数组</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>gesture事件</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Properties</th>
+<th style="text-align:center">Description</th>
+<th style="text-align:right">Mark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">gesturestart</td>
+<td style="text-align:center">当一个手指已经按在屏幕上，而另一个手指又触摸在屏幕时触发</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">gesturechange</td>
+<td style="text-align:center">当触摸屏幕的任何一个手指的位置发生改变的时候触发</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">gestureend</td>
+<td style="text-align:center">当任何一个手指从屏幕上面移开时触发</td>
+</tr>
+</tbody>
+</table>
 ]]></content>
     </entry>
     
@@ -3578,10 +3448,372 @@ a.tooltip {position: relative}
     </entry>
     
     <entry>
-      <title><![CDATA[Common tips]]></title>
-      <url>https://yanlee26.github.io/2015/09/03/common/</url>
-      <content type="html"><![CDATA[<h1 id="JS经典案例"><a href="#JS经典案例" class="headerlink" title="JS经典案例"></a>JS经典案例</h1><h3 id="图片轮播jquery"><a href="#图片轮播jquery" class="headerlink" title="图片轮播jquery"></a>图片轮播jquery</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">	&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">	&lt;title&gt;图片轮播&lt;/title&gt;</div><div class="line">	&lt;style&gt;</div><div class="line">		body,div,span,img,a&#123;margin:0;padding: 0;text-decoration: none;&#125;</div><div class="line">		#container&#123;position: relative;width: 400px;height: 450px;overflow: hidden;margin: 20px auto;border:3px solid red;&#125;</div><div class="line">		#list&#123;width: 2800px;height: 450px;position: absolute;z-index: 1;&#125;</div><div class="line">		#list img&#123;width: 400px;height: 450px;float: left;&#125;</div><div class="line">		#buttons&#123;position: absolute;float: left;width: 100px;height: 10px;bottom:50px;left:175px;z-index: 2;&#125;</div><div class="line">		#buttons span&#123;float:left;height: 10px;width: 10px;margin-right: 5px;cursor: pointer;border:1px solid #000;border-radius: 50%;background: #ccc;z-index: 2;&#125;</div><div class="line">		#buttons .on&#123;background: red;&#125;</div><div class="line">		.arrow&#123;cursor: pointer; display: none;position:absolute;height: 30px;width: 30px;top:175px;font-size: 25px;line-height: 25px;text-align:center;color: #ccc;z-index: 2;background-color: RGBA(0,0,0,.3);&#125;</div><div class="line">		.arrow:hover&#123;background-color: RGBA(0,0,0,.6);&#125;</div><div class="line">		#container:hover .arrow&#123;display: block;&#125;</div><div class="line">		#prev&#123;left: 25px;&#125;</div><div class="line">		#next&#123;right: 25px;&#125;</div><div class="line">	&lt;/style&gt;</div><div class="line">	&lt;script&gt;</div><div class="line">		window.onload=function () &#123;//页面加载调用</div><div class="line">			var container=document.getElementById(&apos;container&apos;);</div><div class="line">			var list=document.getElementById(&apos;list&apos;);</div><div class="line">			var buttons=document.getElementById(&apos;buttons&apos;).getElementsByTagName(&apos;span&apos;);</div><div class="line">			var prev=document.getElementById(&apos;prev&apos;);</div><div class="line">			var next=document.getElementById(&apos;next&apos;);</div><div class="line">			var index=1;//用于索引当前按钮</div><div class="line">			var len=5;//图片数量</div><div class="line">			var animated = false;//判断切换是否进行</div><div class="line">			var interval = 3000;//自动播放计时器3s</div><div class="line">			var timer;//定时器</div><div class="line">			 function animate (offset) &#123;//动画切换</div><div class="line">			 	animated=true;//切换进行中</div><div class="line">			 	var time=300;//位移总时间</div><div class="line">			 	var inteval=10;//位移时间间隔</div><div class="line">			 	var times=time/inteval;//位移次数</div><div class="line">                var speed = offset/times;//位移速度</div><div class="line">			 	var left= parseInt(list.style.left)+offset;//目标值</div><div class="line"></div><div class="line"></div><div class="line">			 	var go=function () &#123;</div><div class="line">			 		//这两种情况表示还在切换中</div><div class="line">                    if ( (speed &gt; 0 &amp;&amp; parseInt(list.style.left) &lt; left) || (speed &lt; 0 &amp;&amp; parseInt(list.style.left) &gt; left)) &#123;</div><div class="line">                        list.style.left = parseInt(list.style.left) + speed + &apos;px&apos;;</div><div class="line">                        setTimeout(go, inteval);//继续执行切换go()函数  </div><div class="line">                    &#125;</div><div class="line">                    else &#123;</div><div class="line">                        list.style.left = left+ &apos;px&apos;;</div><div class="line">		                if(left&lt;-400*len)&#123;</div><div class="line">		                	list.style.left=&quot;-400px&quot;;</div><div class="line">		                &#125;</div><div class="line">		                if(left&gt;-400)&#123;</div><div class="line">		                	list.style.left=-400*len+&quot;px&quot;;</div><div class="line">		                &#125;</div><div class="line">                        animated = false;//切换完成 </div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">                go();</div><div class="line">			 	&#125;</div><div class="line">                </div><div class="line">           </div><div class="line">           //用于为按钮添加样式</div><div class="line">		    function showButton() &#123;     </div><div class="line">		       //先找出原来有.on类的按钮，并移除其类</div><div class="line">		        for (var i = 0; i &lt; buttons.length ; i++) &#123;  </div><div class="line">		                  if( buttons[i].className == &apos;on&apos;)&#123;</div><div class="line">		                buttons[i].className = &apos;&apos;;     </div><div class="line">		                           break;</div><div class="line">		            &#125;</div><div class="line">		        &#125;        </div><div class="line">		        //为当前按钮添加类，索引下标从0开始，故需减1</div><div class="line">		        buttons[index - 1].className = &apos;on&apos;;</div><div class="line">		    &#125;</div><div class="line"></div><div class="line">//自动播放</div><div class="line">            function play() &#123;</div><div class="line">                timer = setTimeout(function () &#123;</div><div class="line">                    next.onclick();</div><div class="line">                    play();</div><div class="line">                &#125;, interval);</div><div class="line">            &#125;</div><div class="line">            //清除定时器</div><div class="line">            function stop() &#123;</div><div class="line">                clearTimeout(timer);</div><div class="line">            &#125;</div><div class="line">//右点击</div><div class="line">           next.onclick = function () &#123;</div><div class="line">           		if (animated) &#123;//如果切换还在进行，则直接结束，直到切换完成</div><div class="line">                    return;</div><div class="line">                &#125;</div><div class="line">           		if(index==5)&#123;</div><div class="line">           			index=1;</div><div class="line">           			&#125;</div><div class="line">           			else&#123;</div><div class="line">           				index+=1;</div><div class="line">           			&#125;           		</div><div class="line">                animate(-400);</div><div class="line">                showButton();</div><div class="line">            &#125;</div><div class="line"> //左点击          </div><div class="line">            prev.onclick = function () &#123;</div><div class="line">    			if (animated) &#123;//如果切换还在进行，则直接结束，直到切换完成</div><div class="line">    	         return;</div><div class="line">        	     &#125;</div><div class="line">            	if(index==1)&#123;</div><div class="line">            		index=5;</div><div class="line">            		&#125;</div><div class="line">            		else&#123;</div><div class="line">            			index-=1;</div><div class="line">            		&#125;</div><div class="line">            	</div><div class="line">                animate(400);</div><div class="line">                showButton(); </div><div class="line">                &#125;</div><div class="line">               </div><div class="line">            //通过循环为按钮添加点击事件</div><div class="line">            for (var i=0;i&lt;buttons.length;i++) &#123;</div><div class="line">            	buttons[i].onclick=function() &#123;</div><div class="line">            		if (animated) &#123;//如果切换还在进行，则直接结束，直到切换完成</div><div class="line">	    	         return;</div><div class="line">	        	     &#125;</div><div class="line">                  	//当继续点击按钮时不切换</div><div class="line">                  	if(this.className==&apos;on&apos;)&#123;</div><div class="line">                  		return;</div><div class="line">                  	&#125;</div><div class="line">                  	//通过获取按钮的标签自定义属性index，得到索引值，再计算差值</div><div class="line">                  	var myIndex=parseInt(this.getAttribute(&apos;index&apos;));</div><div class="line">                  	//真正的偏移量</div><div class="line">                  	var offset=-400*(myIndex-index);</div><div class="line">                  	animate(offset);</div><div class="line">                  	//将点击按钮的index属性置为当前</div><div class="line">                  	index=myIndex;</div><div class="line">                  	showButton();</div><div class="line">                  &#125;  </div><div class="line">              &#125; </div><div class="line">	//父容器的移入移出事件</div><div class="line">            container.onmouseover = stop;</div><div class="line">            container.onmouseout = play;</div><div class="line">            play();//自动播放</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	&lt;/script&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">	&lt;div id=&quot;container&quot;&gt;</div><div class="line">		&lt;div id=&apos;list&apos; style=&apos;left: -400px&apos;&gt;</div><div class="line">			&lt;img src=&quot;img/5.jpg&quot; alt=&quot;&quot;&gt;</div><div class="line">			&lt;img src=&quot;img/1.jpg&quot; alt=&quot;&quot;&gt;</div><div class="line">			&lt;img src=&quot;img/2.jpg&quot; alt=&quot;&quot;&gt;</div><div class="line">			&lt;img src=&quot;img/3.jpg&quot; alt=&quot;&quot;&gt;</div><div class="line">			&lt;img src=&quot;img/4.jpg&quot; alt=&quot;&quot;&gt;</div><div class="line">			&lt;img src=&quot;img/5.jpg&quot; alt=&quot;&quot;&gt;</div><div class="line">			&lt;img src=&quot;img/1.jpg&quot; alt=&quot;&quot;&gt;</div><div class="line">		&lt;/div&gt;</div><div class="line">		&lt;div id=&apos;buttons&apos;&gt;</div><div class="line">			&lt;span index=&apos;1&apos; class=&quot;on&quot;&gt;&lt;/span&gt;</div><div class="line">			&lt;span index=&apos;2&apos;&gt;&lt;/span&gt;</div><div class="line">			&lt;span index=&apos;3&apos;&gt;&lt;/span&gt;</div><div class="line">			&lt;span index=&apos;4&apos;&gt;&lt;/span&gt;</div><div class="line">			&lt;span index=&apos;5&apos;&gt;&lt;/span&gt;</div><div class="line">		&lt;/div&gt;</div><div class="line">		&lt;a href=&quot;javascript:;&quot; id=&apos;prev&apos; class=&quot;arrow&quot;&gt;&amp;lt;&lt;/a&gt;</div><div class="line">		&lt;a href=&quot;javascript:;&quot; id=&apos;next&apos; class=&quot;arrow&quot;&gt;&amp;gt;&lt;/a&gt;		</div><div class="line">	&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
-<h3 id="瀑布流js"><a href="#瀑布流js" class="headerlink" title="瀑布流js"></a>瀑布流js</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>]]></content>
+      <title><![CDATA[JS深入浅出学习分析总结]]></title>
+      <url>https://yanlee26.github.io/2015/09/02/moc_summery/</url>
+      <content type="html"><![CDATA[<h1 id="JS深入浅出学习分析总结"><a href="#JS深入浅出学习分析总结" class="headerlink" title="JS深入浅出学习分析总结"></a>JS深入浅出学习分析总结</h1><h2 id="六种数据类型"><a href="#六种数据类型" class="headerlink" title="六种数据类型"></a>六种数据类型</h2><pre><code>弱类型：
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var num=32;num=&apos;str&apos;;32+32;//64</div><div class="line">32+&apos;32&apos; //64;</div><div class="line">&apos;32&apos;-32 //0</div></pre></td></tr></table></figure>
+<p>-数据类型</p>
+<pre><code>- 原始类型(五种)：number,string,boolean,null,undefined
+- 对象类型object:Function,Array,Date...
+</code></pre><ul>
+<li><p>隐式转换</p>
+<ul>
+<li>类型相同，同===</li>
+<li>类型不同，尝试类型转换并比较<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">null==undefined;</div><div class="line">number==string转number</div><div class="line">boolean==?转number 1==true //true</div><div class="line">object==number|string尝试对象转为基本类型 new String(&apos;hi&apos;)==&apos;hi&apos; //true,</div><div class="line">其它：false</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>包装对象：string,number,boolean</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var str=&apos;12&apos;;//string</div><div class="line">str.length ;//2</div><div class="line">str.a=10;//10</div><div class="line">str.a;//undefined,临时对象创建后立即销毁</div><div class="line">var newStr=new String(&apos;12&apos;);//Object</div></pre></td></tr></table></figure>
+</li>
+<li><p>类型转换</p>
+<ul>
+<li>typeof：基本类型及function类型（null失效）</li>
+<li>instanceof:对象类型，适合自定义对象及原生对象（不同iframe和window间失效）</li>
+<li>Object.prototype：[[Class]]适合内置对象和基元类型（null和undefined失效；IE678返回【object Object】）</li>
+<li>constructor</li>
+<li>duck type<h2 id="表达式和运算符"><a href="#表达式和运算符" class="headerlink" title="表达式和运算符"></a>表达式和运算符</h2>###表达式</li>
+</ul>
+</li>
+<li>原始表达式：<ul>
+<li>常量，直接量：3.14，‘a’</li>
+<li>关键字:null,this,true</li>
+<li>变量:i,j,k</li>
+</ul>
+</li>
+<li>复合表达式：原始表达式&amp;原始表达式</li>
+<li>初始化表达式：[1,2]===new Array(1,2);</li>
+<li>函数表达式：var foo=function(){};(function(){})()</li>
+<li>属性访问表达式：var o={x:1};o.x;o[x’]</li>
+<li>调用表达式：foo()</li>
+<li>对象创建表达式：new Func(1);new Object //无参数可以省略’（）‘;<h3 id="运算符（表达式之间）"><a href="#运算符（表达式之间）" class="headerlink" title="运算符（表达式之间）"></a>运算符（表达式之间）</h3></li>
+<li>操作数：<ul>
+<li>一元：+num;</li>
+<li>二元：a+b;</li>
+<li>三元：c?a:b</li>
+</ul>
+</li>
+<li>功能：<ul>
+<li>赋值：a+=1<br>-比较：a==b</li>
+<li>算数：a-b;</li>
+<li>位：a|b;</li>
+<li>逻辑：exp1&amp;&amp;exp2<br>-字符串：‘a’+’b’</li>
+<li>特殊：<pre><code>-delete obj.x //Object.defineProperty(obj,&apos;x&apos;,                      {configurable:false,value:1});
+</code></pre><ul>
+<li>,:var a,b;</li>
+<li>in: var i in item<ul>
+<li>instanceof ,typeof</li>
+</ul>
+</li>
+<li>new :obj.hasOwnProperty(‘x’);obj.<strong>proto</strong>.hasOwnProperty(‘x’) //true</li>
+<li>this</li>
+<li>void:void 0<h3 id="运算符优先级"><a href="#运算符优先级" class="headerlink" title="运算符优先级"></a>运算符优先级</h3><h2 id="语句"><a href="#语句" class="headerlink" title="语句"></a>语句</h2></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>块语句（js无块及级作用域）和var语句</li>
+<li>try catch语句</li>
+<li>function,switch,循环（for in(1.顺序不定，2.enumberable为false时不可用；3.受原型链影响),do-while），with</li>
+<li>严格模式strict<blockquote>
+<p>一种特殊的运行模式，修复了部分语言上的不足，提供了更强的错误检查并增强安全性</p>
+<ul>
+<li>不允许使用with    </li>
+<li>所有变量必须先声明</li>
+<li>eval中代码不能创建eval所在作用域下的变量函数，而是为eval单独创建一个作用域并在eval返回时丢弃</li>
+<li>函数中的特殊对象arguments是静态副本（不像非严格模式时修改arguments或者参数变量会相互影响）</li>
+<li>删除configurable=false的属性会报错而非忽略</li>
+<li>禁止八进制字面量（010）</li>
+<li>eval,arguments变量为关键字，不可作为变量名函数名</li>
+<li>一般函数调用时（非对象方法调用，不使用apply/call/bind等修改this）this指向null而非全局对象，若使用apply/call当传入null或undefined时this指向null或者undefined而非全局。</li>
+<li>试图修改writable=false，在不可扩展对象上添加属性时包TypeError而非忽略</li>
+<li>arguments.caller,arguments.callee禁用<h2 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h2></li>
+</ul>
+</blockquote>
+</li>
+<li>对象结构（原型链）<br><img src="http://img.mukewang.com/5899cf7300011e1c08280441.jpg" alt="属性的属性"></li>
+<li>创建对象方法：<ul>
+<li>对象字面量</li>
+<li>new/原型链<br><img src="http://img.mukewang.com/5899cfd80001d6cb05290393.jpg" alt="原型链的继承"></li>
+<li>Object.create()<br><img src="http://img.mukewang.com/5899d0410001527005980329.jpg" alt="Object.create"></li>
+</ul>
+</li>
+<li><p>属性的操作</p>
+<ul>
+<li>读写<blockquote>
+<p>注意for-in操作符可以把对象原型上属性也遍历出来</p>
+</blockquote>
+</li>
+<li>读写异常<figure class="highlight plain"><figcaption><span>obj=&#123;x:1&#125;;var yz;if(obj.y)&#123;yz=obj.y.z&#125;;</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var yz=obj&amp;&amp;obj.y&amp;&amp;obj.y.z;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>属性删除</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var descriptor=Object.getOwnPropertyDescriptor(Object,&apos;prototype&apos;);</div><div class="line">descriptor.configurable;//false,是否可配置</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="http://img.mukewang.com/5899d324000108a606410289.jpg" alt="图片描述"></p>
+<blockquote>
+<p>node环境中最后一个也是false</p>
+<ul>
+<li>属性检测<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hasOwnProperty();</div><div class="line">propertyIsEnumerable()</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<p><img src="http://img.mukewang.com/5899d52c00013d8206160360.jpg" alt="图片描述"></p>
+<ul>
+<li><p>属性枚举</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">var o=&#123;x:1,y:2,z:3&#125;;</div><div class="line">&apos;toString&apos; in o;//true</div><div class="line">o.propertyIsEnumerable(&apos;toString&apos;);//false</div><div class="line">var key;</div><div class="line">for(key in o)&#123;console.log(key)&#125;;x,y,z</div><div class="line">var obj=Object.create(o);</div><div class="line">obj.a=4;</div><div class="line">var key;</div><div class="line">for(key in obj)&#123;console.log(key)&#125;;a,x,y,z</div><div class="line">for(key in obj)&#123;if(obj.hasOwnProperty(key)&#123;console.log(key)&#125;)&#125;;a</div></pre></td></tr></table></figure>
+</li>
+<li><p>get/set方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var man=&#123;</div><div class="line">    name:&apos;yl&apos;,</div><div class="line">    get age()&#123;return new Date.getFullYear()-1990&#125;,</div><div class="line">    set age(val)&#123;console.log(&apos;np&apos;+val)&#125;</div><div class="line">&#125;</div><div class="line">man.age;//27</div><div class="line">man.age=12;//np12</div></pre></td></tr></table></figure>
+</li>
+<li><p>属性标签</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">Object.getOwnPropertyDescriptor(&#123;pro:true&#125;,&apos;pro&apos;);</div><div class="line">//Object&#123;value:true,writable:true,enumerable:true,configurable:true&#125;</div><div class="line">Object.getOwnPropertyDescriptor(&#123;pro:true&#125;,&apos;a&apos;);//undefined</div><div class="line">var person=&#123;&#125;;</div><div class="line">Object.defineProperty(person,&apos;name&apos;,&#123;</div><div class="line">    configurable:false,</div><div class="line">    writable:false,</div><div class="line">    enumerable:true,</div><div class="line">    value:&apos;yl&apos;</div><div class="line">&#125;);</div><div class="line">person.name;//yl</div><div class="line">person.name=1;</div><div class="line">person.name;//yl</div><div class="line">delete person.name;//false</div><div class="line">Object.defineProperty(person,&apos;type&apos;,&#123;</div><div class="line">    configurable:true,</div><div class="line">    writable:true,</div><div class="line">    enumerable:false,</div><div class="line">    value:&apos;Object&apos;</div><div class="line">&#125;);</div><div class="line">Object.keys(person);//[&apos;name&apos;]</div><div class="line">//多个属性</div><div class="line">Object.defineProperties(person,&#123;</div><div class="line">    title1:&#123;value:&apos;fe1&apos;,enumerable:true&#125;,</div><div class="line">    title2:&#123;value:&apos;fe2&apos;,enumerable:true&#125;,</div><div class="line">    title3:&#123;value:&apos;fe3&apos;,enumerable:true,writable:true&#125;</div><div class="line">&#125;);</div><div class="line">Object.getOwnPropertyDescriptor(person,&apos;title3&apos;);</div><div class="line">//Object&#123;value:&apos;fe3&apos;,writable:true,enumerable:true,configurable:false&#125;</div><div class="line">Object.getOwnPropertyDescriptor(person,&apos;title1&apos;);</div><div class="line">//Object&#123;value:&apos;fe3&apos;,writable:false,enumerable:true,configurable:false&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>对象标签，序列</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var toString=Object.prototype.toString;</div><div class="line">function getType(o)&#123;return toString.call(o).slice(8,-1)&#125;</div><div class="line">getType(true)</div><div class="line">//&quot;Boolean&quot;</div><div class="line">toString.call(null)</div><div class="line">//&quot;[object Null]&quot;</div></pre></td></tr></table></figure>
+</li>
+<li><p>extensible扩展性</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">var obj=&#123;x:1,y:2&#125;;</div><div class="line">Object.isExtensible(obj);//true</div><div class="line">Object.preventExtensions(obj);</div><div class="line">Object.isExtensible(obj);//false</div><div class="line">obj.z=1;</div><div class="line">obj.z;//undefined,add new property failed</div><div class="line">Object.getOwnPropertyDescriptor(obj,&apos;x&apos;);</div><div class="line">//Object&#123;value:1,writable:true,enumerable:true,configurable:true&#125;</div><div class="line">Object.seal(obj);</div><div class="line">Object.getOwnPropertyDescriptor(obj,&apos;x&apos;);</div><div class="line">//Object&#123;value:1,writable:true,enumerable:true,configurable:false&#125;</div><div class="line">Object.isSealed(obj);//true</div><div class="line">Object.freeze(obj);</div><div class="line">Object.getOwnPropertyDescriptor(obj,&apos;x&apos;);</div><div class="line">//Object&#123;value:1,writable:false,enumerable:true,configurable:false&#125;</div><div class="line">Object.isFrozen(obj);//true</div><div class="line">//caution :not affects prototype chain!!!</div></pre></td></tr></table></figure>
+</li>
+<li><p>序列化其他，其它对象方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">//序列化JSON.stringify&amp;JSON.parse</div><div class="line">var obj=&#123;x:1,y:true,z:[1,2,3],nullVal:null&#125;;</div><div class="line">JSON.stringify(obj);//&quot;&#123;&quot;x&quot;:1,&quot;y&quot;:true,&quot;z&quot;:[1,2,3],&quot;nullVal&quot;:null&#125;&quot;</div><div class="line">obj=&#123;x:undefined,y:NaN,z:Infinity,nullVal:new Date()&#125;;</div><div class="line">JSON.stringify(obj);//&quot;&#123;&quot;y&quot;:null,&quot;z&quot;:null,&quot;nullVal&quot;:&quot;2017-02-07T23:10:33.107Z&quot;&#125;&quot;,注意undefined和NaN</div><div class="line">o=JSON.parse(&apos;&#123;&quot;x&quot;:&quot;1&quot;&#125;&apos;);</div><div class="line">o.x;//1</div><div class="line">//其它对象方法toString()&amp;valueOf()</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>##数组</p>
+<ul>
+<li><p>创建与操作</p>
+<blockquote>
+<p>数组是值的有序集合，每个值叫做元素，每个元素在数组中都有数字位置<br>编号，即索引。js中数组是弱类型的，其中可以含有不同类型元素。</p>
+<figure class="highlight plain"><figcaption><span>arr=[1,true,null,undefined,&#123;&#125;,[]]        ```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">- 创建数组字面量：[]</div><div class="line">- new Array()</div><div class="line">- 元素读写</div><div class="line">```arr.length;arr[i];delete arr[j];//delete 操作不改变原数组</div></pre></td></tr></table></figure>
+</blockquote>
+</li>
+<li><p>元素增删</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">- 数组迭代</div><div class="line">```for-in for</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="二维数组-稀疏数组"><a href="#二维数组-稀疏数组" class="headerlink" title="二维数组+稀疏数组"></a>二维数组+稀疏数组</h3><ul>
+<li>稀疏数组：并不含有从0开始的连续索引，一般length属性值比实际元素个数多<h3 id="数组方法"><a href="#数组方法" class="headerlink" title="数组方法"></a>数组方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">//&#123;&#125;=&gt;Object.prototype;[]=&gt;Array.prototype</div><div class="line">Array.prototype.join;</div><div class="line">Array.prototype.reverse;</div><div class="line">Array.prototype.sort;</div><div class="line">Array.prototype.concat;</div><div class="line">Array.prototype.slice;</div><div class="line">Array.prototype.splice;//左闭右开</div><div class="line">Array.prototype.forEach;//ES5</div><div class="line">Array.prototype.map;//ES5</div><div class="line">Array.prototype.map;//ES5</div><div class="line">Array.prototype.filter;//ES5</div><div class="line">Array.prototype.every;//ES5</div><div class="line">Array.prototype.some;//ES5</div><div class="line">Array.prototype.reduce/reduceRight;//ES5</div><div class="line">Array.prototype.indexOf/lastIndexOf;//ES5</div><div class="line">Array.isArray;//ES5；[] instanceof Array;[].constructor===Array;(&#123;&#125;).toString.apply([])===&apos;[object Array]&apos;</div><div class="line">var arr=[1,2,3];</div><div class="line">var sum=arr.reduce(function(x,y)&#123;return x+y&#125;,0);//6</div><div class="line">var max=arr.reduce(function(x,y)&#123;return x&gt;y?x:y&#125;);//3</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>###小结</p>
+<ul>
+<li>数组vs一般对象<br>同：都可以继承，数组是对象对象不一定是数组，数组拥有对象的一切属性和方法<br>异：数组自动更新length，按索引访问数组相对对象属性访问迅速。数组对象集成Array.prototype上的大量数组操作方法</li>
+<li>字符串vs数组<br>字符串可以堪称类数组<figure class="highlight plain"><figcaption><span>str='hello';</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">str.charAt(0);//&apos;h&apos;</div><div class="line">str[1];//e</div><div class="line">Array.prptotype.join.call(str,&apos;_&apos;);//&apos;h_e_l_l_o&apos;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="函数和作用域"><a href="#函数和作用域" class="headerlink" title="函数和作用域"></a>函数和作用域</h2><blockquote>
+<p>一块js代码，定义一次但可以多次调用。js中函数也是对象</p>
+<ul>
+<li>函数=函数名+参数列表+函数体<br>返回值：<br>1.如果函数没有return语句或者return后边是基本类型=&gt;返回this</li>
+</ul>
+<ol>
+<li>如果返回一个对象=&gt;返回以此对象作为构造器的一个实例<h3 id="重点"><a href="#重点" class="headerlink" title="重点"></a>重点</h3></li>
+</ol>
+<ul>
+<li>this</li>
+<li>arguments</li>
+<li>作用域</li>
+<li>调用：<ul>
+<li>直接调用：foo()</li>
+<li>对象方法：o.method()</li>
+<li>构造器：new Foo()</li>
+<li>call/apply/bind:foo.call</li>
+</ul>
+</li>
+<li>创建<ul>
+<li>函数声明：function a(){};会被前置</li>
+<li>函数表达式:<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//function variable</div><div class="line">var a=function()&#123;&#125;</div><div class="line">//IEF(Immediately Executed Function)</div><div class="line">(function()&#123;&#125;)()</div><div class="line">//first-class function</div><div class="line">return function()&#123;&#125;</div><div class="line">//NFE(Named Function Expression)</div><div class="line">var a=function a()&#123;&#125;</div><div class="line">//FC(Function Constructor)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>函数声明</th>
+<th>函数表达式</th>
+<th>函数构造器</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>前置</td>
+<td>Y</td>
+<td>N</td>
+<td>N</td>
+</tr>
+<tr>
+<td>允许匿名</td>
+<td>N</td>
+<td>Y</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>立即调用</td>
+<td>N</td>
+<td>Y</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>在定义该函数的作用域通过函数名访问</td>
+<td>Y</td>
+<td>N</td>
+<td>N</td>
+</tr>
+<tr>
+<td>没有函数名</td>
+<td>N</td>
+<td>N</td>
+<td>Y</td>
+</tr>
+</tbody>
+</table>
+<h3 id="this"><a href="#this" class="headerlink" title="this"></a>this</h3><ul>
+<li>全局的this(浏览器)</li>
+<li><p>一般函数的this</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">function a()&#123;return this&#125;</div><div class="line"> a()===window;//true ,global,object</div><div class="line">//严格模式下：a()===undefined</div></pre></td></tr></table></figure>
+</li>
+<li><p>作为对象方法的this</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">var o=&#123;</div><div class="line">    prop:23,</div><div class="line">f:function()&#123;return this.prop&#125;</div><div class="line">&#125;</div><div class="line">o.f();//23</div><div class="line">function g()&#123;return this.prop&#125;</div><div class="line">o.f=g;</div><div class="line">o.f();//23</div></pre></td></tr></table></figure>
+</li>
+<li><p>对象原型链上的this</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var o=&#123;</div><div class="line">f:function()&#123;return this.a+this.b&#125;</div><div class="line">&#125;</div><div class="line">var p=Object.create(o);</div><div class="line">p.a=1;p.b=2;</div><div class="line">p.f();//3</div></pre></td></tr></table></figure>
+</li>
+<li><p>get/set方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">function modulus()&#123;</div><div class="line">return Math.sqrt(this.re*this.re+this.im*this.im)</div><div class="line">&#125;</div><div class="line">var o=&#123;</div><div class="line">re:1,im:-1,</div><div class="line">get phase()&#123;</div><div class="line">return Math.atan2(this.im,this.re)</div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line">Object.defineProperty(o,&apos;modulus&apos;,&#123;</div><div class="line">    get:modulus,emumerable:true,configurable:true</div><div class="line">&#125;)</div><div class="line">console.log(o.phase,o.modulus);//-.78,1.142</div></pre></td></tr></table></figure>
+</li>
+<li><p>构造器中的this</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">function MyClass()&#123;this.a=22&#125;</div><div class="line">var o=new MyClass();</div><div class="line">o.a;//22</div><div class="line">function C2()&#123;this.a=23;return &#123;a:38&#125;&#125;</div><div class="line">o=new C2()</div><div class="line">o.a;//23</div></pre></td></tr></table></figure>
+</li>
+<li><p>call/apply方法与this</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function add(a,b)&#123;return this.a+this.b+c+d&#125;</div><div class="line">var o=&#123;a:1,b:3&#125;</div><div class="line">add.call(o,5,7);//1+3+5+7=16</div><div class="line">add.apply(o,[10,20]);//1+3+10+20=34</div><div class="line">function bar()&#123;</div><div class="line">console.log(Object.prototype.toString.call(this))</div><div class="line">&#125;</div><div class="line">bar.call(7);//&quot;[object Number]&quot;</div></pre></td></tr></table></figure>
+</li>
+<li><p>bind方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">function f()&#123;return this.a&#125;</div><div class="line">var g=f.bind(&#123;a:&quot;test&quot;&#125;)</div><div class="line">g();//test</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="属性和方法"><a href="#属性和方法" class="headerlink" title="属性和方法"></a>属性和方法</h3><ul>
+<li><p>arguments属性</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">function foo(x,y,z)&#123;</div><div class="line">&apos;use strict&apos;;</div><div class="line">arguments.length;//2</div><div class="line">arguments[0];//1</div><div class="line">arguments[0]=20;</div><div class="line">x;//changed to 20,严格模式下仍是1</div><div class="line">arguments[2]=100;</div><div class="line">z;//still undefined !!! 未传参数失去绑定关系</div><div class="line">arguments.callee===foo;//true,严格模式下不可用</div><div class="line">&#125;</div><div class="line">foo(1,2);//foo.name=&gt;函数名</div><div class="line">foo.length;//3 ，foo.length=&gt;形参个数,arguments.length=&gt;实参个数</div></pre></td></tr></table></figure>
+</li>
+<li><p>call/apply方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">function foo(x,y)&#123;console.log(x,y,this)&#125;</div><div class="line">foo.call(100,1,2);//1,2,Number(100)</div><div class="line">foo.apply(true,[3,4]);//3,4,Boolean(true)</div><div class="line">foo.apply(null);//undefined,undefined,window(严格模式下null)</div><div class="line">foo.apply(undefined);//undefined,undefined,window（严格模式下undefined）</div></pre></td></tr></table></figure>
+</li>
+<li><p>bind方法（IE9以上）</p>
+</li>
+<li><p>bind与currying（把整个函数拆成多个单元）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">function add(a,b,c)&#123;return a+b+c&#125;</div><div class="line">var func=add.bind(undefined,100);</div><div class="line">func(1,2);//103</div><div class="line">var func2=func.bind(undefined,200)</div><div class="line">func2(10);//310</div></pre></td></tr></table></figure>
+</li>
+<li><p>bind与new</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">function foo()&#123;this.b=100;return this.a&#125;</div><div class="line">var func=foo.bind(&#123;a:1&#125;)</div><div class="line">func();//1</div><div class="line">new func();//&#123;b:100&#125;，bind被忽略？？？</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="闭包作用域"><a href="#闭包作用域" class="headerlink" title="闭包作用域"></a>闭包作用域</h2><ul>
+<li><p>闭包</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function outer()&#123;</div><div class="line">    var localVal=30;</div><div class="line">    return function()&#123;</div><div class="line">        return localVal;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">var func=outer();</div><div class="line">func();//30</div></pre></td></tr></table></figure>
+</li>
+<li><p>封装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">(function ()&#123;</div><div class="line">    var _userId=123;</div><div class="line">    var _typeId=&quot;Item&quot;;</div><div class="line">    var export=&#123;&#125;;</div><div class="line">    function converter(userId)&#123;</div><div class="line">        return +userId;</div><div class="line">&#125;</div><div class="line">export.getUserId=function()&#123;</div><div class="line">    return converter(_userId);</div><div class="line">&#125;</div><div class="line">export.getTypeId=function()&#123;</div><div class="line">return _typedId;</div><div class="line">&#125;</div><div class="line">window.export=export;</div><div class="line">&#125;)()</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>好处：灵活方便，封装；坏处：空间浪费，内存泄漏，性能消耗</p>
+<h3 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h3><ul>
+<li>类型<ul>
+<li>全局</li>
+<li>函数</li>
+<li>eval</li>
+</ul>
+</li>
+<li>作用于链<h3 id="ES3的执行上下文（EC）"><a href="#ES3的执行上下文（EC）" class="headerlink" title="ES3的执行上下文（EC）"></a>ES3的执行上下文（EC）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">function funcEC1()&#123;</div><div class="line">console.log(&apos;EC1&apos;);</div><div class="line">    var funcEC2=function ()&#123;</div><div class="line">        console.log(&apos;EC2&apos;);</div><div class="line">        var funcEC3=function()&#123;</div><div class="line">            console.log(&apos;EC3&apos;);</div><div class="line">        &#125;;</div><div class="line">        funcEC3();</div><div class="line">&#125;;</div><div class="line">    funcEC2();</div><div class="line">&#125;;</div><div class="line">funcEC1();</div><div class="line">//EC0 EC1 EC2 EC3</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<ul>
+<li>概念：变量对象（Variable Object）,一个抽象概念中的对象，用于存储执行上下文中的变量，函数声明，函数参数。</li>
+<li><p>EC与VO</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">activeExecutionContext=&#123;</div><div class="line">    VO:&#123;</div><div class="line">    data_var,data_func_declaration,data_func_arguments</div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line">GlobalContextVO   VO===this===global</div><div class="line">//demo</div><div class="line">var a=10;</div><div class="line">function test(x)&#123;</div><div class="line">    var b=20;</div><div class="line">&#125;</div><div class="line">test(30);</div><div class="line">//=&gt;</div><div class="line">VO(gC)=&#123;</div><div class="line">    a:10,</div><div class="line">    test:&lt;ref to function&gt;</div><div class="line">&#125;</div><div class="line">VO(test functionContext)=&#123;</div><div class="line">    x:30,b:20</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>全局执行上下文GEC</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">VO(globalContext)===[[global]];</div><div class="line">[[global]]=&#123;</div><div class="line">    Math:&lt;...&gt;,</div><div class="line">    String:&lt;&gt;,</div><div class="line">    isNaN:function ()&#123;Native Code&#125;,</div><div class="line">    ...</div><div class="line">    window:global//applied by browser(host)</div><div class="line">&#125;;</div><div class="line">GlobalContextVO  (VO===this===global)</div><div class="line">String(10);//[[global]].String(10);</div><div class="line">window.a=10;//[[global]].window.a=10</div><div class="line">this.b=20;//[[global]].b=20</div></pre></td></tr></table></figure>
+</li>
+<li><p>函数中的激活对象</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">VO(functionContext)===AO;</div><div class="line">AO=&#123;</div><div class="line">    arguments:&lt;Arg0&gt;//函数调用时生成</div><div class="line">&#125;;</div><div class="line">arguments=&#123;</div><div class="line">    callee,length,properties-indexes</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>变量初始化阶段</p>
+<blockquote>
+<p>VO填充顺序：</p>
+</blockquote>
+</li>
+</ul>
+<ol>
+<li>函数参数（arguments=arguments||undefined）;<br>2.函数声明（命名冲突则覆盖,函数表达式不影响VO）；<br>3.变量声明（初始化为undefined，命名冲突则忽略）<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">function test(a,b)&#123;</div><div class="line">var c=10;</div><div class="line">function d()&#123;&#125;</div><div class="line">var e=function _e()&#123;&#125;;</div><div class="line">(function x()&#123;&#125;)();</div><div class="line">b=20;</div><div class="line">&#125;</div><div class="line">test(10);</div><div class="line">//AO</div><div class="line">AO(test)=&#123;</div><div class="line">a:10,b:undefined,c:undefined,d:&lt;ref to func &apos;d&apos;&gt;,e:undefined</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</code></pre></li>
+</ol>
+<p>###demo<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function test(a,b)&#123;</div><div class="line">var c=10;</div><div class="line">function d()&#123;&#125;</div><div class="line">var e=function _e()&#123;&#125;;</div><div class="line">(function x()&#123;&#125;)</div><div class="line">b=30;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<ul>
+<li><p>变量初始化阶段</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">test(10);</div><div class="line">AO(test)=&#123;</div><div class="line">a:10,b:undefined,</div><div class="line">c:undefined,</div><div class="line">d:&lt;ref to func &apos;d&apos;&gt;</div><div class="line">e:undefined</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>代码执行阶段</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">AO(test)=&#123;</div><div class="line">a:10,b:20,</div><div class="line">c:10,</div><div class="line">d:&lt;ref to FunctionDeclaration &apos;d&apos;&gt;</div><div class="line">e:function _e&#123;&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>  测试</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">alert(x);</div><div class="line">var x=10;</div><div class="line">alert(x);x=20;</div><div class="line">function x()&#123;&#125;</div><div class="line">alert(x);</div><div class="line">if(true)&#123;var a=1&#125;else&#123;var b=true&#125;</div><div class="line">alert(a);alert(b)</div><div class="line">//function x()&#123;&#125; 10 20 1 undefined</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="OOP（封装-继承-多态-抽象）"><a href="#OOP（封装-继承-多态-抽象）" class="headerlink" title="OOP（封装+继承+多态+抽象）"></a>OOP（封装+继承+多态+抽象）</h2><blockquote>
+<p>OOP:一种程序设计范型，同时也是一种程序开发方法。对象指的是类的实例。它将对象作为程序的基本单元，将程序和数据封装其中，以提高软件的重用性，灵活性和扩展性。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">function Person(name,age)&#123;this.name=name;this.age=age;&#125;</div><div class="line"></div><div class="line">Person.prototype.hi=function()&#123;console.log(&apos;Hi Iam&apos;+this.name+&apos;I am&apos;+this.age+&apos;years old now&apos;)&#125;</div><div class="line"></div><div class="line">Person.prototype.LEGS_NUM=2;</div><div class="line">Person.prototype.ARMS_NUM=2;</div><div class="line">Person.prototype.walk=function()&#123;console.log(this.nama+&apos;is walking&apos;)&#125;</div><div class="line">function Student(name,age,className&#123;Person.call(this,name,age);this.className=className&#125;</div><div class="line"></div><div class="line">Student.prototype=Object.create(Person.prototype);//</div><div class="line">Student.prototype.constructor=Student;</div><div class="line">Student.prototype.hi=function ()&#123;</div><div class="line">    console.log(&quot;Hi&quot;+this.name+&apos;,I am&apos;+this.age+&apos;years old ,and from&apos;+this.className+&apos;.&apos;)</div><div class="line">&#125;</div><div class="line">Student.prototype.learn=function(subject)&#123;console.log(&apos;my major is&apos;+subject)&#125;</div><div class="line">//test</div><div class="line">var tom=new Student(&apos;Tom&apos;,22,&apos;Class 3&apos;);</div><div class="line">tom.hi();</div><div class="line">tom.LEGS_NUM;</div><div class="line">tom.walk();</div><div class="line">tom.learn();</div></pre></td></tr></table></figure></p>
+</blockquote>
+<p><img src="http://img.mukewang.com/589babcb0001243408190462.jpg" alt="再谈原型链"></p>
+<h3 id="prototype属性"><a href="#prototype属性" class="headerlink" title="prototype属性"></a>prototype属性</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">Student.prototype.x=101;</div><div class="line">tom.x;//101</div><div class="line"></div><div class="line">Student.prototype=&#123;y:3&#125;;</div><div class="line">tom.y;//undefined</div><div class="line">tom.x;//101</div><div class="line"></div><div class="line">var jack=new Student(&apos;Jack&apos;,22,&apos;Class 1&apos;);</div><div class="line">jack.x;//undefined</div><div class="line">jack.y;//2</div></pre></td></tr></table></figure>
+<p>-Thus:<br>1.动态修改prototype对象的属性, 会影响创建及已创建的实例</p>
+<ol>
+<li>修改整个prototype对象，只影响后续创建的实例</li>
+</ol>
+<ul>
+<li>内置构造器的prototype<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">Object.prototype.x=1;</div><div class="line">var obj=&#123;&#125;;</div><div class="line">obj.x;//1</div><div class="line">for(var key in obj)&#123;console.log(key)&#125;//x</div><div class="line">//ES5</div><div class="line">Object.defineProperty(Object.prototype,&#123;</div><div class="line">writable:true,value:1</div><div class="line">&#125;)</div><div class="line">var obj=&#123;&#125;;</div><div class="line">obj.x;//1</div><div class="line">for(var key in obj)&#123;console.log(key)&#125;//nothing</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="实现继承的方式"><a href="#实现继承的方式" class="headerlink" title="实现继承的方式"></a>实现继承的方式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">function Person()&#123;&#125;</div><div class="line">function Student()&#123;&#125;</div><div class="line">Student.prototype=Person.prototype;//1 bad</div><div class="line">Student.prototype=new Person;//2===4</div><div class="line">Student.prototype=Object.create(Person.prototype);//3,ES5</div><div class="line">//check</div><div class="line">if(!Object.create)&#123;</div><div class="line">    Object.create=function(proto)&#123;</div><div class="line">    function F()&#123;&#125;</div><div class="line">    F.prototype=proto;</div><div class="line">    return new F;</div><div class="line">&#125;    </div><div class="line">&#125;</div><div class="line">Student.prototype.constructor=Person;//4</div></pre></td></tr></table></figure>
+<h3 id="模拟重载，链式调用，模块化"><a href="#模拟重载，链式调用，模块化" class="headerlink" title="模拟重载，链式调用，模块化"></a>模拟重载，链式调用，模块化</h3><ul>
+<li><p>模拟重载</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">function Person()&#123;</div><div class="line">    var args=arguments;</div><div class="line">    if(typeof args[0]===&apos;object&apos;&amp;&amp;args[0])&#123;</div><div class="line">        if(args[0].name)&#123;</div><div class="line">            this.name=args[0].name        </div><div class="line">        &#125;</div><div class="line">         if(args[0].age)&#123;</div><div class="line">            this.age=args[0].age        </div><div class="line">        &#125;else&#123;</div><div class="line">            if(args[0])&#123;</div><div class="line">                this.name=args[0]</div><div class="line">            &#125;</div><div class="line">            if(args[1])&#123;</div><div class="line">                this.age=args[1]</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">Person.prototype.toString=function()&#123;</div><div class="line">    return &apos;name=&apos;+this.name+&apos;,age&apos;+this.age;</div><div class="line">&#125;</div><div class="line">var tom=new Person(&apos;tom&apos;,28);</div><div class="line">var jack=new Person(&#123;name:&apos;Jack&apos;,age:23&#125;)</div></pre></td></tr></table></figure>
+</li>
+<li><p>调用子类的方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">function Person(name)&#123;this.name=name;&#125;</div><div class="line">function Student(name,className)&#123;this.className=className;Person.call(this,name);&#125;</div><div class="line">var tom=new Student(&apos;tom&apos;,&apos;NT&apos;);</div><div class="line"></div><div class="line">Person.prototype.init=function()&#123;&#125;；</div><div class="line">Student.prototypt.init=function()&#123;Person.prototype.init.apply(this,arguments)&#125;;</div></pre></td></tr></table></figure>
+</li>
+<li><p>链式调用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function ClassManager()&#123;</div><div class="line">    ClassManager.prototype.addClass=function(str)&#123;</div><div class="line">        console.log(&apos;Class&apos;+str+&apos;added&apos;);</div><div class="line">        return this;//实现链式调用</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">var manager=new ClassManager();</div><div class="line">manager.addClass(&apos;classA&apos;).addClass(&apos;classB&apos;).addClass(&apos;classC&apos;)</div></pre></td></tr></table></figure>
+</li>
+<li><p>抽象类</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">function DetectorBase()&#123;</div><div class="line">    throw new Error(&apos;Abstract class can not be invoked directly!&apos;)</div><div class="line">&#125;</div><div class="line">DetectorBase.detect=function()&#123;console.log(&apos;Detector starting...&apos;)&#125;;</div><div class="line">DetectorBase.stop=function()&#123;console.log(&apos;Detector stopped.&apos;)&#125;;</div><div class="line">DetectorBase.init=function()&#123;throw new Error(&apos;Error&apos;)&#125;;</div><div class="line"></div><div class="line">function LinkDetector()&#123;&#125;</div><div class="line">LinkDetector.prototype=Object.create(Detector.prototype);</div><div class="line">LinkDetector.prototype.constructor=LinkDetector;</div><div class="line">//...add methods to LinkDetector...</div></pre></td></tr></table></figure>
+</li>
+<li><p>defineProperty(ES5)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">function Person(name)&#123;</div><div class="line">    Obect.defineProperty(this,&apos;name&apos;,&#123;value:name,enumerable:true&#125;);</div><div class="line">&#125;</div><div class="line">Object.defineProperty(Person,&quot;ARMS_NUM&quot;,&#123;value:2,enumerable:true&#125;);</div><div class="line">Object.seal(Person.prototype);</div><div class="line">Object.seal(Person);</div><div class="line">function Student(name,className)&#123;</div><div class="line">    this.className=className;</div><div class="line">Person.call(this,name)</div><div class="line">&#125;</div><div class="line">Student.prototype=Object.create(Person.prototype);</div><div class="line">Student.prototype.constructor=Student;</div></pre></td></tr></table></figure>
+</li>
+<li><p>模块化</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">var moduleA;</div><div class="line">moduleA=function()&#123;</div><div class="line">    var prop=1;</div><div class="line">    function func()&#123;</div><div class="line">        return&#123;</div><div class="line">        func:func,</div><div class="line">        prop:prop</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var moduleA;</div><div class="line">moduleA=new function()&#123;</div><div class="line">    var prop=1;</div><div class="line">    function func()&#123;&#125;</div><div class="line">    this.func=func;</div><div class="line">    this.prop=prop;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>实践（探测器）<br>```<br>!function(global){<br>  function DetectorBase(configs){</p>
+<pre><code>if(!this instanceof DetectorBase){
+    throw new Error(&apos;Do not invoke without new&apos;)
+}
+this.configs=configs;
+this.analyze();
+</code></pre><p>  }<br>  DetectorBase.prototype.detect=function(){</p>
+<pre><code>throw new Error(&apos;Not implemented&apos;)
+</code></pre><p>  }<br>  DetectorBase.prototype.analyze=function(){<br>  console.log(‘analyzing…’);<br>  this.data=’###data###’;<br>  }<br>}<br>function LinkDetector(links){<br>  if(!this instanceof LinkDetector){</p>
+<pre><code>throw new Error(&apos;Do not invoke without new&apos;);
+</code></pre><p>  }<br>  this.links=links;<br>  DetectorBase.aply(this,arguments);<br>}<br>function ContainerDetector(containers){<br>  if(!this instanceof ContainerDetector){</p>
+<pre><code>throw new Error(&apos;Do not invoke without new&apos;)
+</code></pre><p>  }<br>  this.containers=containers;<br>  DetectorBase.apply(this,arguments);<br>}<br>//inherit first<br>inherit(LinkDetector,DetectorBase);<br>inherit(ContainerDetector,DetectorBase);<br>//</p>
+</li>
+</ul>
+]]></content>
     </entry>
     
     <entry>
