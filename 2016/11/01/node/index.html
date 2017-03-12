@@ -1,0 +1,2008 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo,Next," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="简介
+Node是一个基于Chrome的V8JS引擎的JS运行时。Node运用事件驱动(event-driven)，非阻塞I/O模型(non-blocking I/O)使其轻量和高效。Node的包管理器npm，是世界上生态系统最大的开源库。
+
+示例作为异步事件驱动的JS运行时，Node旨在构建大型网络应用。如下示例中，可以并发(concurrently)处理很多连接。每次连接中，回调都被触发(fir">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Node7.7.2--explore">
+<meta property="og:url" content="https://yanlee26.github.io/2016/11/01/node/index.html">
+<meta property="og:site_name" content="Frank_Lyan's Blog">
+<meta property="og:description" content="简介
+Node是一个基于Chrome的V8JS引擎的JS运行时。Node运用事件驱动(event-driven)，非阻塞I/O模型(non-blocking I/O)使其轻量和高效。Node的包管理器npm，是世界上生态系统最大的开源库。
+
+示例作为异步事件驱动的JS运行时，Node旨在构建大型网络应用。如下示例中，可以并发(concurrently)处理很多连接。每次连接中，回调都被触发(fir">
+<meta property="og:updated_time" content="2017-03-12T14:40:29.412Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Node7.7.2--explore">
+<meta name="twitter:description" content="简介
+Node是一个基于Chrome的V8JS引擎的JS运行时。Node运用事件驱动(event-driven)，非阻塞I/O模型(non-blocking I/O)使其轻量和高效。Node的包管理器npm，是世界上生态系统最大的开源库。
+
+示例作为异步事件驱动的JS运行时，Node旨在构建大型网络应用。如下示例中，可以并发(concurrently)处理很多连接。每次连接中，回调都被触发(fir">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"hide"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6382889515761010000,
+      author: 'Author'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="https://yanlee26.github.io/2016/11/01/node/"/>
+
+  <title> Node7.7.2--explore | Frank_Lyan's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Frank_Lyan's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">progressive programing</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-commenting"></i> <br />
+            
+            留言
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search fa-lg"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Node7.7.2--explore
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-11-01T21:05:24+08:00" content="2016-11-01">
+              2016-11-01
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/NODE/" itemprop="url" rel="index">
+                    <span itemprop="name">NODE</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+
+          
+
+          
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv">热度
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>℃
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><blockquote>
+<p>Node是一个基于Chrome的V8JS引擎的JS运行时。Node运用事件驱动(event-driven)，非阻塞I/O模型(non-blocking I/O)使其轻量和高效。Node的包管理器npm，是世界上生态系统最大的开源库。</p>
+</blockquote>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p>作为异步事件驱动的JS运行时，Node旨在构建大型网络应用。如下示例中，可以并发(concurrently)处理很多连接。<br>每次连接中，回调都被触发(fired)，但如果没有事做Node保持休眠。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">const http = require(&apos;http&apos;);</div><div class="line">const hostname = &apos;127.0.0.1&apos;;</div><div class="line">const port = 3000;</div><div class="line">const server = http.createServer((req, res) =&gt; &#123;</div><div class="line">  res.statusCode = 200;</div><div class="line">  res.setHeader(&apos;Content-Type&apos;, &apos;text/plain&apos;);</div><div class="line">  res.end(&apos;Hello World\n&apos;);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">server.listen(port, hostname, () =&gt; &#123;</div><div class="line">  console.log(`Server running at http://$&#123;hostname&#125;:$&#123;port&#125;/`);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>这点与当今使用OS线程(OS threads)的更常见并发模型对比鲜明。基于线程(Thread-based)的网络相对低效且难以使用。<br>此外，Node的用户不必担心死锁(dead-locking)过程因为压根没有。几乎没有函数在Node中直接执行I/O<br>所以进程永不阻塞。因此，大规模系统在Node中可以非常合理地开发。</p>
+<p>Node设计上类似Ruby的Event Machine或Python的Twisted等系统。Node在事件模型( event model)上更进一步。<br>它提供一个事件循环(event loop)而非库(library)作为运行时的构建(runtime construct)。其它系统中事件循<br>环启动之初经常存在阻塞的调用(blocking call)。通常行为(behavior)通过脚本起初的回调来定义,且最终通过启动一个阻塞<br>的回调(如EventMachine::run())启动一个服务。在Node中不存在如此的start-the-event-loop调用。Node中执行了<br>输入脚本便直接进入事件循环。当没有更多回调去执行时，Node存在event loop；此举正如浏览器JS—event loop对用户隐藏。</p>
+<p>HTTP是Node中的头等公民，设计时考虑流和低延迟。这使得Node非常适合于Web库或框架的基础。</p>
+<p>只因Node旨在无线程，并非不能利用环境中的多核。子进程可以过使用我们的child_process.fork（）API生成，并且设计为<br>易于与之通信。基于同一接口的是集群模块，它允许您在进程之间共享套接字，以便通过内核实现负载平衡。</p>
+<h2 id="Node-js-v7-7-2-Documentation"><a href="#Node-js-v7-7-2-Documentation" class="headerlink" title="Node.js v7.7.2 Documentation"></a>Node.js v7.7.2 Documentation</h2><blockquote>
+<p>Throughout the documentation, you will see indications of a section’s stability.<br> The Node.js API is still somewhat changing, and as it matures, certain parts are more reliable than others.<br>Some are so proven, and so relied upon, that they are unlikely to ever change at all. Others are brand new and<br>experimental, or known to be hazardous and in the process of being redesigned.</p>
+</blockquote>
+<p>用法和示例：</p>
+<figure class="highlight plain"><figcaption><span>[options] [v8 options] [script.js | -e "script"] [arguments]```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">### Assertion Testing断言测试</div><div class="line"></div><div class="line">&gt; Node内置模块，用于断言。若表达式不符预期则抛出错误。种类很多但常用的只有几种。</div><div class="line"></div><div class="line">- assert(value[, message])</div></pre></td></tr></table></figure>
+<p>var assert = require(‘assert’);<br>assert(true);// OK<br>assert(1);// OK<br>assert(false);// throws “AssertionError: false == true”<br>assert(false==0);// OK<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">- assert.deepEqual(actual, expected[, message])</div></pre></td></tr></table></figure></p>
+<p>const assert = require(‘assert’);</p>
+<p>const o1 = {<br>  a: {<br>    b: 1<br>  }<br>};<br>const o2 = {<br>  a: {<br>    b: 2<br>  }<br>};<br>const o3 = {<br>  a: {<br>    b: 1<br>  }<br>};<br>const o4 = Object.create(o1);</p>
+<p>assert.deepEqual(o1, o1); //OK<br>assert.deepEqual(o1, o2); // AssertionError: { a: { b: 1 } } deepEqual { a: { b: 2 } }<br>// values of b are different<br>assert.deepEqual(o1, o3); //OK<br>assert.deepEqual(o1, o4); // AssertionError: { a: { b: 1 } } deepEqual {}<br>// Prototypes are ignored<br>assert.deepEqual(o1, o4.<strong>proto</strong>); //OK</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">- assert.deepStrictEqual(actual, expected[, message])</div></pre></td></tr></table></figure>
+<p>assert.deepEqual({a:1}, {a:’1’});// OK, because 1 == ‘1’<br>assert.deepStrictEqual({a:1}, {a:’1’});// because 1 !== ‘1’ using strict equality<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">- assert.doesNotThrow(block[, error][, message])</div><div class="line"></div><div class="line">- assert.equal(actual, expected[, message])</div></pre></td></tr></table></figure></p>
+<p>//相当于==<br>assert.equal(1, 1);// OK, 1 == 1<br>assert.equal(1, ‘1’);// OK, 1 == ‘1’<br>assert.equal(1, 2);// AssertionError: 1 == 2<br>assert.equal({a: {b: 1}}, {a: {b: 1}});//AssertionError: { a: { b: 1 } } == { a: { b: 1 } }<br>{a:{b:1}}=={a:{b:1}};//false</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">- assert.fail(actual, expected, message, operator)</div><div class="line">- assert.ifError(value)</div><div class="line">- assert.notDeepEqual(actual, expected[, message])</div><div class="line">- assert.notDeepStrictEqual(actual, expected[, message])</div><div class="line">- assert.notEqual(actual, expected[, message])</div><div class="line">- assert.notStrictEqual(actual, expected[, message])</div><div class="line">- assert.ok(value[, message])</div><div class="line">- assert.strictEqual(actual, expected[, message])</div><div class="line"></div><div class="line">### Buffer </div><div class="line"></div><div class="line">&gt; 在ES6引入TypedArray之前，JS中只有字符串数据类型，没有二进制数据类型；JS比较擅长字符串处理但处理二进制数据(比如TCP数据)就不足。</div><div class="line">在Node中，定义了一个Buffer类，用于专门存放二进制文件的缓冲区，及方法处理，可以全局访问。Node中Buffer类是随Node内核</div><div class="line">一起发布的核心库，为Node提供了一种存储原始数据的方法，可以处理二进制数据，每当需要在Node</div><div class="line">中处理I/O操作中移动的数据时，就有可能使用。原始数据存放在Buffer类的实例中，一个Buffer类似于</div><div class="line">一个整数数组，但对于V8堆内存之外的一块原始内存。</div><div class="line"></div><div class="line">- 与TypedArray关系</div><div class="line"></div><div class="line">&gt;TypedArray构造函数可以接受Buffer实例作为参数生成一个二进制数组.二进制数组的操作，与Buffer对象的操作基本上是兼容的，只有轻微的差异。比如，二进制数组的slice方法返回原内存的拷贝，而Buffer对象的slice方法创造原内存的一个视图（view）。</div><div class="line"></div><div class="line">- 示例</div></pre></td></tr></table></figure>
+<p>// Creates a zero-filled Buffer of length 10.<br>const buf1 = Buffer.alloc(10);</p>
+<p>// Creates a Buffer of length 10, filled with 0x1.<br>const buf2 = Buffer.alloc(10, 1);</p>
+<p>// Creates an uninitialized buffer of length 10.<br>// This is faster than calling Buffer.alloc() but the returned<br>// Buffer instance might contain old data that needs to be<br>// overwritten using either fill() or write().<br>const buf3 = Buffer.allocUnsafe(10);</p>
+<p>// Creates a Buffer containing [0x1, 0x2, 0x3].<br>const buf4 = Buffer.from([1, 2, 3]);</p>
+<p>// Creates a Buffer containing UTF-8 bytes [0x74, 0xc3, 0xa9, 0x73, 0x74].<br>const buf5 = Buffer.from(‘tést’);</p>
+<p>// Creates a Buffer containing Latin-1 bytes [0x74, 0xe9, 0x73, 0x74].<br>const buf6 = Buffer.from(‘tést’, ‘latin-1’);</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">- 类的方法</div><div class="line"></div><div class="line">    + Buffer.isEncoding():返回一个布尔值，表征是否为指定编码</div><div class="line"></div><div class="line">    ```Buffer.isEncoding(&apos;utf8&apos;)</div></pre></td></tr></table></figure>
+<pre><code>+ Buffer.isBuffer():接受一个对象为参数，表征是否为Buffer实例
+
+<figure class="highlight plain"><figcaption><span>// false ```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">+ Buffer.byteLength():返回字符串实际占据的字节长度</div><div class="line">```Buffer.byteLength(&apos;Hello&apos;, &apos;utf8&apos;) // 5</div></pre></td></tr></table></figure>
+
++ Buffer.concat()
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var i1 = new Buffer(&apos;Hello&apos;);</div><div class="line">var i2 = new Buffer(&apos; &apos;);</div><div class="line">var i3 = new Buffer(&apos;World&apos;);</div><div class="line">Buffer.concat([i1, i2, i3], 10).toString()</div><div class="line">// &apos;Hello Worl&apos;</div></pre></td></tr></table></figure>
+</code></pre><ul>
+<li><p>实例方法</p>
+<ul>
+<li><p>write()</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var buf = new Buffer(5);</div><div class="line">buf.write(&apos;He&apos;);</div><div class="line">buf.write(&apos;l&apos;, 2);</div><div class="line">buf.write(&apos;lo&apos;, 3);</div><div class="line">console.log(buf.toString());</div><div class="line">// &quot;Hello&quot;</div></pre></td></tr></table></figure>
+</li>
+<li><p>slice()</p>
+</li>
+<li>toString()</li>
+<li>toJSON()</li>
+</ul>
+</li>
+</ul>
+<h3 id="C-C-Addons-插件"><a href="#C-C-Addons-插件" class="headerlink" title="C/C++ Addons 插件"></a>C/C++ Addons 插件</h3><blockquote>
+<p>Node.js 插件是用 C 或 C++ 编写的动态链接共享对象，可以使用 require() 函数加载到 Node.js 中，且像普通的<br>Node.js 模块一样被使用。 它们主要用于为运行于 Node.js 的 JavaScript 和 C/C++ 库之间提供接口。</p>
+</blockquote>
+<ul>
+<li>Hello world<ul>
+<li>Building</li>
+<li>Linking to Node.js’ own dependencies</li>
+<li>Loading Addons using require()</li>
+</ul>
+</li>
+<li>Native Abstractions for Node.js</li>
+<li>Addon examples<ul>
+<li>Function arguments</li>
+<li>Callbacks</li>
+<li>Object factory</li>
+<li>Function factory</li>
+<li>Wrapping C++ objects</li>
+<li>Factory of wrapped objects</li>
+<li>Passing wrapped objects around</li>
+<li>AtExit hooks<ul>
+<li>void AtExit(callback, args)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="Child-Process"><a href="#Child-Process" class="headerlink" title="Child Process"></a>Child Process</h3><blockquote>
+<p>默认情况下，在 Node.js 的父进程和衍生的子进程之间会建立 stdin、stdout 和 stderr 的管道。<br>这使得数据可以以非阻塞的方式在这些管道流通。 注意，有些程序会在内部使用行缓冲 I/O。 虽然这并不影响 Node.js，但这意味着发送到子过程的数据可能无法被立即消费。</p>
+</blockquote>
+<h3 id="Cluster-集群"><a href="#Cluster-集群" class="headerlink" title="Cluster(集群)"></a>Cluster(集群)</h3><h3 id="Command-Line-Options"><a href="#Command-Line-Options" class="headerlink" title="Command Line Options"></a>Command Line Options</h3><ul>
+<li><p>Synopsis</p>
+</li>
+<li><p>Options</p>
+<ul>
+<li>-v, –version</li>
+<li>-h, –help</li>
+<li>-e, –eval “script”</li>
+<li>-p, –print “script”</li>
+<li>-c, –check</li>
+<li>-i, –interactive</li>
+<li>-r, –require module</li>
+<li>–no-deprecation</li>
+<li>–trace-deprecation</li>
+<li>–throw-deprecation</li>
+<li>–no-warnings</li>
+<li>–trace-warnings</li>
+<li>–trace-sync-io</li>
+<li>–trace-events-enabled</li>
+<li>–trace-event-categories</li>
+<li>–zero-fill-buffers</li>
+<li>–preserve-symlinks</li>
+<li>–track-heap-objects</li>
+<li>–prof-process</li>
+<li>–v8-options</li>
+<li>–tls-cipher-list=list</li>
+<li>–enable-fips</li>
+<li>–force-fips</li>
+<li>–openssl-config=file</li>
+<li>–use-openssl-ca, –use-bundled-ca</li>
+<li>–icu-data-dir=file</li>
+</ul>
+</li>
+<li><p>Environment Variables</p>
+</li>
+</ul>
+<h3 id="Console"><a href="#Console" class="headerlink" title="Console"></a>Console</h3><blockquote>
+<p>console 模块提供了一个简单的调试控制台，它与 Web 浏览器提供的 JavaScript 控制台的机制类似。</p>
+</blockquote>
+<ul>
+<li>Class: Console<ul>
+<li>new Console(stdout[, stderr])</li>
+<li>console.assert(value[, message][, …args])</li>
+<li>console.dir(obj[, options])</li>
+<li>console.error([data][, …args])</li>
+<li>console.info([data][, …args])</li>
+<li>console.log([data][, …args])</li>
+<li>console.time(label)</li>
+<li>console.timeEnd(label)</li>
+<li>console.trace([message][, …args])</li>
+<li>console.warn([data][, …args])</li>
+</ul>
+</li>
+</ul>
+<h3 id="Crypto-加密"><a href="#Crypto-加密" class="headerlink" title="Crypto(加密)"></a>Crypto(加密)</h3><ul>
+<li>Determining if crypto support is unavailable</li>
+<li>Class: Certificate<ul>
+<li>new crypto.Certificate()</li>
+<li>certificate.exportChallenge(spkac)</li>
+<li>certificate.exportPublicKey(spkac)</li>
+<li>certificate.verifySpkac(spkac)</li>
+</ul>
+</li>
+<li>Class: Cipher<ul>
+<li>cipher.final([output_encoding])</li>
+<li>cipher.setAAD(buffer)</li>
+<li>cipher.getAuthTag()</li>
+<li>cipher.setAutoPadding(auto_padding=true)</li>
+<li>cipher.update(data[, input_encoding][, output_encoding])</li>
+</ul>
+</li>
+<li>Class: Decipher<ul>
+<li>decipher.final([output_encoding])</li>
+<li>decipher.setAAD(buffer)</li>
+<li>decipher.setAuthTag(buffer)</li>
+<li>decipher.setAutoPadding(auto_padding=true)</li>
+<li>decipher.update(data[, input_encoding][, output_encoding])</li>
+</ul>
+</li>
+<li>Class: DiffieHellman<ul>
+<li>diffieHellman.computeSecret(other_public_key[, input_encoding][, output_encoding])</li>
+<li>diffieHellman.generateKeys([encoding])</li>
+<li>diffieHellman.getGenerator([encoding])</li>
+<li>diffieHellman.getPrime([encoding])</li>
+<li>diffieHellman.getPrivateKey([encoding])</li>
+<li>diffieHellman.getPublicKey([encoding])</li>
+<li>diffieHellman.setPrivateKey(private_key[, encoding])</li>
+<li>diffieHellman.setPublicKey(public_key[, encoding])</li>
+<li>diffieHellman.verifyError</li>
+</ul>
+</li>
+<li>Class: ECDH<ul>
+<li>ecdh.computeSecret(other_public_key[, input_encoding][, output_encoding])</li>
+<li>ecdh.generateKeys([encoding[, format]])</li>
+<li>ecdh.getPrivateKey([encoding])</li>
+<li>ecdh.getPublicKey([encoding[, format]])</li>
+<li>ecdh.setPrivateKey(private_key[, encoding])</li>
+<li>ecdh.setPublicKey(public_key[, encoding])</li>
+</ul>
+</li>
+<li>Class: Hash<ul>
+<li>hash.digest([encoding])</li>
+<li>hash.update(data[, input_encoding])</li>
+</ul>
+</li>
+<li>Class: Hmac<ul>
+<li>hmac.digest([encoding])</li>
+<li>hmac.update(data[, input_encoding])</li>
+</ul>
+</li>
+<li>Class: Sign<ul>
+<li>sign.sign(private_key[, output_format])</li>
+<li>sign.update(data[, input_encoding])</li>
+</ul>
+</li>
+<li>Class: Verify<ul>
+<li>verifier.update(data[, input_encoding])</li>
+<li>verifier.verify(object, signature[, signature_format])<br>crypto module methods and properties</li>
+<li>crypto.constants</li>
+<li>crypto.DEFAULT_ENCODING</li>
+<li>crypto.fips</li>
+<li>crypto.createCipher(algorithm, password)</li>
+<li>crypto.createCipheriv(algorithm, key, iv)</li>
+<li>crypto.createCredentials(details)</li>
+<li>crypto.createDecipher(algorithm, password)</li>
+<li>crypto.createDecipheriv(algorithm, key, iv)</li>
+<li>crypto.createDiffieHellman(prime[, prime_encoding][, generator][, generator_encoding])</li>
+<li>crypto.createDiffieHellman(prime_length[, generator])</li>
+<li>crypto.createECDH(curve_name)</li>
+<li>crypto.createHash(algorithm)</li>
+<li>crypto.createHmac(algorithm, key)</li>
+<li>crypto.createSign(algorithm)</li>
+<li>crypto.createVerify(algorithm)</li>
+<li>crypto.getCiphers()</li>
+<li>crypto.getCurves()</li>
+<li>crypto.getDiffieHellman(group_name)</li>
+<li>crypto.getHashes()</li>
+<li>crypto.pbkdf2(password, salt, iterations, keylen, digest, callback)</li>
+<li>crypto.pbkdf2Sync(password, salt, iterations, keylen, digest)</li>
+<li>crypto.privateDecrypt(private_key, buffer)</li>
+<li>crypto.privateEncrypt(private_key, buffer)</li>
+<li>crypto.publicDecrypt(public_key, buffer)</li>
+<li>crypto.publicEncrypt(public_key, buffer)</li>
+<li>crypto.randomBytes(size[, callback])</li>
+<li>crypto.setEngine(engine[, flags])</li>
+<li>crypto.timingSafeEqual(a, b)</li>
+</ul>
+</li>
+<li>Notes<ul>
+<li>Legacy Streams API (pre Node.js v0.10)</li>
+<li>Recent ECDH Changes</li>
+<li>Support for weak or compromised algorithms</li>
+</ul>
+</li>
+<li>Crypto Constants<ul>
+<li>OpenSSL Options</li>
+<li>OpenSSL Engine Constants</li>
+<li>Other OpenSSL Constants</li>
+<li>Node.js Crypto Constants</li>
+</ul>
+</li>
+</ul>
+<h3 id="Debugger"><a href="#Debugger" class="headerlink" title="Debugger"></a>Debugger</h3><blockquote>
+<p>Node.js 包含一个进程外的调试工具，可以通过基于 TCP 的协议和内置调试客户端访问。</p>
+</blockquote>
+<figure class="highlight plain"><figcaption><span>node debug main.js</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">&lt; Debugger listening on 127.0.0.1:5858</div><div class="line">connecting to 127.0.0.1:5858 ... ok</div><div class="line">break in D:\me\webpack\webpack-demo\main.js:1</div><div class="line">&gt; 1 var x = 5;</div><div class="line">  2 setTimeout(() =&gt; &#123;</div><div class="line">  3     debugger;</div><div class="line">debug&gt; cont</div><div class="line">&lt; hello</div><div class="line">break in D:\me\webpack\webpack-demo\main.js:3</div><div class="line">  1 var x = 5;</div><div class="line">  2 setTimeout(() =&gt; &#123;</div><div class="line">&gt; 3     debugger;</div><div class="line">  4     console.log(&apos;world&apos;);</div><div class="line">  5 &#125;, 1000);</div><div class="line">debug&gt; next</div><div class="line">break in D:\me\webpack\webpack-demo\main.js:4</div><div class="line">  2 setTimeout(() =&gt; &#123;</div><div class="line">  3     debugger;</div><div class="line">&gt; 4     console.log(&apos;world&apos;);</div><div class="line">  5 &#125;, 1000);</div><div class="line">  6 console.log(&apos;hello&apos;);</div><div class="line">debug&gt; quit</div></pre></td></tr></table></figure>
+<ul>
+<li>Watchers</li>
+<li>Command reference<ul>
+<li>Stepping</li>
+<li>Breakpoints</li>
+<li>Information</li>
+<li>Execution control</li>
+<li>Various</li>
+</ul>
+</li>
+<li>Advanced Usage</li>
+<li>V8 Inspector Integration for Node.js</li>
+</ul>
+<h3 id="DNS"><a href="#DNS" class="headerlink" title="DNS"></a>DNS</h3><ul>
+<li>dns.getServers()</li>
+<li>dns.lookup(hostname[, options], callback)<br>Supported getaddrinfo flags</li>
+<li>dns.lookupService(address, port, callback)</li>
+<li>dns.resolve(hostname[, rrtype], callback)</li>
+<li>dns.resolve4(hostname[, options], callback)</li>
+<li>dns.resolve6(hostname[, options], callback)</li>
+<li>dns.resolveCname(hostname, callback)</li>
+<li>dns.resolveNaptr(hostname, callback)</li>
+<li>dns.resolveNs(hostname, callback)</li>
+<li>dns.resolvePtr(hostname, callback)</li>
+<li>dns.resolveSoa(hostname, callback)</li>
+<li>dns.resolveSrv(hostname, callback)</li>
+<li>dns.resolveTxt(hostname, callback)</li>
+<li>dns.reverse(ip, callback)</li>
+<li>dns.setServers(servers)</li>
+<li>Error codes</li>
+<li>Implementation considerations<ul>
+<li>dns.lookup()</li>
+<li>dns.resolve(), dns.resolve*() and dns.reverse()</li>
+</ul>
+</li>
+</ul>
+<h3 id="Domain-deprecated"><a href="#Domain-deprecated" class="headerlink" title="Domain(deprecated)"></a>Domain(deprecated)</h3><h3 id="Errors"><a href="#Errors" class="headerlink" title="Errors"></a>Errors</h3><ul>
+<li>Error Propagation and Interception<ul>
+<li>Node.js style callbacks</li>
+</ul>
+</li>
+<li>Class: Error<ul>
+<li>new Error(message)</li>
+<li>Error.captureStackTrace(targetObject[,constructorOpt])</li>
+<li>Error.stackTraceLimit</li>
+<li>error.message</li>
+<li>error.stack</li>
+</ul>
+</li>
+<li>Class: RangeError</li>
+<li>Class: ReferenceError</li>
+<li>Class: SyntaxError</li>
+<li>Class: TypeError</li>
+<li>Exceptions vs. Errors</li>
+<li>System Errors<ul>
+<li>Class: System Error<ul>
+<li>error.code</li>
+<li>error.errno</li>
+<li>error.syscall</li>
+<li>error.path</li>
+<li>error.address</li>
+<li>error.port</li>
+</ul>
+</li>
+<li>Common System Errors</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>Node是单线程运行环境，一旦抛出异常未被捕获便引起整个进程崩溃，一般有三种方法传播一个错误。</p>
+</blockquote>
+<ul>
+<li>throw抛出异常</li>
+</ul>
+<blockquote>
+<p>最常用，但无法捕获异步运行代码抛出的异常。</p>
+</blockquote>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line">    try &#123;</div><div class="line">      process.nextTick(() =&gt; &#123;</div><div class="line">        throw new Error(&apos;error&apos;)</div><div class="line">      &#125;);</div><div class="line">    &#125; catch (err) &#123;</div><div class="line">      //can not catch it</div><div class="line">      concole.log(err);</div><div class="line">    &#125;   </div><div class="line">    try &#123;</div><div class="line">      setTimeout(() =&gt; &#123;</div><div class="line">        throw new Error(&apos;error&apos;)</div><div class="line">      &#125;, 10)</div><div class="line">    &#125; catch (err) &#123;</div><div class="line">      //can not catch it</div><div class="line">      console.log(err);</div><div class="line">    &#125;</div><div class="line">//   使用process.nextTick和setTimeout在下一轮事件循环抛出两个异常代表一步操作错误，均无法被catch捕获，因catch已运行结束 </div><div class="line">//解决方案之一：将错误代码也放到异步执行</div><div class="line">    function async(cb, err) &#123;</div><div class="line">      setTimeout(function() &#123;</div><div class="line">        try &#123;</div><div class="line">          if (true)</div><div class="line">            throw new Error(&quot;woops!&quot;);</div><div class="line">          else</div><div class="line">            cb(&quot;done&quot;);</div><div class="line">        &#125; catch(e) &#123;</div><div class="line">          err(e);</div><div class="line">        &#125;</div><div class="line">      &#125;, 2000)</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    async(function(res) &#123;</div><div class="line">      console.log(&quot;received:&quot;, res);</div><div class="line">    &#125;, function(err) &#123;</div><div class="line">      console.log(&quot;Error: async threw an exception:&quot;, err);</div><div class="line">    &#125;);</div><div class="line">    // Error: async threw an exception: Error: woops!Node很少用此方法，如JSON.parse时</div></pre></td></tr></table></figure>
+</code></pre><ul>
+<li>将error对象传递给回调函数，发出错误</li>
+</ul>
+<blockquote>
+<p>Node将错误对象作为首个参数传入回调函数</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">fs.readFile(&apos;/foo.txt&apos;, function(err, data) &#123;</div><div class="line">  if (err !== null) throw err;</div><div class="line">  console.log(data);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<ul>
+<li>通过EventEmitter接口，发出error事件</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var EventEmitter = require(&apos;events&apos;).EventEmitter;</div><div class="line">var emitter = new EventEmitter();</div><div class="line">emitter.emit(&apos;error&apos;, new Error(&apos;something bad happened&apos;));</div><div class="line">//如果没有对error事件部署监听函数，会导致整个应用程序崩溃。所以，一般总是必须同时部署下面的代码。</div><div class="line">emitter.on(&apos;error&apos;, function(err) &#123;</div><div class="line">  console.error(&apos;出错：&apos; + err.message);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<ul>
+<li>uncaughtException事件</li>
+</ul>
+<blockquote>
+<p>异常未被捕获便触发</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">var logger = require(&apos;tracer&apos;).console();</div><div class="line">process.on(&apos;uncaughtException&apos;, function(err) &#123;</div><div class="line">  console.error(&apos;Error caught in uncaughtException event:&apos;, err);</div><div class="line">  //uncaughtException触发后，最好记录错误日志，然后结束Node进程</div><div class="line">  logger.log(err);</div><div class="line">  process.exit(1);</div><div class="line">&#125;);</div><div class="line">try &#123;</div><div class="line">  setTimeout(function()&#123;</div><div class="line">    throw new Error(&quot;error&quot;);</div><div class="line">  &#125;,1);</div><div class="line">&#125; catch (err) &#123;</div><div class="line">  //can not catch it</div><div class="line">  console.log(err);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>unhandledRejection事件</li>
+</ul>
+<h3 id="Events模块"><a href="#Events模块" class="headerlink" title="Events模块"></a>Events模块</h3><blockquote>
+<p>回调函数让Node可以处理异步操作，但其只能有开始和结束两种状态。对于多状态的异步操作，Node<br>提供EventEmitter接口，通过事件解决多状态异步操作响应问题。</p>
+</blockquote>
+<ul>
+<li>概述</li>
+</ul>
+<blockquote>
+<p>EventEmitter是event模块提供的一个接口，可以在任何对象上部署。</p>
+</blockquote>
+<ul>
+<li>Passing arguments and this to listeners</li>
+<li>Asynchronous vs. Synchronous</li>
+<li>Handling events only once</li>
+<li>Error events</li>
+<li>Class: EventEmitter<ul>
+<li>Event: ‘newListener’</li>
+<li>Event: ‘removeListener’</li>
+<li>EventEmitter.defaultMaxListeners</li>
+<li>emitter.addListener(eventName, listener)</li>
+<li>emitter.emit(eventName[, …args])</li>
+<li>emitter.eventNames()</li>
+<li>emitter.getMaxListeners()</li>
+<li>emitter.listenerCount(eventName)</li>
+<li>emitter.listeners(eventName)</li>
+<li>emitter.on(eventName, listener)</li>
+<li>emitter.once(eventName, listener)</li>
+<li>emitter.prependListener(eventName, listener)</li>
+<li>emitter.prependOnceListener(eventName, listener)</li>
+<li>emitter.removeAllListeners([eventName])</li>
+<li>emitter.removeListener(eventName, listener)</li>
+<li>emitter.setMaxListeners(n)</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">var EventEmitter = require(&apos;events&apos;).EventEmitter;</div><div class="line">var emitter = new EventEmitter();</div><div class="line">//事件发生器的实例方法用on监听事件，然后emit用来发出事件。</div><div class="line">var EventEmitter = require(&apos;events&apos;).EventEmitter;</div><div class="line">var emitter = new EventEmitter();</div><div class="line"></div><div class="line">emitter.on(&apos;event1&apos;, () =&gt; console.log(&apos;event1 has occred&apos;));</div><div class="line">emitter.on(&apos;event2&apos;, () =&gt; console.log(&apos;event2 has occred&apos;));</div><div class="line">//EventEmitter对象的事件触发和监听是同步的</div><div class="line">console.log(&apos;start&apos;);</div><div class="line">emitter.emit(&apos;event1&apos;);</div><div class="line">emitter.emit(&apos;event2&apos;);</div><div class="line">console.log(&apos;end&apos;);</div></pre></td></tr></table></figure>
+<ul>
+<li>EventEmitter接口的部署</li>
+</ul>
+<blockquote>
+<p>Event Emitter 接口可以部署在任意对象上，使得这些对象也能订阅和发布消息。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">var EventEmitter = require(&apos;events&apos;).EventEmitter;</div><div class="line">var util = require(&apos;util&apos;);</div><div class="line"></div><div class="line">function Dog(name) &#123;</div><div class="line">  this.name = name;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// Dog.prototype.__proto__ = EventEmitter.prototype;</div><div class="line">//Dog.prototype=Object.create(EventEmitter.prototype);</div><div class="line">util.inherits(Dog, EventEmitter);//利用内置继承</div><div class="line"></div><div class="line">var haha = new Dog(&apos;haha&apos;);</div><div class="line">haha.on(&apos;bark&apos;, function() &#123;</div><div class="line">  console.log(this.name + &apos; barked...&apos;);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">haha.emit(&apos;bark&apos;);</div><div class="line">//hahabarked...</div></pre></td></tr></table></figure>
+<ul>
+<li>Event Emitter实例方法<ul>
+<li>emitter.on(name, f) 对事件name指定监听函数f</li>
+<li>emitter.addListener(name, f) addListener是on方法的别名</li>
+<li>emitter.once(name, f) 与on方法类似，但是监听函数f是一次性的，使用后自动移除</li>
+<li>emitter.listeners(name) 返回一个数组，成员是事件name所有监听函数</li>
+<li>emitter.removeListener(name, f) 移除事件name的监听函数f(具名函数)</li>
+<li>emitter.setMaxListeners(num) Node默认允许同一个事件最多可以指定10个回调函数。移除num个事件</li>
+<li>emitter.removeAllListeners(name) 移除事件name的所有监听函数</li>
+<li>emitter.listeners(f) 返回该事件所有回调函数组成的数组</li>
+</ul>
+</li>
+<li>错误捕获：事件处理过程中抛出的错误可用try-catch捕获</li>
+<li>事件类型： Events模块默认支持两个事件<ul>
+<li>newListener事件：添加新的回调函数时触发。</li>
+<li>removeListener事件：移除回调时触发。</li>
+</ul>
+</li>
+</ul>
+<h3 id="File-System"><a href="#File-System" class="headerlink" title="File System"></a>File System</h3><blockquote>
+<p>Node提供一组类似UNIX(POSIX)标准的文件操作API</p>
+</blockquote>
+<ul>
+<li>Buffer API</li>
+<li>Class: fs.FSWatcher<ul>
+<li>Event: ‘change’</li>
+<li>Event: ‘error’</li>
+<li>watcher.close()</li>
+</ul>
+</li>
+<li>Class: fs.ReadStream<ul>
+<li>Event: ‘close’</li>
+<li>Event: ‘open’</li>
+<li>readStream.bytesRead</li>
+<li>readStream.path</li>
+</ul>
+</li>
+<li>Class: fs.Stats<ul>
+<li>Stat Time Values</li>
+</ul>
+</li>
+<li>Class: fs.WriteStream<ul>
+<li>Event: ‘close’</li>
+<li>Event: ‘open’</li>
+<li>writeStream.bytesWritten</li>
+<li>writeStream.path</li>
+</ul>
+</li>
+<li>fs.access(path[, mode], callback)</li>
+<li>fs.accessSync(path[, mode])</li>
+<li>fs.appendFile(file, data[, options], - callback)</li>
+<li>fs.appendFileSync(file, data[, options])</li>
+<li>fs.chmod(path, mode, callback)</li>
+<li>fs.chmodSync(path, mode)</li>
+<li>fs.chown(path, uid, gid, callback)</li>
+<li>fs.chownSync(path, uid, gid)</li>
+<li>fs.close(fd, callback)</li>
+<li>fs.closeSync(fd)</li>
+<li>fs.constants</li>
+<li>fs.createReadStream(path[, options])</li>
+<li>fs.createWriteStream(path[, options])</li>
+<li>fs.existsSync(path)</li>
+<li>fs.fchmod(fd, mode, callback)</li>
+<li>fs.fchmodSync(fd, mode)</li>
+<li>fs.fchown(fd, uid, gid, callback)</li>
+<li>fs.fchownSync(fd, uid, gid)</li>
+<li>fs.fdatasync(fd, callback)</li>
+<li>fs.fdatasyncSync(fd)</li>
+<li>fs.fstat(fd, callback)</li>
+<li>fs.fstatSync(fd)</li>
+<li>fs.fsync(fd, callback)</li>
+<li>fs.fsyncSync(fd)</li>
+<li>fs.ftruncate(fd, len, callback)</li>
+<li>fs.ftruncateSync(fd, len)</li>
+<li>fs.futimes(fd, atime, mtime, callback)</li>
+<li>fs.futimesSync(fd, atime, mtime)</li>
+<li>fs.lchmod(path, mode, callback)</li>
+<li>fs.lchmodSync(path, mode)</li>
+<li>fs.lchown(path, uid, gid, callback)</li>
+<li>fs.lchownSync(path, uid, gid)</li>
+<li>fs.link(existingPath, newPath, callback)</li>
+<li>fs.linkSync(existingPath, newPath)</li>
+<li>fs.lstat(path, callback)</li>
+<li>fs.lstatSync(path)</li>
+<li>fs.mkdir(path[, mode], callback)</li>
+<li>fs.mkdirSync(path[, mode])</li>
+<li>fs.mkdtemp(prefix[, options], callback)</li>
+<li>fs.mkdtempSync(prefix[, options])</li>
+<li>fs.open(path, flags[, mode], callback)</li>
+<li>fs.openSync(path, flags[, mode])</li>
+<li>fs.read(fd, buffer, offset, length, - position, callback)</li>
+<li>fs.readdir(path[, options], callback)</li>
+<li>fs.readdirSync(path[, options])</li>
+<li>fs.readFile(file[, options], callback)</li>
+<li>fs.readFileSync(file[, options])</li>
+<li>fs.readlink(path[, options], callback)</li>
+<li>fs.readlinkSync(path[, options])</li>
+<li>fs.readSync(fd, buffer, offset, length, - position)</li>
+<li>fs.realpath(path[, options], callback)</li>
+<li>fs.realpathSync(path[, options])</li>
+<li>fs.rename(oldPath, newPath, callback)</li>
+<li>fs.renameSync(oldPath, newPath)</li>
+<li>fs.rmdir(path, callback)</li>
+<li>fs.rmdirSync(path)</li>
+<li>fs.stat(path, callback)</li>
+<li>fs.statSync(path)</li>
+<li>fs.symlink(target, path[, type], callback)</li>
+<li>fs.symlinkSync(target, path[, type])</li>
+<li>fs.truncate(path, len, callback)</li>
+<li>fs.truncateSync(path, len)</li>
+<li>fs.unlink(path, callback)</li>
+<li>fs.unlinkSync(path)</li>
+<li>fs.unwatchFile(filename[, listener])</li>
+<li>fs.utimes(path, atime, mtime, callback)</li>
+<li>fs.utimesSync(path, atime, mtime)</li>
+<li>fs.watch(filename[, options][, listener])<ul>
+<li>Caveats<ul>
+<li>Availability</li>
+<li>Inodes</li>
+<li>Filename Argument</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>fs.watchFile(filename[, options], listener)</li>
+<li>fs.write(fd, buffer[, offset[, length[, - position]]], callback)</li>
+<li>fs.write(fd, string[, position[, -encoding]], callback)</li>
+<li>fs.writeFile(file, data[, options],  callback)</li>
+<li>fs.writeFileSync(file, data[, options])</li>
+<li>fs.writeSync(fd, buffer[, offset[,  length[, position]]])</li>
+<li>fs.writeSync(fd, string[, position[, encoding]])</li>
+<li>FS Constants<ul>
+<li>File Access Constants</li>
+<li>File Open Constants</li>
+<li>File Type Constants</li>
+<li>File Mode Constants- </li>
+</ul>
+</li>
+<li><p>readFile()/readFileSync()</p>
+<ul>
+<li><p>readFile():异步读取数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">fs.readFile(&apos;./image.png&apos;, function (err, buffer) &#123;</div><div class="line">  if (err) throw err;</div><div class="line">  process(buffer);//若是相对路径则是相对当前脚本所在的路径</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+</li>
+<li><p>readFileSync():同步读取文件，返回一个字符串。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var text = fs.readFileSync(fileName, &apos;utf8&apos;);   </div><div class="line">// 将文件按行拆成数组</div><div class="line">text.split(/\r?\n/).forEach(function (line) &#123;</div><div class="line">  // ...</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>writeFile()/writeFileSync()</p>
+<ul>
+<li><p>writeFile():异步写入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">fs.writeFile(&apos;message.txt&apos;, &apos;Hello Node.js&apos;,&apos;utf8&apos;, (err) =&gt; &#123;</div><div class="line">  if (err) throw err;</div><div class="line">  console.log(&apos;It\&apos;s saved!&apos;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+</li>
+<li><p>writeFileSync()</p>
+</li>
+</ul>
+</li>
+<li>exists(path,callback):判断给定路径是否存在</li>
+<li>mkdir()/writeFile()/readFile()</li>
+<li>mkdirSync()/writeFileSync()/readFileSync()</li>
+<li>readdir()/readdirSync() :readdir方法用于读取目录，返回一个所包含的文件和子目录的数组。</li>
+<li>start():参数为一文件或目录，产生一个包含该文件或目录具体信息的对象。判断处理的是文件还是目录。</li>
+<li>watchFile()/unwatchFile():监听文件变化</li>
+<li>createReadStream():打开大文件，创建一个读取操作的数据流。</li>
+<li>createWriteStream():创建一个写入数据流对象，其write方法用于写入数据，end方法用于结束写入操作。</li>
+</ul>
+<h3 id="Globals"><a href="#Globals" class="headerlink" title="Globals"></a>Globals</h3><blockquote>
+<p>Global Object:所有属性均可在程序的任何地方访问，即全局变量。相当于浏览器中的window。<br>所有对象都是global对象的属性。</p>
+</blockquote>
+<ul>
+<li>全局对象<ul>
+<li>global<br>类似window对象，但每个文件都是模块，其内变量均为该模块私有其它模块无法获取</li>
+<li>process<br>表示Node所处的当前进程，允许开发者与之互动</li>
+<li>console<br>提供命令行环境中的标准输入输出功能</li>
+</ul>
+</li>
+<li>全局函数<ul>
+<li>setTimeout()</li>
+<li>clearTimeout()</li>
+<li>setInterval()</li>
+<li>clearInterval()</li>
+<li>require():加载模块</li>
+<li>Buffer()：操作二进制数据</li>
+</ul>
+</li>
+<li><p>全局变量：在最外层定义的变量，全局对象的属性，隐式定义的变量</p>
+<ul>
+<li>__filename:当前运行脚本文件名</li>
+<li>__dirname:当前运行脚本所在目录</li>
+<li>伪全局变量:实际为模块内部的局部变量，指向对象个面具模块不同而不同，但所以模块均适用。<ul>
+<li>module</li>
+<li>module.exports</li>
+<li>exports<br>Node中不可能在最外层定义变量，因所有用户代码都属于当前模块，而模块本身不是最外层上下文。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>__filename: 当前正在执行的脚本文件名。将输出文件所在位置的绝对路径且和命令行参数所指定的<br>文件名不一定相同。在模块中返回模块文件路径。</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//main.js  </div><div class="line">console.log(__filename);// 输出全局变量 __filename 的值</div><div class="line">$ node main.js</div><div class="line">D:\me\webpack\webpack-demo\main.js</div></pre></td></tr></table></figure>
+<ul>
+<li>__dirname:当前执行脚本所在的目录</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//main.js  </div><div class="line">console.log(__dirname);// 输出全局变量 __dirname 的值</div><div class="line">$ node main.js</div><div class="line">D:\me\webpack\webpack-demo</div></pre></td></tr></table></figure>
+<h3 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h3><ul>
+<li>JS函数调用堆栈：函数被调用时便被压入堆栈顶部，运行完成则被移出堆栈顶部；其数据结构为FIFO。</li>
+<li><p>回调：<br>  异步编程最基本的方法，node按顺序执行异步逻辑时一般采用后续传递的方式。<br>  即将后续逻辑封装在回调函数中作为起始函数的参数，逐层嵌套，以此让程序按期望执行。</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">//callback.js</div><div class="line">fuction learn(sth)&#123;</div><div class="line">    console.log(sth);</div><div class="line">&#125;</div><div class="line">function we(callback,sth)&#123;</div><div class="line">    sth+=&apos;is cool&apos;;</div><div class="line">    callback(sth);</div><div class="line">&#125;</div><div class="line">we(learn,&apos;Node&apos;);</div><div class="line">we((sth)=&gt;console.log(sth),&apos;react&apos;);</div></pre></td></tr></table></figure>
+</li>
+<li><p>同步/异步：关注的是消息通信机制 (synchronous communication/ asynchronous communication)。<br>  同步：由调用者主动等待这个调用的结果。执行任务执行顺序与任务排列顺序一致，上一步任务执行完毕才能开始下一步程序。<br>  异步：调用在发出之后，这个调用就直接返回了，所以没有返回结果。每个任务都有一个或多个回调函数，<br>  程序执行顺序与任务排列顺序无关。</p>
+</li>
+<li>I/O：磁盘的写入和读出，数据的输入和输出</li>
+<li>单线程/多线程：前者–程序功能按顺序执行，前续功能执行结束后续功能才能执行开始；后者：反之。</li>
+<li>阻塞/非阻塞：关注的是程序在等待调用结果（消息，返回值）时的状态。同步的原因导致阻塞结果，异步的原因导致非阻塞结果。<br>  阻塞：调用结果返回之前，当前线程会被挂起。调用线程只有在得到结果之后才会返回。<br>  非阻塞：在不能立刻得到结果之前，该调用不会阻塞当前线程。</li>
+<li><p>事件/事件驱动：函数执行的一种方式，即为某个事件注册了回调函数，该函数不会立即执行而是等事件被触发(EventEmitter)之后才执行。<br>![event loop][<a href="http://www.runoob.com/wp-content/uploads/2015/09/event_loop.jpg" target="_blank" rel="external">http://www.runoob.com/wp-content/uploads/2015/09/event_loop.jpg</a>]<br>  事件类似于主题，其上的事件处理函数相当于观察者(Observer)。</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">var events = require(&apos;events&apos;);</div><div class="line">// 创建 eventEmitter 对象</div><div class="line">var eventEmitter = new events.EventEmitter();</div><div class="line">var connectHandler = function connected() &#123;</div><div class="line">   console.log(&apos;连接成功。&apos;);</div><div class="line">   eventEmitter.emit(&apos;data_received&apos;);</div><div class="line">&#125;</div><div class="line">eventEmitter.on(&apos;connection&apos;, connectHandler);</div><div class="line">eventEmitter.on(&apos;data_received&apos;, function()&#123;</div><div class="line">   console.log(&apos;数据接收成功。&apos;);</div><div class="line">&#125;);</div><div class="line">eventEmitter.emit(&apos;connection&apos;);</div><div class="line">console.log(&quot;程序执行完毕。&quot;);</div></pre></td></tr></table></figure>
+</li>
+<li><p>基于事件驱动的回调：注册事件驱动的回调。</p>
+</li>
+<li>事件循环：event loop一种事件管理机制(FIFO)，若有大量的异步操作，IO的耗时操作及计时器控制的延时操作，<br>  它们完成的时候都要调用相应的回调函数，<br>  从而完成一些密集的任务，又不会阻塞整个程序执行的流程。<ul>
+<li>Node是单线程单进程的应用程序，通过事件和回调支持并发故性能高。</li>
+<li>Node的每个API都是作为一个独立线程运行的异步的，使用异步函数调用并处理并发。</li>
+<li>Node基本上所有事件机制都是设计模式中的观察者模式。</li>
+<li>单线程类似进入一个while(true)循环，直到没有事件观察者退出，每个异步事件都生成一个事件观察者。若有事件发生则回调。</li>
+</ul>
+</li>
+<li>HTTP小爬虫</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">var http = require(&apos;http&apos;);</div><div class="line">var url = &apos;http://www.imooc.com/video/7965&apos;;</div><div class="line"></div><div class="line">http.get(url, (res) =&gt; &#123;</div><div class="line">  var html = &apos;&apos;;</div><div class="line">  res.on(&apos;data&apos;, data =&gt; html += data)</div><div class="line">  res.on(&apos;end&apos;, () =&gt; console.log(html))</div><div class="line">&#125;).on(&apos;error&apos;, () =&gt; console.log(&apos;error...&apos;))</div></pre></td></tr></table></figure>
+<ul>
+<li><p>函数传递是如何让HTTP服务器工作的:事件驱动与回调</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var http = require(&quot;http&quot;);</div><div class="line">function onRequest(request, response) &#123;</div><div class="line">  response.writeHead(200, &#123;&quot;Content-Type&quot;: &quot;text/plain&quot;&#125;);</div><div class="line">  response.write(&quot;Hello World&quot;);</div><div class="line">  response.end();</div><div class="line">&#125;</div><div class="line">http.createServer(onRequest).listen(8888);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="HTTPS"><a href="#HTTPS" class="headerlink" title="HTTPS"></a>HTTPS</h3><ul>
+<li>Class: https.Agent</li>
+<li>Class: https.Server<ul>
+<li>server.setTimeout(msecs, callback)</li>
+<li>server.timeout</li>
+</ul>
+</li>
+<li>https.createServer(options[, requestListener])<ul>
+<li>server.close([callback])</li>
+<li>server.listen(handle[, callback])</li>
+<li>server.listen(path[, callback])</li>
+<li>server.listen(port[, host][, backlog][, callback])</li>
+</ul>
+</li>
+<li>https.get(options, callback)</li>
+<li>https.globalAgent</li>
+<li>https.request(options, callback)</li>
+</ul>
+<h3 id="Modules"><a href="#Modules" class="headerlink" title="Modules"></a>Modules</h3><blockquote>
+<p>Modules是Node应用程序的基本组成部分，文件和模块一一对应，使Node文件可以相互调用</p>
+</blockquote>
+<ul>
+<li>Accessing the main module</li>
+<li>Addenda: Package Manager Tips</li>
+<li>All Together…</li>
+<li>Caching<ul>
+<li>Module Caching Caveats</li>
+</ul>
+</li>
+<li>Core Modules</li>
+<li>Cycles</li>
+<li>File Modules</li>
+<li>Folders as Modules</li>
+<li>Loading from node_modules Folders</li>
+<li>Loading from the global folders</li>
+<li>The module wrapper</li>
+<li>The module Object<ul>
+<li>module.children</li>
+<li>module.exports</li>
+<li>exports shortcut</li>
+<li>module.filename</li>
+<li>module.id</li>
+<li>module.loaded</li>
+<li>module.parent</li>
+<li>module.require(id) </li>
+</ul>
+</li>
+<li><p>Node提供了exports和require两个对象，前者是模块公开的接口，后者用于从外部获取一个模块的接口即所获取模块的exports对象。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">//hello.js</div><div class="line">exports.world=function()&#123;&#125;//通过exports对象把world作为模块的访问接口</div><div class="line">//main.js</div><div class="line">var world=require(&apos;./hello&apos;);//加载该模块便可访问hello.js中exports对象的成员函数了。</div><div class="line">module.exports=function()&#123;&#125;/*只把一个对象封装到模块中，</div><div class="line">外部引用该模块时其接口对象即要输出的Hello对象本身，而非原先的exports*/</div></pre></td></tr></table></figure>
+</li>
+<li><p>Node的require方法中的文件查找策略如下：</p>
+</li>
+</ul>
+<p>![<a href="http://www.runoob.com/wp-content/uploads/2014/03/nodejs-require.jpg][http://www.runoob.com/wp-content/uploads/2014/03/nodejs-require.jpg" target="_blank" rel="external">http://www.runoob.com/wp-content/uploads/2014/03/nodejs-require.jpg][http://www.runoob.com/wp-content/uploads/2014/03/nodejs-require.jpg</a>]<br>    Node中的四类模块(一种原生模块三种文件模块)</p>
+<pre><code>1. 原生模块：http,fs,path等
+2. ./,../相对路径的文件模块
+3. /pathtomodule/mod,绝对路径模块
+4. mod，非原生模块的文件模块
+</code></pre><h3 id="Net"><a href="#Net" class="headerlink" title="Net"></a>Net</h3><ul>
+<li>Class: net.Server<ul>
+<li>Event: ‘close’</li>
+<li>Event: ‘connection’</li>
+<li>Event: ‘error’</li>
+<li>Event: ‘listening’</li>
+<li>server.address()</li>
+<li>server.close([callback])</li>
+<li>server.getConnections(callback)</li>
+<li>server.listen(handle[, backlog][, callback])</li>
+<li>server.listen(options[, callback])</li>
+<li>server.listen(path[, backlog][, callback])</li>
+<li>server.listen([port][, hostname][, backlog][- , callback])</li>
+<li>server.listening</li>
+<li>server.maxConnections</li>
+<li>server.ref()</li>
+<li>server.unref()</li>
+</ul>
+</li>
+<li>Class: net.Socket<ul>
+<li>new net.Socket([options])</li>
+<li>Event: ‘close’</li>
+<li>Event: ‘connect’</li>
+<li>Event: ‘data’</li>
+<li>Event: ‘drain’</li>
+<li>Event: ‘end’</li>
+<li>Event: ‘error’</li>
+<li>Event: ‘lookup’</li>
+<li>Event: ‘timeout’</li>
+<li>socket.address()</li>
+<li>socket.bufferSize</li>
+<li>socket.bytesRead</li>
+<li>socket.bytesWritten</li>
+<li>socket.connect(options[, connectListener])</li>
+<li>socket.connect(path[, connectListener])</li>
+<li>socket.connect(port[, host][, - connectListener])</li>
+<li>socket.connecting</li>
+<li>socket.destroy([exception])</li>
+<li>socket.destroyed</li>
+<li>socket.end([data][, encoding])</li>
+<li>socket.localAddress</li>
+<li>socket.localPort</li>
+<li>socket.pause()</li>
+<li>socket.ref()</li>
+<li>socket.remoteAddress</li>
+<li>socket.remoteFamily</li>
+<li>socket.remotePort</li>
+<li>socket.resume()</li>
+<li>socket.setEncoding([encoding])</li>
+<li>socket.setKeepAlive([enable][, initialDelay])</li>
+<li>socket.setNoDelay([noDelay])</li>
+<li>socket.setTimeout(timeout[, callback])</li>
+<li>socket.unref()</li>
+<li>socket.write(data[, encoding][, callback])</li>
+</ul>
+</li>
+<li>net.connect(options[, connectListener])</li>
+<li>net.connect(path[, connectListener])</li>
+<li>net.connect(port[, host][, connectListener])</li>
+<li>net.createConnection(options[, connectListener])</li>
+<li>net.createConnection(path[, connectListener])</li>
+<li>net.createConnection(port[, host][, connectListener])</li>
+<li>net.createServer([options][, connectionListener])</li>
+<li>net.isIP(input)</li>
+<li>net.isIPv4(input)</li>
+<li>net.isIPv6(input)</li>
+</ul>
+<h3 id="OS"><a href="#OS" class="headerlink" title="OS"></a>OS</h3><ul>
+<li>os.EOL</li>
+<li>os.arch()</li>
+<li>os.constants</li>
+<li>os.cpus()</li>
+<li>os.endianness()</li>
+<li>os.freemem()</li>
+<li>os.homedir()</li>
+<li>os.hostname()</li>
+<li>os.loadavg()</li>
+<li>os.networkInterfaces()</li>
+<li>os.platform()</li>
+<li>os.release()</li>
+<li>os.tmpdir()</li>
+<li>os.totalmem()</li>
+<li>os.type()</li>
+<li>os.uptime()</li>
+<li>os.userInfo([options])</li>
+<li>OS Constants<ul>
+<li>Signal Constants</li>
+<li>Error Constants<ul>
+<li>POSIX Error Constants</li>
+<li>Windows Specific Error Constants</li>
+</ul>
+</li>
+<li>libuv Constants</li>
+</ul>
+</li>
+</ul>
+<h3 id="Path"><a href="#Path" class="headerlink" title="Path"></a>Path</h3><blockquote>
+<p>为路由提供请求的URL和其它需要的GET/POST参数，而后据此执行程序。</p>
+</blockquote>
+<ul>
+<li>Windows vs. POSIX</li>
+<li>path.basename(path[, ext])</li>
+<li>path.delimiter</li>
+<li>path.dirname(path)</li>
+<li>path.extname(path)</li>
+<li>path.format(pathObject)</li>
+<li>path.isAbsolute(path)</li>
+<li>path.join([…paths])</li>
+<li>path.normalize(path)</li>
+<li>path.parse(path)</li>
+<li>path.posix</li>
+<li>path.relative(from, to)</li>
+<li>path.resolve([…paths])</li>
+<li>path.sep</li>
+<li>path.win32</li>
+</ul>
+<h3 id="Process"><a href="#Process" class="headerlink" title="Process"></a>Process</h3><blockquote>
+<p>Node是单线程事件驱动处理并发的，每个子进程都有三个流对象：child.stdin,child.stdout,<br>child.stderr.可能会共享父进程的stdio流或者可以是独立的被导流的流对象。</p>
+</blockquote>
+<ul>
+<li>Process Events<ul>
+<li>Event: ‘beforeExit’</li>
+<li>Event: ‘disconnect’</li>
+<li>Event: ‘exit’</li>
+<li>Event: ‘message’</li>
+<li>Event: ‘rejectionHandled’</li>
+<li>Event: ‘uncaughtException’</li>
+<li>Warning: Using ‘uncaughtException’ correctly</li>
+<li>Event: ‘unhandledRejection’</li>
+<li>Event: ‘warning’</li>
+<li>Emitting custom warnings</li>
+<li>Signal Events</li>
+</ul>
+</li>
+<li>process.abort()</li>
+<li>process.arch</li>
+<li>process.argv</li>
+<li>process.argv0</li>
+<li>process.channel</li>
+<li>process.chdir(directory)</li>
+<li>process.config</li>
+<li>process.connected</li>
+<li>process.cpuUsage([previousValue])</li>
+<li>process.cwd()</li>
+<li>process.disconnect()</li>
+<li>process.emitWarning(warning[, name][, ctor])<ul>
+<li>Avoiding duplicate warnings</li>
+</ul>
+</li>
+<li>process.env</li>
+<li>process.execArgv</li>
+<li>process.execPath</li>
+<li>process.exit([code])</li>
+<li>process.exitCode</li>
+<li>process.getegid()</li>
+<li>process.geteuid()</li>
+<li>process.getgid()</li>
+<li>process.getgroups()</li>
+<li>process.getuid()</li>
+<li>process.hrtime([time])</li>
+<li>process.initgroups(user, extra_group)</li>
+<li>process.kill(pid[, signal])</li>
+<li>process.mainModule</li>
+<li>process.memoryUsage()</li>
+<li>process.nextTick(callback[, …args])</li>
+<li>process.pid</li>
+<li>process.platform</li>
+<li>process.release</li>
+<li>process.send(message[, sendHandle[, options]][, callback])</li>
+<li>process.setegid(id)</li>
+<li>process.seteuid(id)</li>
+<li>process.setgid(id)</li>
+<li>process.setgroups(groups)</li>
+<li>process.setuid(id)</li>
+<li>process.stderr</li>
+<li>process.stdin</li>
+<li>process.stdout<ul>
+<li>A note on process I/O</li>
+</ul>
+</li>
+<li>process.title</li>
+<li>process.umask([mask])</li>
+<li>process.uptime()</li>
+<li>process.version</li>
+<li>process.versions<ul>
+<li>Exit Codes</li>
+</ul>
+</li>
+<li>创建子进程方法：<ul>
+<li>exec-child_process.exec</li>
+<li>spawn-child_process.spawn</li>
+<li>fork-child_process.fork</li>
+</ul>
+</li>
+</ul>
+<h3 id="Punycode"><a href="#Punycode" class="headerlink" title="Punycode"></a>Punycode</h3><h3 id="Query-Strings"><a href="#Query-Strings" class="headerlink" title="Query Strings"></a>Query Strings</h3><ul>
+<li>querystring.escape(str)</li>
+<li>querystring.parse(str[, sep[, eq[, options]]])</li>
+<li>querystring.stringify(obj[, sep[, eq[, options]]])</li>
+<li>querystring.unescape(str)</li>
+</ul>
+<h3 id="Readline"><a href="#Readline" class="headerlink" title="Readline"></a>Readline</h3><ul>
+<li>Class: Interface<ul>
+<li>Event: ‘close’</li>
+<li>Event: ‘line’</li>
+<li>Event: ‘pause’</li>
+<li>Event: ‘resume’</li>
+<li>Event: ‘SIGCONT’</li>
+<li>Event: ‘SIGINT’</li>
+<li>Event: ‘SIGTSTP’</li>
+<li>rl.close()</li>
+<li>rl.pause()</li>
+<li>rl.prompt([preserveCursor])</li>
+<li>rl.question(query, callback)</li>
+<li>rl.resume()</li>
+<li>rl.setPrompt(prompt)</li>
+<li>rl.write(data[, key])</li>
+<li>readline.clearLine(stream, dir)</li>
+<li>readline.clearScreenDown(stream)</li>
+<li>readline.createInterface(options)<ul>
+<li>Use of the completer Function</li>
+</ul>
+</li>
+<li>readline.cursorTo(stream, x, y)</li>
+<li>readline.emitKeypressEvents(stream[, interface])</li>
+<li>readline.moveCursor(stream, dx, dy)</li>
+</ul>
+</li>
+<li>Example: Tiny CLI</li>
+<li>Example: Read File Stream Line-by-Line</li>
+</ul>
+<h3 id="REPL"><a href="#REPL" class="headerlink" title="REPL"></a>REPL</h3><ul>
+<li>Design and Features<ul>
+<li>Commands and Special Keys</li>
+<li>Default Evaluation<ul>
+<li>JavaScript Expressions</li>
+<li>Global and Local Scope</li>
+<li>Accessing Core Node.js Modules</li>
+<li>Assignment of the _ (underscore) variable</li>
+</ul>
+</li>
+<li>Custom Evaluation Functions<ul>
+<li>Recoverable Errors</li>
+</ul>
+</li>
+<li>Customizing REPL Output</li>
+</ul>
+</li>
+<li>Class: REPLServer<ul>
+<li>Event: ‘exit’</li>
+<li>Event: ‘reset’</li>
+<li>replServer.defineCommand(keyword, cmd)</li>
+<li>replServer.displayPrompt([preserveCursor])</li>
+<li>repl.start([options])</li>
+</ul>
+</li>
+<li>The Node.js REPL<ul>
+<li>Environment Variable Options</li>
+<li>Using the Node.js REPL with advanced line-editors</li>
+<li>Starting multiple REPL instances against a single running instance</li>
+</ul>
+</li>
+</ul>
+<h3 id="Stream"><a href="#Stream" class="headerlink" title="Stream"></a>Stream</h3><blockquote>
+<p>Stream是一个抽象接口，Node中很多对象(request,stout)已实现。</p>
+</blockquote>
+<p>Stream 四种流类型：</p>
+<ul>
+<li>Readable</li>
+<li>Writable</li>
+<li>Duplex 可读可写操作.</li>
+<li>Transform<br>所有Stream对象都是EventEmitter的实例，常见：</li>
+<li>data</li>
+<li>end 没有更多的数据可读时触发。</li>
+<li>error</li>
+<li>finish 所有数据已被写入到底层系统时触发。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">var fs = require(&apos;fs&apos;);</div><div class="line">var readStream = fs.createReadStream(&apos;package.json&apos;);</div><div class="line">readStream</div><div class="line">  .on(&apos;data&apos;, chunk =&gt; &#123;</div><div class="line">    console.log(&apos;data emits&apos;);</div><div class="line">    console.log(Buffer.isBuffer(chunk));</div><div class="line">    // console.log(chunk.toString(&apos;utf-8&apos;));</div><div class="line">        readStream.pause();</div><div class="line">        setTimeout(() =&gt; &#123;</div><div class="line">            console.log(&apos;data pause end&apos;);</div><div class="line">            readStream.resume()</div><div class="line">        &#125;, 10)</div><div class="line">  &#125;)</div><div class="line">  .on(&apos;readable&apos;, () =&gt; console.log(&apos;data readable&apos;))</div><div class="line">  .on(&apos;end&apos;, () =&gt; console.log(&apos;data ends&apos;))</div><div class="line">  .on(&apos;close&apos;, () =&gt; console.log(&apos;data close&apos;))</div><div class="line">  .on(&apos;error&apos;, e =&gt; console.log(&apos;data read error&apos; + e))</div><div class="line">  //pipe读写</div><div class="line">  var readable = require(&apos;stream&apos;).Readable;</div><div class="line">    var writable = require(&apos;stream&apos;).Writable;</div><div class="line">    </div><div class="line">    var readStream = new readable();</div><div class="line">    var writStream = new writable();</div><div class="line">    readStream.push(&apos;I&apos;);</div><div class="line">    readStream.push(&apos;Love&apos;);</div><div class="line">    readStream.push(&apos;Node\n&apos;);</div><div class="line">    readStream.push(null);</div><div class="line">    </div><div class="line">    writStream._write = (chunk, encode, cb) =&gt; &#123;</div><div class="line">      console.log(chunk.toString());</div><div class="line">      cb()</div><div class="line">    &#125;</div><div class="line">    readStream.pipe(writStream);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="String-Decoder"><a href="#String-Decoder" class="headerlink" title="String Decoder"></a>String Decoder</h3><ul>
+<li>Class: new StringDecoder([encoding])<ul>
+<li>stringDecoder.end([buffer])</li>
+<li>stringDecoder.write(buffer)</li>
+</ul>
+</li>
+</ul>
+<h3 id="Timers"><a href="#Timers" class="headerlink" title="Timers"></a>Timers</h3><ul>
+<li>Class: Immediate</li>
+<li>Class: Timeout<ul>
+<li>timeout.ref()</li>
+<li>timeout.unref()</li>
+</ul>
+</li>
+<li>Scheduling Timers<ul>
+<li>setImmediate(callback[, …args])</li>
+<li>setInterval(callback, delay[, …args])</li>
+<li>setTimeout(callback, delay[, …args])</li>
+</ul>
+</li>
+<li>Cancelling Timers<ul>
+<li>clearImmediate(immediate)</li>
+<li>clearInterval(timeout)</li>
+<li>clearTimeout(timeout)</li>
+</ul>
+</li>
+</ul>
+<h3 id="TTY"><a href="#TTY" class="headerlink" title="TTY"></a>TTY</h3><ul>
+<li>Class: tty.ReadStream<ul>
+<li>readStream.isRaw</li>
+<li>readStream.setRawMode(mode)</li>
+</ul>
+</li>
+<li>Class: tty.WriteStream</li>
+<li>Event: ‘resize’<ul>
+<li>writeStream.columns</li>
+<li>writeStream.rows</li>
+</ul>
+</li>
+<li>tty.isatty(fd)</li>
+</ul>
+<h3 id="Tracing"><a href="#Tracing" class="headerlink" title="Tracing"></a>Tracing</h3><h3 id="UDP-Datagram"><a href="#UDP-Datagram" class="headerlink" title="UDP/Datagram"></a>UDP/Datagram</h3><h3 id="URL"><a href="#URL" class="headerlink" title="URL"></a>URL</h3><ul>
+<li>URL Strings and URL Objects<ul>
+<li>urlObject.auth</li>
+<li>urlObject.hash</li>
+<li>urlObject.host</li>
+<li>urlObject.hostname</li>
+<li>urlObject.href</li>
+<li>urlObject.path</li>
+<li>urlObject.pathname</li>
+<li>urlObject.port</li>
+<li>urlObject.protocol</li>
+<li>urlObject.query</li>
+<li>urlObject.search</li>
+<li>urlObject.slashes</li>
+</ul>
+</li>
+<li>url.format(urlObject)</li>
+<li>url.format(URL[, options])</li>
+<li>url.parse(urlString[, parseQueryString[, - slashesDenoteHost]])</li>
+<li>url.resolve(from, to)</li>
+<li>Escaped Characters</li>
+<li>The WHATWG URL API<ul>
+<li>Class: URL<ul>
+<li>Constructor: new URL(input[, base])</li>
+<li>url.hash</li>
+<li>url.host</li>
+<li>url.hostname</li>
+<li>url.href</li>
+<li>url.origin</li>
+<li>url.password</li>
+<li>url.pathname</li>
+<li>url.port</li>
+<li>url.protocol</li>
+<li>url.search</li>
+<li>url.searchParams</li>
+<li>url.username</li>
+<li>url.toString()</li>
+<li>url.toJSON()</li>
+</ul>
+</li>
+<li>Class: URLSearchParams</li>
+<li>Constructor: new URLSearchParams([init])</li>
+<li>urlSearchParams.append(name, value)</li>
+<li>urlSearchParams.delete(name)</li>
+<li>urlSearchParams.entries()</li>
+<li>urlSearchParams.forEach(fn[, thisArg])</li>
+<li>urlSearchParams.get(name)</li>
+<li>urlSearchParams.getAll(name)</li>
+<li>urlSearchParams.has(name)</li>
+<li>urlSearchParams.keys()</li>
+<li>urlSearchParams.set(name, value)</li>
+<li>urlSearchParams.sort()</li>
+<li>urlSearchParams.toString()</li>
+<li>urlSearchParams.values()</li>
+<li>urlSearchParams<a href="">@@iterator</a></li>
+</ul>
+</li>
+<li>require(‘url’).domainToASCII(domain)</li>
+<li>require(‘url’).domainToUnicode(domain)</li>
+<li>Percent-Encoding in the WHATWG URL Standard </li>
+</ul>
+<h3 id="Utilities"><a href="#Utilities" class="headerlink" title="Utilities"></a>Utilities</h3><blockquote>
+<p>util是Node的核心模块，提供常用函数的集合，用于弥补核心JS功能过于精简的不足。</p>
+</blockquote>
+<ul>
+<li>util.inherits(constructor, superConstructor):实现对象间原型继承的函数</li>
+</ul>
+<blockquote>
+<p>JavaScript 的面向对象特性是基于原型的，与常见的基于类的不同。<br>JavaScript 没有 提供对象继承的语言级别特性，而是通过原型复制来实现的。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">var util = require(&apos;util&apos;);</div><div class="line"></div><div class="line">function Base() &#123;</div><div class="line">  this.name = &apos;base&apos;;</div><div class="line">  this.base = 1990;</div><div class="line">  this.sayHello = function() &#123;</div><div class="line">    console.log(&apos;Hello&apos; + this.name);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">Base.prototype.showName = function() &#123;</div><div class="line">  console.log(this.name);</div><div class="line">&#125;</div><div class="line"></div><div class="line">function Sub() &#123;</div><div class="line">  this.name = &apos;sub&apos;;</div><div class="line">&#125;</div><div class="line"></div><div class="line">util.inherits(Sub, Base);</div><div class="line">var objBase = new Base();</div><div class="line">objBase.showName();</div><div class="line">objBase.sayHello();</div><div class="line">console.log(objBase);</div><div class="line">var objSub = new Sub();</div><div class="line">objSub.showName(); </div><div class="line">//objSub.sayHello();//TypeError: objSub.sayHello is not a function,Sub仅继承原型中定义的函数</div><div class="line">console.log(objSub);</div></pre></td></tr></table></figure></p>
+</blockquote>
+<ul>
+<li>util.inspect: 将任意对象转换为字符串，常用语调试及错误输出，至少接受一个object参数。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">//util.inspect 并不会简单地直接把对象转换为字符串，即使该对 象定义了toString 方法也不会调用。</div><div class="line">var util = require(&apos;util&apos;);</div><div class="line">function Person() &#123;</div><div class="line">  this.name = &apos;haha&apos;;</div><div class="line">  this.toString = function() &#123;</div><div class="line">    return this.name;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">var o = new Person();</div><div class="line">console.log(util.inspect(o));</div><div class="line">console.log(util.inspect(o, true));</div><div class="line">console.log(util.inspect(o, true, 3));</div><div class="line">console.log(util.inspect(o, true, 3, [(1, 0, 0)]));</div><div class="line">//输出如下</div><div class="line">Person &#123; name: &apos;haha&apos;, toString: [Function] &#125;</div><div class="line">Person &#123;</div><div class="line">  name: &apos;haha&apos;,</div><div class="line">  toString:</div><div class="line">   &#123; [Function]</div><div class="line">     [length]: 0,</div><div class="line">     [name]: &apos;&apos;,</div><div class="line">     [arguments]: null,</div><div class="line">     [caller]: null,</div><div class="line">     [prototype]: &#123; [constructor]: [Circular] &#125; &#125; &#125;</div><div class="line">Person &#123;</div><div class="line">  name: &apos;haha&apos;,</div><div class="line">  toString:</div><div class="line">   &#123; [Function]</div><div class="line">     [length]: 0,</div><div class="line">     [name]: &apos;&apos;,</div><div class="line">     [arguments]: null,</div><div class="line">     [caller]: null,</div><div class="line">     [prototype]: &#123; [constructor]: [Circular] &#125; &#125; &#125;</div><div class="line">Person &#123;</div><div class="line">  name: &apos;haha&apos;,</div><div class="line">  toString:</div><div class="line">   &#123; [Function]</div><div class="line">     [length]: 0,</div><div class="line">     [name]: &apos;&apos;,</div><div class="line">     [arguments]: null,</div><div class="line">     [caller]: null,</div><div class="line">     [prototype]: &#123; [constructor]: [Circular] &#125; &#125; &#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>util.isArray(object)</li>
+<li>util.isRegExp(object)</li>
+<li>util.isDate(object)</li>
+<li>util.isError(object)</li>
+</ul>
+<h3 id="V8"><a href="#V8" class="headerlink" title="V8"></a>V8</h3><ul>
+<li>v8.getHeapSpaceStatistics()</li>
+<li>v8.getHeapStatistics()</li>
+<li>v8.setFlagsFromString(string)</li>
+</ul>
+<h3 id="VM"><a href="#VM" class="headerlink" title="VM"></a>VM</h3><h3 id="ZLIB"><a href="#ZLIB" class="headerlink" title="ZLIB"></a>ZLIB</h3>
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/wg.jpg" alt="Yan Li wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，查看更多分享！</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+<blockquote class="blockquote-center">
+    完
+</blockquote>
+
+  <span id="inline-green" style="border-radius:3px;">作者</span>：<a class="link-blue" href="https://github.com/yanlee26" target="_blank">Frank</a><br/>有问题请 <a class="link-blue" href="https://yanlee26.github.io/guestbook" target="_blank">留言</a> 或者私信我的 <a class="link-blue" href="http://weibo.com/franklyan" target="_blank">微博</a>。
+
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>满分是100分的话，这篇文章你给多少分</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/w.jpg" alt="Yan Li WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/z.jpg" alt="Yan Li Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Hexo/" rel="tag">#Hexo</a>
+          
+            <a href="/tags/Next/" rel="tag">#Next</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/11/01/commonJS/" rel="next" title="CommonJS规范">
+                <i class="fa fa-chevron-left"></i> CommonJS规范
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/11/04/php/" rel="prev" title="php总结分析">
+                php总结分析 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/11/01/node/"
+     data-title="Node7.7.2--explore"
+     data-content=""
+     data-url="https://yanlee26.github.io/2016/11/01/node/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><span class="ds-more">分享到：</span></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+      <li><a class="ds-facebook" href="javascript:void(0);" data-service="facebook">Facebook</a></li>
+      <li><a class="ds-google" href="javascript:void(0);" data-service="google">Google</a></li>
+    </ul>
+    <!--
+      <div class="ds-share-icons-more">
+      </div>
+    -->
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="Yan Li" />
+          <p class="site-author-name" itemprop="name">Yan Li</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">25</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/yanlee26" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  Github
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/franklyan" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://stackoverflow.com/users/7261459/yan" target="_blank" title="stackoverflow">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  stackoverflow
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://home.cnblogs.com/u/frank26/" title="cnblogs" target="_blank">cnblogs</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://twitter.com/?request_context=signup" title="Twitter" target="_blank">Twitter</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#示例"><span class="nav-number">1.1.</span> <span class="nav-text">示例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Node-js-v7-7-2-Documentation"><span class="nav-number">2.</span> <span class="nav-text">Node.js v7.7.2 Documentation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#C-C-Addons-插件"><span class="nav-number">2.1.</span> <span class="nav-text">C/C++ Addons 插件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Child-Process"><span class="nav-number">2.2.</span> <span class="nav-text">Child Process</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Cluster-集群"><span class="nav-number">2.3.</span> <span class="nav-text">Cluster(集群)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Command-Line-Options"><span class="nav-number">2.4.</span> <span class="nav-text">Command Line Options</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Console"><span class="nav-number">2.5.</span> <span class="nav-text">Console</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Crypto-加密"><span class="nav-number">2.6.</span> <span class="nav-text">Crypto(加密)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Debugger"><span class="nav-number">2.7.</span> <span class="nav-text">Debugger</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DNS"><span class="nav-number">2.8.</span> <span class="nav-text">DNS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Domain-deprecated"><span class="nav-number">2.9.</span> <span class="nav-text">Domain(deprecated)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Errors"><span class="nav-number">2.10.</span> <span class="nav-text">Errors</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Events模块"><span class="nav-number">2.11.</span> <span class="nav-text">Events模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#File-System"><span class="nav-number">2.12.</span> <span class="nav-text">File System</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Globals"><span class="nav-number">2.13.</span> <span class="nav-text">Globals</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP"><span class="nav-number">2.14.</span> <span class="nav-text">HTTP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTPS"><span class="nav-number">2.15.</span> <span class="nav-text">HTTPS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Modules"><span class="nav-number">2.16.</span> <span class="nav-text">Modules</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Net"><span class="nav-number">2.17.</span> <span class="nav-text">Net</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OS"><span class="nav-number">2.18.</span> <span class="nav-text">OS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Path"><span class="nav-number">2.19.</span> <span class="nav-text">Path</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Process"><span class="nav-number">2.20.</span> <span class="nav-text">Process</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Punycode"><span class="nav-number">2.21.</span> <span class="nav-text">Punycode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Query-Strings"><span class="nav-number">2.22.</span> <span class="nav-text">Query Strings</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Readline"><span class="nav-number">2.23.</span> <span class="nav-text">Readline</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#REPL"><span class="nav-number">2.24.</span> <span class="nav-text">REPL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Stream"><span class="nav-number">2.25.</span> <span class="nav-text">Stream</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#String-Decoder"><span class="nav-number">2.26.</span> <span class="nav-text">String Decoder</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Timers"><span class="nav-number">2.27.</span> <span class="nav-text">Timers</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TTY"><span class="nav-number">2.28.</span> <span class="nav-text">TTY</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tracing"><span class="nav-number">2.29.</span> <span class="nav-text">Tracing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UDP-Datagram"><span class="nav-number">2.30.</span> <span class="nav-text">UDP/Datagram</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#URL"><span class="nav-number">2.31.</span> <span class="nav-text">URL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Utilities"><span class="nav-number">2.32.</span> <span class="nav-text">Utilities</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#V8"><span class="nav-number">2.33.</span> <span class="nav-text">V8</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#VM"><span class="nav-number">2.34.</span> <span class="nav-text">VM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ZLIB"><span class="nav-number">2.35.</span> <span class="nav-text">ZLIB</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">您是第<span class="busuanzi-value" id="busuanzi_value_site_uv"></span>个小伙伴</span>
+  
+
+  
+    <span class="site-pv">本站总浏览<span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次</span>
+  
+  
+</div>
+
+
+
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yan Li</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io" rel="external nofollow">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" rel="external nofollow">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"yanlee24"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementById('footer')
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+<script type="text/javascript" async src="//push.zhanzhang.baidu.com/push.js">
+</script>
+
+
+  <!-- 背景动画 -->
+  <script type="text/javascript" src="/js/src/particle.js"></script>
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/src/love.js"></script>
+
+</body>
+</html>

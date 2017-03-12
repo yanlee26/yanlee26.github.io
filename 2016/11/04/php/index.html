@@ -84,70 +84,16 @@
 
 
 
-<meta name="description" content="Node–get started
-Node简介及配置、快速上手、核心特点、模块化
-
-Node简介客户端的JavaScript是怎样的
-什么是 JavaScript？
-
-脚本语言
-运行在浏览器中
-一般用来做客户端页面的交互（Interactive）
-
-
-JavaScript 的运行环境？
-
-是不是运行在浏览器呢？
-不够严谨
-运行在浏览器内核中的 JS 引擎（engine）
-
-
-浏览器中的 JavaS">
+<meta name="description" content="草稿。。。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Node--get started">
-<meta property="og:url" content="https://yanlee26.github.io/2016/11/01/node--getstarted/index.html">
+<meta property="og:title" content="php总结分析">
+<meta property="og:url" content="https://yanlee26.github.io/2016/11/04/php/index.html">
 <meta property="og:site_name" content="Frank_Lyan's Blog">
-<meta property="og:description" content="Node–get started
-Node简介及配置、快速上手、核心特点、模块化
-
-Node简介客户端的JavaScript是怎样的
-什么是 JavaScript？
-
-脚本语言
-运行在浏览器中
-一般用来做客户端页面的交互（Interactive）
-
-
-JavaScript 的运行环境？
-
-是不是运行在浏览器呢？
-不够严谨
-运行在浏览器内核中的 JS 引擎（engine）
-
-
-浏览器中的 JavaS">
-<meta property="og:updated_time" content="2017-02-05T01:26:06.031Z">
+<meta property="og:description" content="草稿。。。">
+<meta property="og:updated_time" content="2017-03-12T14:06:21.054Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Node--get started">
-<meta name="twitter:description" content="Node–get started
-Node简介及配置、快速上手、核心特点、模块化
-
-Node简介客户端的JavaScript是怎样的
-什么是 JavaScript？
-
-脚本语言
-运行在浏览器中
-一般用来做客户端页面的交互（Interactive）
-
-
-JavaScript 的运行环境？
-
-是不是运行在浏览器呢？
-不够严谨
-运行在浏览器内核中的 JS 引擎（engine）
-
-
-浏览器中的 JavaS">
+<meta name="twitter:title" content="php总结分析">
+<meta name="twitter:description" content="草稿。。。">
 
 
 
@@ -168,9 +114,9 @@ JavaScript 的运行环境？
 
 
 
-  <link rel="canonical" href="https://yanlee26.github.io/2016/11/01/node--getstarted/"/>
+  <link rel="canonical" href="https://yanlee26.github.io/2016/11/04/php/"/>
 
-  <title> Node--get started | Frank_Lyan's Blog </title>
+  <title> php总结分析 | Frank_Lyan's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -333,7 +279,7 @@ JavaScript 的运行环境？
             
             
               
-                Node--get started
+                php总结分析
               
             
           </h1>
@@ -345,8 +291,8 @@ JavaScript 的运行环境？
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-11-01T21:05:24+08:00" content="2016-11-01">
-              2016-11-01
+            <time itemprop="dateCreated" datetime="2016-11-04T07:25:10+08:00" content="2016-11-03">
+              2016-11-03
             </time>
           </span>
 
@@ -359,8 +305,8 @@ JavaScript 的运行环境？
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/NODE/" itemprop="url" rel="index">
-                    <span itemprop="name">NODE</span>
+                  <a href="/categories/php/" itemprop="url" rel="index">
+                    <span itemprop="name">php</span>
                   </a>
                 </span>
 
@@ -395,183 +341,10 @@ JavaScript 的运行环境？
       
 
       
-        <h1 id="Node–get-started"><a href="#Node–get-started" class="headerlink" title="Node–get started"></a>Node–get started</h1><blockquote>
-<p>Node简介及配置、快速上手、核心特点、模块化</p>
+        <blockquote>
+<p>草稿。。。</p>
 </blockquote>
-<h2 id="Node简介"><a href="#Node简介" class="headerlink" title="Node简介"></a>Node简介</h2><h3 id="客户端的JavaScript是怎样的"><a href="#客户端的JavaScript是怎样的" class="headerlink" title="客户端的JavaScript是怎样的"></a>客户端的JavaScript是怎样的</h3><ul>
-<li><p>什么是 JavaScript？</p>
-<ul>
-<li>脚本语言</li>
-<li>运行在浏览器中</li>
-<li>一般用来做客户端页面的交互（Interactive）</li>
-</ul>
-</li>
-<li><p>JavaScript 的运行环境？</p>
-<ul>
-<li>是不是运行在浏览器呢？</li>
-<li>不够严谨</li>
-<li>运行在浏览器内核中的 JS 引擎（engine）</li>
-</ul>
-</li>
-<li><p>浏览器中的 JavaScript 可以做什么？</p>
-<ul>
-<li>操作DOM（对DOM的增删改、注册事件）</li>
-<li>AJAX/跨域</li>
-<li>BOM（页面跳转、历史记录、console.log()、alert()）</li>
-<li>ECMAScript</li>
-</ul>
-</li>
-<li><p>浏览器中的 JavaScript 不可以做什么？</p>
-<ul>
-<li>文件操作（文件和文件夹的CRUD）</li>
-<li>没有办法操作系统信息</li>
-<li>由于运行环境特殊（我们写的代码是在不认识的人的浏览器中运行）</li>
-</ul>
-</li>
-<li><p>在开发人员能力相同的情况下编程语言的能力取决于什么？</p>
-<ul>
-<li>-语言本身？-</li>
-<li>语言本身只是提供定义变量，定义函数，定义类型，流程控制，循环结构之类的操作</li>
-<li>取决于运行该语言的平台（环境）</li>
-<li>对于JS来说，我们常说的JS实际是ES，大部分能力都是由浏览器的执行引擎决定</li>
-<li>BOM和DOM可以说是浏览器开放出来的接口</li>
-<li><p>比如：Cordova中提供JS调用摄像头，操作本地文件的API</p>
-</li>
-<li><p>Java既是语言也是平台</p>
-</li>
-<li>Java运行在Java虚拟机（跨操作系统）</li>
-<li><p>PHP既是语言也是平台（跨操作系统）</p>
-</li>
-<li><p>C#语言平台：.NET Framework（Windows）</p>
-</li>
-<li>C#可以运行在MONO这样的平台</li>
-<li>因为有人需要将C#运行在Linux平台，所有出现了MONO</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>JavaScript 只可以运行在浏览器中吗？<ul>
-<li>不是</li>
-<li>能运行在哪取决于，这个环境有没有特定平台</li>
-</ul>
-</li>
-</ul>
-<h3 id="什么是Node"><a href="#什么是Node" class="headerlink" title="什么是Node"></a>什么是Node</h3><ul>
-<li>Node 就是 JavaScript 语言在服务器端的运行环境</li>
-<li>所谓“运行环境（平台）”有两层意思：<ul>
-<li>首先，JavaScript 语言通过 Node 在服务器运行，在这个意义上，Node 有点像 JavaScript 虚拟机；</li>
-<li>其次，Node 提供大量工具库，使得 JavaScript 语言与操作系统互动（比如读写文件、新建子进程），在这个意义上， Node 又是 JavaScript 的工具库。</li>
-</ul>
-</li>
-</ul>
-<h3 id="为什么是JavaScript"><a href="#为什么是JavaScript" class="headerlink" title="为什么是JavaScript"></a>为什么是JavaScript</h3><h3 id="Node的实现结构"><a href="#Node的实现结构" class="headerlink" title="Node的实现结构"></a>Node的实现结构</h3><h3 id="Node在当下Web开发领域的应用"><a href="#Node在当下Web开发领域的应用" class="headerlink" title="Node在当下Web开发领域的应用"></a>Node在当下Web开发领域的应用</h3><h3 id="哪些公司在用"><a href="#哪些公司在用" class="headerlink" title="哪些公司在用"></a>哪些公司在用</h3><h3 id="重点理解"><a href="#重点理解" class="headerlink" title="重点理解"></a>重点理解</h3><ul>
-<li>Node是一个JavaScript的运行环境（平台），不是一门语言，也不是JavaScript的框架；</li>
-<li>Node的实现结构；</li>
-<li>Node可以用来开发服务端应用程序，Web系统；</li>
-<li>基于Node的前端工具集</li>
-</ul>
-<hr>
-<h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><h3 id="安装包的方式安装"><a href="#安装包的方式安装" class="headerlink" title="安装包的方式安装"></a>安装包的方式安装</h3><ul>
-<li>安装包下载链接：<ul>
-<li>Mac OSX： <a href="http://npm.taobao.org/mirrors/node/v5.7.0/node-v5.7.0.pkg" target="_blank" rel="external">darwin</a></li>
-<li>Windows：<ul>
-<li><a href="http://npm.taobao.org/mirrors/node/v5.7.0/node-v5.7.0-x64.msi" target="_blank" rel="external">x64</a></li>
-<li><a href="http://npm.taobao.org/mirrors/node/v5.7.0/node-v5.7.0-x86.msi" target="_blank" rel="external">x86</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>安装操作：<ul>
-<li>一路<em>Next</em></li>
-</ul>
-</li>
-</ul>
-<h3 id="更新版本"><a href="#更新版本" class="headerlink" title="更新版本"></a>更新版本</h3><ul>
-<li>操作方式：<ul>
-<li>重新下载最新的安装包；</li>
-<li>覆盖安装即可；</li>
-</ul>
-</li>
-<li>问题：<ul>
-<li>以前版本安装的很多全局的工具包需要重新安装</li>
-<li>无法回滚到之前的版本</li>
-<li>无法在多个版本之间切换（很多时候我们要使用特定版本）</li>
-</ul>
-</li>
-</ul>
-<h3 id="NVM工具的使用"><a href="#NVM工具的使用" class="headerlink" title="NVM工具的使用"></a>NVM工具的使用</h3><blockquote>
-<p>Node Version Manager（Node版本管理工具）</p>
-</blockquote>
-<p>由于以后的开发工作可能会在多个Node版本中测试，而且Node的版本也比较多，所以需要这么款工具来管理</p>
-<h4 id="安装操作步骤"><a href="#安装操作步骤" class="headerlink" title="安装操作步骤"></a>安装操作步骤</h4><ol>
-<li>下载：<a href="https://github.com/coreybutler/nvm-windows/releases/download/1.1.0/nvm-noinstall.zip" target="_blank" rel="external">nvm-windows</a></li>
-<li>解压到一个全英文路径</li>
-<li><p>编辑解压目录下的<code>settings.txt</code>文件（不存在则新建）</p>
-<ul>
-<li><code>root 配置为当前 nvm.exe 所在目录</code></li>
-<li><code>path 配置为 node 快捷方式所在的目录</code></li>
-<li><code>arch 配置为当前操作系统的位数（32/64）</code></li>
-<li><code>proxy 不用配置</code></li>
-</ul>
-</li>
-<li><p>配置环境变量 可以通过 window+r  : sysdm.cpl</p>
-<ul>
-<li><code>NVM_HOME = 当前 nvm.exe 所在目录</code></li>
-<li><code>NVM_SYMLINK = node 快捷方式所在的目录</code></li>
-<li><code>PATH += %NVM_HOME%;%NVM_SYMLINK%;</code></li>
-<li>打开CMD通过<code>set [name]</code>命令查看环境变量是否配置成功</li>
-<li>PowerShell中是通过<code>dir env:[name]</code>命令</li>
-</ul>
-</li>
-<li><p>NVM使用说明：</p>
-<ul>
-<li><a href="https://github.com/coreybutler/nvm-windows/" target="_blank" rel="external">https://github.com/coreybutler/nvm-windows/</a></li>
-</ul>
-</li>
-<li><p>NPM的目录之后使用再配置</p>
-</li>
-</ol>
-<h3 id="配置Python环境"><a href="#配置Python环境" class="headerlink" title="配置Python环境"></a>配置Python环境</h3><blockquote>
-<p>Node中有些第三方的包是以C/C++源码的方式发布的，需要安装后编译<br>确保全局环境中可以使用python命令</p>
-</blockquote>
-<h3 id="环境变量的概念"><a href="#环境变量的概念" class="headerlink" title="环境变量的概念"></a>环境变量的概念</h3><blockquote>
-<p>环境变量就是操作系统提供的系统级别用于存储变量的地方</p>
-</blockquote>
-<ul>
-<li>Windows中环境变量分为系统变量和用户变量</li>
-<li>环境变量的变量名是不区分大小写的</li>
-<li>特殊值：<ul>
-<li>PATH 变量：只要添加到 PATH 变量中的路径，都可以在任何目录下搜索</li>
-</ul>
-</li>
-</ul>
-<h3 id="Windows下常用的命令行操作"><a href="#Windows下常用的命令行操作" class="headerlink" title="Windows下常用的命令行操作"></a>Windows下常用的命令行操作</h3><ul>
-<li>切换当前目录（change directory）：cd</li>
-<li>创建目录（make directory）：mkdir</li>
-<li>查看当前目录列表（directory）：dir<ul>
-<li>别名：ls（list）</li>
-</ul>
-</li>
-<li>清空当前控制台：cls<ul>
-<li>别名：clear</li>
-</ul>
-</li>
-<li>删除文件：del<ul>
-<li>别名：rm</li>
-</ul>
-</li>
-</ul>
-<blockquote>
-<p>注意：所有别名必须在新版本的 PowerShell 中使用</p>
-</blockquote>
-<hr>
-<blockquote>
-<p>事件驱动和非阻塞、模块化、核心模块、NPM</p>
-</blockquote>
-<hr>
-<h2 id="事件驱动和非阻塞"><a href="#事件驱动和非阻塞" class="headerlink" title="事件驱动和非阻塞"></a>事件驱动和非阻塞</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">// $.ajax()</span></div><div class="line"></div><div class="line"><span class="comment">// $.get('/users/list',&#123;order:'id'&#125;)</span></div><div class="line"></div><div class="line"><span class="comment">// $.get('/delete/user', &#123;id:10&#125;)</span></div><div class="line"><span class="comment">//   .success(function(data)&#123;</span></div><div class="line"><span class="comment">//     console.log(11);</span></div><div class="line"><span class="comment">//   &#125;)</span></div><div class="line"><span class="comment">//   .error(function(error)&#123;</span></div><div class="line">    </div><div class="line"><span class="comment">//   &#125;);</span></div><div class="line"></div><div class="line">$.get(<span class="string">''</span>,&#123;&#125;,<span class="function"><span class="keyword">function</span>(<span class="params">err,data</span>)</span>&#123;</div><div class="line">  <span class="keyword">if</span>(err)</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<hr>
-<h2 id="模块化开发"><a href="#模块化开发" class="headerlink" title="模块化开发"></a>模块化开发</h2>
+
       
     </div>
 
@@ -637,16 +410,16 @@ JavaScript 的运行环境？
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/09/24/scss/" rel="next" title="SCSS">
-                <i class="fa fa-chevron-left"></i> SCSS
+              <a href="/2016/11/01/node/" rel="next" title="Node7.7.2--explore">
+                <i class="fa fa-chevron-left"></i> Node7.7.2--explore
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/11/03/node--npmpackages/" rel="prev" title="Node--常用模块初探">
-                Node--常用模块初探 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/12/24/vue/" rel="prev" title="vue(2.0)全家桶 总结及源码分析">
+                vue(2.0)全家桶 总结及源码分析 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -662,10 +435,10 @@ JavaScript 的运行环境？
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/11/01/node--getstarted/"
-     data-title="Node--get started"
+        <div class="ds-share flat" data-thread-key="2016/11/04/php/"
+     data-title="php总结分析"
      data-content=""
-     data-url="https://yanlee26.github.io/2016/11/01/node--getstarted/">
+     data-url="https://yanlee26.github.io/2016/11/04/php/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -733,7 +506,7 @@ JavaScript 的运行环境？
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-count">25</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -741,7 +514,7 @@ JavaScript 的运行环境？
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -832,7 +605,7 @@ JavaScript 的运行环境？
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Node–get-started"><span class="nav-number">1.</span> <span class="nav-text">Node–get started</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Node简介"><span class="nav-number">1.1.</span> <span class="nav-text">Node简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#客户端的JavaScript是怎样的"><span class="nav-number">1.1.1.</span> <span class="nav-text">客户端的JavaScript是怎样的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是Node"><span class="nav-number">1.1.2.</span> <span class="nav-text">什么是Node</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么是JavaScript"><span class="nav-number">1.1.3.</span> <span class="nav-text">为什么是JavaScript</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Node的实现结构"><span class="nav-number">1.1.4.</span> <span class="nav-text">Node的实现结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Node在当下Web开发领域的应用"><span class="nav-number">1.1.5.</span> <span class="nav-text">Node在当下Web开发领域的应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#哪些公司在用"><span class="nav-number">1.1.6.</span> <span class="nav-text">哪些公司在用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重点理解"><span class="nav-number">1.1.7.</span> <span class="nav-text">重点理解</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#环境配置"><span class="nav-number">1.2.</span> <span class="nav-text">环境配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装包的方式安装"><span class="nav-number">1.2.1.</span> <span class="nav-text">安装包的方式安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更新版本"><span class="nav-number">1.2.2.</span> <span class="nav-text">更新版本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NVM工具的使用"><span class="nav-number">1.2.3.</span> <span class="nav-text">NVM工具的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装操作步骤"><span class="nav-number">1.2.3.1.</span> <span class="nav-text">安装操作步骤</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置Python环境"><span class="nav-number">1.2.4.</span> <span class="nav-text">配置Python环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#环境变量的概念"><span class="nav-number">1.2.5.</span> <span class="nav-text">环境变量的概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Windows下常用的命令行操作"><span class="nav-number">1.2.6.</span> <span class="nav-text">Windows下常用的命令行操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事件驱动和非阻塞"><span class="nav-number">1.3.</span> <span class="nav-text">事件驱动和非阻塞</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模块化开发"><span class="nav-number">1.4.</span> <span class="nav-text">模块化开发</span></a></li></ol></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
         </section>

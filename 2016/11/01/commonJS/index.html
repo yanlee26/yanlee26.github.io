@@ -84,58 +84,19 @@
 
 
 
-<meta name="description" content="Node–文件及网络操作
-文件流、网络操作、服务端Web开发基础
-
-文件操作文件监视利用文件监视实现自动 markdown 文件转换
-相关链接：
-
-https://github.com/chjj/marked
-https://github.com/Browsersync/browser-sync 
-
-
-实现思路：
-
-利用fs模块的文件监视功能监视指定MD文件
-当文件发生变化后，借助marked包提">
+<meta name="description" content="概述
+Node应用有采用CommonJS规范的模块组成，据此每个文件就是一模块，有自己的作用域。其内定义的变量，函数，类都是私有的，对其它文件不可见。1234567// example.jsvar x = 5;var addX = function (value) &amp;#123;  return value + x;&amp;#125;;//分享变量global.warning = true;//不推荐">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Node--文件及网络操作">
-<meta property="og:url" content="https://yanlee26.github.io/2016/11/04/node--http&https/index.html">
+<meta property="og:title" content="CommonJS规范">
+<meta property="og:url" content="https://yanlee26.github.io/2016/11/01/commonJS/index.html">
 <meta property="og:site_name" content="Frank_Lyan's Blog">
-<meta property="og:description" content="Node–文件及网络操作
-文件流、网络操作、服务端Web开发基础
-
-文件操作文件监视利用文件监视实现自动 markdown 文件转换
-相关链接：
-
-https://github.com/chjj/marked
-https://github.com/Browsersync/browser-sync 
-
-
-实现思路：
-
-利用fs模块的文件监视功能监视指定MD文件
-当文件发生变化后，借助marked包提">
-<meta property="og:image" content="https://yanlee26.github.io/./img/01.png">
-<meta property="og:image" content="https://yanlee26.github.io/./img/02.png">
-<meta property="og:updated_time" content="2017-02-05T01:26:06.033Z">
+<meta property="og:description" content="概述
+Node应用有采用CommonJS规范的模块组成，据此每个文件就是一模块，有自己的作用域。其内定义的变量，函数，类都是私有的，对其它文件不可见。1234567// example.jsvar x = 5;var addX = function (value) &amp;#123;  return value + x;&amp;#125;;//分享变量global.warning = true;//不推荐">
+<meta property="og:updated_time" content="2017-03-10T06:18:50.487Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Node--文件及网络操作">
-<meta name="twitter:description" content="Node–文件及网络操作
-文件流、网络操作、服务端Web开发基础
-
-文件操作文件监视利用文件监视实现自动 markdown 文件转换
-相关链接：
-
-https://github.com/chjj/marked
-https://github.com/Browsersync/browser-sync 
-
-
-实现思路：
-
-利用fs模块的文件监视功能监视指定MD文件
-当文件发生变化后，借助marked包提">
-<meta name="twitter:image" content="https://yanlee26.github.io/./img/01.png">
+<meta name="twitter:title" content="CommonJS规范">
+<meta name="twitter:description" content="概述
+Node应用有采用CommonJS规范的模块组成，据此每个文件就是一模块，有自己的作用域。其内定义的变量，函数，类都是私有的，对其它文件不可见。1234567// example.jsvar x = 5;var addX = function (value) &amp;#123;  return value + x;&amp;#125;;//分享变量global.warning = true;//不推荐">
 
 
 
@@ -156,9 +117,9 @@ https://github.com/Browsersync/browser-sync
 
 
 
-  <link rel="canonical" href="https://yanlee26.github.io/2016/11/04/node--http&https/"/>
+  <link rel="canonical" href="https://yanlee26.github.io/2016/11/01/commonJS/"/>
 
-  <title> Node--文件及网络操作 | Frank_Lyan's Blog </title>
+  <title> CommonJS规范 | Frank_Lyan's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -321,7 +282,7 @@ https://github.com/Browsersync/browser-sync
             
             
               
-                Node--文件及网络操作
+                CommonJS规范
               
             
           </h1>
@@ -333,8 +294,8 @@ https://github.com/Browsersync/browser-sync
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-11-04T07:25:33+08:00" content="2016-11-03">
-              2016-11-03
+            <time itemprop="dateCreated" datetime="2016-11-01T21:05:24+08:00" content="2016-11-01">
+              2016-11-01
             </time>
           </span>
 
@@ -347,8 +308,8 @@ https://github.com/Browsersync/browser-sync
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/NODE/" itemprop="url" rel="index">
-                    <span itemprop="name">NODE</span>
+                  <a href="/categories/CommonJS/" itemprop="url" rel="index">
+                    <span itemprop="name">CommonJS</span>
                   </a>
                 </span>
 
@@ -383,89 +344,67 @@ https://github.com/Browsersync/browser-sync
       
 
       
-        <h1 id="Node–文件及网络操作"><a href="#Node–文件及网络操作" class="headerlink" title="Node–文件及网络操作"></a>Node–文件及网络操作</h1><blockquote>
-<p>文件流、网络操作、服务端Web开发基础</p>
+        <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>Node应用有采用CommonJS规范的模块组成，据此每个文件就是一模块，有自己的作用域。其内定义的<br>变量，函数，类都是私有的，对其它文件不可见。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">// example.js</div><div class="line">var x = 5;</div><div class="line">var addX = function (value) &#123;</div><div class="line">  return value + x;</div><div class="line">&#125;;</div><div class="line">//分享变量</div><div class="line">global.warning = true;//不推荐</div></pre></td></tr></table></figure></p>
 </blockquote>
-<h2 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h2><h3 id="文件监视"><a href="#文件监视" class="headerlink" title="文件监视"></a>文件监视</h3><h4 id="利用文件监视实现自动-markdown-文件转换"><a href="#利用文件监视实现自动-markdown-文件转换" class="headerlink" title="利用文件监视实现自动 markdown 文件转换"></a>利用文件监视实现自动 markdown 文件转换</h4><ul>
-<li><p>相关链接：</p>
+<ul>
+<li><p>CommonJS规定，每个模块内部module变量代表当前模块，其exports属性是对外接口，加载某个模块即是加载其module.exports<br>属性。特点如下：</p>
 <ol>
-<li><a href="https://github.com/chjj/marked" target="_blank" rel="external">https://github.com/chjj/marked</a></li>
-<li><a href="https://github.com/Browsersync/browser-sync" target="_blank" rel="external">https://github.com/Browsersync/browser-sync</a> </li>
+<li>所有代码运行在模块作用域，不污染全局作用域；</li>
+<li>模块可以多次加载但一次运行，结果缓存以后再加载便直接读取缓存结果；若想让模块再次运行必须清除缓存；</li>
+<li>模块加载顺序，与其在代码中出现的位置一致。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var x = 5;</div><div class="line">var addX = function (value) &#123;</div><div class="line">  return value + x;</div><div class="line">&#125;;</div><div class="line">module.exports.x = x;</div><div class="line">module.exports.addX = addX;</div></pre></td></tr></table></figure>
+</li>
 </ol>
 </li>
-<li><p>实现思路：</p>
-<ol>
-<li>利用<code>fs</code>模块的文件监视功能监视指定MD文件</li>
-<li>当文件发生变化后，借助<code>marked</code>包提供的<code>markdown</code> to <code>html</code>功能将改变后的MD文件转换为HTML</li>
-<li>再将得到的HTML替换到模版中</li>
-<li>最后利用BrowserSync模块实现浏览器自动刷新<br>browsersync需要用到Python</li>
-</ol>
+<li><p>require 方法也可用于加载模块</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var example = require(&apos;./example.js&apos;);</div><div class="line">console.log(example.x); // 5</div><div class="line">console.log(example.addX(1)); // 6</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</div><div class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</div><div class="line"><span class="keyword">var</span> marked = <span class="built_in">require</span>(<span class="string">'marked'</span>);</div><div class="line"><span class="keyword">var</span> bs = <span class="built_in">require</span>(<span class="string">'browser-sync'</span>).create();</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">var</span> target = path.join(__dirname, process.argv[<span class="number">2</span>] || <span class="string">'./README.md'</span>);</div><div class="line"><span class="keyword">var</span> filename = path.basename(target, path.extname(target)) + <span class="string">'.html'</span>;</div><div class="line"><span class="keyword">var</span> targetHtml = path.join(path.dirname(target), filename);</div><div class="line"></div><div class="line">bs.init(&#123;</div><div class="line">  <span class="attr">server</span>: path.dirname(target),</div><div class="line">  <span class="attr">index</span>: filename,</div><div class="line">  <span class="attr">notify</span>: <span class="literal">false</span></div><div class="line">&#125;);</div><div class="line"></div><div class="line">bs.reload(filename);</div><div class="line"></div><div class="line"><span class="keyword">var</span> template = <span class="string">`&lt;!DOCTYPE html&gt;</span></div><div class="line">&lt;html lang="en"&gt;</div><div class="line">&lt;head&gt;</div><div class="line">  &lt;meta charset="UTF-8"&gt;</div><div class="line">  &lt;title&gt;&lt;/title&gt;</div><div class="line">  &lt;style&gt;&#123;&#123;&#123;styles&#125;&#125;&#125;&lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">  &lt;article class="markdown"&gt;</div><div class="line">    &#123;&#123;&#123;body&#125;&#125;&#125;</div><div class="line">  &lt;/article&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div><div class="line">`;</div><div class="line"></div><div class="line">fs.readFile(path.join(__dirname, <span class="string">'./markdown.css'</span>), <span class="string">'utf8'</span>, (error, css) =&gt; &#123;</div><div class="line">  <span class="keyword">if</span> (error) <span class="keyword">throw</span> error;</div><div class="line">  template = template.replace(<span class="string">'&#123;&#123;&#123;styles&#125;&#125;&#125;'</span>, css);</div><div class="line">  <span class="keyword">var</span> handler = <span class="function">(<span class="params">current, previous</span>) =&gt;</span> &#123;</div><div class="line">    fs.readFile(target, <span class="string">'utf8'</span>, (error, content) =&gt; &#123;</div><div class="line">      <span class="keyword">var</span> html = template.replace(<span class="string">'&#123;&#123;&#123;body&#125;&#125;&#125;'</span>, marked(content));</div><div class="line">      fs.writeFile(targetHtml, html, (error) =&gt; &#123;</div><div class="line">        <span class="keyword">if</span> (!error) &#123;</div><div class="line">          <span class="built_in">console</span>.log(<span class="string">`updated@<span class="subst">$&#123;<span class="keyword">new</span> <span class="built_in">Date</span>()&#125;</span>`</span>);</div><div class="line">          bs.reload(filename);</div><div class="line">        &#125;</div><div class="line">      &#125;);</div><div class="line">    &#125;);</div><div class="line">  &#125;;</div><div class="line">  handler();</div><div class="line">  fs.watchFile(target, &#123; <span class="attr">interval</span>: <span class="number">100</span> &#125;, handler);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<hr>
-<h2 id="文件流"><a href="#文件流" class="headerlink" title="文件流"></a>文件流</h2><h3 id="什么是流"><a href="#什么是流" class="headerlink" title="什么是流"></a>什么是流</h3><p><img src="./img/01.png" alt="二进制的世界"></p>
+<h2 id="module对象"><a href="#module对象" class="headerlink" title="module对象"></a>module对象</h2><blockquote>
+<p>Node内部提供一个Module构造函数，所有模块都是Module的实例;每个模块内部都有一个代表当前模块的module<br>对象</p>
 <ul>
-<li><p>现实过程的流</p>
-<ul>
-<li>水流，人流</li>
-</ul>
+<li>有以下属性：<ul>
+<li>module.id: 标识符，常为带有绝对路径的模块文件名</li>
+<li>module.filename: 模块文件名，带有绝对路径</li>
+<li>module.loaded: 返回布尔值，表示模块是否已经加载完成</li>
+<li>module.parent：返回一个对象，表示调用该模块的模块</li>
+<li>module.children： 返回一个数组，表示该模块要调用到的其它模块</li>
+<li>module.exports； 表示模块对外输出的值<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">//main.js</div><div class="line">var http = require(&apos;./package.json&apos;);</div><div class="line">console.log(module);</div><div class="line">//输出如下</div><div class="line">Module &#123;</div><div class="line">  id: &apos;.&apos;,</div><div class="line">  exports: &#123;&#125;,</div><div class="line">  parent: null,</div><div class="line">  filename: &apos;D:\\me\\webpack\\webpack-demo\\main.js&apos;,</div><div class="line">  loaded: false,</div><div class="line">  children:</div><div class="line">   [ Module &#123;</div><div class="line">       id: &apos;D:\\me\\webpack\\webpack-demo\\package.json&apos;,</div><div class="line">       exports: [Object],</div><div class="line">       parent: [Circular],</div><div class="line">       filename: &apos;D:\\me\\webpack\\webpack-demo\\package.json&apos;,</div><div class="line">       loaded: true,</div><div class="line">       children: [],</div><div class="line">       paths: [Object] &#125; ],</div><div class="line">  paths:</div><div class="line">   [ &apos;D:\\me\\webpack\\webpack-demo\\node_modules&apos;,</div><div class="line">     &apos;D:\\me\\webpack\\node_modules&apos;,</div><div class="line">     &apos;D:\\me\\node_modules&apos;,</div><div class="line">     &apos;D:\\node_modules&apos; ] &#125;</div></pre></td></tr></table></figure>
 </li>
-<li><p>在程序开发的概念中</p>
-<ul>
-<li>流是程序输入或输出的一个连续的字节序列</li>
-<li>文件流、网络流</li>
-<li>设备(例如鼠标、键盘、磁盘、屏幕、调制解调器和打印机)的输入和输出都是用流来处理的。</li>
 </ul>
 </li>
 </ul>
-<h3 id="Node中的流操作"><a href="#Node中的流操作" class="headerlink" title="Node中的流操作"></a>Node中的流操作</h3><p><img src="./img/02.png" alt="流的操作"></p>
-<p>在 Node 核心模块 fs 中定义了一些与流相关的 API</p>
-<ul>
-<li>fs.createReadStream()<ul>
-<li>=&gt; 得到一个ReadableStream</li>
-</ul>
-</li>
-<li>fs.createWriteStream()<ul>
-<li>=&gt; 得到一个WritableStream</li>
-</ul>
-</li>
-</ul>
-<h3 id="读取流常用-API"><a href="#读取流常用-API" class="headerlink" title="读取流常用 API"></a>读取流常用 API</h3><h4 id="Event："><a href="#Event：" class="headerlink" title="Event："></a>Event：</h4><ul>
-<li>data</li>
-<li>end</li>
-<li>error</li>
-</ul>
-<h4 id="Method："><a href="#Method：" class="headerlink" title="Method："></a>Method：</h4><ul>
-<li>read([size])、</li>
-<li>pause()、</li>
-<li>isPause()、</li>
-<li>resume()、</li>
-<li>setEncoding(encoding)、</li>
-<li>pipe(destination[, options])、</li>
-<li>unpipe([destination])</li>
-</ul>
-<h3 id="写入流常用-API"><a href="#写入流常用-API" class="headerlink" title="写入流常用 API"></a>写入流常用 API</h3><h4 id="Event"><a href="#Event" class="headerlink" title="Event:"></a>Event:</h4><ul>
-<li>error</li>
-<li>pipe</li>
-</ul>
-<h4 id="Method：-1"><a href="#Method：-1" class="headerlink" title="Method："></a>Method：</h4><ul>
-<li>write(chunk[, encoding][, callback])</li>
-<li>end([chunk][, encoding][, callback])</li>
-<li>setDefaultEncoding(encoding)</li>
-</ul>
-<hr>
-<h2 id="网络操作"><a href="#网络操作" class="headerlink" title="网络操作"></a>网络操作</h2><p>如何计算循环节长度呢？</p>
-<p>想想我们手算，如果余数比除数小，我们会在后面补0然后再除。也就是说补零之后的数是下一次的被除数。如果被除数重复出现，除数确定的，那么商和余数也就是一样的。这时，循环节就出现了。</p>
-<p>下面的函数分为两部分，</p>
-<p>补零操作<br>查找有没有同样的被除数存在，如果有，就找到了循环节，计算循环节长度并返回。在没有找到的前提下，把当前被除数记录下来，并得到余数作为下一次的被除数。<br>这里需要注意，如果某一次出现了除尽的情况，说明该分数是有限小数，循环节长度是0。<br>`<br>JavaScript</p>
-<p>console.log(foo(11, 3));<br>console.log(foo(1, 7));;<br>console.log(foo(2, 10));;<br>function foo(a, b) {<br>  if (!(a % b)) {<br>    return <code>${a}÷${b}:${a / b}</code>;<br>  }<br>  var all = (a / b).toString().split(‘.’);<br>  var i = getCycleSection(a, b);<br>  if(i)<br>    return <code>${a}÷${b}: ${all[0]}.{${all[1].substr(0, i) }}</code>;<br>    return <code>${a}÷${b}: ${a / b}</code>;</p>
-<p>}<br>function getCycleSection(n, m) {<br>  var temp = [];<br>  while (true) {<br>    while (n &lt; m) {<br>      n *= 10;<br>    }<br>    var index = temp.indexOf(n);<br>    if (index &gt;= 0) {<br>      return temp.length - index;<br>    }<br>    temp.push(n);<br>    n %= m;<br>    if (!n)<br>      return 0;<br>  }<br>}</p>
-<p>`</p>
-<blockquote>
-<p>HTTP协议，http、url、querystring、模块、网络爬虫，创建文件服务器</p>
 </blockquote>
-<h2 id="Socket"><a href="#Socket" class="headerlink" title="Socket"></a>Socket</h2><h2 id="收发有格式的数据"><a href="#收发有格式的数据" class="headerlink" title="收发有格式的数据"></a>收发有格式的数据</h2><h2 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h2><h2 id="Node中与HTTP相关的模块"><a href="#Node中与HTTP相关的模块" class="headerlink" title="Node中与HTTP相关的模块"></a>Node中与HTTP相关的模块</h2><h2 id="网络爬虫爬取页面内容"><a href="#网络爬虫爬取页面内容" class="headerlink" title="网络爬虫爬取页面内容"></a>网络爬虫爬取页面内容</h2>
+<ul>
+<li><p>module.exports属性:表示当前模块对外输出(module.exports变量)的接口</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">var EventEmitter = require(&apos;events&apos;).EventEmitter;</div><div class="line">module.exports = new EventEmitter();</div><div class="line"></div><div class="line">setTimeout(function() &#123;</div><div class="line">  module.exports.emit(&apos;ready&apos;);</div><div class="line">&#125;, 1000);</div><div class="line">//也可以写成</div><div class="line">var a = require(&apos;./a&apos;);</div><div class="line">a.on(&apos;ready&apos;, function() &#123;</div><div class="line">  console.log(&apos;module a is ready&apos;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+</li>
+<li><p>exports变量: Node为每个模块提供一个指向module.exports的exports变量，等同于在每个模块头部加入</p>
+<figure class="highlight plain"><figcaption><span>exports=module.exports```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">### AMD规范与CommonJS规范的兼容性</div><div class="line">&gt; CommonJS规范加载模块是同步的，AMD规范则是非同步加载模块，允许指定回调函数。</div><div class="line">因Node主要用于服务器编程，模块文件一般已经存于本地硬盘，故加载起来较快，无需考虑非同步加载方式，</div><div class="line">所以较适用CommonJS规范。若是浏览器环境，则一般考虑AMD规范。</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>//AMD 使用define定义模块<br>define([‘package/lib’], function(lib){<br>  function foo(){<br>    lib.log(‘hello world!’);<br>  }<br>  return {<br>    foo: foo<br>  };<br>});<br>//兼容CommonJS规范时写成。。。<br>define(function (require, exports, module){<br>  var someModule = require(“someModule”);<br>  var anotherModule = require(“anotherModule”);</p>
+<p>  someModule.doTehAwesome();<br>  anotherModule.doMoarAwesome();</p>
+<p>  exports.asplode = function (){<br>    someModule.doTehAwesome();<br>    anotherModule.doMoarAwesome();<br>  };<br>});<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">### require命令</div><div class="line">- 基本用法</div><div class="line">&gt; Node使用CommonJS模块规范，内置require命令加载文件。其基本功能是读入并执行一个js文件</div><div class="line">，然后返回该模块的exports对象，无则报错。</div><div class="line">- 加载规则</div><div class="line">&gt; require命令用于加载文件，默认后缀.js</div></pre></td></tr></table></figure></p>
+<p>var foo = require(‘foo’);<br>//  等同于<br>var foo = require(‘foo.js’);<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">根据参数不同，require命令去不同路径寻找模块文件</div><div class="line">    1 . &apos;/&apos;:加载的是一个位于绝对路径的模块文件```require(&apos;/home/marco/foo.js&apos;)</div></pre></td></tr></table></figure></p>
+<pre><code>2. &apos;./&apos;:加载相对路径文件
+3. &apos;&apos;:加载默认提供的核心模块(Node系统安装目录中)或者位于各级node_modules目录的已安装模块。
+旨在使不同的模块可以将所依赖的模块本地化。
+4. &apos;example-module/path/to/file&apos;：从前到后加载路径
+5. 若指定模块文件未发现则尝试为文件名添加.js,.json,.node后再去搜索
+6. 若想得到require命令加载的文件的确切名使用<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">- 目录加载规则</div><div class="line">&gt; 为便于组织我们常把相关文件放于一个目录里边，此时最好为该目录设置一个入口文件，让require</div><div class="line">方法可以据此加载整个目录。</div></pre></td></tr></table></figure>
+</code></pre><p>// package.json<br>{ “name” : “some-library”,<br>  “main” : “./lib/some-library.js” }<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">require发现参数字符串指向一个目录以后，会自动查看该目录的package.json文件，然后加载main字段指定的入口文件。</div><div class="line">如果package.json文件没有main字段，或者根本就没有package.json文件，则会加载该目录下的index.js文件或index.node文件。</div><div class="line">- 模块缓存</div><div class="line">&gt; 首次加载某模块时，Node会缓存；而后加载便直接从缓存读取该模块的module.exports属性</div><div class="line">- 环境变量NODE_PATH</div><div class="line">&gt; Node执行一个脚本时，会先查看其环境变量(以冒号分割的绝对路径)。在其它位置找不到指定模块时，Node会</div><div class="line">去这些路径查找。</div><div class="line">- 模块的循环加载</div><div class="line">&gt;第二次加载a.js和b.js时，会直接从缓存读取exports属性，所以a.js和b.js内部的console.log语句都不会执行了。</div><div class="line">- require.main</div><div class="line">&gt; 判断模块是直接执行还是调用执行，直接执行则```require.main===module</div></pre></td></tr></table></figure></p>
+<h3 id="模块的加载机制"><a href="#模块的加载机制" class="headerlink" title="模块的加载机制"></a>模块的加载机制</h3><blockquote>
+<p>CommonJS模块的加载机制是：输入的是被输出值的拷贝。<br>即一旦输出，一个值模块内部的变化就影响不到该值。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">//lib.js</div><div class="line">var c = 3;</div><div class="line">function add() &#123;return c++;&#125;</div><div class="line">module.exports = &#123;c,add,&#125;</div><div class="line">//main.js</div><div class="line">var c = require(&apos;./lib&apos;).c;</div><div class="line">var add = require(&apos;./lib&apos;).add;</div><div class="line">console.log(c);</div><div class="line">add();</div><div class="line">console.log(add());</div><div class="line">console.log(c);//3 4 3</div></pre></td></tr></table></figure></p>
+</blockquote>
+<ul>
+<li>require的内部处理流程<blockquote>
+<p>require在CommonJS中用于加载其它模块的命令。其实不是一全局命令，而是指向当前模块的<br>调用了Node内部命令Module._load的module.require命令。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">Module._load = function(request, parent, isMain) &#123;</div><div class="line">  // 1. 检查 Module._cache，是否缓存之中有指定模块</div><div class="line">  // 2. 如果缓存之中没有，就创建一个新的Module实例</div><div class="line">        //require(): 加载外部模块</div><div class="line">        //require.resolve()：将模块名解析到一个绝对路径</div><div class="line">        //require.main：指向主模块</div><div class="line">        //require.cache：指向所有缓存的模块</div><div class="line">        //require.extensions：根据文件的后缀名，调用不同的执行函数</div><div class="line">  // 3. 将它保存到缓存</div><div class="line">  // 4. 使用 module.load() 加载指定的模块文件，</div><div class="line">  //    读取文件内容之后，使用 module.compile() 执行文件代码</div><div class="line">  // 5. 如果加载/解析过程报错，就从缓存删除该模块</div><div class="line">  // 6. 返回该模块的 module.exports</div><div class="line">&#125;;</div><div class="line">Module.prototype._compile = function(content, filename) &#123;</div><div class="line">  // 1. 生成一个require函数，指向module.require</div><div class="line">  // 2. 加载其他辅助方法到require</div><div class="line">  // 3. 将文件内容放到一个函数之中，该函数可调用 require</div><div class="line">  // 4. 执行该函数</div><div class="line">&#125;;</div><div class="line"></div><div class="line">(function (exports, require, module, __filename, __dirname) &#123;</div><div class="line">  // YOUR CODE INJECTED HERE!</div><div class="line">&#125;);</div><div class="line">/*一旦require函数准备完毕，整个所要加载的脚本被放到一个新函数中以避免全局污染。</div><div class="line">Module._compile方法是同步执行的，所以Module._load要等它执行完成，才会向用户返回module.exports的值。</div><div class="line">*/</div></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+
       
     </div>
 
@@ -531,16 +470,16 @@ https://github.com/Browsersync/browser-sync
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/11/03/node--npmpackages/" rel="next" title="Node--常用模块初探">
-                <i class="fa fa-chevron-left"></i> Node--常用模块初探
+              <a href="/2016/10/24/webpack/" rel="next" title="webpack 初探">
+                <i class="fa fa-chevron-left"></i> webpack 初探
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/01/04/front-end-career/" rel="prev" title="Becoming a Great Web Front-end Developer">
-                Becoming a Great Web Front-end Developer <i class="fa fa-chevron-right"></i>
+              <a href="/2016/11/01/node/" rel="prev" title="Node7.7.2--explore">
+                Node7.7.2--explore <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -556,10 +495,10 @@ https://github.com/Browsersync/browser-sync
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/11/04/node--http&https/"
-     data-title="Node--文件及网络操作"
+        <div class="ds-share flat" data-thread-key="2016/11/01/commonJS/"
+     data-title="CommonJS规范"
      data-content=""
-     data-url="https://yanlee26.github.io/2016/11/04/node--http&https/">
+     data-url="https://yanlee26.github.io/2016/11/01/commonJS/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -627,7 +566,7 @@ https://github.com/Browsersync/browser-sync
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-count">25</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -635,7 +574,7 @@ https://github.com/Browsersync/browser-sync
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -726,7 +665,7 @@ https://github.com/Browsersync/browser-sync
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Node–文件及网络操作"><span class="nav-number">1.</span> <span class="nav-text">Node–文件及网络操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#文件操作"><span class="nav-number">1.1.</span> <span class="nav-text">文件操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文件监视"><span class="nav-number">1.1.1.</span> <span class="nav-text">文件监视</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#利用文件监视实现自动-markdown-文件转换"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">利用文件监视实现自动 markdown 文件转换</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件流"><span class="nav-number">1.2.</span> <span class="nav-text">文件流</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是流"><span class="nav-number">1.2.1.</span> <span class="nav-text">什么是流</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Node中的流操作"><span class="nav-number">1.2.2.</span> <span class="nav-text">Node中的流操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#读取流常用-API"><span class="nav-number">1.2.3.</span> <span class="nav-text">读取流常用 API</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Event："><span class="nav-number">1.2.3.1.</span> <span class="nav-text">Event：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Method："><span class="nav-number">1.2.3.2.</span> <span class="nav-text">Method：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#写入流常用-API"><span class="nav-number">1.2.4.</span> <span class="nav-text">写入流常用 API</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Event"><span class="nav-number">1.2.4.1.</span> <span class="nav-text">Event:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Method：-1"><span class="nav-number">1.2.4.2.</span> <span class="nav-text">Method：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网络操作"><span class="nav-number">1.3.</span> <span class="nav-text">网络操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Socket"><span class="nav-number">1.4.</span> <span class="nav-text">Socket</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#收发有格式的数据"><span class="nav-number">1.5.</span> <span class="nav-text">收发有格式的数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP"><span class="nav-number">1.6.</span> <span class="nav-text">HTTP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Node中与HTTP相关的模块"><span class="nav-number">1.7.</span> <span class="nav-text">Node中与HTTP相关的模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网络爬虫爬取页面内容"><span class="nav-number">1.8.</span> <span class="nav-text">网络爬虫爬取页面内容</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#module对象"><span class="nav-number">2.</span> <span class="nav-text">module对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#模块的加载机制"><span class="nav-number">2.1.</span> <span class="nav-text">模块的加载机制</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
