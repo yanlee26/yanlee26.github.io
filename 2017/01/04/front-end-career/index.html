@@ -1,0 +1,944 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo,Next," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="成就一名卓越的前端开发者
+本文记录了两位工程师为web开发者们所提出的多条建议，其中一位推荐了多种实用的工具与技术，而另一位则对于如何克服浏览器开发时所面临的挑战提出了诸多建议。Rebecca Murphey是来自于Bazaarvoice的一位软件工程师。今年早些时候，她发布了一篇博客文章“前端（JS）开发者的基本素质之2015版”，为JavaScript开发者在进行客户端web开发时使用的工具与">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Becoming a Great Web Front-end Developer">
+<meta property="og:url" content="https://yanlee26.github.io/2017/01/04/front-end-career/index.html">
+<meta property="og:site_name" content="Frank_Lyan's Blog">
+<meta property="og:description" content="成就一名卓越的前端开发者
+本文记录了两位工程师为web开发者们所提出的多条建议，其中一位推荐了多种实用的工具与技术，而另一位则对于如何克服浏览器开发时所面临的挑战提出了诸多建议。Rebecca Murphey是来自于Bazaarvoice的一位软件工程师。今年早些时候，她发布了一篇博客文章“前端（JS）开发者的基本素质之2015版”，为JavaScript开发者在进行客户端web开发时使用的工具与">
+<meta property="og:updated_time" content="2017-03-12T14:25:45.934Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Becoming a Great Web Front-end Developer">
+<meta name="twitter:description" content="成就一名卓越的前端开发者
+本文记录了两位工程师为web开发者们所提出的多条建议，其中一位推荐了多种实用的工具与技术，而另一位则对于如何克服浏览器开发时所面临的挑战提出了诸多建议。Rebecca Murphey是来自于Bazaarvoice的一位软件工程师。今年早些时候，她发布了一篇博客文章“前端（JS）开发者的基本素质之2015版”，为JavaScript开发者在进行客户端web开发时使用的工具与">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"hide"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6382889515761010000,
+      author: 'Author'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="https://yanlee26.github.io/2017/01/04/front-end-career/"/>
+
+  <title> Becoming a Great Web Front-end Developer | Frank_Lyan's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Frank_Lyan's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">progressive programing</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-commenting"></i> <br />
+            
+            留言
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search fa-lg"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Becoming a Great Web Front-end Developer
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-01-04T03:28:20+08:00" content="2017-01-03">
+              2017-01-03
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/技术译文/" itemprop="url" rel="index">
+                    <span itemprop="name">技术译文</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+
+          
+
+          
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv">热度
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>℃
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="成就一名卓越的前端开发者"><a href="#成就一名卓越的前端开发者" class="headerlink" title="成就一名卓越的前端开发者"></a><center>成就一名卓越的前端开发者</center></h1><blockquote>
+<p>本文记录了两位工程师为web开发者们所提出的多条建议，其中一位推荐了多种实用的工具与技术，而另一位则对于如何克服浏览器开发时所面临的挑战提出了诸多建议。<br>Rebecca Murphey是来自于Bazaarvoice的一位软件工程师。今年早些时候，她发布了一篇博客文章<a href="http://rmurphey.com/blog/2015/03/23/a-baseline-for-front-end-developers-2015" target="_blank" rel="external">“前端（JS）开发者的基本素质之2015版”</a>，为JavaScript开发者在进行客户端web开发时使用的工具与开发方式提出了一些建议。她在文章的总结中写道：</p>
+</blockquote>
+<h3 id="1-学习ECMAScript-2015"><a href="#1-学习ECMAScript-2015" class="headerlink" title="1. 学习ECMAScript 2015"></a>1. 学习ECMAScript 2015</h3><p>推荐的参考资料有：<a href="https://www.infoq.com/news/2015/06/ecmascript-2015-es6" target="_blank" rel="external">《Understanding ES6》</a>、ES6 Rocks以及BabelJS。我们在此还要加上一条，即Axel Rauschmayer的著作<a href="http://www.infoq.com/cn/news/2015/07/exploring-es6" target="_blank" rel="external">《探索ES6》</a>。考虑到在当前这个时间点上似乎还没有必要了解ECMAScript 2015的所有细节，Murphey建议开发者更深入地了解如何使用异步调用、回调以及promise。</p>
+<h3 id="2-使用模块"><a href="#2-使用模块" class="headerlink" title="2.使用模块"></a>2.使用模块</h3><p>Murphey相信，模块毫无疑问应当作为客户端web应用程序的构建块。她最近在使用webpack以实现模块化的效果，但她希望让每个人都能够使用ECMAScript标准模块的那一天能够早日到来。</p>
+<h3 id="3-测试你的代码"><a href="#3-测试你的代码" class="headerlink" title="3.测试你的代码"></a>3.测试你的代码</h3><p>在Murphey看来，为你的代码编写测试，并且保证代码的可测试性是至关重要的。<br>虽然她对于Intern“非常中意”，但出于习惯，她还是坚持使用Mocha。关于这一方面，<br>她也强烈推荐Michael Feathers的著作<a href="http://philipwalton.com/articles/how-to-become-a-great-front-end-engineer/" target="_blank" rel="external">《修改代码的艺术》</a>。</p>
+<h3 id="4-实现流程自动化"><a href="#4-实现流程自动化" class="headerlink" title="4.实现流程自动化"></a>4.实现流程自动化</h3><p>Murphey曾经尝试使用Grunt与Gulp，但她最终还是选择了Yeoman。因为在“使用不熟悉的技术开始一个全新的项目”，或是对第三方JavaScript应用的开发进行标准化时，Yeoman的表现“非常出色”。Murphey也提到了Broccoli，认为它将来或许能够取代Grunt和Yeoman。</p>
+<h3 id="5-编写高质量的代码"><a href="#5-编写高质量的代码" class="headerlink" title="5.编写高质量的代码"></a>5.编写高质量的代码</h3><p>她的建议是，对“违反了项目中经过良好定义的风格指南”的代码进行重构，还应当使用lint工具，例如JSCS或ESLint。</p>
+<h3 id="6-使用Git"><a href="#6-使用Git" class="headerlink" title="6.使用Git"></a>6.使用Git</h3><p>Murphey建议在Git中使用特性分支，因此得以“通过交互式rebase，在与他人分享提交时对提交进行清理，并且尽可能地在较小的单元上进行工作，以减少冲突的发生机率”。此外还应当通过ghooks在push操作与commit操作前运行钩子操作。</p>
+<h3 id="7-在服务端生成HTML"><a href="#7-在服务端生成HTML" class="headerlink" title="7.在服务端生成HTML"></a>7.在服务端生成HTML</h3><p>出于性能方面的考虑，Murphey推荐在大型项目中尽可能在服务端生成HTML。“预先生成这些文件，将其作为静态文件保存，以加快处理请求的速度。随后在客户端的相应事件中可通过客户端代码操作这些HTML文件，并在客户端模板中修改。”</p>
+<h3 id="8-拥抱Node"><a href="#8-拥抱Node" class="headerlink" title="8. 拥抱Node"></a>8. 拥抱Node</h3><p>Murphey建议web开发者熟练掌握Node.js的相关知识，至少要了解如何初始化一个Node项目、如何搭建一台Express服务器、以及如何使用request模块转发请求。<br>Philip Walton是来自Google的一位软件工程师，他最近撰写了一篇博客文章<a href="https://www.amazon.com/Working-Effectively-Legacy-Michael-Feathers/dp/0131177052" target="_blank" rel="external">Working-Effectively-Legacy-Michael-Feathers</a>。这篇文章的观点另辟蹊径，他并没有向读者推荐任何工具或框架，而是专注于如何处理这一领域中的某些挑战。在他看来，优秀员工与真正杰出的人才的差别不在于他们的知识量，而在于他们的思考方式。他是这样描述开发者的智慧的：</p>
+<h3 id="9-真正理解背后的过程"><a href="#9-真正理解背后的过程" class="headerlink" title="9.真正理解背后的过程"></a>9.真正理解背后的过程</h3><p>对于Walton来说，仅仅编写出可以运行的代码算不得优秀。他见过许多编写CSS与JavaScript的人，他们 “只求找到能够运行的代码，然后就继续下一步工作了。”很多时候，开发者并不了解某段代码运行的机制。Walton建议开发者进行深入钻研：</p>
+<blockquote>
+<p>要充分理解代码的工作原理或许会很耗时间，但我向你保证，从长远来说，这种方式最终将节省你大量的时间。一旦你充分理解你所参与的系统是如何运作的，你就无需不断地进行猜测与检验这些费时的工作了。<br>预先了解浏览器将产生的改动。Web开发者应当持续了解有哪些浏览器的改动会破坏现有的代码。以下代码在IE10中必然会导致整个JavaScript框架的方法出错：<br>var isIE6 = !isIE7 &amp;&amp; !isIE8 &amp;&amp; !isIE9;</p>
+</blockquote>
+<h3 id="10仔细阅读规范"><a href="#10仔细阅读规范" class="headerlink" title="10仔细阅读规范"></a>10仔细阅读规范</h3><p>Walton指出，虽然阅读规范是一项艰辛的任务，但一旦出现浏览器对某个页面的渲染不同的情况，这一任务就是不可避免的了。他为此特别举例说明：</p>
+<blockquote>
+<p>最近我遇到这样一个例子，与可伸缩（flex）元素的默认最小尺寸有关。根据规范所说，可伸缩元素的min-width与min-height的初始值是auto，而不是0，这就意味着在默认情况下，这些元素不可能收缩到比其中的内容尺寸还小。而在过去8个月中，Firefox是唯一一个正确地实现了这一特性的浏览器。<br>如果你遇到了这个跨浏览器的不一致性问题，并且注意到你的网站在Chrome、IE、Opera和Safari上的展现完全相同，只在Firefox上有所差别，那你很可能会认为是Firefox的问题。实际上，我曾多次发现这一情况，在我的Flexbugs项目中，有许多由用户报告的bug其实都是由这种不一致性所导致的。而如果我按照用户所提议的那些临时方案来改变实现方式，那么在两周前所发布的Chrome 44中又会产生问题。由于这些临时方案选择了违背规范的方式，它们在无形中起到了提倡不正确行为的负面作用。</p>
+</blockquote>
+<h3 id="11-代码审查"><a href="#11-代码审查" class="headerlink" title="11.代码审查"></a>11.代码审查</h3><p>Walton表示，从阅读他人的代码中可以学到很多知识，它可以拓宽你的思路，了解“新的工作方法”，同时也有助于你在团队中的工作。实际上，这一点确实相当必要，因为“作为一位工程师来说，你的时间大部分都是在一个现有的代码库中添加或修改代码”，而不是从头开始编写全新的代码。</p>
+<h3 id="12-与更聪明的人一起工作"><a href="#12-与更聪明的人一起工作" class="headerlink" title="12.与更聪明的人一起工作"></a>12.与更聪明的人一起工作</h3><p>Walton“强烈”建议你至少在职业生涯的初期阶段要尽量在某个团队中进行工作，向更有经验的团队成员学习，并让他们审查你的代码。如果之后选择了自由职业者这条职业路线，那么Walton建议你参与开源项目，这同样可以感受到在团队中工作的益处。</p>
+<h3 id="13-重复发明轮子"><a href="#13-重复发明轮子" class="headerlink" title="13.重复发明轮子"></a>13.重复发明轮子</h3><p>Walton相信，虽然“重复发明轮子对于业务来说是有害的”，但它对于学习很有好处。在有些情况下，他建议你自己编写代码，而不是依赖于第三方的代码，因为这一过程将让你学到许多东西。当然这也要看情况而定。</p>
+<h3 id="14-将你的经验记录下来"><a href="#14-将你的经验记录下来" class="headerlink" title="14.将你的经验记录下来"></a>14.将你的经验记录下来</h3><p>Walton的最后一条建议是将你所学到的东西用文字记录下来：“按我的经验来看，写作、演讲以及开发demo，这些方法能够迫使我对知识点进行充分的挖掘，并做到从内到外的完全理解。哪怕你写的东西完全没人看，但写作的过程本身就已经值得你付出的努力了。”</p>
+<p><a href="https://www.infoq.com/news/2015/08/great-front-end-developer" target="_blank" rel="external">参考链接</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/wg.jpg" alt="Yan Li wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，查看更多分享！</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+<blockquote class="blockquote-center">
+    完
+</blockquote>
+
+  <span id="inline-green" style="border-radius:3px;">作者</span>：<a class="link-blue" href="https://github.com/yanlee26" target="_blank">Frank</a><br/>有问题请 <a class="link-blue" href="https://yanlee26.github.io/guestbook" target="_blank">留言</a> 或者私信我的 <a class="link-blue" href="http://weibo.com/franklyan" target="_blank">微博</a>。
+
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>满分是100分的话，这篇文章你给多少分</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/w.jpg" alt="Yan Li WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/z.jpg" alt="Yan Li Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Hexo/" rel="tag">#Hexo</a>
+          
+            <a href="/tags/Next/" rel="tag">#Next</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/12/24/three/" rel="next" title="three学习总结">
+                <i class="fa fa-chevron-left"></i> three学习总结
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/01/24/react/" rel="prev" title="react学习及原理分析">
+                react学习及原理分析 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2017/01/04/front-end-career/"
+     data-title="Becoming a Great Web Front-end Developer"
+     data-content=""
+     data-url="https://yanlee26.github.io/2017/01/04/front-end-career/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><span class="ds-more">分享到：</span></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+      <li><a class="ds-facebook" href="javascript:void(0);" data-service="facebook">Facebook</a></li>
+      <li><a class="ds-google" href="javascript:void(0);" data-service="google">Google</a></li>
+    </ul>
+    <!--
+      <div class="ds-share-icons-more">
+      </div>
+    -->
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="Yan Li" />
+          <p class="site-author-name" itemprop="name">Yan Li</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">25</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/yanlee26" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  Github
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/franklyan" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://stackoverflow.com/users/7261459/yan" target="_blank" title="stackoverflow">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  stackoverflow
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://home.cnblogs.com/u/frank26/" title="cnblogs" target="_blank">cnblogs</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://twitter.com/?request_context=signup" title="Twitter" target="_blank">Twitter</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#成就一名卓越的前端开发者"><span class="nav-number">1.</span> <span class="nav-text">成就一名卓越的前端开发者</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-学习ECMAScript-2015"><span class="nav-number">1.0.1.</span> <span class="nav-text">1. 学习ECMAScript 2015</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-使用模块"><span class="nav-number">1.0.2.</span> <span class="nav-text">2.使用模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-测试你的代码"><span class="nav-number">1.0.3.</span> <span class="nav-text">3.测试你的代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-实现流程自动化"><span class="nav-number">1.0.4.</span> <span class="nav-text">4.实现流程自动化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-编写高质量的代码"><span class="nav-number">1.0.5.</span> <span class="nav-text">5.编写高质量的代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-使用Git"><span class="nav-number">1.0.6.</span> <span class="nav-text">6.使用Git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-在服务端生成HTML"><span class="nav-number">1.0.7.</span> <span class="nav-text">7.在服务端生成HTML</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-拥抱Node"><span class="nav-number">1.0.8.</span> <span class="nav-text">8. 拥抱Node</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-真正理解背后的过程"><span class="nav-number">1.0.9.</span> <span class="nav-text">9.真正理解背后的过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10仔细阅读规范"><span class="nav-number">1.0.10.</span> <span class="nav-text">10仔细阅读规范</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-代码审查"><span class="nav-number">1.0.11.</span> <span class="nav-text">11.代码审查</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-与更聪明的人一起工作"><span class="nav-number">1.0.12.</span> <span class="nav-text">12.与更聪明的人一起工作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13-重复发明轮子"><span class="nav-number">1.0.13.</span> <span class="nav-text">13.重复发明轮子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#14-将你的经验记录下来"><span class="nav-number">1.0.14.</span> <span class="nav-text">14.将你的经验记录下来</span></a></li></ol></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">您是第<span class="busuanzi-value" id="busuanzi_value_site_uv"></span>个小伙伴</span>
+  
+
+  
+    <span class="site-pv">本站总浏览<span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次</span>
+  
+  
+</div>
+
+
+
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yan Li</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io" rel="external nofollow">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" rel="external nofollow">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"yanlee24"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementById('footer')
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+<script type="text/javascript" async src="//push.zhanzhang.baidu.com/push.js">
+</script>
+
+
+  <!-- 背景动画 -->
+  <script type="text/javascript" src="/js/src/particle.js"></script>
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/src/love.js"></script>
+
+</body>
+</html>

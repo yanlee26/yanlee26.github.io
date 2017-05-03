@@ -1,0 +1,1186 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo,Next," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="简介
+Python是一种解释型、面向对象、动态数据类型的高级程序设计语言。
+
+
+Python 是一种解释型语言： 这意味着开发过程中没有了编译这个环节。类似于PHP和Perl语言。
+
+Python 是交互式语言： 这意味着，您可以在一个Python提示符，直接互动执行写你的程序。
+
+Python 是面向对象语言: 这意味着Python支持面向对象的风格或代码封装在对象的编程技术。
+
+Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python get started">
+<meta property="og:url" content="https://yanlee26.github.io/2016/10/04/python/index.html">
+<meta property="og:site_name" content="Frank_Lyan's Blog">
+<meta property="og:description" content="简介
+Python是一种解释型、面向对象、动态数据类型的高级程序设计语言。
+
+
+Python 是一种解释型语言： 这意味着开发过程中没有了编译这个环节。类似于PHP和Perl语言。
+
+Python 是交互式语言： 这意味着，您可以在一个Python提示符，直接互动执行写你的程序。
+
+Python 是面向对象语言: 这意味着Python支持面向对象的风格或代码封装在对象的编程技术。
+
+Python">
+<meta property="og:updated_time" content="2017-03-26T03:18:19.611Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python get started">
+<meta name="twitter:description" content="简介
+Python是一种解释型、面向对象、动态数据类型的高级程序设计语言。
+
+
+Python 是一种解释型语言： 这意味着开发过程中没有了编译这个环节。类似于PHP和Perl语言。
+
+Python 是交互式语言： 这意味着，您可以在一个Python提示符，直接互动执行写你的程序。
+
+Python 是面向对象语言: 这意味着Python支持面向对象的风格或代码封装在对象的编程技术。
+
+Python">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"hide"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6382889515761010000,
+      author: 'Author'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="https://yanlee26.github.io/2016/10/04/python/"/>
+
+  <title> Python get started | Frank_Lyan's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Frank_Lyan's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">progressive programing</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-commenting"></i> <br />
+            
+            留言
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search fa-lg"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Python get started
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-04T02:25:40+08:00" content="2016-10-03">
+              2016-10-03
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+
+          
+
+          
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv">热度
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>℃
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><blockquote>
+<p>Python是一种解释型、面向对象、动态数据类型的高级程序设计语言。</p>
+</blockquote>
+<ul>
+<li><p>Python 是一种解释型语言： 这意味着开发过程中没有了编译这个环节。类似于PHP和Perl语言。</p>
+</li>
+<li><p>Python 是交互式语言： 这意味着，您可以在一个Python提示符，直接互动执行写你的程序。</p>
+</li>
+<li><p>Python 是面向对象语言: 这意味着Python支持面向对象的风格或代码封装在对象的编程技术。</p>
+</li>
+<li><p>Python 是初学者的语言：Python 对初级程序员而言，是一种伟大的语言，它支持广泛的应用程序开发，从简单的文字处理到 WWW 浏览器再到游戏。</p>
+</li>
+</ul>
+<h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><ol>
+<li><p>易于学习：Python有相对较少的关键字，结构简单，和一个明确定义的语法，学习起来更加简单。</p>
+</li>
+<li><p>易于阅读：Python代码定义的更清晰。</p>
+</li>
+<li><p>易于维护：Python的成功在于它的源代码是相当容易维护的。</p>
+</li>
+<li><p>一个广泛的标准库：Python的最大的优势之一是丰富的库，跨平台的，在UNIX，Windows和Macintosh兼容很好。</p>
+</li>
+<li><p>互动模式：互动模式的支持，您可以从终端输入执行代码并获得结果的语言，互动的测试和调试代码片断。</p>
+</li>
+<li><p>可移植：基于其开放源代码的特性，Python已经被移植（也就是使其工作）到许多平台。</p>
+</li>
+<li><p>可扩展：如果你需要一段运行很快的关键代码，或者是想要编写一些不愿开放的算法，你可以使用C或C++完成那部分程序，然后从你的Python程序中调用。</p>
+</li>
+<li><p>数据库：Python提供所有主要的商业数据库的接口。</p>
+</li>
+<li><p>GUI编程：Python支持GUI可以创建和移植到许多系统调用。</p>
+</li>
+<li><p>可嵌入: 你可以将Python嵌入到C/C++程序，让你的程序的用户获得”脚本化”的能力。</p>
+</li>
+</ol>
+<h1 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h1><ul>
+<li><p>标识符，保留字同JS</p>
+</li>
+<li><p>行和缩进</p>
+</li>
+</ul>
+<blockquote>
+<p>不使用大括号（{}）来控制类，函数以及其他逻辑判断。python最具特色的就是用缩进来写模块。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">if True:</div><div class="line">    print &quot;True&quot;</div><div class="line">else:</div><div class="line">  print &quot;False&quot;</div></pre></td></tr></table></figure>
+<ul>
+<li>多行语句：一般以新行作为为语句的结束符。<br>但是我们可以使用斜杠（ \）将一行的语句分为多行显示</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">total = item_one + \</div><div class="line">        item_two + \</div><div class="line">        item_three</div><div class="line">#语句中包含[], &#123;&#125; 或 () 括号就不需要使用多行连接符</div><div class="line">days = [&apos;Monday&apos;, &apos;Tuesday&apos;, &apos;Wednesday&apos;,</div><div class="line">        &apos;Thursday&apos;, &apos;Friday&apos;]</div></pre></td></tr></table></figure>
+<ul>
+<li>引号（三引号可以由多行组成，编写多行文本的快捷语法，常用语文档字符串，在文件的特定地点，被当做注释。）</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">word = &apos;word&apos;</div><div class="line">sentence = &quot;这是一个句子。&quot;</div><div class="line">paragraph = &quot;&quot;&quot;这是一个段落。</div><div class="line">包含了多个语句&quot;&quot;&quot;</div></pre></td></tr></table></figure>
+<ul>
+<li><p>注释（# 开头，三个单引号(‘’’)或三个双引号(“””)）     </p>
+</li>
+<li><p>空行：函数之间或类的方法之间用空行分隔，表示一段新的代码的开始。类和函数入口之间也用一行空行分隔，以突出函数入口的开始。</p>
+</li>
+</ul>
+<h1 id="变量类型"><a href="#变量类型" class="headerlink" title="变量类型"></a>变量类型</h1><blockquote>
+<p>变量存储在内存中的值。这就意味着在创建变量时会在内存中开辟一个空间。<br>基于变量的数据类型，解释器会分配指定内存，并决定什么数据可以被存储在内存中。<br>因此，变量可以指定不同的数据类型，这些变量可以存储整数，小数或字符。</p>
+</blockquote>
+<h2 id="赋值-不需要类型声明"><a href="#赋值-不需要类型声明" class="headerlink" title="赋值(不需要类型声明)"></a>赋值(不需要类型声明)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">counter = 100 # 赋值整型变量</div><div class="line">miles = 1000.0 # 浮点型</div><div class="line">name = &quot;John&quot; # 字符串</div><div class="line"> </div><div class="line">print (counter);</div><div class="line"></div><div class="line">print (miles);</div><div class="line"></div><div class="line">print (name);</div><div class="line"></div><div class="line"># 多个变量</div><div class="line">a, b, c = 1, 2, &quot;john&quot;</div><div class="line">a = b = c = 1</div></pre></td></tr></table></figure>
+<h2 id="标准数据类型-五个，在内存中存储的数据可以有多种类型"><a href="#标准数据类型-五个，在内存中存储的数据可以有多种类型" class="headerlink" title="标准数据类型(五个，在内存中存储的数据可以有多种类型)"></a>标准数据类型(五个，在内存中存储的数据可以有多种类型)</h2><ul>
+<li>Numbers（数字）</li>
+<li>String（字符串）</li>
+<li>List（列表，Python 中使用最频繁的数据类型）</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">list = [ &apos;runoob&apos;, 786 , 2.23, &apos;john&apos;, 70.2 ]</div><div class="line">tinylist = [123, &apos;john&apos;]</div><div class="line"> </div><div class="line">print (list)               # 输出完整列表</div><div class="line">print (list[0]  )          # 输出列表的第一个元素</div><div class="line">print (list[1:3])          # 输出第二个至第三个的元素 </div><div class="line">print (list[2:])          # 输出从第三个开始至列表末尾的所有元素</div><div class="line">print (tinylist* 2)       # 输出列表两次</div><div class="line">print (list + tinylist)    # 打印组合的列表</div></pre></td></tr></table></figure>
+<ul>
+<li>Tuple（元组,另一个数据类型，类似于List（列表）,用”()”标识。内部元素用逗号隔开。但是元组不能二次赋值，相当于只读列表）</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">tuple = ( &apos;runoob&apos;, 786 , 2.23, &apos;john&apos;, 70.2 )</div><div class="line">tinytuple = (123, &apos;john&apos;)</div><div class="line"> </div><div class="line">print (tuple)               # 输出完整列表</div><div class="line">print (tuple[0]  )          # 输出列表的第一个元素</div><div class="line">print (tuple[1:3])          # 输出第二个至第三个的元素 </div><div class="line">print (tuple[2:])          # 输出从第三个开始至列表末尾的所有元素</div><div class="line">print (tinytuple* 2)       # 输出列表两次</div><div class="line">print (tuple + tinytuple)    # 打印组合的列表</div></pre></td></tr></table></figure>
+<ul>
+<li>Dictionary（字典,列表是有序的对象结合，字典是无序的对象集合。字典当中的元素是通过键来存取的，而不是通过偏移存取。字典用”{ }”标识。字典由索引(key)和它对应的值value组成。）</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">dict = &#123;&#125;</div><div class="line">dict[&apos;one&apos;] = &quot;This is one&quot;</div><div class="line">dict[2] = &quot;This is two&quot;</div><div class="line"> </div><div class="line">tinydict = &#123;&apos;name&apos;: &apos;john&apos;,&apos;code&apos;:6734, &apos;dept&apos;: &apos;sales&apos;&#125;</div><div class="line"> </div><div class="line"> </div><div class="line">print (dict[&apos;one&apos;])          # 输出键为&apos;one&apos; 的值</div><div class="line">print (dict[2])              # 输出键为 2 的值</div><div class="line">print (tinydict)             # 输出完整的字典</div><div class="line">print (tinydict.keys())      # 输出所有键</div><div class="line">print (tinydict.values())    # 输出所有值</div></pre></td></tr></table></figure>
+<h2 id="数据类型转换：只需要将数据类型作为函数名即可"><a href="#数据类型转换：只需要将数据类型作为函数名即可" class="headerlink" title="数据类型转换：只需要将数据类型作为函数名即可"></a>数据类型转换：只需要将数据类型作为函数名即可</h2><h1 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h1><ul>
+<li>算术运算符</li>
+<li>比较（关系）运算符</li>
+<li>赋值运算符</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">**=	幂赋值运算符	c **= a 等效于 c = c ** a</div><div class="line">//=	取整除赋值运算符	c //= a 等效于 c = c // a</div></pre></td></tr></table></figure>
+<ul>
+<li><p>逻辑运算符</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">and not or</div></pre></td></tr></table></figure>
+</li>
+<li><p>位运算符</p>
+</li>
+<li>成员运算符(字符串，列表或元组。in/not in)</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">a = 10</div><div class="line">b = 20</div><div class="line">list = [1, 2, 3, 4, 5 ];</div><div class="line"></div><div class="line">if ( a in list ):</div><div class="line">   print (&quot;1 - variable a in the list &quot; )</div><div class="line">else:</div><div class="line">   print (&quot;1 - variable a not in the  list &quot;)</div><div class="line"></div><div class="line">if ( b not in list ):</div><div class="line">   print (&quot;2 - variable b not in the  list &quot;)</div><div class="line">else:</div><div class="line">   print (&quot;2 - variable b in the list &quot; )</div><div class="line"># modify the value of a</div><div class="line">a = 2</div><div class="line">if ( a in list ):</div><div class="line">   print (&quot;3 - variable a in the list &quot; )</div><div class="line">else:</div><div class="line">   print (&quot;3 - variable a not in the  list &quot;)</div></pre></td></tr></table></figure>
+<ul>
+<li>身份运算符(比较两个对象的存储单元 is/is not)</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">a = 20</div><div class="line">b = 20</div><div class="line"></div><div class="line">if ( a is b ):</div><div class="line">   print (&quot;1 - a and b are  the same log&quot;)</div><div class="line">else:</div><div class="line">   print (&quot;1 - a and b are not the same log&quot;)</div><div class="line"></div><div class="line">if ( id(a) is not id(b) ):</div><div class="line">   print (&quot;2 - a and b are  the same log&quot;)</div><div class="line">else:</div><div class="line">   print (&quot;2 - a and b are not the same log&quot;)</div><div class="line"></div><div class="line"># modify the value of b</div><div class="line">b = 30</div><div class="line">if ( a is b ):</div><div class="line">   print (&quot;3 - a and b are  the same log&quot;)</div><div class="line">else:</div><div class="line">   print (&quot;3 - a and b are not the same log&quot;)</div><div class="line"></div><div class="line">if ( a is not b ):</div><div class="line">   print (&quot;4 - a and b are not the same log&quot;)</div><div class="line">else:</div><div class="line">   print (&quot;4 - a and b are  the same log&quot;)</div></pre></td></tr></table></figure>
+<ul>
+<li>运算符优先级</li>
+</ul>
+<h1 id="条件语句"><a href="#条件语句" class="headerlink" title="条件语句"></a>条件语句</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">if ( var  == 100 ) : print (&quot;变量 var 的值为100&quot; )</div><div class="line"></div><div class="line">if condition：</div><div class="line">    Execute the statement...</div><div class="line">elseif：</div><div class="line">    Execute the statement...</div><div class="line">else：</div><div class="line">Execute the statement...</div></pre></td></tr></table></figure>
+<h1 id="循环语句-没有do-while循环"><a href="#循环语句-没有do-while循环" class="headerlink" title="循环语句(没有do-while循环)"></a>循环语句(没有do-while循环)</h1><h2 id="while循环"><a href="#while循环" class="headerlink" title="while循环"></a>while循环</h2><h2 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h2><h2 id="嵌套循环"><a href="#嵌套循环" class="headerlink" title="嵌套循环"></a>嵌套循环</h2><h2 id="break语句"><a href="#break语句" class="headerlink" title="break语句"></a>break语句</h2><h2 id="continue语句"><a href="#continue语句" class="headerlink" title="continue语句"></a>continue语句</h2><h2 id="pass语句-不做任何事情，一般用做占位语句"><a href="#pass语句-不做任何事情，一般用做占位语句" class="headerlink" title="pass语句(不做任何事情，一般用做占位语句)"></a>pass语句(不做任何事情，一般用做占位语句)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">for letter in &apos;Python&apos;:</div><div class="line">   if letter == &apos;h&apos;:</div><div class="line">      pass</div><div class="line">      print (&apos;This is the block of pass &apos;)</div><div class="line">   print (&apos;The current letter is :&apos;, letter)</div><div class="line"></div><div class="line">print (&quot;Good bye!&quot;)</div></pre></td></tr></table></figure>
+<h1 id="Number"><a href="#Number" class="headerlink" title="Number"></a>Number</h1><p>Python 支持四种不同的数值类型：</p>
+<ul>
+<li><p>整型(Int) 通常被称为是整型或整数，是正或负整数，不带小数点。</p>
+</li>
+<li><p>长整型(long integers)无限大小的整数，整数最后是一个大写或小写的L。</p>
+</li>
+<li><p>浮点型(floating point real values)浮点型由整数部分与小数部分组成，浮点型也可以使用科学计数法表示（2.5e2 = 2.5 x 102 = 250）</p>
+</li>
+<li><p>复数( (complex numbers))复数由实数部分和虚数部分构成，可以用a + bj,或者complex(a,b)表示， 复数的实部a和虚部b都是浮点型。</p>
+</li>
+</ul>
+<h1 id="String"><a href="#String" class="headerlink" title="String"></a>String</h1><ul>
+<li>访问字符串中的值</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var1 = &apos;Hello World!&apos;</div><div class="line">var2 = &quot;Python Runoob&quot;</div><div class="line"></div><div class="line">print (&quot;var1[0]: &quot;, var1[0])</div><div class="line">print (&quot;var2[1:5]: &quot;, var2[1:5])</div></pre></td></tr></table></figure>
+<ul>
+<li>更新</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var1 = &apos;Hello World!&apos;</div><div class="line"></div><div class="line">print (&quot;更新字符串 :- &quot;, var1[:6] + &apos;Runoob!&apos;)</div></pre></td></tr></table></figure>
+<ul>
+<li>字符串运算符</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">operator</th>
+<th>describe</th>
+<th style="text-align:right">instance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">+</td>
+<td>字符串连接</td>
+<td style="text-align:right">‘a + b’ HelloPython’</td>
+</tr>
+<tr>
+<td style="text-align:left">*</td>
+<td>重复输出字符串</td>
+<td style="text-align:right">a * 2’HelloHello’</td>
+</tr>
+<tr>
+<td style="text-align:left">[]</td>
+<td>通过索引获取字符串中字符</td>
+<td style="text-align:right">a[1]’e’</td>
+</tr>
+<tr>
+<td style="text-align:left">[:]</td>
+<td>截取字符串中的一部分</td>
+<td style="text-align:right">a[1:4]’ell’</td>
+</tr>
+<tr>
+<td style="text-align:left">in</td>
+<td>成员运算符 - 如果字符串中包含给定的字符返回 True</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">not in</td>
+<td>成员运算符 - 如果字符串中不包含给定的字符返回 True</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">r/R</td>
+<td>原始字符串 - 原始字符串：所有的字符串都是直接按照字面的意思来使用，没有转义特殊或不能打印的字符。 原始字符串除在字符串的第一个引号前加上字母”r”（可以大小写）以外，与普通字符串有着几乎完全相同的语法。</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">%</td>
+<td>格式字符串</td>
+<td style="text-align:right">print “My name is %s and weight is %d kg!” % (‘Zara’, 21)</td>
+</tr>
+</tbody>
+</table>
+<h1 id="日期和时间-time-和-calendar-模块"><a href="#日期和时间-time-和-calendar-模块" class="headerlink" title="日期和时间( time 和 calendar 模块)"></a>日期和时间( time 和 calendar 模块)</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">import time;  # 引入time模块</div><div class="line"></div><div class="line">ticks = time.time()</div><div class="line">print (ticks)</div></pre></td></tr></table></figure>
+<h2 id="时间元祖"><a href="#时间元祖" class="headerlink" title="时间元祖"></a>时间元祖</h2><table>
+<thead>
+<tr>
+<th style="text-align:left">list</th>
+<th>Field</th>
+<th style="text-align:right">value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">0</td>
+<td>year</td>
+<td style="text-align:right">2008</td>
+</tr>
+<tr>
+<td style="text-align:left">1</td>
+<td>month</td>
+<td style="text-align:right">1-12</td>
+</tr>
+<tr>
+<td style="text-align:left">2</td>
+<td>day</td>
+<td style="text-align:right">1-31</td>
+</tr>
+<tr>
+<td style="text-align:left">3</td>
+<td>hour</td>
+<td style="text-align:right">0-23</td>
+</tr>
+<tr>
+<td style="text-align:left">4</td>
+<td>minutes</td>
+<td style="text-align:right">0-59</td>
+</tr>
+<tr>
+<td style="text-align:left">5</td>
+<td>seconds</td>
+<td style="text-align:right">0-59</td>
+</tr>
+<tr>
+<td style="text-align:left">6</td>
+<td>day of week</td>
+<td style="text-align:right">0-6</td>
+</tr>
+<tr>
+<td style="text-align:left">7</td>
+<td>day of year</td>
+<td style="text-align:right">1-366</td>
+</tr>
+<tr>
+<td style="text-align:left">8</td>
+<td>summer time</td>
+<td style="text-align:right">-1, 0, 1, -1是决定是否为夏令时的旗帜</td>
+</tr>
+</tbody>
+</table>
+<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">def printme( str ):</div><div class="line">   print (str)</div><div class="line">   return</div><div class="line"></div><div class="line">printme(&apos;hello&apos;)</div><div class="line">printme(&apos;python&apos;)</div></pre></td></tr></table></figure>
+<h1 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h1><blockquote>
+<p>Python 模块(Module)，是一个 Python 文件，以 .py 结尾，包含了 Python 对象定义和Python语句。<br>模块让你能够有逻辑地组织你的 Python 代码段。<br>把相关的代码分配到一个模块里能让你的代码更好用，更易懂。<br>模块能定义函数，类和变量，模块里也能包含可执行的代码。</p>
+</blockquote>
+<h2 id="import-from-import-from-import"><a href="#import-from-import-from-import" class="headerlink" title="import,from-import,from-import*"></a>import,from-import,from-import*</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">import module1[, module2[,... moduleN]</div><div class="line"># 从模块中导入一个指定的部分到当前命名空间中</div><div class="line">from modname import name1[, name2[, ... nameN]]</div><div class="line"># 把一个模块的所有内容全都导入到当前的命名空间也是可行的</div><div class="line">from modname import *</div></pre></td></tr></table></figure>
+<h2 id="命名空间和作用域"><a href="#命名空间和作用域" class="headerlink" title="命名空间和作用域"></a>命名空间和作用域</h2><blockquote>
+<p>变量是拥有匹配对象的名字（标识符）。命名空间是一个包含了变量名称们（键）和它们各自相应的对象们（值）的字典。<br>一个 Python 表达式可以访问局部命名空间和全局命名空间里的变量。如果一个局部变量和一个全局变量重名，则局部变量会覆盖全局变量。</p>
+</blockquote>
+<h2 id="dir-函数，排好序的字符串列表，内容是一个模块里定义过的名字。"><a href="#dir-函数，排好序的字符串列表，内容是一个模块里定义过的名字。" class="headerlink" title="dir()函数，排好序的字符串列表，内容是一个模块里定义过的名字。"></a>dir()函数，排好序的字符串列表，内容是一个模块里定义过的名字。</h2><h2 id="globals-和-locals-函数"><a href="#globals-和-locals-函数" class="headerlink" title="globals() 和 locals() 函数"></a>globals() 和 locals() 函数</h2><h2 id="reload-函数"><a href="#reload-函数" class="headerlink" title="reload() 函数"></a>reload() 函数</h2><h1 id="文件I-O"><a href="#文件I-O" class="headerlink" title="文件I/O"></a>文件I/O</h1><h1 id="file方法"><a href="#file方法" class="headerlink" title="file方法"></a>file方法</h1><h1 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h1>
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/wg.jpg" alt="Yan Li wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，查看更多分享！</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+<blockquote class="blockquote-center">
+    完
+</blockquote>
+
+  <span id="inline-green" style="border-radius:3px;">作者</span>：<a class="link-blue" href="https://github.com/yanlee26" target="_blank">Frank</a><br/>有问题请 <a class="link-blue" href="https://yanlee26.github.io/guestbook" target="_blank">留言</a> 或者私信我的 <a class="link-blue" href="http://weibo.com/franklyan" target="_blank">微博</a>。
+
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>满分是100分的话，这篇文章你给多少分</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/w.jpg" alt="Yan Li WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/z.jpg" alt="Yan Li Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Hexo/" rel="tag">#Hexo</a>
+          
+            <a href="/tags/Next/" rel="tag">#Next</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/09/24/scss/" rel="next" title="SCSS">
+                <i class="fa fa-chevron-left"></i> SCSS
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/10/04/es6/" rel="prev" title="ES6/ES7总结分析">
+                ES6/ES7总结分析 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/10/04/python/"
+     data-title="Python get started"
+     data-content=""
+     data-url="https://yanlee26.github.io/2016/10/04/python/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><span class="ds-more">分享到：</span></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+      <li><a class="ds-facebook" href="javascript:void(0);" data-service="facebook">Facebook</a></li>
+      <li><a class="ds-google" href="javascript:void(0);" data-service="google">Google</a></li>
+    </ul>
+    <!--
+      <div class="ds-share-icons-more">
+      </div>
+    -->
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="Yan Li" />
+          <p class="site-author-name" itemprop="name">Yan Li</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">25</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/yanlee26" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  Github
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/franklyan" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://stackoverflow.com/users/7261459/yan" target="_blank" title="stackoverflow">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  stackoverflow
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://home.cnblogs.com/u/frank26/" title="cnblogs" target="_blank">cnblogs</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://twitter.com/?request_context=signup" title="Twitter" target="_blank">Twitter</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#特点"><span class="nav-number">1.1.</span> <span class="nav-text">特点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基础语法"><span class="nav-number">2.</span> <span class="nav-text">基础语法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#变量类型"><span class="nav-number">3.</span> <span class="nav-text">变量类型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#赋值-不需要类型声明"><span class="nav-number">3.1.</span> <span class="nav-text">赋值(不需要类型声明)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标准数据类型-五个，在内存中存储的数据可以有多种类型"><span class="nav-number">3.2.</span> <span class="nav-text">标准数据类型(五个，在内存中存储的数据可以有多种类型)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型转换：只需要将数据类型作为函数名即可"><span class="nav-number">3.3.</span> <span class="nav-text">数据类型转换：只需要将数据类型作为函数名即可</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#运算符"><span class="nav-number">4.</span> <span class="nav-text">运算符</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#条件语句"><span class="nav-number">5.</span> <span class="nav-text">条件语句</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#循环语句-没有do-while循环"><span class="nav-number">6.</span> <span class="nav-text">循环语句(没有do-while循环)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#while循环"><span class="nav-number">6.1.</span> <span class="nav-text">while循环</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#for循环"><span class="nav-number">6.2.</span> <span class="nav-text">for循环</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#嵌套循环"><span class="nav-number">6.3.</span> <span class="nav-text">嵌套循环</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#break语句"><span class="nav-number">6.4.</span> <span class="nav-text">break语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#continue语句"><span class="nav-number">6.5.</span> <span class="nav-text">continue语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pass语句-不做任何事情，一般用做占位语句"><span class="nav-number">6.6.</span> <span class="nav-text">pass语句(不做任何事情，一般用做占位语句)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Number"><span class="nav-number">7.</span> <span class="nav-text">Number</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#String"><span class="nav-number">8.</span> <span class="nav-text">String</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#日期和时间-time-和-calendar-模块"><span class="nav-number">9.</span> <span class="nav-text">日期和时间( time 和 calendar 模块)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#时间元祖"><span class="nav-number">9.1.</span> <span class="nav-text">时间元祖</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#函数"><span class="nav-number">10.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#模块"><span class="nav-number">11.</span> <span class="nav-text">模块</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#import-from-import-from-import"><span class="nav-number">11.1.</span> <span class="nav-text">import,from-import,from-import*</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命名空间和作用域"><span class="nav-number">11.2.</span> <span class="nav-text">命名空间和作用域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dir-函数，排好序的字符串列表，内容是一个模块里定义过的名字。"><span class="nav-number">11.3.</span> <span class="nav-text">dir()函数，排好序的字符串列表，内容是一个模块里定义过的名字。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#globals-和-locals-函数"><span class="nav-number">11.4.</span> <span class="nav-text">globals() 和 locals() 函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#reload-函数"><span class="nav-number">11.5.</span> <span class="nav-text">reload() 函数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文件I-O"><span class="nav-number">12.</span> <span class="nav-text">文件I/O</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#file方法"><span class="nav-number">13.</span> <span class="nav-text">file方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#异常处理"><span class="nav-number">14.</span> <span class="nav-text">异常处理</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">您是第<span class="busuanzi-value" id="busuanzi_value_site_uv"></span>个小伙伴</span>
+  
+
+  
+    <span class="site-pv">本站总浏览<span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次</span>
+  
+  
+</div>
+
+
+
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yan Li</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io" rel="external nofollow">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" rel="external nofollow">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"yanlee24"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementById('footer')
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+<script type="text/javascript" async src="//push.zhanzhang.baidu.com/push.js">
+</script>
+
+
+  <!-- 背景动画 -->
+  <script type="text/javascript" src="/js/src/particle.js"></script>
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/src/love.js"></script>
+
+</body>
+</html>

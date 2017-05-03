@@ -84,103 +84,139 @@
 
 
 
-<meta name="description" content="web events(值均为script)PC端
-window事件属性（适用于body标签）
+<meta name="description" content="web events(值均为script)事件类型（DOM3级）
 
 
-
-
-Properties
+type
 Description
 Mark
 
 
 
 
-onafterprint
-在打印文档之后运行脚本
-New
+UI事件
+用户与页面上元素交互
 
 
-onbeforeprint
-在文档打印之前运行脚本
-New
+
+焦点事件
+元素得失焦点触发
 
 
-onbeforeonload
-在文档加载之前运行脚本
-New
+
+鼠标事件
+用户用鼠标与页面交互
 
 
-onblur
-当窗口失去焦点时运行脚本">
+
+滚轮事件
+用户用鼠标滚轮与页面交互
+
+
+
+文本事件
+用户在文档中输入文本
+
+
+
+键盘事件
+用户用键盘与页面交互
+
+
+
+合成事件
+当为IME(输入法编辑器)输入字符时触发">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Events">
 <meta property="og:url" content="https://yanlee26.github.io/2016/03/03/events/index.html">
 <meta property="og:site_name" content="Frank_Lyan's Blog">
-<meta property="og:description" content="web events(值均为script)PC端
-window事件属性（适用于body标签）
+<meta property="og:description" content="web events(值均为script)事件类型（DOM3级）
 
 
-
-
-Properties
+type
 Description
 Mark
 
 
 
 
-onafterprint
-在打印文档之后运行脚本
-New
+UI事件
+用户与页面上元素交互
 
 
-onbeforeprint
-在文档打印之前运行脚本
-New
+
+焦点事件
+元素得失焦点触发
 
 
-onbeforeonload
-在文档加载之前运行脚本
-New
+
+鼠标事件
+用户用鼠标与页面交互
 
 
-onblur
-当窗口失去焦点时运行脚本">
-<meta property="og:updated_time" content="2017-02-05T01:26:05.980Z">
+
+滚轮事件
+用户用鼠标滚轮与页面交互
+
+
+
+文本事件
+用户在文档中输入文本
+
+
+
+键盘事件
+用户用键盘与页面交互
+
+
+
+合成事件
+当为IME(输入法编辑器)输入字符时触发">
+<meta property="og:updated_time" content="2017-02-13T13:35:59.613Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Events">
-<meta name="twitter:description" content="web events(值均为script)PC端
-window事件属性（适用于body标签）
+<meta name="twitter:description" content="web events(值均为script)事件类型（DOM3级）
 
 
-
-
-Properties
+type
 Description
 Mark
 
 
 
 
-onafterprint
-在打印文档之后运行脚本
-New
+UI事件
+用户与页面上元素交互
 
 
-onbeforeprint
-在文档打印之前运行脚本
-New
+
+焦点事件
+元素得失焦点触发
 
 
-onbeforeonload
-在文档加载之前运行脚本
-New
+
+鼠标事件
+用户用鼠标与页面交互
 
 
-onblur
-当窗口失去焦点时运行脚本">
+
+滚轮事件
+用户用鼠标滚轮与页面交互
+
+
+
+文本事件
+用户在文档中输入文本
+
+
+
+键盘事件
+用户用键盘与页面交互
+
+
+
+合成事件
+当为IME(输入法编辑器)输入字符时触发">
 
 
 
@@ -428,7 +464,57 @@ onblur
       
 
       
-        <h1 id="web-events-值均为script"><a href="#web-events-值均为script" class="headerlink" title="web events(值均为script)"></a>web events(值均为script)</h1><h3 id="PC端"><a href="#PC端" class="headerlink" title="PC端"></a>PC端</h3><ol>
+        <h1 id="web-events-值均为script"><a href="#web-events-值均为script" class="headerlink" title="web events(值均为script)"></a>web events(值均为script)</h1><h3 id="事件类型（DOM3级）"><a href="#事件类型（DOM3级）" class="headerlink" title="事件类型（DOM3级）"></a>事件类型（DOM3级）</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">type</th>
+<th style="text-align:center">Description</th>
+<th style="text-align:right">Mark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">UI事件</td>
+<td style="text-align:center">用户与页面上元素交互</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">焦点事件</td>
+<td style="text-align:center">元素得失焦点触发</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">鼠标事件</td>
+<td style="text-align:center">用户用鼠标与页面交互</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">滚轮事件</td>
+<td style="text-align:center">用户用鼠标滚轮与页面交互</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">文本事件</td>
+<td style="text-align:center">用户在文档中输入文本</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">键盘事件</td>
+<td style="text-align:center">用户用键盘与页面交互</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">合成事件</td>
+<td style="text-align:center">当为IME(输入法编辑器)输入字符时触发</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">变动事件</td>
+<td style="text-align:center">底层DOM结构变动时触发</td>
+</tr>
+</tbody>
+</table>
+<h3 id="PC端"><a href="#PC端" class="headerlink" title="PC端"></a>PC端</h3><ol>
 <li>window事件属性（适用于body标签）</li>
 </ol>
 <table>
@@ -533,10 +619,102 @@ onblur
 </tbody>
 </table>
 <ol>
-<li><p>form事件属性(适用于所有h5元素，常用于表单)<br>| Properties    | Description | Mark|<br>| :———— |:————–:|—–:|<br>| onblur  | 当元素失去焦点时运行脚本||<br>| onchange  | 当元素改变时运行脚本||<br>| oncontextmenu  | 当触发上下文菜单时运行脚本|New|<br>| onfocus  | 当元素获得焦点时运行脚本|New|<br>| onformchange  | 当表单改变时运行脚本|New|<br>| onforminput  | 当表单获得用户输入时运行脚本|New|<br>| oninput  | 当元素获得用户输入时运行脚本|New|<br>| oninvalid  | 当元素无效时运行脚本|New|<br>| onreset  | 当表单重置时运行脚本。HTML 5 不支持||<br>| onselect  | 当选取元素时运行脚本||<br>| onsubmit  | 当提交表单时运行脚本||</p>
-</li>
-<li><p>keyboard事件(适用于所有h5元素)<br>| Properties    | Description | Mark|<br>| :———— |:————–:|—–:|<br>| onkeydown  | 当按下按键时运行脚本||<br>| onkeypress  | 当按下并松开按键时运行脚本||<br>| onkeyup  | 当松开按键时运行脚本||</p>
-</li>
+<li>form事件属性(适用于所有h5元素，常用于表单)</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Properties</th>
+<th style="text-align:center">Description</th>
+<th style="text-align:right">Mark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">onblur</td>
+<td style="text-align:center">当元素失去焦点时运行脚本</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">onchange</td>
+<td style="text-align:center">当元素改变时运行脚本</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">oncontextmenu</td>
+<td style="text-align:center">当触发上下文菜单时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">onfocus</td>
+<td style="text-align:center">当元素获得焦点时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">onformchange</td>
+<td style="text-align:center">当表单改变时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">onforminput</td>
+<td style="text-align:center">当表单获得用户输入时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">oninput</td>
+<td style="text-align:center">当元素获得用户输入时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">oninvalid</td>
+<td style="text-align:center">当元素无效时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">onreset</td>
+<td style="text-align:center">当表单重置时运行脚本。HTML 5 不支持</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">onselect</td>
+<td style="text-align:center">当选取元素时运行脚本</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">onsubmit</td>
+<td style="text-align:center">当提交表单时运行脚本</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>keyboard事件(适用于所有h5元素)</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Properties</th>
+<th style="text-align:center">Description</th>
+<th style="text-align:right">Mark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">onkeydown</td>
+<td style="text-align:center">当按下按键时运行脚本</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">onkeypress</td>
+<td style="text-align:center">当按下并松开按键时运行脚本</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">onkeyup</td>
+<td style="text-align:center">当松开按键时运行脚本</td>
+</tr>
+</tbody>
+</table>
+<ol>
 <li>mouse事件(适用于所有h5元素)</li>
 </ol>
 <table>
@@ -864,6 +1042,339 @@ onblur
 <blockquote>
 <p>触摸事件和手势事件的之间关系：<br>当一个手指放在屏幕上时，会触发touchstart事件，而另一个手指触摸在屏幕上时<br>触发gesturestart事件，随后触发基于该手指的touchstart事件。<br>如果一个或两个手指在屏幕上滑动时，将会触发gesturechange事件，但是只要有一个手指移开时候，则会触发gestureend事件，<br>紧接着会触发touchend事件。<br>手势的专有属性:<br>rotation: 表示手指变化引起的旋转角度，负值表示逆时针，正值表示顺时针，从0开始；<br>scale: 表示2个手指之间的距离情况，向内收缩会缩短距离，这个值从1开始的，并随距离拉大而增长。</p>
 </blockquote>
+<h3 id="常用事件"><a href="#常用事件" class="headerlink" title="常用事件"></a>常用事件</h3><ul>
+<li>PC端</li>
+</ul>
+<ol>
+<li>window事件属性（适用于body标签）</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Properties</th>
+<th style="text-align:center">Description</th>
+<th style="text-align:right">Mark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">onblur</td>
+<td style="text-align:center">当窗口失去焦点时运行脚本</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">onerror</td>
+<td style="text-align:center">当错误发生时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">onfocus</td>
+<td style="text-align:center">当窗口获得焦点时运行脚本</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">onload</td>
+<td style="text-align:center">当文档加载时运行脚本</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">onresize</td>
+<td style="text-align:center">当调整窗口大小时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>form事件属性(适用于所有h5元素，常用于表单)</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Properties</th>
+<th style="text-align:center">Description</th>
+<th style="text-align:right">Mark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">onblur</td>
+<td style="text-align:center">当元素失去焦点时运行脚本</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">onchange</td>
+<td style="text-align:center">当元素改变时运行脚本</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">onfocus</td>
+<td style="text-align:center">当元素获得焦点时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">oninput</td>
+<td style="text-align:center">当元素获得用户输入时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">onreset</td>
+<td style="text-align:center">当表单重置时运行脚本。HTML 5 不支持</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">onselect</td>
+<td style="text-align:center">当选取元素时运行脚本</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">onsubmit</td>
+<td style="text-align:center">当提交表单时运行脚本</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>keyboard事件(适用于所有h5元素)</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Properties</th>
+<th style="text-align:center">Description</th>
+<th style="text-align:right">Mark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">onkeydown</td>
+<td style="text-align:center">当按下按键时运行脚本</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">onkeypress</td>
+<td style="text-align:center">当按下并松开按键时运行脚本</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">onkeyup</td>
+<td style="text-align:center">当松开按键时运行脚本</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>mouse事件(适用于所有h5元素)</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Properties</th>
+<th style="text-align:center">Description</th>
+<th style="text-align:right">Mark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">onclick</td>
+<td style="text-align:center">当单击鼠标时运行脚本</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">ondblclick</td>
+<td style="text-align:center">当双击鼠标时运行脚本</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">ondrag</td>
+<td style="text-align:center">当拖动元素时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">ondragend</td>
+<td style="text-align:center">当拖动操作结束时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">ondragenter</td>
+<td style="text-align:center">当元素被拖动至有效的拖放目标时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">ondragleave</td>
+<td style="text-align:center">当元素离开有效拖放目标时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">ondragover</td>
+<td style="text-align:center">当元素被拖动至有效拖放目标上方时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">ondragstart</td>
+<td style="text-align:center">当拖动操作开始时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">ondrop</td>
+<td style="text-align:center">当被拖动元素正在被拖放时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">onmousedown</td>
+<td style="text-align:center">当按下鼠标按钮时运行脚本</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">onmousemove</td>
+<td style="text-align:center">当鼠标指针移动时运行脚本</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">onmouseout</td>
+<td style="text-align:center">当鼠标指针移出元素时运行脚本</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">onmouseover</td>
+<td style="text-align:center">当鼠标指针移至元素之上时运行脚本</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">onmouseup</td>
+<td style="text-align:center">当松开鼠标按钮时运行脚本</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">onmousewheel</td>
+<td style="text-align:center">当转动鼠标滚轮时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">onscroll</td>
+<td style="text-align:center">当滚动元素滚动元素的滚动条时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>media事件(适用于所有h5元素,常用于媒体元素)</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Properties</th>
+<th style="text-align:center">Description</th>
+<th style="text-align:right">Mark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">onabort</td>
+<td style="text-align:center">当发生中止事件时运行脚本</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">onerror</td>
+<td style="text-align:center">当在元素加载期间发生错误时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">onloadeddata</td>
+<td style="text-align:center">当加载媒介数据时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">onpause</td>
+<td style="text-align:center">当媒介数据暂停时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">onplay</td>
+<td style="text-align:center">当媒介数据将要开始播放时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">onplaying</td>
+<td style="text-align:center">当媒介数据已开始播放时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+<tr>
+<td style="text-align:left">onwaiting</td>
+<td style="text-align:center">当媒介已停止播放但打算继续播放时运行脚本</td>
+<td style="text-align:right">New</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>移动端<blockquote>
+<p> 理解click的300ms的延迟响应<br> Click事件在移动手机开发中有300ms的延迟，因为在手机早期，浏览器系统有放大和缩放功能，用户在屏幕上点击两次之后，<br> 系统会触发放大或者缩放功能，因此系统做了一个处理，当触摸一次后，在300ms这段时间内有没有触摸第二次，<br> 如果触摸了第二次的话，说明是触发放大或缩放功能，否则的话是click事件。因此当click时候，所有用户必须等待于300ms后才<br> 会触发click事件。所以当在移动端使用click事件的时候，会感觉到有300ms的迟钝。</p>
+</blockquote>
+</li>
+</ul>
+<ol>
+<li>touch事件</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Properties</th>
+<th style="text-align:center">Description</th>
+<th style="text-align:right">Mark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">touchstart</td>
+<td style="text-align:center">当手指放在屏幕上触发</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">touchmove</td>
+<td style="text-align:center">当手指在屏幕上滑动时，连续地触发</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">touchend</td>
+<td style="text-align:center">当手指从屏幕上离开时触发</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">touchcancel</td>
+<td style="text-align:center">当系统停止跟踪时触发; 该事件暂时使用不到</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">touches</td>
+<td style="text-align:center">表示当前跟踪的触摸操作的touch对象的数组</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>gesture事件</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Properties</th>
+<th style="text-align:center">Description</th>
+<th style="text-align:right">Mark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">gesturestart</td>
+<td style="text-align:center">当一个手指已经按在屏幕上，而另一个手指又触摸在屏幕时触发</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">gesturechange</td>
+<td style="text-align:center">当触摸屏幕的任何一个手指的位置发生改变的时候触发</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">gestureend</td>
+<td style="text-align:center">当任何一个手指从屏幕上面移开时触发</td>
+</tr>
+</tbody>
+</table>
 
       
     </div>
@@ -930,16 +1441,16 @@ onblur
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/12/01/cssskills/" rel="next" title="CSS skills">
-                <i class="fa fa-chevron-left"></i> CSS skills
+              <a href="/2016/01/04/dave-to-dream/" rel="next" title="放飞希望：勇敢地再次梦想">
+                <i class="fa fa-chevron-left"></i> 放飞希望：勇敢地再次梦想
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/06/04/prefesional/" rel="prev" title="Prefessional JS resharpe">
-                Prefessional JS resharpe <i class="fa fa-chevron-right"></i>
+              <a href="/2016/06/04/bibleInLife/" rel="prev" title="道德经：人生之向导，智慧之源泉">
+                道德经：人生之向导，智慧之源泉 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -1026,7 +1537,7 @@ onblur
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-count">25</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1034,7 +1545,7 @@ onblur
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1043,7 +1554,7 @@ onblur
           
             <div class="site-state-item site-state-tags">
               <a href="/">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -1125,7 +1636,7 @@ onblur
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#web-events-值均为script"><span class="nav-number">1.</span> <span class="nav-text">web events(值均为script)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#PC端"><span class="nav-number">1.0.1.</span> <span class="nav-text">PC端</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#移动端"><span class="nav-number">1.0.2.</span> <span class="nav-text">移动端</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#web-events-值均为script"><span class="nav-number">1.</span> <span class="nav-text">web events(值均为script)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#事件类型（DOM3级）"><span class="nav-number">1.0.1.</span> <span class="nav-text">事件类型（DOM3级）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PC端"><span class="nav-number">1.0.2.</span> <span class="nav-text">PC端</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#移动端"><span class="nav-number">1.0.3.</span> <span class="nav-text">移动端</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用事件"><span class="nav-number">1.0.4.</span> <span class="nav-text">常用事件</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
         </section>
