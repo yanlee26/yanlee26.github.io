@@ -1,362 +1,207 @@
-<!doctype html>
+<!DOCTYPE html>
+<html lang="en">
 
-
-
-  
-
-
-<html class="theme-next pisces use-motion">
+<!-- Head tag -->
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-  
-  
-  
-  
-
-  
+    <!--Description-->
     
+        <meta name="description" content="stay hungry,stay foolish!">
     
-  
 
-  
-
-  
-
-  
-
-  
-
-  
+    <!--Author-->
     
+        <meta name="author" content="Yan Li">
     
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="FLEX布局"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="stay hungry,stay foolish!" />
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Frank_lyan&#39;s Blog"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>FLEX布局 - Frank_lyan&#39;s Blog</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
 
 
-
-
-
-
-<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="Hexo,Next," />
-
-
-
-
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.0.1" />
-
-
-
-
-
-
-<meta name="description" content="2009年，W3C提出了一种新的方案—-Flex布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能很安全地使用这项功能。
-
-通过笔者大量实践，发现flex布局屡试不爽，尤其在移动端自适应方面。但处于其大量的属性记忆混乱，今天图文并茂梳理如下。
-语法及概念部分
-实例演示部分结合笛卡尔坐标系（仅考虑一个item情况，其它情况可以据此的排列组合实现）">
-<meta property="og:type" content="article">
-<meta property="og:title" content="FLEX布局">
-<meta property="og:url" content="https://yanlee26.github.io/2016/08/24/flex/index.html">
-<meta property="og:site_name" content="Frank_Lyan's Blog">
-<meta property="og:description" content="2009年，W3C提出了一种新的方案—-Flex布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能很安全地使用这项功能。
-
-通过笔者大量实践，发现flex布局屡试不爽，尤其在移动端自适应方面。但处于其大量的属性记忆混乱，今天图文并茂梳理如下。
-语法及概念部分
-实例演示部分结合笛卡尔坐标系（仅考虑一个item情况，其它情况可以据此的排列组合实现）">
-<meta property="og:image" content="http://img.mukewang.com/58b27b7c00012f3c12430476.jpg">
-<meta property="og:image" content="http://img.mukewang.com/58b27bb400017ac206010476.jpg">
-<meta property="og:updated_time" content="2017-03-02T23:33:57.362Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="FLEX布局">
-<meta name="twitter:description" content="2009年，W3C提出了一种新的方案—-Flex布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能很安全地使用这项功能。
-
-通过笔者大量实践，发现flex布局屡试不爽，尤其在移动端自适应方面。但处于其大量的属性记忆混乱，今天图文并茂梳理如下。
-语法及概念部分
-实例演示部分结合笛卡尔坐标系（仅考虑一个item情况，其它情况可以据此的排列组合实现）">
-<meta name="twitter:image" content="http://img.mukewang.com/58b27b7c00012f3c12430476.jpg">
-
-
-
-<script type="text/javascript" id="hexo.configuration">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    scheme: 'Pisces',
-    sidebar: {"position":"left","display":"hide"},
-    fancybox: true,
-    motion: true,
-    duoshuo: {
-      userId: 6382889515761010000,
-      author: 'Author'
-    }
-  };
-</script>
-
-
-
-
-  <link rel="canonical" href="https://yanlee26.github.io/2016/08/24/flex/"/>
-
-  <title> FLEX布局 | Frank_Lyan's Blog </title>
+    <!-- favicon -->
+    
+	
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
-  
+<body>
 
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Configurable Title</a>
+        </div>
 
-
-
-
-
-
-
-
-
-  
-  
-    
-  
-
-  <div class="container one-collumn sidebar-position-left page-post-detail ">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-meta ">
-  
-
-  <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <span class="site-title">Frank_Lyan's Blog</span>
-      <span class="logo-line-after"><i></i></span>
-    </a>
-  </div>
-  <p class="site-subtitle">progressive programing</p>
-</div>
-
-<div class="site-nav-toggle">
-  <button>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-  </button>
-</div>
-
-<nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-guestbook">
-          <a href="/guestbook" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-commenting"></i> <br />
-            
-            留言
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            关于
-          </a>
-        </li>
-      
-
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
-            
-            搜索
-          </a>
-        </li>
-      
-    </ul>
-  
-
-  
-    <div class="site-search">
-      
-  <div class="popup">
- <span class="search-icon fa fa-search fa-lg"></span>
- <input type="text" id="local-search-input">
- <div id="local-search-result"></div>
- <span class="popup-btn-close">close</span>
-</div>
-
-
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/yanlee26">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
     </div>
-  
+    <!-- /.container -->
 </nav>
 
- </div>
-    </header>
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-
-  <div id="posts" class="posts-expand">
-    
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                FLEX布局
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-24T03:45:24+08:00" content="2016-08-23">
-              2016-08-23
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/CSS/" itemprop="url" rel="index">
-                    <span itemprop="name">CSS</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-
-          
-
-          
-          
-
-          
-              &nbsp; | &nbsp;
-              <span class="page-pv">热度
-              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>℃
-              </span>
-          
+<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>FLEX布局</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2016-08-24
+                        
+                    </span>
+                </div>
+            </div>
         </div>
-      </header>
-    
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
 
 
-    <div class="post-body" itemprop="articleBody">
+<a href="/tags/Hexo/">#Hexo</a> <a href="/tags/Next/">#Next</a>
 
-      
-      
 
-      
-        <blockquote>
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                        
+
+<a href="/categories/CSS/">CSS</a>
+
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <blockquote>
 <p>2009年，W3C提出了一种新的方案—-Flex布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能很安全地使用这项功能。</p>
 </blockquote>
 <p>通过笔者大量实践，发现flex布局屡试不爽，尤其在移动端自适应方面。但处于其大量的属性记忆混乱，今天图文并茂梳理如下。</p>
@@ -366,576 +211,76 @@
 <p>##css部分<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div><div class="line">188</div><div class="line">189</div><div class="line">190</div><div class="line">191</div><div class="line">192</div><div class="line">193</div><div class="line">194</div><div class="line">195</div><div class="line">196</div><div class="line">197</div><div class="line">198</div><div class="line">199</div><div class="line">200</div><div class="line">201</div><div class="line">202</div><div class="line">203</div><div class="line">204</div><div class="line">205</div><div class="line">206</div><div class="line">207</div><div class="line">208</div><div class="line">209</div><div class="line">210</div><div class="line">211</div><div class="line">212</div><div class="line">213</div><div class="line">214</div><div class="line">215</div><div class="line">216</div><div class="line">217</div><div class="line">218</div><div class="line">219</div><div class="line">220</div><div class="line">221</div><div class="line">222</div><div class="line">223</div><div class="line">224</div><div class="line">225</div><div class="line">226</div><div class="line">227</div><div class="line">228</div><div class="line">229</div><div class="line">230</div><div class="line">231</div><div class="line">232</div><div class="line">233</div><div class="line">234</div><div class="line">235</div><div class="line">236</div><div class="line">237</div><div class="line">238</div><div class="line">239</div><div class="line">240</div><div class="line">241</div><div class="line">242</div><div class="line">243</div><div class="line">244</div></pre></td><td class="code"><pre><div class="line">/*骰子的布局*/</div><div class="line">.box &#123;</div><div class="line">  display: flex;</div><div class="line">  width: 50px;</div><div class="line">  height: 50px;</div><div class="line">  border: 1px solid #ccc;</div><div class="line">  border-radius: 2px;</div><div class="line">&#125;</div><div class="line">.box .item&#123;</div><div class="line">  display: inline-block;</div><div class="line">  width: 10px;</div><div class="line">  height: 10px;</div><div class="line">  margin:3px;</div><div class="line">  border-radius: 50%;</div><div class="line">  background: #000;</div><div class="line">&#125;</div><div class="line">/*中上(1,0)*/</div><div class="line">.c2&#123;</div><div class="line">  justify-content: center;</div><div class="line">&#125;</div><div class="line">/*右上(2,0)*/</div><div class="line">.c3&#123;</div><div class="line">  justify-content: flex-end;</div><div class="line">&#125;</div><div class="line">/*左间(0,1)*/</div><div class="line">.c4&#123;</div><div class="line">  align-items: center;</div><div class="line">&#125;</div><div class="line">/*左下(0,2)*/</div><div class="line">.c5&#123;</div><div class="line">  align-items: flex-end;</div><div class="line">&#125;</div><div class="line">/*中间(1,1)*/</div><div class="line">.c6&#123;</div><div class="line">  justify-content: center;</div><div class="line">  align-items: center;</div><div class="line">&#125;</div><div class="line">/*右间(2,1)*/</div><div class="line">.c7&#123;</div><div class="line">  justify-content: flex-end;</div><div class="line">  align-items: center;</div><div class="line">&#125;</div><div class="line"></div><div class="line">/*中下(1,2)*/</div><div class="line">.c8&#123;</div><div class="line">  justify-content: center;</div><div class="line">  align-items: flex-end;</div><div class="line">&#125;</div><div class="line">/*右下(2,2)*/</div><div class="line">.c9&#123;</div><div class="line">  justify-content: flex-end;</div><div class="line">    align-items: flex-end;</div><div class="line">&#125;</div><div class="line">/*两个*/</div><div class="line">/*space-between*/</div><div class="line">.c21&#123;</div><div class="line">  justify-content: space-between;</div><div class="line">&#125;</div><div class="line">/*两个flex-direction+column*/</div><div class="line">.c22&#123;</div><div class="line">  justify-content: space-between;</div><div class="line">  flex-direction: column;</div><div class="line">&#125;</div><div class="line">/*2.3两个space-between+flex-direction+ align-items*/</div><div class="line">.c23&#123;</div><div class="line">  justify-content: space-between;</div><div class="line">  flex-direction: column;</div><div class="line">  align-items: center;</div><div class="line">&#125;</div><div class="line">/*2.4两个space-between+flex-direction+ align-items*/</div><div class="line">.c24&#123;</div><div class="line">  justify-content: space-between;</div><div class="line">  flex-direction: column;</div><div class="line">   align-items: flex-end;</div><div class="line">&#125;</div><div class="line">/*2.5两个space-between+flex-direction+ align-items*/</div><div class="line"></div><div class="line">.c25 .item:nth-child(2) &#123;</div><div class="line">   align-self: center;</div><div class="line">&#125;</div><div class="line">/*2.6两个space-between+flex-direction+ align-items*/</div><div class="line">.c26&#123;</div><div class="line">  justify-content: space-between;</div><div class="line">&#125;</div><div class="line">.c26 .item:nth-child(2) &#123;</div><div class="line">   align-self:  flex-end;</div><div class="line">&#125;</div><div class="line"></div><div class="line">/*3.1三个align-self：center+flex-end*/</div><div class="line"></div><div class="line">.c31 .item:nth-child(2) &#123;</div><div class="line">   align-self:  center;</div><div class="line">&#125;</div><div class="line">.c31 .item:nth-child(3) &#123;</div><div class="line">   align-self:  flex-end;</div><div class="line">&#125;</div><div class="line">/*4.1四个*/</div><div class="line">.c41 &#123;</div><div class="line">  flex-wrap: wrap;</div><div class="line">  justify-content: flex-end;</div><div class="line">  align-content: space-between;</div><div class="line">&#125;</div><div class="line">/*4.2四个*/</div><div class="line">.c42 &#123;</div><div class="line">  flex-wrap: wrap;</div><div class="line">  align-content: space-between;</div><div class="line">&#125;</div><div class="line">.column &#123;</div><div class="line">  flex-basis: 100%;</div><div class="line">  display: flex;</div><div class="line">  justify-content: space-between;</div><div class="line">&#125;</div><div class="line">/*6.1六个*/</div><div class="line">.c61&#123;</div><div class="line">  flex-wrap: wrap;</div><div class="line">&#125;</div><div class="line">.row&#123;</div><div class="line">  flex-basis: 100%;</div><div class="line">  display:flex;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.row:nth-child(2)&#123;</div><div class="line">  justify-content: center;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.row:nth-child(3)&#123;</div><div class="line">  justify-content: space-between;</div><div class="line">&#125;</div><div class="line">/*九个*/</div><div class="line">.c9&#123;</div><div class="line">  flex-wrap: wrap;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">/*网格布局*/</div><div class="line">/*基本*/</div><div class="line">.Grid &#123;</div><div class="line">  display: flex;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.Grid-cell &#123;</div><div class="line">  flex: 1;</div><div class="line">&#125;</div><div class="line">/*百分比布局*/</div><div class="line">.Grid-cell.u-full &#123;</div><div class="line">  flex: 0 0 100%;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.Grid-cell.u-1of2 &#123;</div><div class="line">  flex: 0 0 50%;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.Grid-cell.u-1of3 &#123;</div><div class="line">  flex: 0 0 33.3333%;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.Grid-cell.u-1of4 &#123;</div><div class="line">  flex: 0 0 25%;</div><div class="line">&#125;</div><div class="line"></div><div class="line">/*圣杯布局圣杯布局（Holy Grail Layout）*/</div><div class="line">.fh &#123;</div><div class="line">    display: flex;</div><div class="line">    min-height: 98vh;</div><div class="line">    flex-direction: column;</div><div class="line">    margin: 1rem;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.fh-header &#123;</div><div class="line">    display: flex;</div><div class="line">    flex: 1.2;</div><div class="line">    border: 1px solid #ccc;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.fh&gt;.fh-middle &#123;</div><div class="line">    flex: 1;</div><div class="line">    border: 1px solid #ccc;</div><div class="line">    margin: 1rem 0;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.fh&gt;.fh-footer &#123;</div><div class="line">    flex: 2.5;</div><div class="line">    border: 1px solid #ccc;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.fh-content &#123;</div><div class="line">    flex: 1;</div><div class="line">    border: 1px solid #ccc;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.fh-nav &#123;</div><div class="line">    /* 边栏的宽度设为20rem */</div><div class="line">    flex: 0 0 20rem;</div><div class="line">    border: 1px solid #ccc;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.fh-nav &#123;</div><div class="line">    /* 导航放到最左边 */</div><div class="line">    order: -1;</div><div class="line">    margin-right: 1rem;</div><div class="line">&#125;</div><div class="line">/*输入框布局*/</div><div class="line">.InputAddOn &#123;</div><div class="line">  display: flex;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.InputAddOn-field &#123;</div><div class="line">  flex: 1;</div><div class="line">&#125;</div><div class="line">/*悬挂式布局*/</div><div class="line">.Media &#123;</div><div class="line">  display: flex;</div><div class="line">  align-items: flex-start;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.Media-figure &#123;</div><div class="line">  margin-right: 1em;</div><div class="line">&#125;</div><div class="line">/*固定低栏*/</div><div class="line">.Site &#123;</div><div class="line">  display: flex;</div><div class="line">  min-height: 100vh;</div><div class="line">  flex-direction: column;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.Site-content &#123;</div><div class="line">  flex: 1;</div><div class="line">&#125;</div><div class="line">/*流式布局*/</div><div class="line">.parent &#123;</div><div class="line">  width: 200px;</div><div class="line">  height: 150px;</div><div class="line">  background-color: black;</div><div class="line">  display: flex;</div><div class="line">  flex-flow: row wrap;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.child &#123;</div><div class="line">  box-sizing: border-box;</div><div class="line">  background-color: white;</div><div class="line">  flex: 0 0 25%;</div><div class="line">  height: 50px;</div><div class="line">  border: 1px solid red;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h3 id="html部分"><a href="#html部分" class="headerlink" title="html部分"></a>html部分</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">  &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">  &lt;title&gt;fh-main&lt;/title&gt;</div><div class="line">  &lt;link rel=&quot;stylesheet&quot; href=&quot;flex.css&quot;&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body &gt;</div><div class="line">&lt;h4&gt;骰子的布局（左0中1右2，上0间1下2）&lt;/h4&gt;</div><div class="line">&lt;p&gt;1.1一个左上(0,0):justify-content:flex-start(default);&lt;/p&gt;</div><div class="line">  &lt;div class=&quot;box c1&quot;&gt;</div><div class="line">    &lt;span class=&quot;item&quot;&gt;&lt;/span&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">&lt;p&gt;1.2一个中上(1,0):justify-content:center;&lt;/p&gt;</div><div class="line">  &lt;div class=&quot;box c2&quot;&gt;</div><div class="line">    &lt;span class=&quot;item&quot;&gt;&lt;/span&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">&lt;p&gt;1.3一个右上(2,0):justify-content:flex-end;&lt;/p&gt;</div><div class="line">  &lt;div class=&quot;box c3&quot;&gt;</div><div class="line">    &lt;span class=&quot;item&quot;&gt;&lt;/span&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">&lt;p&gt;1.4一个左间(0,1) </div><div class="line">  :align-items: center;&lt;/p&gt;</div><div class="line">  &lt;div class=&quot;box c4&quot;&gt;</div><div class="line">    &lt;span class=&quot;item&quot;&gt;&lt;/span&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">&lt;p&gt;1.5一个左下(0,2):align-items: flex-end;&lt;/p&gt;</div><div class="line">  &lt;div class=&quot;box c5&quot;&gt;</div><div class="line">    &lt;span class=&quot;item&quot;&gt;&lt;/span&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">&lt;p&gt;1.6一个中间(1,1):justify-content: center;align-items:center;&lt;/p&gt;</div><div class="line">  &lt;div class=&quot;box c6&quot;&gt;</div><div class="line">    &lt;span class=&quot;item&quot;&gt;&lt;/span&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">&lt;p&gt;1.7一个右间(2,1):justify-content:flex-end;align-items:center;&lt;/p&gt;</div><div class="line">  &lt;div class=&quot;box c7&quot;&gt;</div><div class="line">    &lt;span class=&quot;item&quot;&gt;&lt;/span&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">&lt;p&gt;1.8一个中下(1,2) :justify-content:center;align-items:flex-end;&lt;/p&gt;</div><div class="line">  &lt;div class=&quot;box c8&quot;&gt;</div><div class="line">    &lt;span class=&quot;item&quot;&gt;&lt;/span&gt;</div><div class="line">  &lt;/div&gt;  </div><div class="line">&lt;p&gt;1.9一个右下(2,2) justify-content: flex-end;</div><div class="line">  align-items: flex-end;&lt;/p&gt;</div><div class="line">  &lt;div class=&quot;box c9&quot;&gt;</div><div class="line">    &lt;span class=&quot;item&quot;&gt;&lt;/span&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">&lt;p&gt;2.1两个space-between&lt;/p&gt;</div><div class="line">  &lt;div class=&quot;box c21&quot;&gt;</div><div class="line">    &lt;span class=&quot;item&quot;&gt;&lt;/span&gt;</div><div class="line">    &lt;span class=&quot;item&quot;&gt;&lt;/span&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">&lt;p&gt;2.2两个space-between+flex-direction&lt;/p&gt;</div><div class="line">  &lt;div class=&quot;box c22&quot;&gt;</div><div class="line">    &lt;span class=&quot;item&quot;&gt;&lt;/span&gt;</div><div class="line">    &lt;span class=&quot;item&quot;&gt;&lt;/span&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">&lt;p&gt;2.3两个space-between+flex-direction+ align-items&lt;/p&gt;</div><div class="line">  &lt;div class=&quot;box c23&quot;&gt;</div><div class="line">    &lt;span class=&quot;item&quot;&gt;&lt;/span&gt;</div><div class="line">    &lt;span class=&quot;item&quot;&gt;&lt;/span&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">&lt;p&gt;2.4两个space-between+flex-direction+ align-items：flex-end&lt;/p&gt;</div><div class="line">  &lt;div class=&quot;box c24&quot;&gt;</div><div class="line">    &lt;span class=&quot;item&quot;&gt;&lt;/span&gt;</div><div class="line">    &lt;span class=&quot;item&quot;&gt;&lt;/span&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">&lt;p&gt;2.5两个align-self&lt;/p&gt;</div><div class="line">  &lt;div class=&quot;box c25&quot;&gt;</div><div class="line">    &lt;span class=&quot;item&quot;&gt;&lt;/span&gt;</div><div class="line">    &lt;span class=&quot;item&quot;&gt;&lt;/span&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">&lt;p&gt;2.6两个align-self&lt;/p&gt;</div><div class="line">  &lt;div class=&quot;box c26&quot;&gt;</div><div class="line">    &lt;span class=&quot;item&quot;&gt;&lt;/span&gt;</div><div class="line">    &lt;span class=&quot;item&quot;&gt;&lt;/span&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line"></div><div class="line">&lt;p&gt;3.1三个align-self：center+flex-end&lt;/p&gt;</div><div class="line">  &lt;div class=&quot;box c31&quot;&gt;</div><div class="line">    &lt;span class=&quot;item&quot;&gt;&lt;/span&gt;</div><div class="line">    &lt;span class=&quot;item&quot;&gt;&lt;/span&gt;</div><div class="line">    &lt;span class=&quot;item&quot;&gt;&lt;/span&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">&lt;p&gt;4.1四个&lt;/p&gt;</div><div class="line">  &lt;div class=&quot;box c41&quot;&gt;</div><div class="line">    &lt;span class=&quot;item&quot;&gt;&lt;/span&gt;</div><div class="line">    &lt;span class=&quot;item&quot;&gt;&lt;/span&gt;</div><div class="line">    &lt;span class=&quot;item&quot;&gt;&lt;/span&gt;</div><div class="line">    &lt;span class=&quot;item&quot;&gt;&lt;/span&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">&lt;p&gt;4.2四个&lt;/p&gt;</div><div class="line">  &lt;div class=&quot;box c42&quot;&gt;</div><div class="line">    &lt;span class=&quot;column&quot;&gt;</div><div class="line">      &lt;span class=&quot;item&quot;&gt;&lt;/span&gt;</div><div class="line">      &lt;span class=&quot;item&quot;&gt;&lt;/span&gt;</div><div class="line">    &lt;/span&gt;</div><div class="line">    &lt;span class=&quot;column&quot;&gt;</div><div class="line">      &lt;span class=&quot;item&quot;&gt;&lt;/span&gt;</div><div class="line">      &lt;span class=&quot;item&quot;&gt;&lt;/span&gt;</div><div class="line">    &lt;/span&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">&lt;p&gt;6.1六个&lt;/p&gt;</div><div class="line">&lt;div class=&quot;box c61&quot;&gt;</div><div class="line">  &lt;div class=&quot;row&quot;&gt;</div><div class="line">    &lt;span class=&quot;item&quot;&gt;&lt;/span&gt;</div><div class="line">    &lt;span class=&quot;item&quot;&gt;&lt;/span&gt;</div><div class="line">    &lt;span class=&quot;item&quot;&gt;&lt;/span&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">  &lt;div class=&quot;row&quot;&gt;</div><div class="line">    &lt;span class=&quot;item&quot;&gt;&lt;/span&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">  &lt;div class=&quot;row&quot;&gt;</div><div class="line">     &lt;span class=&quot;item&quot;&gt;&lt;/span&gt;</div><div class="line">     &lt;span class=&quot;item&quot;&gt;&lt;/span&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;p&gt;9九个&lt;/p&gt;</div><div class="line">  &lt;div class=&quot;box c9&quot;&gt;</div><div class="line">     &lt;span class=&quot;item&quot;&gt;&lt;/span&gt;</div><div class="line">     &lt;span class=&quot;item&quot;&gt;&lt;/span&gt;</div><div class="line">     &lt;span class=&quot;item&quot;&gt;&lt;/span&gt;</div><div class="line">     &lt;span class=&quot;item&quot;&gt;&lt;/span&gt;</div><div class="line">     &lt;span class=&quot;item&quot;&gt;&lt;/span&gt;</div><div class="line">     &lt;span class=&quot;item&quot;&gt;&lt;/span&gt;</div><div class="line">     &lt;span class=&quot;item&quot;&gt;&lt;/span&gt;</div><div class="line">     &lt;span class=&quot;item&quot;&gt;&lt;/span&gt;</div><div class="line">     &lt;span class=&quot;item&quot;&gt;&lt;/span&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">&lt;h2&gt;网格布局&lt;/h2&gt;</div><div class="line"></div><div class="line">&lt;p&gt;2.1基本网格布局&lt;/p&gt;</div><div class="line">&lt;div class=&quot;Grid&quot;&gt;</div><div class="line">  &lt;div class=&quot;Grid-cell&quot;&gt;Grid-cell&lt;/div&gt;</div><div class="line">  &lt;div class=&quot;Grid-cell&quot;&gt;Grid-cell&lt;/div&gt;</div><div class="line">  &lt;div class=&quot;Grid-cell&quot;&gt;Grid-cell&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;p&gt;2.2百分比布局&lt;/p&gt;</div><div class="line">&lt;div class=&quot;Grid&quot;&gt;</div><div class="line">  &lt;div class=&quot;Grid-cell u-1of4&quot;&gt;u-1of4&lt;/div&gt;</div><div class="line">  &lt;div class=&quot;Grid-cell&quot;&gt;...&lt;/div&gt;</div><div class="line">  &lt;div class=&quot;Grid-cell u-1of3&quot;&gt;u-1of3&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div><div class="line"></div><div class="line">&lt;h2&gt;圣杯布局&lt;/h2&gt;</div><div class="line">&lt;div class=&quot;fh&quot;&gt;</div><div class="line">  &lt;header class=&quot;fh-header&quot;&gt;</div><div class="line">    &lt;nav class=&quot;fh-nav&quot;&gt;nav&lt;/nav&gt;</div><div class="line">    &lt;main class=&quot;fh-content&quot;&gt;mian&lt;/main&gt;</div><div class="line">  &lt;/header&gt;</div><div class="line">  &lt;div class=&quot;fh-middle&quot;&gt;middle&lt;/div&gt;</div><div class="line">  &lt;footer class=&quot;fh-footer&quot;&gt;footer&lt;/footer&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;h2&gt;输入框的布局&lt;/h2&gt;</div><div class="line"></div><div class="line">&lt;div class=&quot;InputAddOn&quot;&gt;</div><div class="line">  &lt;span class=&quot;InputAddOn-item&quot;&gt;icon&lt;/span&gt;</div><div class="line">  &lt;input class=&quot;InputAddOn-field&quot;&gt;</div><div class="line">  &lt;button class=&quot;InputAddOn-item&quot;&gt;btn&lt;/button&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;h2&gt;悬挂式布局&lt;/h2&gt;</div><div class="line">&lt;div class=&quot;Media&quot;&gt;</div><div class="line">  &lt;img class=&quot;Media-figure&quot; src=&quot;a/img&quot; alt=&quot;aa&quot;&gt;</div><div class="line">  &lt;p class=&quot;Media-body&quot;&gt;...&lt;/p&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;h2&gt;固定低栏&lt;/h2&gt;</div><div class="line">&lt;div class=&quot;site&quot;&gt;</div><div class="line">  &lt;header&gt;header&lt;/header&gt;</div><div class="line">  &lt;main class=&quot;Site-content&quot;&gt;main &lt;/main&gt;</div><div class="line">  &lt;footer&gt;footer&lt;/footer&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;h2&gt;流式布局&lt;/h2&gt;</div><div class="line">&lt;div class=&quot;parent&quot;&gt;</div><div class="line">  &lt;span class=&quot;child&quot;&gt;&lt;/span&gt;</div><div class="line">  &lt;span class=&quot;child&quot;&gt;&lt;/span&gt;</div><div class="line">  &lt;span class=&quot;child&quot;&gt;&lt;/span&gt;</div><div class="line">  &lt;span class=&quot;child&quot;&gt;&lt;/span&gt;</div><div class="line">  &lt;span class=&quot;child&quot;&gt;&lt;/span&gt;</div><div class="line">  &lt;span class=&quot;child&quot;&gt;&lt;/span&gt;</div><div class="line">  &lt;span class=&quot;child&quot;&gt;&lt;/span&gt;</div><div class="line">  &lt;span class=&quot;child&quot;&gt;&lt;/span&gt;</div><div class="line">  &lt;span class=&quot;child&quot;&gt;&lt;/span&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
 
-      
-    </div>
 
-    <div>
-      
-        
-<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
-    <img id="wechat_subscriber_qcode" src="/images/wg.jpg" alt="Yan Li wechat" style="width: 200px; max-width: 100%;"/>
-    <div>欢迎您扫一扫上面的微信公众号，查看更多分享！</div>
-</div>
-
-
-      
-    </div>
-
-    <div>
-      
-        
-
-<blockquote class="blockquote-center">
-    完
-</blockquote>
-
-  <span id="inline-green" style="border-radius:3px;">作者</span>：<a class="link-blue" href="https://github.com/yanlee26" target="_blank">Frank</a><br/>有问题请 <a class="link-blue" href="https://yanlee26.github.io/guestbook" target="_blank">留言</a> 或者私信我的 <a class="link-blue" href="http://weibo.com/franklyan" target="_blank">微博</a>。
-
-  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
-    <div>满分是100分的话，这篇文章你给多少分</div>
-    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
-      <span>赏</span>
-    </button>
-    <div id="QR" style="display: none;">
-      
-        <div id="wechat" style="display: inline-block">
-          <img id="wechat_qr" src="/images/w.jpg" alt="Yan Li WeChat Pay"/>
-          <p>微信打赏</p>
-        </div>
-      
-      
-        <div id="alipay" style="display: inline-block">
-          <img id="alipay_qr" src="/images/z.jpg" alt="Yan Li Alipay"/>
-          <p>支付宝打赏</p>
-        </div>
-      
-    </div>
-  </div>
-
-
-      
-    </div>
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/Hexo/" rel="tag">#Hexo</a>
-          
-            <a href="/tags/Next/" rel="tag">#Next</a>
-          
-        </div>
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2016/06/08/prefessional JS/" rel="next" title="Prefesional JS">
-                <i class="fa fa-chevron-left"></i> Prefesional JS
-              </a>
-            
-          </div>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/09/24/scss/" rel="prev" title="SCSS">
-                SCSS <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </article>
-
-
-
-    <div class="post-spread">
-      
-        <div class="ds-share flat" data-thread-key="2016/08/24/flex/"
-     data-title="FLEX布局"
-     data-content=""
-     data-url="https://yanlee26.github.io/2016/08/24/flex/">
-  <div class="ds-share-inline">
-    <ul  class="ds-share-icons-16">
-
-      <li data-toggle="ds-share-icons-more"><span class="ds-more">分享到：</span></li>
-      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
-      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
-      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
-      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
-      <li><a class="ds-facebook" href="javascript:void(0);" data-service="facebook">Facebook</a></li>
-      <li><a class="ds-google" href="javascript:void(0);" data-service="google">Google</a></li>
-    </ul>
-    <!--
-      <div class="ds-share-icons-more">
-      </div>
-    -->
-  </div>
-</div>
-      
-    </div>
-  </div>
-
-
-          </div>
-          
-
-
-          
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
-
-      <section class="site-overview sidebar-panel ">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/avatar.jpg"
-               alt="Yan Li" />
-          <p class="site-author-name" itemprop="name">Yan Li</p>
-          <p class="site-description motion-element" itemprop="description"></p>
-        </div>
-        <nav class="site-state motion-element">
-          <div class="site-state-item site-state-posts">
-            <a href="/archives">
-              <span class="site-state-item-count">25</span>
-              <span class="site-state-item-name">日志</span>
-            </a>
-          </div>
-
-          
-            <div class="site-state-item site-state-categories">
-              <a href="/categories">
-                <span class="site-state-item-count">13</span>
-                <span class="site-state-item-name">分类</span>
-              </a>
+                
             </div>
-          
 
-          
-            <div class="site-state-item site-state-tags">
-              <a href="/">
-                <span class="site-state-item-count">2</span>
-                <span class="site-state-item-name">标签</span>
-              </a>
-            </div>
-          
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
 
-        </nav>
 
-        
-
-        <div class="links-of-author motion-element">
-          
+                </div>
             
-              <span class="links-of-author-item">
-                <a href="https://github.com/yanlee26" target="_blank" title="Github">
-                  
-                    <i class="fa fa-fw fa-github"></i>
-                  
-                  Github
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://weibo.com/franklyan" target="_blank" title="Weibo">
-                  
-                    <i class="fa fa-fw fa-weibo"></i>
-                  
-                  Weibo
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://stackoverflow.com/users/7261459/yan" target="_blank" title="stackoverflow">
-                  
-                    <i class="fa fa-fw fa-globe"></i>
-                  
-                  stackoverflow
-                </a>
-              </span>
-            
-          
         </div>
+    </div>
+</article>
 
-        
-        
-          <div class="cc-license motion-element" itemprop="license">
-            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
-              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
-            </a>
-          </div>
-        
+    <!-- Footer -->
+    <hr />
 
-        
-        
-          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
-            <div class="links-of-blogroll-title">
-              <i class="fa  fa-fw fa-globe"></i>
-              友情链接
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/yanlee26" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2017 Yan Li<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
             </div>
-            <ul class="links-of-blogroll-list">
-              
-                <li class="links-of-blogroll-item">
-                  <a href="https://home.cnblogs.com/u/frank26/" title="cnblogs" target="_blank">cnblogs</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="https://twitter.com/?request_context=signup" title="Twitter" target="_blank">Twitter</a>
-                </li>
-              
-            </ul>
-          </div>
-        
-
-      </section>
-
-      
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-            
-              
-            
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#语法及概念部分"><span class="nav-number">1.</span> <span class="nav-text">语法及概念部分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实例演示部分"><span class="nav-number">2.</span> <span class="nav-text">实例演示部分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#html部分"><span class="nav-number">2.1.</span> <span class="nav-text">html部分</span></a></li></ol></li></ol></div>
-            
-          </div>
-        </section>
-      
-
+        </div>
     </div>
-  </aside>
+</footer>
 
 
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        
-
-<div class="busuanzi-count">
-
-  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-  
-    <span class="site-uv">您是第<span class="busuanzi-value" id="busuanzi_value_site_uv"></span>个小伙伴</span>
-  
-
-  
-    <span class="site-pv">本站总浏览<span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次</span>
-  
-  
-</div>
-
-
-
-        <div class="copyright" >
-  
-  &copy;  2015 - 
-  <span itemprop="copyrightYear">2017</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Yan Li</span>
-</div>
-
-<div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io" rel="external nofollow">Hexo</a> 强力驱动
-</div>
-
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" rel="external nofollow">
-    NexT.Pisces
-  </a>
-</div>
-
-        
-      </div>
-    </footer>
-
-    <div class="back-to-top">
-      <i class="fa fa-arrow-up"></i>
-    </div>
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
-
-
-
-  
-
-
-
-  
-  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
-
-
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
-
-
-
-  
-
-  
+    <!-- After footer scripts -->
     
-  
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
 
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"yanlee24"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.id = 'duoshuo-script';
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementById('footer')
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
-  
-    
-    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
-    <script src="/js/src/hook-duoshuo.js"></script>
-  
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
 
 
-
-
-
-
-  
-  
-  <script type="text/javascript">
-    // Popup Window;
-    var isfetched = false;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length == 0) {
-       search_path = "search.xml";
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    function proceedsearch() {
-      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
-      $('.popup').toggle();
-
-    }
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-    'use strict';
-    $.ajax({
-        url: path,
-        dataType: "xml",
-        async: true,
-        success: function( xmlResponse ) {
-            // get the contents from search data
-            isfetched = true;
-            $('.popup').detach().appendTo('.header-inner');
-            var datas = $( "entry", xmlResponse ).map(function() {
-                return {
-                    title: $( "title", this ).text(),
-                    content: $("content",this).text(),
-                    url: $( "url" , this).text()
-                };
-            }).get();
-            var $input = document.getElementById(search_id);
-            var $resultContent = document.getElementById(content_id);
-            $input.addEventListener('input', function(){
-                var matchcounts = 0;
-                var str='<ul class=\"search-result-list\">';
-                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
-                $resultContent.innerHTML = "";
-                if (this.value.trim().length > 1) {
-                // perform local searching
-                datas.forEach(function(data) {
-                    var isMatch = true;
-                    var content_index = [];
-                    var data_title = data.title.trim().toLowerCase();
-                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
-                    var data_url = data.url;
-                    var index_title = -1;
-                    var index_content = -1;
-                    var first_occur = -1;
-                    // only match artiles with not empty titles and contents
-                    if(data_title != '' && data_content != '') {
-                        keywords.forEach(function(keyword, i) {
-                            index_title = data_title.indexOf(keyword);
-                            index_content = data_content.indexOf(keyword);
-                            if( index_title < 0 && index_content < 0 ){
-                                isMatch = false;
-                            } else {
-                                if (index_content < 0) {
-                                    index_content = 0;
-                                }
-                                if (i == 0) {
-                                    first_occur = index_content;
-                                }
-                            }
-                        });
-                    }
-                    // show search results
-                    if (isMatch) {
-                        matchcounts += 1;
-                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
-                        var content = data.content.trim().replace(/<[^>]+>/g,"");
-                        if (first_occur >= 0) {
-                            // cut out 100 characters
-                            var start = first_occur - 20;
-                            var end = first_occur + 80;
-                            if(start < 0){
-                                start = 0;
-                            }
-                            if(start == 0){
-                                end = 50;
-                            }
-                            if(end > content.length){
-                                end = content.length;
-                            }
-                            var match_content = content.substring(start, end);
-                            // highlight all keywords
-                            keywords.forEach(function(keyword){
-                                var regS = new RegExp(keyword, "gi");
-                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
-                            });
-
-                            str += "<p class=\"search-result\">" + match_content +"...</p>"
-                        }
-                        str += "</li>";
-                    }
-                })};
-                str += "</ul>";
-                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
-                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
-                $resultContent.innerHTML = str;
-            });
-            proceedsearch();
-        }
-    });}
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched == false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-
-    });
-
-    $('.popup-btn-close').click(function(e){
-      $('.popup').hide();
-      $(".popoverlay").remove();
-      $('body').css('overflow', '');
-    });
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-  </script>
-
-
-  
-
-  
-
-  
-<script type="text/javascript" async src="//push.zhanzhang.baidu.com/push.js">
-</script>
-
-
-  <!-- 背景动画 -->
-  <script type="text/javascript" src="/js/src/particle.js"></script>
-  <!-- 页面点击小红心 -->
-  <script type="text/javascript" src="/js/src/love.js"></script>
 
 </body>
+
 </html>
