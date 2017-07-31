@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yanlee26.github.io/"/>
-  <updated>2017-03-12T14:09:45.000Z</updated>
+  <updated>2017-07-31T14:26:18.000Z</updated>
   <id>https://yanlee26.github.io/</id>
   
   <author>
@@ -16,11 +16,65 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>职业规划</title>
+    <link href="https://yanlee26.github.io/2017/07/29/2017-07-27/"/>
+    <id>https://yanlee26.github.io/2017/07/29/2017-07-27/</id>
+    <published>2017-07-28T18:25:20.000Z</published>
+    <updated>2017-07-31T14:26:18.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="职业规划"><a href="#职业规划" class="headerlink" title="职业规划"></a>职业规划</h1><pre><code>在前端领域，争取做到一专多能。保持匠人心态与精神，成为一个全栈且偏前端的软件工程师。
+</code></pre><ul>
+<li>在精通JS的基础上，旁通其它主流编程语言；</li>
+<li>熟悉常见设计模式，实践上指导各种语言的灵活应用；</li>
+<li>熟悉算法及数据结构，理论上提高编程深度及水平；</li>
+<li>保持终身学习的习惯，不断更新自我，与时俱进，使自己保持在行业领域前沿；</li>
+</ul>
+<h1 id="技术栈"><a href="#技术栈" class="headerlink" title="技术栈"></a>技术栈</h1><pre><code>在公司无可避免的要用公司架构的技术栈；但对自身而言，若要保持well-informed，务必发展自己的技术栈。
+</code></pre><ul>
+<li>坚持每三个月研读一本技术书籍的习惯，如函数式编程及设计模式等；</li>
+<li>后端：node， python；</li>
+<li>前端：react， vue ，ES6/7；</li>
+<li>打包工具：webpack；</li>
+</ul>
+<h1 id="生活上"><a href="#生活上" class="headerlink" title="生活上"></a>生活上</h1><pre><code>继续保持积极进取的心态，培养及发展几个有益身心的业余爱好，做一个有趣的人，懂生活的人。
+</code></pre><ul>
+<li>坚持旅游，跑步，健身的习惯；</li>
+<li>发展好对英语，经济，及科技领域知识的爱好及保持归零心态；</li>
+<li>有机会多参与户外活动，多与真实世界交流；</li>
+<li>保持爱读书的习惯；</li>
+<li>保持作息有致，饮食规律；</li>
+<li>做一些有价值的投资，健康方面或自我发展方面；</li>
+</ul>
+<h1 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h1><blockquote>
+<p>这世间，唯有梦想与好女孩不可辜负！</p>
+</blockquote>
+<pre><code>寻找并珍惜，生命中最珍贵的人。
+
+                                          2017-07-28  浦东新区
+</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;职业规划&quot;&gt;&lt;a href=&quot;#职业规划&quot; class=&quot;headerlink&quot; title=&quot;职业规划&quot;&gt;&lt;/a&gt;职业规划&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;在前端领域，争取做到一专多能。保持匠人心态与精神，成为一个全栈且偏前端的软件工程师。
+&lt;/code&gt;&lt;/pr
+    
+    </summary>
+    
+      <category term="综合" scheme="https://yanlee26.github.io/categories/%E7%BB%BC%E5%90%88/"/>
+    
+    
+      <category term="Hexo" scheme="https://yanlee26.github.io/tags/Hexo/"/>
+    
+      <category term="clean_blog" scheme="https://yanlee26.github.io/tags/clean-blog/"/>
+    
+  </entry>
+  
+  <entry>
     <title>react学习及原理分析</title>
     <link href="https://yanlee26.github.io/2017/01/24/react/"/>
     <id>https://yanlee26.github.io/2017/01/24/react/</id>
     <published>2017-01-23T23:15:24.000Z</published>
-    <updated>2017-03-12T14:09:45.000Z</updated>
+    <updated>2017-07-31T14:25:07.000Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>草稿。。。</p>
@@ -41,7 +95,7 @@
     
       <category term="Hexo" scheme="https://yanlee26.github.io/tags/Hexo/"/>
     
-      <category term="Next" scheme="https://yanlee26.github.io/tags/Next/"/>
+      <category term="clean_blog" scheme="https://yanlee26.github.io/tags/clean-blog/"/>
     
   </entry>
   
@@ -50,7 +104,7 @@
     <link href="https://yanlee26.github.io/2017/01/04/front-end-career/"/>
     <id>https://yanlee26.github.io/2017/01/04/front-end-career/</id>
     <published>2017-01-03T19:28:20.000Z</published>
-    <updated>2017-03-12T14:25:45.000Z</updated>
+    <updated>2017-07-31T14:25:16.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="成就一名卓越的前端开发者"><a href="#成就一名卓越的前端开发者" class="headerlink" title="成就一名卓越的前端开发者"></a><center>成就一名卓越的前端开发者</center></h1><blockquote>
 <p>本文记录了两位工程师为web开发者们所提出的多条建议，其中一位推荐了多种实用的工具与技术，而另一位则对于如何克服浏览器开发时所面临的挑战提出了诸多建议。<br>Rebecca Murphey是来自于Bazaarvoice的一位软件工程师。今年早些时候，她发布了一篇博客文章<a href="http://rmurphey.com/blog/2015/03/23/a-baseline-for-front-end-developers-2015" target="_blank" rel="external">“前端（JS）开发者的基本素质之2015版”</a>，为JavaScript开发者在进行客户端web开发时使用的工具与开发方式提出了一些建议。她在文章的总结中写道：</p>
@@ -90,7 +144,7 @@
     
       <category term="Hexo" scheme="https://yanlee26.github.io/tags/Hexo/"/>
     
-      <category term="Next" scheme="https://yanlee26.github.io/tags/Next/"/>
+      <category term="clean_blog" scheme="https://yanlee26.github.io/tags/clean-blog/"/>
     
   </entry>
   
@@ -99,7 +153,7 @@
     <link href="https://yanlee26.github.io/2016/12/24/three/"/>
     <id>https://yanlee26.github.io/2016/12/24/three/</id>
     <published>2016-12-23T23:45:24.000Z</published>
-    <updated>2017-03-11T09:25:54.000Z</updated>
+    <updated>2017-07-31T14:25:03.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Getting-Started"><a href="#Getting-Started" class="headerlink" title="Getting Started"></a>Getting Started</h2><ul>
 <li><p>Creating the scene</p>
@@ -150,7 +204,7 @@
     
       <category term="Hexo" scheme="https://yanlee26.github.io/tags/Hexo/"/>
     
-      <category term="Next" scheme="https://yanlee26.github.io/tags/Next/"/>
+      <category term="clean_blog" scheme="https://yanlee26.github.io/tags/clean-blog/"/>
     
   </entry>
   
@@ -159,7 +213,7 @@
     <link href="https://yanlee26.github.io/2016/12/24/vue/"/>
     <id>https://yanlee26.github.io/2016/12/24/vue/</id>
     <published>2016-12-23T19:41:24.000Z</published>
-    <updated>2017-03-13T12:46:36.000Z</updated>
+    <updated>2017-07-31T14:25:00.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Essentials"><a href="#Essentials" class="headerlink" title="Essentials"></a>Essentials</h1><h2 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h2><blockquote>
 <p>Vue does not support IE8 and below</p>
@@ -383,7 +437,7 @@ example1.items.splice(indexOfItem, 1, newValue)
     
       <category term="Hexo" scheme="https://yanlee26.github.io/tags/Hexo/"/>
     
-      <category term="Next" scheme="https://yanlee26.github.io/tags/Next/"/>
+      <category term="clean_blog" scheme="https://yanlee26.github.io/tags/clean-blog/"/>
     
   </entry>
   
@@ -392,7 +446,7 @@ example1.items.splice(indexOfItem, 1, newValue)
     <link href="https://yanlee26.github.io/2016/11/04/php/"/>
     <id>https://yanlee26.github.io/2016/11/04/php/</id>
     <published>2016-11-03T23:25:10.000Z</published>
-    <updated>2017-03-26T03:45:18.000Z</updated>
+    <updated>2017-07-31T14:25:11.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><blockquote>
 <p>PHP 是一种创建动态交互性站点的强有力的服务器端脚本语言。</p>
@@ -536,7 +590,7 @@ example1.items.splice(indexOfItem, 1, newValue)
     
       <category term="Hexo" scheme="https://yanlee26.github.io/tags/Hexo/"/>
     
-      <category term="Next" scheme="https://yanlee26.github.io/tags/Next/"/>
+      <category term="clean_blog" scheme="https://yanlee26.github.io/tags/clean-blog/"/>
     
   </entry>
   
@@ -545,7 +599,7 @@ example1.items.splice(indexOfItem, 1, newValue)
     <link href="https://yanlee26.github.io/2016/11/01/node/"/>
     <id>https://yanlee26.github.io/2016/11/01/node/</id>
     <published>2016-11-01T13:05:24.000Z</published>
-    <updated>2017-03-12T14:40:29.000Z</updated>
+    <updated>2017-07-31T14:25:13.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><blockquote>
 <p>Node是一个基于Chrome的V8JS引擎的JS运行时。Node运用事件驱动(event-driven)，非阻塞I/O模型(non-blocking I/O)使其轻量和高效。Node的包管理器npm，是世界上生态系统最大的开源库。</p>
@@ -1643,7 +1697,7 @@ example1.items.splice(indexOfItem, 1, newValue)
     
       <category term="Hexo" scheme="https://yanlee26.github.io/tags/Hexo/"/>
     
-      <category term="Next" scheme="https://yanlee26.github.io/tags/Next/"/>
+      <category term="clean_blog" scheme="https://yanlee26.github.io/tags/clean-blog/"/>
     
   </entry>
   
@@ -1652,7 +1706,7 @@ example1.items.splice(indexOfItem, 1, newValue)
     <link href="https://yanlee26.github.io/2016/11/01/commonJS/"/>
     <id>https://yanlee26.github.io/2016/11/01/commonJS/</id>
     <published>2016-11-01T13:05:24.000Z</published>
-    <updated>2017-03-10T06:18:50.000Z</updated>
+    <updated>2017-07-31T14:25:30.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
 <p>Node应用有采用CommonJS规范的模块组成，据此每个文件就是一模块，有自己的作用域。其内定义的<br>变量，函数，类都是私有的，对其它文件不可见。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">// example.js</div><div class="line">var x = 5;</div><div class="line">var addX = function (value) &#123;</div><div class="line">  return value + x;</div><div class="line">&#125;;</div><div class="line">//分享变量</div><div class="line">global.warning = true;//不推荐</div></pre></td></tr></table></figure></p>
@@ -1728,7 +1782,7 @@ example1.items.splice(indexOfItem, 1, newValue)
     
       <category term="Hexo" scheme="https://yanlee26.github.io/tags/Hexo/"/>
     
-      <category term="Next" scheme="https://yanlee26.github.io/tags/Next/"/>
+      <category term="clean_blog" scheme="https://yanlee26.github.io/tags/clean-blog/"/>
     
   </entry>
   
@@ -1737,7 +1791,7 @@ example1.items.splice(indexOfItem, 1, newValue)
     <link href="https://yanlee26.github.io/2016/10/24/webpack/"/>
     <id>https://yanlee26.github.io/2016/10/24/webpack/</id>
     <published>2016-10-23T23:15:01.000Z</published>
-    <updated>2017-03-12T14:17:22.000Z</updated>
+    <updated>2017-07-31T14:24:55.000Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>草稿。。。</p>
@@ -1784,7 +1838,7 @@ a.确定什么文件该被相应loader转换(test)，b：转换相应文件以�
     
       <category term="Hexo" scheme="https://yanlee26.github.io/tags/Hexo/"/>
     
-      <category term="Next" scheme="https://yanlee26.github.io/tags/Next/"/>
+      <category term="clean_blog" scheme="https://yanlee26.github.io/tags/clean-blog/"/>
     
   </entry>
   
@@ -1793,7 +1847,7 @@ a.确定什么文件该被相应loader转换(test)，b：转换相应文件以�
     <link href="https://yanlee26.github.io/2016/10/04/es6/"/>
     <id>https://yanlee26.github.io/2016/10/04/es6/</id>
     <published>2016-10-03T23:28:30.000Z</published>
-    <updated>2017-05-03T13:42:33.000Z</updated>
+    <updated>2017-07-31T14:25:22.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="ECMAScript-6"><a href="#ECMAScript-6" class="headerlink" title="ECMAScript 6"></a>ECMAScript 6</h1><h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><blockquote>
 <p>ECMAScript 6, also known as ECMAScript 2015, is the latest version of the ECMAScript<br> standard.  ES6 is a significant update to the language, and the first update to<br> the language since ES5 was standardized in 2009. Implementation of these features<br> in major  engines is <a href="http://kangax.github.io/es5-compat-table/es6/" target="_blank" rel="external">underway now(支持情况一览)</a>.</p>
@@ -2938,7 +2992,7 @@ a.确定什么文件该被相应loader转换(test)，b：转换相应文件以�
     
       <category term="Hexo" scheme="https://yanlee26.github.io/tags/Hexo/"/>
     
-      <category term="Next" scheme="https://yanlee26.github.io/tags/Next/"/>
+      <category term="clean_blog" scheme="https://yanlee26.github.io/tags/clean-blog/"/>
     
   </entry>
   
@@ -2947,7 +3001,7 @@ a.确定什么文件该被相应loader转换(test)，b：转换相应文件以�
     <link href="https://yanlee26.github.io/2016/10/04/python/"/>
     <id>https://yanlee26.github.io/2016/10/04/python/</id>
     <published>2016-10-03T18:25:40.000Z</published>
-    <updated>2017-03-26T03:18:19.000Z</updated>
+    <updated>2017-07-31T14:25:09.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><blockquote>
 <p>Python是一种解释型、面向对象、动态数据类型的高级程序设计语言。</p>
@@ -3204,7 +3258,7 @@ a.确定什么文件该被相应loader转换(test)，b：转换相应文件以�
     
       <category term="Hexo" scheme="https://yanlee26.github.io/tags/Hexo/"/>
     
-      <category term="Next" scheme="https://yanlee26.github.io/tags/Next/"/>
+      <category term="clean_blog" scheme="https://yanlee26.github.io/tags/clean-blog/"/>
     
   </entry>
   
@@ -3213,7 +3267,7 @@ a.确定什么文件该被相应loader转换(test)，b：转换相应文件以�
     <link href="https://yanlee26.github.io/2016/09/24/scss/"/>
     <id>https://yanlee26.github.io/2016/09/24/scss/</id>
     <published>2016-09-23T19:45:24.000Z</published>
-    <updated>2017-02-05T01:26:06.000Z</updated>
+    <updated>2017-07-31T14:25:05.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="SASS"><a href="#SASS" class="headerlink" title="SASS"></a>SASS</h1><h3 id="get-started…"><a href="#get-started…" class="headerlink" title="get started…"></a>get started…</h3><ol>
 <li>变量<blockquote>
@@ -3387,7 +3441,7 @@ color: #006699;
     
       <category term="Hexo" scheme="https://yanlee26.github.io/tags/Hexo/"/>
     
-      <category term="Next" scheme="https://yanlee26.github.io/tags/Next/"/>
+      <category term="clean_blog" scheme="https://yanlee26.github.io/tags/clean-blog/"/>
     
   </entry>
   
@@ -3396,7 +3450,7 @@ color: #006699;
     <link href="https://yanlee26.github.io/2016/08/24/flex/"/>
     <id>https://yanlee26.github.io/2016/08/24/flex/</id>
     <published>2016-08-23T19:45:24.000Z</published>
-    <updated>2017-03-02T23:33:57.000Z</updated>
+    <updated>2017-07-31T14:25:20.000Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>2009年，W3C提出了一种新的方案—-Flex布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能很安全地使用这项功能。</p>
@@ -3423,7 +3477,7 @@ color: #006699;
     
       <category term="Hexo" scheme="https://yanlee26.github.io/tags/Hexo/"/>
     
-      <category term="Next" scheme="https://yanlee26.github.io/tags/Next/"/>
+      <category term="clean_blog" scheme="https://yanlee26.github.io/tags/clean-blog/"/>
     
   </entry>
   
@@ -3432,7 +3486,7 @@ color: #006699;
     <link href="https://yanlee26.github.io/2016/06/08/prefessional%20JS/"/>
     <id>https://yanlee26.github.io/2016/06/08/prefessional JS/</id>
     <published>2016-06-08T13:28:24.000Z</published>
-    <updated>2017-03-13T12:45:47.000Z</updated>
+    <updated>2017-07-31T14:25:10.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="JS高级教程总结"><a href="#JS高级教程总结" class="headerlink" title="JS高级教程总结"></a>JS高级教程总结</h1><h3 id="Chapter3-基本概念"><a href="#Chapter3-基本概念" class="headerlink" title="Chapter3 基本概念"></a>Chapter3 基本概念</h3><ul>
 <li>3.4数据类型</li>
@@ -4867,7 +4921,7 @@ function goodbye(){}
     
       <category term="Hexo" scheme="https://yanlee26.github.io/tags/Hexo/"/>
     
-      <category term="Next" scheme="https://yanlee26.github.io/tags/Next/"/>
+      <category term="clean_blog" scheme="https://yanlee26.github.io/tags/clean-blog/"/>
     
   </entry>
   
@@ -4876,7 +4930,7 @@ function goodbye(){}
     <link href="https://yanlee26.github.io/2016/06/04/framework/"/>
     <id>https://yanlee26.github.io/2016/06/04/framework/</id>
     <published>2016-06-03T23:22:22.000Z</published>
-    <updated>2017-02-05T01:26:05.000Z</updated>
+    <updated>2017-07-31T14:25:17.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="js-常用封装总结"><a href="#js-常用封装总结" class="headerlink" title="js 常用封装总结"></a>js 常用封装总结</h1><p>`<br>//自制框架<br>//定义一个对象 - 名字是$$<br>var $$ = function () {<br>};<br>//第二种写法<br>$$.prototype = {<br>    $q:function (str) {<br>        return document.querySelector(str)<br>    },<br>    $qa:function (str) {<br>        return document.querySelectorAll(str)<br>    },<br>    $id: function (str) {<br>        return document.getElementById(str)<br>    },<br>    $tag: function (tag) {<br>        return document.getElementsByTagName(tag)<br>    },<br>    //去除左边空格<br>    ltrim: function (str) {<br>        return str.replace(/(^\s<em>)/g, ‘’);<br>    },<br>    //去除右边空格<br>    rtrim: function (str) {<br>        return str.replace(/(\s</em>$)/g, ‘’);<br>    },<br>    //去除空格<br>    trim: function (str) {<br>        return str.replace(/(^\s<em>)|(\s</em>$)/g, ‘’);<br>    },<br>    //ajax<br>    myAjax: function (URL, fn) {<br>        var xhr = createXHR();    //返回了一个对象，这个对象IE6兼容。<br>        xhr.onreadystatechange = function () {<br>            if (xhr.readyState === 4) {<br>                if (xhr.status &gt;= 200 &amp;&amp; xhr.status &lt; 300 || xhr.status == 304) {<br>                    fn(xhr.responseText);<br>                } else {<br>                    alert(“错误的文件！”);<br>                }<br>            }<br>        };<br>        xhr.open(“get”, URL, true);<br>        xhr.send();<br>        //闭包形式，因为这个函数只服务于ajax函数，所以放在里面<br>        function createXHR() {<br>            if (typeof XMLHttpRequest != “undefined”) {<br>                return new XMLHttpRequest();<br>            } else if (typeof ActiveXObject != “undefined”) {<br>                if (typeof arguments.callee.activeXString != “string”) {<br>                    var versions = [“MSXML2.XMLHttp.6.0”, “MSXML2.XMLHttp.3.0”,<br>                            “MSXML2.XMLHttp”<br>                        ],<br>                        i, len;<br>                    for (i = 0, len = versions.length; i &lt; len; i++) {<br>                        try {<br>                            new ActiveXObject(versions[i]);<br>                            arguments.callee.activeXString = versions[i];<br>                            break;<br>                        } catch (ex) {<br>                            //skip<br>                        }<br>                    }<br>                }<br>                return new ActiveXObject(arguments.callee.activeXString);<br>            } else {<br>                throw new Error(“No XHR object available.”);<br>            }<br>        }<br>    },<br>    //tab<br>    tab: function (id) {<br>        var box = document.getElementById(id);<br>        var spans = box.getElementsByTagName(‘span’);<br>        var lis = box.getElementsByTagName(‘li’);<br>        for (var i = 0; i &lt; spans.length; i++) {<br>            spans[i].index = i;<br>            spans[i].onmouseover = function () {<br>                for (var i = 0; i &lt; spans.length; i++) {<br>                    spans[i].className = ‘’;<br>                    lis[i].className = ‘’;<br>                }<br>                this.className = ‘select’;<br>                lis[this.index].className = ‘select’;<br>            }<br>        }<br>    },<br>    //简单的数据绑定formateString<br>    formateString: function (str, data) {<br>        return str.replace(/@((\w+))/g, function (match, key) {<br>            return typeof data[key] === “undefined” ? ‘’ : data[key]<br>        });<br>    },<br>    //给一个对象扩充功能<br>    extendMany: function () {<br>        var key, i = 0, len = arguments.length, target = null, copy;<br>        if (len === 0) {<br>            return;<br>        } else if (len === 1) {<br>            target = this;<br>        } else {<br>            i++;<br>            target = arguments[0];<br>        }<br>        for (; i &lt; len; i++) {<br>            for (key in arguments[i]) {<br>                copy = arguments[i][key];<br>                target[key] = copy;<br>            }<br>        }<br>        return target;<br>    },<br>    extend: function (tar, source) {<br>        for (var i in source) {<br>            tar[i] = source[i];<br>        }<br>        return tar;<br>    },<br>    random: function (begin, end) {<br>        return Math.floor(Math.random() <em> (end - begin)) + begin;<br>    },<br>    isNumber: function (val) {<br>        return typeof val === ‘number’ &amp;&amp; isFinite(val)<br>    },<br>    isBoolean: function (val) {<br>        return typeof val === “boolean”;<br>    },<br>    isString: function (val) {<br>        return typeof val === “string”;<br>    },<br>    isUndefined: function (val) {<br>        return typeof val === “undefined”;<br>    },<br>    isObj: function (str) {<br>        if (str === null || typeof str === ‘undefined’) {<br>            return false;<br>        }<br>        return typeof str === ‘object’;<br>    },<br>    isNull: function (val) {<br>        return val === null;<br>    },<br>    isArray: function (arr) {<br>        if (arr === null || typeof arr === ‘undefined’) {<br>            return false;<br>        }<br>        return arr.constructor === Array;<br>    }<br>};<br>//在框架中实例化<br>$$ = new $$();<br>$$.extend($$, {<br>    $id: function(id) {<br>        return document.getElementById(id);<br>    },<br>    $tag: function(tag, context) {<br>        if (typeof context == ‘string’) {<br>            context = $$.$id(context);<br>        }<br>        if (context) {<br>            return context.getElementsByTagName(tag);<br>        } else {<br>            return document.getElementsByTagName(tag);<br>        }<br>    },<br>    $class: function(className, context) {<br>        var i = 0,<br>            len, dom = [],<br>            arr = [];<br>        if ($$.isString(context)) {<br>            context = document.getElementById(context);<br>        } else {<br>            context = document;<br>        }<br>        if (context.getElementsByClassName) {<br>            return context.getElementsByClassName(className);<br>        } else {<br>            dom = context.getElementsByTagName(‘</em>‘);<br>            for (i; len = dom.length, i &lt; len; i++) {<br>                if (dom[i].className) {<br>                    arr.push(dom[i]);<br>                }<br>            }<br>        }<br>        return arr;<br>    },<br>    $group: function(content) {<br>        var result = [],<br>            doms = [];<br>        var arr = $$.trim(content).split(‘,’);<br>        for (var i = 0, len = arr.length; i &lt; len; i++) {<br>            var item = $$.trim(arr[i])<br>            var first = item.charAt(0)<br>            var index = item.indexOf(first)<br>            if (first === ‘.’) {<br>                doms = $$.$class(item.slice(index + 1));<br>                pushArray(doms, result)<br>            } else if (first === ‘#’) {<br>                doms = [$$.$id(item.slice(index + 1))] ;<br>                pushArray(doms, result)<br>            } else {<br>                doms = $$.$tag(item);<br>                pushArray(doms, result)<br>            }<br>        }<br>        return result;<br>        function pushArray(doms, result) {<br>            for (var j = 0, domlen = doms.length; j &lt; domlen; j++) {<br>                result.push(doms[j])<br>            }<br>        }<br>    },<br>    $cengci: function(select) {<br>        var sel = $$.trim(select).split(‘ ‘);<br>        var result = [];<br>        var context = [];<br>        for (var i = 0, len = sel.length; i &lt; len; i++) {<br>            result = [];<br>            var item = $$.trim(sel[i]);<br>            var first = sel[i].charAt(0)<br>            var index = item.indexOf(first)<br>            if (first === ‘#’) {<br>                pushArray([$$.$id(item.slice(index + 1))]);<br>                context = result;<br>            } else if (first === ‘.’) {<br>                if (context.length) {<br>                    for (var j = 0, contextLen = context.length; j &lt; contextLen; j++) {<br>                        pushArray($$.$class(item.slice(index + 1), context[j]));<br>                    }<br>                } else {<br>                    pushArray($$.$class(item.slice(index + 1)));<br>                }<br>                context = result;<br>            } else {<br>                if (context.length) {<br>                    for (var j = 0, contextLen = context.length; j &lt; contextLen; j++) {<br>                        pushArray($$.$tag(item, context[j]));<br>                    }<br>                } else {<br>                    pushArray($$.$tag(item));<br>                }<br>                context = result;<br>            }<br>        }</p>
 <pre><code>    return context;
@@ -5103,7 +5157,7 @@ return api;
     
       <category term="Hexo" scheme="https://yanlee26.github.io/tags/Hexo/"/>
     
-      <category term="Next" scheme="https://yanlee26.github.io/tags/Next/"/>
+      <category term="clean_blog" scheme="https://yanlee26.github.io/tags/clean-blog/"/>
     
   </entry>
   
@@ -5112,7 +5166,7 @@ return api;
     <link href="https://yanlee26.github.io/2016/06/04/bibleInLife/"/>
     <id>https://yanlee26.github.io/2016/06/04/bibleInLife/</id>
     <published>2016-06-03T18:25:20.000Z</published>
-    <updated>2017-02-05T13:51:31.000Z</updated>
+    <updated>2017-07-31T14:25:34.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="【道德经】"><a href="#【道德经】" class="headerlink" title="【道德经】"></a><center>【道德经】</center></h1><blockquote>
 <p>老子</p>
@@ -5221,7 +5275,7 @@ return api;
     
       <category term="Hexo" scheme="https://yanlee26.github.io/tags/Hexo/"/>
     
-      <category term="Next" scheme="https://yanlee26.github.io/tags/Next/"/>
+      <category term="clean_blog" scheme="https://yanlee26.github.io/tags/clean-blog/"/>
     
   </entry>
   
@@ -5230,7 +5284,7 @@ return api;
     <link href="https://yanlee26.github.io/2016/03/03/events/"/>
     <id>https://yanlee26.github.io/2016/03/03/events/</id>
     <published>2016-03-03T12:11:38.000Z</published>
-    <updated>2017-02-13T13:35:59.000Z</updated>
+    <updated>2017-07-31T14:25:21.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="web-events-值均为script"><a href="#web-events-值均为script" class="headerlink" title="web events(值均为script)"></a>web events(值均为script)</h1><h3 id="事件类型（DOM3级）"><a href="#事件类型（DOM3级）" class="headerlink" title="事件类型（DOM3级）"></a>事件类型（DOM3级）</h3><table>
 <thead>
@@ -6156,7 +6210,7 @@ return api;
     
       <category term="Hexo" scheme="https://yanlee26.github.io/tags/Hexo/"/>
     
-      <category term="Next" scheme="https://yanlee26.github.io/tags/Next/"/>
+      <category term="clean_blog" scheme="https://yanlee26.github.io/tags/clean-blog/"/>
     
   </entry>
   
@@ -6165,7 +6219,7 @@ return api;
     <link href="https://yanlee26.github.io/2016/01/04/dave-to-dream/"/>
     <id>https://yanlee26.github.io/2016/01/04/dave-to-dream/</id>
     <published>2016-01-03T18:29:22.000Z</published>
-    <updated>2017-03-12T14:26:18.000Z</updated>
+    <updated>2017-07-31T14:25:26.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Dave-to-Dream-Again"><a href="#Dave-to-Dream-Again" class="headerlink" title=" Dave to Dream Again"></a><center> Dave to Dream Again</center></h1><blockquote>
 <p>最早接触此篇文章在高中，当时花了两块钱买了本喜欢看的《英语沙龙》，当读第一遍的时候<br>就爱不释手并背了下来。在我今后的人生征途中，每每想到其铿锵有力的措辞，时刻迸发出掷地<br>有声的回响。实在是值得收藏与分享的枕边书，只不过要早起的时候看，开启激情燃烧的时刻。。。</p>
@@ -6190,7 +6244,7 @@ return api;
     
       <category term="Hexo" scheme="https://yanlee26.github.io/tags/Hexo/"/>
     
-      <category term="Next" scheme="https://yanlee26.github.io/tags/Next/"/>
+      <category term="clean_blog" scheme="https://yanlee26.github.io/tags/clean-blog/"/>
     
   </entry>
   
@@ -6199,7 +6253,7 @@ return api;
     <link href="https://yanlee26.github.io/2015/12/01/cssskills/"/>
     <id>https://yanlee26.github.io/2015/12/01/cssskills/</id>
     <published>2015-12-01T11:31:20.000Z</published>
-    <updated>2017-02-05T01:26:05.000Z</updated>
+    <updated>2017-07-31T14:25:29.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="CSS-使用技巧"><a href="#CSS-使用技巧" class="headerlink" title="CSS 使用技巧"></a>CSS 使用技巧</h1><ul>
 <li>文字<ol>
@@ -6387,7 +6441,7 @@ a.tooltip {position: relative}
     
       <category term="Hexo" scheme="https://yanlee26.github.io/tags/Hexo/"/>
     
-      <category term="Next" scheme="https://yanlee26.github.io/tags/Next/"/>
+      <category term="clean_blog" scheme="https://yanlee26.github.io/tags/clean-blog/"/>
     
   </entry>
   
@@ -6396,7 +6450,7 @@ a.tooltip {position: relative}
     <link href="https://yanlee26.github.io/2015/10/01/design-pattern/"/>
     <id>https://yanlee26.github.io/2015/10/01/design-pattern/</id>
     <published>2015-10-01T11:31:20.000Z</published>
-    <updated>2017-03-11T02:38:16.000Z</updated>
+    <updated>2017-07-31T14:25:24.000Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>了解一下经典的设计模式，总之一句话：大道至简，要言不繁！</p>
@@ -6471,394 +6525,7 @@ a.tooltip {position: relative}
     
       <category term="Hexo" scheme="https://yanlee26.github.io/tags/Hexo/"/>
     
-      <category term="Next" scheme="https://yanlee26.github.io/tags/Next/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JS深入浅出学习分析总结</title>
-    <link href="https://yanlee26.github.io/2015/09/02/moc_summery/"/>
-    <id>https://yanlee26.github.io/2015/09/02/moc_summery/</id>
-    <published>2015-09-01T21:31:43.000Z</published>
-    <updated>2017-03-12T14:14:21.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="JS深入浅出学习分析总结"><a href="#JS深入浅出学习分析总结" class="headerlink" title="JS深入浅出学习分析总结"></a>JS深入浅出学习分析总结</h1><h2 id="六种数据类型"><a href="#六种数据类型" class="headerlink" title="六种数据类型"></a>六种数据类型</h2><pre><code>弱类型：
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var num=32;num=&apos;str&apos;;32+32;//64</div><div class="line">32+&apos;32&apos; //64;</div><div class="line">&apos;32&apos;-32 //0</div></pre></td></tr></table></figure>
-<p>-数据类型</p>
-<pre><code>- 原始类型(五种)：number,string,boolean,null,undefined
-- 对象类型object:Function,Array,Date...
-</code></pre><ul>
-<li><p>隐式转换</p>
-<ul>
-<li>类型相同，同===</li>
-<li>类型不同，尝试类型转换并比较<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">null==undefined;</div><div class="line">number==string转number</div><div class="line">boolean==?转number 1==true //true</div><div class="line">object==number|string尝试对象转为基本类型 new String(&apos;hi&apos;)==&apos;hi&apos; //true,</div><div class="line">其它：false</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>包装对象：string,number,boolean</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var str=&apos;12&apos;;//string</div><div class="line">str.length ;//2</div><div class="line">str.a=10;//10</div><div class="line">str.a;//undefined,临时对象创建后立即销毁</div><div class="line">var newStr=new String(&apos;12&apos;);//Object</div></pre></td></tr></table></figure>
-</li>
-<li><p>类型转换</p>
-<ul>
-<li>typeof：基本类型及function类型（null失效）</li>
-<li>instanceof:对象类型，适合自定义对象及原生对象（不同iframe和window间失效）</li>
-<li>Object.prototype：[[Class]]适合内置对象和基元类型（null和undefined失效；IE678返回【object Object】）</li>
-<li>constructor</li>
-<li>duck type<h2 id="表达式和运算符"><a href="#表达式和运算符" class="headerlink" title="表达式和运算符"></a>表达式和运算符</h2>###表达式</li>
-</ul>
-</li>
-<li>原始表达式：<ul>
-<li>常量，直接量：3.14，‘a’</li>
-<li>关键字:null,this,true</li>
-<li>变量:i,j,k</li>
-</ul>
-</li>
-<li>复合表达式：原始表达式&amp;原始表达式</li>
-<li>初始化表达式：[1,2]===new Array(1,2);</li>
-<li>函数表达式：var foo=function(){};(function(){})()</li>
-<li>属性访问表达式：var o={x:1};o.x;o[x’]</li>
-<li>调用表达式：foo()</li>
-<li>对象创建表达式：new Func(1);new Object //无参数可以省略’（）‘;<h3 id="运算符（表达式之间）"><a href="#运算符（表达式之间）" class="headerlink" title="运算符（表达式之间）"></a>运算符（表达式之间）</h3></li>
-<li>操作数：<ul>
-<li>一元：+num;</li>
-<li>二元：a+b;</li>
-<li>三元：c?a:b</li>
-</ul>
-</li>
-<li>功能：<ul>
-<li>赋值：a+=1<br>-比较：a==b</li>
-<li>算数：a-b;</li>
-<li>位：a|b;</li>
-<li>逻辑：exp1&amp;&amp;exp2<br>-字符串：‘a’+’b’</li>
-<li>特殊：<pre><code>-delete obj.x //Object.defineProperty(obj,&apos;x&apos;,                      {configurable:false,value:1});
-</code></pre><ul>
-<li>,:var a,b;</li>
-<li>in: var i in item<ul>
-<li>instanceof ,typeof</li>
-</ul>
-</li>
-<li>new :obj.hasOwnProperty(‘x’);obj.<strong>proto</strong>.hasOwnProperty(‘x’) //true</li>
-<li>this</li>
-<li>void:void 0<h3 id="运算符优先级"><a href="#运算符优先级" class="headerlink" title="运算符优先级"></a>运算符优先级</h3><h2 id="语句"><a href="#语句" class="headerlink" title="语句"></a>语句</h2></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>块语句（js无块及级作用域）和var语句</li>
-<li>try catch语句</li>
-<li>function,switch,循环（for in(1.顺序不定，2.enumberable为false时不可用；3.受原型链影响),do-while），with</li>
-<li>严格模式strict<blockquote>
-<p>一种特殊的运行模式，修复了部分语言上的不足，提供了更强的错误检查并增强安全性</p>
-<ul>
-<li>不允许使用with    </li>
-<li>所有变量必须先声明</li>
-<li>eval中代码不能创建eval所在作用域下的变量函数，而是为eval单独创建一个作用域并在eval返回时丢弃</li>
-<li>函数中的特殊对象arguments是静态副本（不像非严格模式时修改arguments或者参数变量会相互影响）</li>
-<li>删除configurable=false的属性会报错而非忽略</li>
-<li>禁止八进制字面量（010）</li>
-<li>eval,arguments变量为关键字，不可作为变量名函数名</li>
-<li>一般函数调用时（非对象方法调用，不使用apply/call/bind等修改this）this指向null而非全局对象，若使用apply/call当传入null或undefined时this指向null或者undefined而非全局。</li>
-<li>试图修改writable=false，在不可扩展对象上添加属性时包TypeError而非忽略</li>
-<li>arguments.caller,arguments.callee禁用<h2 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h2></li>
-</ul>
-</blockquote>
-</li>
-<li>对象结构（原型链）<br><img src="http://img.mukewang.com/5899cf7300011e1c08280441.jpg" alt="属性的属性"></li>
-<li>创建对象方法：<ul>
-<li>对象字面量</li>
-<li>new/原型链<br><img src="http://img.mukewang.com/5899cfd80001d6cb05290393.jpg" alt="原型链的继承"></li>
-<li>Object.create()<br><img src="http://img.mukewang.com/5899d0410001527005980329.jpg" alt="Object.create"></li>
-</ul>
-</li>
-<li><p>属性的操作</p>
-<ul>
-<li>读写<blockquote>
-<p>注意for-in操作符可以把对象原型上属性也遍历出来</p>
-</blockquote>
-</li>
-<li>读写异常<figure class="highlight plain"><figcaption><span>obj=&#123;x:1&#125;;var yz;if(obj.y)&#123;yz=obj.y.z&#125;;</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var yz=obj&amp;&amp;obj.y&amp;&amp;obj.y.z;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>属性删除</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var descriptor=Object.getOwnPropertyDescriptor(Object,&apos;prototype&apos;);</div><div class="line">descriptor.configurable;//false,是否可配置</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><img src="http://img.mukewang.com/5899d324000108a606410289.jpg" alt="图片描述"></p>
-<blockquote>
-<p>node环境中最后一个也是false</p>
-<ul>
-<li>属性检测<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hasOwnProperty();</div><div class="line">propertyIsEnumerable()</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</blockquote>
-<p><img src="http://img.mukewang.com/5899d52c00013d8206160360.jpg" alt="图片描述"></p>
-<ul>
-<li><p>属性枚举</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">var o=&#123;x:1,y:2,z:3&#125;;</div><div class="line">&apos;toString&apos; in o;//true</div><div class="line">o.propertyIsEnumerable(&apos;toString&apos;);//false</div><div class="line">var key;</div><div class="line">for(key in o)&#123;console.log(key)&#125;;x,y,z</div><div class="line">var obj=Object.create(o);</div><div class="line">obj.a=4;</div><div class="line">var key;</div><div class="line">for(key in obj)&#123;console.log(key)&#125;;a,x,y,z</div><div class="line">for(key in obj)&#123;if(obj.hasOwnProperty(key)&#123;console.log(key)&#125;)&#125;;a</div></pre></td></tr></table></figure>
-</li>
-<li><p>get/set方法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var man=&#123;</div><div class="line">    name:&apos;yl&apos;,</div><div class="line">    get age()&#123;return new Date.getFullYear()-1990&#125;,</div><div class="line">    set age(val)&#123;console.log(&apos;np&apos;+val)&#125;</div><div class="line">&#125;</div><div class="line">man.age;//27</div><div class="line">man.age=12;//np12</div></pre></td></tr></table></figure>
-</li>
-<li><p>属性标签</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">Object.getOwnPropertyDescriptor(&#123;pro:true&#125;,&apos;pro&apos;);</div><div class="line">//Object&#123;value:true,writable:true,enumerable:true,configurable:true&#125;</div><div class="line">Object.getOwnPropertyDescriptor(&#123;pro:true&#125;,&apos;a&apos;);//undefined</div><div class="line">var person=&#123;&#125;;</div><div class="line">Object.defineProperty(person,&apos;name&apos;,&#123;</div><div class="line">    configurable:false,</div><div class="line">    writable:false,</div><div class="line">    enumerable:true,</div><div class="line">    value:&apos;yl&apos;</div><div class="line">&#125;);</div><div class="line">person.name;//yl</div><div class="line">person.name=1;</div><div class="line">person.name;//yl</div><div class="line">delete person.name;//false</div><div class="line">Object.defineProperty(person,&apos;type&apos;,&#123;</div><div class="line">    configurable:true,</div><div class="line">    writable:true,</div><div class="line">    enumerable:false,</div><div class="line">    value:&apos;Object&apos;</div><div class="line">&#125;);</div><div class="line">Object.keys(person);//[&apos;name&apos;]</div><div class="line">//多个属性</div><div class="line">Object.defineProperties(person,&#123;</div><div class="line">    title1:&#123;value:&apos;fe1&apos;,enumerable:true&#125;,</div><div class="line">    title2:&#123;value:&apos;fe2&apos;,enumerable:true&#125;,</div><div class="line">    title3:&#123;value:&apos;fe3&apos;,enumerable:true,writable:true&#125;</div><div class="line">&#125;);</div><div class="line">Object.getOwnPropertyDescriptor(person,&apos;title3&apos;);</div><div class="line">//Object&#123;value:&apos;fe3&apos;,writable:true,enumerable:true,configurable:false&#125;</div><div class="line">Object.getOwnPropertyDescriptor(person,&apos;title1&apos;);</div><div class="line">//Object&#123;value:&apos;fe3&apos;,writable:false,enumerable:true,configurable:false&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>对象标签，序列</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var toString=Object.prototype.toString;</div><div class="line">function getType(o)&#123;return toString.call(o).slice(8,-1)&#125;</div><div class="line">getType(true)</div><div class="line">//&quot;Boolean&quot;</div><div class="line">toString.call(null)</div><div class="line">//&quot;[object Null]&quot;</div></pre></td></tr></table></figure>
-</li>
-<li><p>extensible扩展性</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">var obj=&#123;x:1,y:2&#125;;</div><div class="line">Object.isExtensible(obj);//true</div><div class="line">Object.preventExtensions(obj);</div><div class="line">Object.isExtensible(obj);//false</div><div class="line">obj.z=1;</div><div class="line">obj.z;//undefined,add new property failed</div><div class="line">Object.getOwnPropertyDescriptor(obj,&apos;x&apos;);</div><div class="line">//Object&#123;value:1,writable:true,enumerable:true,configurable:true&#125;</div><div class="line">Object.seal(obj);</div><div class="line">Object.getOwnPropertyDescriptor(obj,&apos;x&apos;);</div><div class="line">//Object&#123;value:1,writable:true,enumerable:true,configurable:false&#125;</div><div class="line">Object.isSealed(obj);//true</div><div class="line">Object.freeze(obj);</div><div class="line">Object.getOwnPropertyDescriptor(obj,&apos;x&apos;);</div><div class="line">//Object&#123;value:1,writable:false,enumerable:true,configurable:false&#125;</div><div class="line">Object.isFrozen(obj);//true</div><div class="line">//caution :not affects prototype chain!!!</div></pre></td></tr></table></figure>
-</li>
-<li><p>序列化其他，其它对象方法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">//序列化JSON.stringify&amp;JSON.parse</div><div class="line">var obj=&#123;x:1,y:true,z:[1,2,3],nullVal:null&#125;;</div><div class="line">JSON.stringify(obj);//&quot;&#123;&quot;x&quot;:1,&quot;y&quot;:true,&quot;z&quot;:[1,2,3],&quot;nullVal&quot;:null&#125;&quot;</div><div class="line">obj=&#123;x:undefined,y:NaN,z:Infinity,nullVal:new Date()&#125;;</div><div class="line">JSON.stringify(obj);//&quot;&#123;&quot;y&quot;:null,&quot;z&quot;:null,&quot;nullVal&quot;:&quot;2017-02-07T23:10:33.107Z&quot;&#125;&quot;,注意undefined和NaN</div><div class="line">o=JSON.parse(&apos;&#123;&quot;x&quot;:&quot;1&quot;&#125;&apos;);</div><div class="line">o.x;//1</div><div class="line">//其它对象方法toString()&amp;valueOf()</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>##数组</p>
-<ul>
-<li><p>创建与操作</p>
-<blockquote>
-<p>数组是值的有序集合，每个值叫做元素，每个元素在数组中都有数字位置<br>编号，即索引。js中数组是弱类型的，其中可以含有不同类型元素。</p>
-<figure class="highlight plain"><figcaption><span>arr=[1,true,null,undefined,&#123;&#125;,[]]        ```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">- 创建数组字面量：[]</div><div class="line">- new Array()</div><div class="line">- 元素读写</div><div class="line">```arr.length;arr[i];delete arr[j];//delete 操作不改变原数组</div></pre></td></tr></table></figure>
-</blockquote>
-</li>
-<li><p>元素增删</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">- 数组迭代</div><div class="line">```for-in for</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="二维数组-稀疏数组"><a href="#二维数组-稀疏数组" class="headerlink" title="二维数组+稀疏数组"></a>二维数组+稀疏数组</h3><ul>
-<li>稀疏数组：并不含有从0开始的连续索引，一般length属性值比实际元素个数多<h3 id="数组方法"><a href="#数组方法" class="headerlink" title="数组方法"></a>数组方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">//&#123;&#125;=&gt;Object.prototype;[]=&gt;Array.prototype</div><div class="line">Array.prototype.join;</div><div class="line">Array.prototype.reverse;</div><div class="line">Array.prototype.sort;</div><div class="line">Array.prototype.concat;</div><div class="line">Array.prototype.slice;</div><div class="line">Array.prototype.splice;//左闭右开</div><div class="line">Array.prototype.forEach;//ES5</div><div class="line">Array.prototype.map;//ES5</div><div class="line">Array.prototype.map;//ES5</div><div class="line">Array.prototype.filter;//ES5</div><div class="line">Array.prototype.every;//ES5</div><div class="line">Array.prototype.some;//ES5</div><div class="line">Array.prototype.reduce/reduceRight;//ES5</div><div class="line">Array.prototype.indexOf/lastIndexOf;//ES5</div><div class="line">Array.isArray;//ES5；[] instanceof Array;[].constructor===Array;(&#123;&#125;).toString.apply([])===&apos;[object Array]&apos;</div><div class="line">var arr=[1,2,3];</div><div class="line">var sum=arr.reduce(function(x,y)&#123;return x+y&#125;,0);//6</div><div class="line">var max=arr.reduce(function(x,y)&#123;return x&gt;y?x:y&#125;);//3</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>###小结</p>
-<ul>
-<li>数组vs一般对象<br>同：都可以继承，数组是对象对象不一定是数组，数组拥有对象的一切属性和方法<br>异：数组自动更新length，按索引访问数组相对对象属性访问迅速。数组对象集成Array.prototype上的大量数组操作方法</li>
-<li>字符串vs数组<br>字符串可以堪称类数组<figure class="highlight plain"><figcaption><span>str='hello';</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">str.charAt(0);//&apos;h&apos;</div><div class="line">str[1];//e</div><div class="line">Array.prptotype.join.call(str,&apos;_&apos;);//&apos;h_e_l_l_o&apos;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="函数和作用域"><a href="#函数和作用域" class="headerlink" title="函数和作用域"></a>函数和作用域</h2><blockquote>
-<p>一块js代码，定义一次但可以多次调用。js中函数也是对象</p>
-<ul>
-<li>函数=函数名+参数列表+函数体<br>返回值：<br>1.如果函数没有return语句或者return后边是基本类型=&gt;返回this</li>
-</ul>
-<ol>
-<li>如果返回一个对象=&gt;返回以此对象作为构造器的一个实例<h3 id="重点"><a href="#重点" class="headerlink" title="重点"></a>重点</h3></li>
-</ol>
-<ul>
-<li>this</li>
-<li>arguments</li>
-<li>作用域</li>
-<li>调用：<ul>
-<li>直接调用：foo()</li>
-<li>对象方法：o.method()</li>
-<li>构造器：new Foo()</li>
-<li>call/apply/bind:foo.call</li>
-</ul>
-</li>
-<li>创建<ul>
-<li>函数声明：function a(){};会被前置</li>
-<li>函数表达式:<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//function variable</div><div class="line">var a=function()&#123;&#125;</div><div class="line">//IEF(Immediately Executed Function)</div><div class="line">(function()&#123;&#125;)()</div><div class="line">//first-class function</div><div class="line">return function()&#123;&#125;</div><div class="line">//NFE(Named Function Expression)</div><div class="line">var a=function a()&#123;&#125;</div><div class="line">//FC(Function Constructor)</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>函数声明</th>
-<th>函数表达式</th>
-<th>函数构造器</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>前置</td>
-<td>Y</td>
-<td>N</td>
-<td>N</td>
-</tr>
-<tr>
-<td>允许匿名</td>
-<td>N</td>
-<td>Y</td>
-<td>Y</td>
-</tr>
-<tr>
-<td>立即调用</td>
-<td>N</td>
-<td>Y</td>
-<td>Y</td>
-</tr>
-<tr>
-<td>在定义该函数的作用域通过函数名访问</td>
-<td>Y</td>
-<td>N</td>
-<td>N</td>
-</tr>
-<tr>
-<td>没有函数名</td>
-<td>N</td>
-<td>N</td>
-<td>Y</td>
-</tr>
-</tbody>
-</table>
-<h3 id="this"><a href="#this" class="headerlink" title="this"></a>this</h3><ul>
-<li>全局的this(浏览器)</li>
-<li><p>一般函数的this</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">function a()&#123;return this&#125;</div><div class="line"> a()===window;//true ,global,object</div><div class="line">//严格模式下：a()===undefined</div></pre></td></tr></table></figure>
-</li>
-<li><p>作为对象方法的this</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">var o=&#123;</div><div class="line">    prop:23,</div><div class="line">f:function()&#123;return this.prop&#125;</div><div class="line">&#125;</div><div class="line">o.f();//23</div><div class="line">function g()&#123;return this.prop&#125;</div><div class="line">o.f=g;</div><div class="line">o.f();//23</div></pre></td></tr></table></figure>
-</li>
-<li><p>对象原型链上的this</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var o=&#123;</div><div class="line">f:function()&#123;return this.a+this.b&#125;</div><div class="line">&#125;</div><div class="line">var p=Object.create(o);</div><div class="line">p.a=1;p.b=2;</div><div class="line">p.f();//3</div></pre></td></tr></table></figure>
-</li>
-<li><p>get/set方法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">function modulus()&#123;</div><div class="line">return Math.sqrt(this.re*this.re+this.im*this.im)</div><div class="line">&#125;</div><div class="line">var o=&#123;</div><div class="line">re:1,im:-1,</div><div class="line">get phase()&#123;</div><div class="line">return Math.atan2(this.im,this.re)</div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line">Object.defineProperty(o,&apos;modulus&apos;,&#123;</div><div class="line">    get:modulus,emumerable:true,configurable:true</div><div class="line">&#125;)</div><div class="line">console.log(o.phase,o.modulus);//-.78,1.142</div></pre></td></tr></table></figure>
-</li>
-<li><p>构造器中的this</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">function MyClass()&#123;this.a=22&#125;</div><div class="line">var o=new MyClass();</div><div class="line">o.a;//22</div><div class="line">function C2()&#123;this.a=23;return &#123;a:38&#125;&#125;</div><div class="line">o=new C2()</div><div class="line">o.a;//23</div></pre></td></tr></table></figure>
-</li>
-<li><p>call/apply方法与this</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function add(a,b)&#123;return this.a+this.b+c+d&#125;</div><div class="line">var o=&#123;a:1,b:3&#125;</div><div class="line">add.call(o,5,7);//1+3+5+7=16</div><div class="line">add.apply(o,[10,20]);//1+3+10+20=34</div><div class="line">function bar()&#123;</div><div class="line">console.log(Object.prototype.toString.call(this))</div><div class="line">&#125;</div><div class="line">bar.call(7);//&quot;[object Number]&quot;</div></pre></td></tr></table></figure>
-</li>
-<li><p>bind方法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">function f()&#123;return this.a&#125;</div><div class="line">var g=f.bind(&#123;a:&quot;test&quot;&#125;)</div><div class="line">g();//test</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="属性和方法"><a href="#属性和方法" class="headerlink" title="属性和方法"></a>属性和方法</h3><ul>
-<li><p>arguments属性</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">function foo(x,y,z)&#123;</div><div class="line">&apos;use strict&apos;;</div><div class="line">arguments.length;//2</div><div class="line">arguments[0];//1</div><div class="line">arguments[0]=20;</div><div class="line">x;//changed to 20,严格模式下仍是1</div><div class="line">arguments[2]=100;</div><div class="line">z;//still undefined !!! 未传参数失去绑定关系</div><div class="line">arguments.callee===foo;//true,严格模式下不可用</div><div class="line">&#125;</div><div class="line">foo(1,2);//foo.name=&gt;函数名</div><div class="line">foo.length;//3 ，foo.length=&gt;形参个数,arguments.length=&gt;实参个数</div></pre></td></tr></table></figure>
-</li>
-<li><p>call/apply方法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">function foo(x,y)&#123;console.log(x,y,this)&#125;</div><div class="line">foo.call(100,1,2);//1,2,Number(100)</div><div class="line">foo.apply(true,[3,4]);//3,4,Boolean(true)</div><div class="line">foo.apply(null);//undefined,undefined,window(严格模式下null)</div><div class="line">foo.apply(undefined);//undefined,undefined,window（严格模式下undefined）</div></pre></td></tr></table></figure>
-</li>
-<li><p>bind方法（IE9以上）</p>
-</li>
-<li><p>bind与currying（把整个函数拆成多个单元）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">function add(a,b,c)&#123;return a+b+c&#125;</div><div class="line">var func=add.bind(undefined,100);</div><div class="line">func(1,2);//103</div><div class="line">var func2=func.bind(undefined,200)</div><div class="line">func2(10);//310</div></pre></td></tr></table></figure>
-</li>
-<li><p>bind与new</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">function foo()&#123;this.b=100;return this.a&#125;</div><div class="line">var func=foo.bind(&#123;a:1&#125;)</div><div class="line">func();//1</div><div class="line">new func();//&#123;b:100&#125;，bind被忽略？？？</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="闭包作用域"><a href="#闭包作用域" class="headerlink" title="闭包作用域"></a>闭包作用域</h2><ul>
-<li><p>闭包</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function outer()&#123;</div><div class="line">    var localVal=30;</div><div class="line">    return function()&#123;</div><div class="line">        return localVal;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">var func=outer();</div><div class="line">func();//30</div></pre></td></tr></table></figure>
-</li>
-<li><p>封装</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">(function ()&#123;</div><div class="line">    var _userId=123;</div><div class="line">    var _typeId=&quot;Item&quot;;</div><div class="line">    var export=&#123;&#125;;</div><div class="line">    function converter(userId)&#123;</div><div class="line">        return +userId;</div><div class="line">&#125;</div><div class="line">export.getUserId=function()&#123;</div><div class="line">    return converter(_userId);</div><div class="line">&#125;</div><div class="line">export.getTypeId=function()&#123;</div><div class="line">return _typedId;</div><div class="line">&#125;</div><div class="line">window.export=export;</div><div class="line">&#125;)()</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<blockquote>
-<p>好处：灵活方便，封装；坏处：空间浪费，内存泄漏，性能消耗</p>
-<h3 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h3><ul>
-<li>类型<ul>
-<li>全局</li>
-<li>函数</li>
-<li>eval</li>
-</ul>
-</li>
-<li>作用于链<h3 id="ES3的执行上下文（EC）"><a href="#ES3的执行上下文（EC）" class="headerlink" title="ES3的执行上下文（EC）"></a>ES3的执行上下文（EC）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">function funcEC1()&#123;</div><div class="line">console.log(&apos;EC1&apos;);</div><div class="line">    var funcEC2=function ()&#123;</div><div class="line">        console.log(&apos;EC2&apos;);</div><div class="line">        var funcEC3=function()&#123;</div><div class="line">            console.log(&apos;EC3&apos;);</div><div class="line">        &#125;;</div><div class="line">        funcEC3();</div><div class="line">&#125;;</div><div class="line">    funcEC2();</div><div class="line">&#125;;</div><div class="line">funcEC1();</div><div class="line">//EC0 EC1 EC2 EC3</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</blockquote>
-<ul>
-<li>概念：变量对象（Variable Object）,一个抽象概念中的对象，用于存储执行上下文中的变量，函数声明，函数参数。</li>
-<li><p>EC与VO</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">activeExecutionContext=&#123;</div><div class="line">    VO:&#123;</div><div class="line">    data_var,data_func_declaration,data_func_arguments</div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line">GlobalContextVO   VO===this===global</div><div class="line">//demo</div><div class="line">var a=10;</div><div class="line">function test(x)&#123;</div><div class="line">    var b=20;</div><div class="line">&#125;</div><div class="line">test(30);</div><div class="line">//=&gt;</div><div class="line">VO(gC)=&#123;</div><div class="line">    a:10,</div><div class="line">    test:&lt;ref to function&gt;</div><div class="line">&#125;</div><div class="line">VO(test functionContext)=&#123;</div><div class="line">    x:30,b:20</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>全局执行上下文GEC</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">VO(globalContext)===[[global]];</div><div class="line">[[global]]=&#123;</div><div class="line">    Math:&lt;...&gt;,</div><div class="line">    String:&lt;&gt;,</div><div class="line">    isNaN:function ()&#123;Native Code&#125;,</div><div class="line">    ...</div><div class="line">    window:global//applied by browser(host)</div><div class="line">&#125;;</div><div class="line">GlobalContextVO  (VO===this===global)</div><div class="line">String(10);//[[global]].String(10);</div><div class="line">window.a=10;//[[global]].window.a=10</div><div class="line">this.b=20;//[[global]].b=20</div></pre></td></tr></table></figure>
-</li>
-<li><p>函数中的激活对象</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">VO(functionContext)===AO;</div><div class="line">AO=&#123;</div><div class="line">    arguments:&lt;Arg0&gt;//函数调用时生成</div><div class="line">&#125;;</div><div class="line">arguments=&#123;</div><div class="line">    callee,length,properties-indexes</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>变量初始化阶段</p>
-<blockquote>
-<p>VO填充顺序：</p>
-</blockquote>
-</li>
-</ul>
-<ol>
-<li>函数参数（arguments=arguments||undefined）;<br>2.函数声明（命名冲突则覆盖,函数表达式不影响VO）；<br>3.变量声明（初始化为undefined，命名冲突则忽略）<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">function test(a,b)&#123;</div><div class="line">var c=10;</div><div class="line">function d()&#123;&#125;</div><div class="line">var e=function _e()&#123;&#125;;</div><div class="line">(function x()&#123;&#125;)();</div><div class="line">b=20;</div><div class="line">&#125;</div><div class="line">test(10);</div><div class="line">//AO</div><div class="line">AO(test)=&#123;</div><div class="line">a:10,b:undefined,c:undefined,d:&lt;ref to func &apos;d&apos;&gt;,e:undefined</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</code></pre></li>
-</ol>
-<p>###demo<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function test(a,b)&#123;</div><div class="line">var c=10;</div><div class="line">function d()&#123;&#125;</div><div class="line">var e=function _e()&#123;&#125;;</div><div class="line">(function x()&#123;&#125;)</div><div class="line">b=30;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<ul>
-<li><p>变量初始化阶段</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">test(10);</div><div class="line">AO(test)=&#123;</div><div class="line">a:10,b:undefined,</div><div class="line">c:undefined,</div><div class="line">d:&lt;ref to func &apos;d&apos;&gt;</div><div class="line">e:undefined</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>代码执行阶段</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">AO(test)=&#123;</div><div class="line">a:10,b:20,</div><div class="line">c:10,</div><div class="line">d:&lt;ref to FunctionDeclaration &apos;d&apos;&gt;</div><div class="line">e:function _e&#123;&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>  测试</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">alert(x);</div><div class="line">var x=10;</div><div class="line">alert(x);x=20;</div><div class="line">function x()&#123;&#125;</div><div class="line">alert(x);</div><div class="line">if(true)&#123;var a=1&#125;else&#123;var b=true&#125;</div><div class="line">alert(a);alert(b)</div><div class="line">//function x()&#123;&#125; 10 20 1 undefined</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="OOP（封装-继承-多态-抽象）"><a href="#OOP（封装-继承-多态-抽象）" class="headerlink" title="OOP（封装+继承+多态+抽象）"></a>OOP（封装+继承+多态+抽象）</h2><blockquote>
-<p>OOP:一种程序设计范型，同时也是一种程序开发方法。对象指的是类的实例。它将对象作为程序的基本单元，将程序和数据封装其中，以提高软件的重用性，灵活性和扩展性。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">function Person(name,age)&#123;this.name=name;this.age=age;&#125;</div><div class="line"></div><div class="line">Person.prototype.hi=function()&#123;console.log(&apos;Hi Iam&apos;+this.name+&apos;I am&apos;+this.age+&apos;years old now&apos;)&#125;</div><div class="line"></div><div class="line">Person.prototype.LEGS_NUM=2;</div><div class="line">Person.prototype.ARMS_NUM=2;</div><div class="line">Person.prototype.walk=function()&#123;console.log(this.nama+&apos;is walking&apos;)&#125;</div><div class="line">function Student(name,age,className&#123;Person.call(this,name,age);this.className=className&#125;</div><div class="line"></div><div class="line">Student.prototype=Object.create(Person.prototype);//</div><div class="line">Student.prototype.constructor=Student;</div><div class="line">Student.prototype.hi=function ()&#123;</div><div class="line">    console.log(&quot;Hi&quot;+this.name+&apos;,I am&apos;+this.age+&apos;years old ,and from&apos;+this.className+&apos;.&apos;)</div><div class="line">&#125;</div><div class="line">Student.prototype.learn=function(subject)&#123;console.log(&apos;my major is&apos;+subject)&#125;</div><div class="line">//test</div><div class="line">var tom=new Student(&apos;Tom&apos;,22,&apos;Class 3&apos;);</div><div class="line">tom.hi();</div><div class="line">tom.LEGS_NUM;</div><div class="line">tom.walk();</div><div class="line">tom.learn();</div></pre></td></tr></table></figure></p>
-</blockquote>
-<p><img src="http://img.mukewang.com/589babcb0001243408190462.jpg" alt="再谈原型链"></p>
-<h3 id="prototype属性"><a href="#prototype属性" class="headerlink" title="prototype属性"></a>prototype属性</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">Student.prototype.x=101;</div><div class="line">tom.x;//101</div><div class="line"></div><div class="line">Student.prototype=&#123;y:3&#125;;</div><div class="line">tom.y;//undefined</div><div class="line">tom.x;//101</div><div class="line"></div><div class="line">var jack=new Student(&apos;Jack&apos;,22,&apos;Class 1&apos;);</div><div class="line">jack.x;//undefined</div><div class="line">jack.y;//2</div></pre></td></tr></table></figure>
-<p>-Thus:<br>1.动态修改prototype对象的属性, 会影响创建及已创建的实例</p>
-<ol>
-<li>修改整个prototype对象，只影响后续创建的实例</li>
-</ol>
-<ul>
-<li>内置构造器的prototype<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">Object.prototype.x=1;</div><div class="line">var obj=&#123;&#125;;</div><div class="line">obj.x;//1</div><div class="line">for(var key in obj)&#123;console.log(key)&#125;//x</div><div class="line">//ES5</div><div class="line">Object.defineProperty(Object.prototype,&#123;</div><div class="line">writable:true,value:1</div><div class="line">&#125;)</div><div class="line">var obj=&#123;&#125;;</div><div class="line">obj.x;//1</div><div class="line">for(var key in obj)&#123;console.log(key)&#125;//nothing</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="实现继承的方式"><a href="#实现继承的方式" class="headerlink" title="实现继承的方式"></a>实现继承的方式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">function Person()&#123;&#125;</div><div class="line">function Student()&#123;&#125;</div><div class="line">Student.prototype=Person.prototype;//1 bad</div><div class="line">Student.prototype=new Person;//2===4</div><div class="line">Student.prototype=Object.create(Person.prototype);//3,ES5</div><div class="line">//check</div><div class="line">if(!Object.create)&#123;</div><div class="line">    Object.create=function(proto)&#123;</div><div class="line">    function F()&#123;&#125;</div><div class="line">    F.prototype=proto;</div><div class="line">    return new F;</div><div class="line">&#125;    </div><div class="line">&#125;</div><div class="line">Student.prototype.constructor=Person;//4</div></pre></td></tr></table></figure>
-<h3 id="模拟重载，链式调用，模块化"><a href="#模拟重载，链式调用，模块化" class="headerlink" title="模拟重载，链式调用，模块化"></a>模拟重载，链式调用，模块化</h3><ul>
-<li><p>模拟重载</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">function Person()&#123;</div><div class="line">    var args=arguments;</div><div class="line">    if(typeof args[0]===&apos;object&apos;&amp;&amp;args[0])&#123;</div><div class="line">        if(args[0].name)&#123;</div><div class="line">            this.name=args[0].name        </div><div class="line">        &#125;</div><div class="line">         if(args[0].age)&#123;</div><div class="line">            this.age=args[0].age        </div><div class="line">        &#125;else&#123;</div><div class="line">            if(args[0])&#123;</div><div class="line">                this.name=args[0]</div><div class="line">            &#125;</div><div class="line">            if(args[1])&#123;</div><div class="line">                this.age=args[1]</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">Person.prototype.toString=function()&#123;</div><div class="line">    return &apos;name=&apos;+this.name+&apos;,age&apos;+this.age;</div><div class="line">&#125;</div><div class="line">var tom=new Person(&apos;tom&apos;,28);</div><div class="line">var jack=new Person(&#123;name:&apos;Jack&apos;,age:23&#125;)</div></pre></td></tr></table></figure>
-</li>
-<li><p>调用子类的方法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">function Person(name)&#123;this.name=name;&#125;</div><div class="line">function Student(name,className)&#123;this.className=className;Person.call(this,name);&#125;</div><div class="line">var tom=new Student(&apos;tom&apos;,&apos;NT&apos;);</div><div class="line"></div><div class="line">Person.prototype.init=function()&#123;&#125;；</div><div class="line">Student.prototypt.init=function()&#123;Person.prototype.init.apply(this,arguments)&#125;;</div></pre></td></tr></table></figure>
-</li>
-<li><p>链式调用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function ClassManager()&#123;</div><div class="line">    ClassManager.prototype.addClass=function(str)&#123;</div><div class="line">        console.log(&apos;Class&apos;+str+&apos;added&apos;);</div><div class="line">        return this;//实现链式调用</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">var manager=new ClassManager();</div><div class="line">manager.addClass(&apos;classA&apos;).addClass(&apos;classB&apos;).addClass(&apos;classC&apos;)</div></pre></td></tr></table></figure>
-</li>
-<li><p>抽象类</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">function DetectorBase()&#123;</div><div class="line">    throw new Error(&apos;Abstract class can not be invoked directly!&apos;)</div><div class="line">&#125;</div><div class="line">DetectorBase.detect=function()&#123;console.log(&apos;Detector starting...&apos;)&#125;;</div><div class="line">DetectorBase.stop=function()&#123;console.log(&apos;Detector stopped.&apos;)&#125;;</div><div class="line">DetectorBase.init=function()&#123;throw new Error(&apos;Error&apos;)&#125;;</div><div class="line"></div><div class="line">function LinkDetector()&#123;&#125;</div><div class="line">LinkDetector.prototype=Object.create(Detector.prototype);</div><div class="line">LinkDetector.prototype.constructor=LinkDetector;</div><div class="line">//...add methods to LinkDetector...</div></pre></td></tr></table></figure>
-</li>
-<li><p>defineProperty(ES5)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">function Person(name)&#123;</div><div class="line">    Obect.defineProperty(this,&apos;name&apos;,&#123;value:name,enumerable:true&#125;);</div><div class="line">&#125;</div><div class="line">Object.defineProperty(Person,&quot;ARMS_NUM&quot;,&#123;value:2,enumerable:true&#125;);</div><div class="line">Object.seal(Person.prototype);</div><div class="line">Object.seal(Person);</div><div class="line">function Student(name,className)&#123;</div><div class="line">    this.className=className;</div><div class="line">Person.call(this,name)</div><div class="line">&#125;</div><div class="line">Student.prototype=Object.create(Person.prototype);</div><div class="line">Student.prototype.constructor=Student;</div></pre></td></tr></table></figure>
-</li>
-<li><p>模块化</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">var moduleA;</div><div class="line">moduleA=function()&#123;</div><div class="line">    var prop=1;</div><div class="line">    function func()&#123;</div><div class="line">        return&#123;</div><div class="line">        func:func,</div><div class="line">        prop:prop</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var moduleA;</div><div class="line">moduleA=new function()&#123;</div><div class="line">    var prop=1;</div><div class="line">    function func()&#123;&#125;</div><div class="line">    this.func=func;</div><div class="line">    this.prop=prop;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>实践（探测器）<br>```<br>!function(global){<br>  function DetectorBase(configs){</p>
-<pre><code>if(!this instanceof DetectorBase){
-    throw new Error(&apos;Do not invoke without new&apos;)
-}
-this.configs=configs;
-this.analyze();
-</code></pre><p>  }<br>  DetectorBase.prototype.detect=function(){</p>
-<pre><code>throw new Error(&apos;Not implemented&apos;)
-</code></pre><p>  }<br>  DetectorBase.prototype.analyze=function(){<br>  console.log(‘analyzing…’);<br>  this.data=’###data###’;<br>  }<br>}<br>function LinkDetector(links){<br>  if(!this instanceof LinkDetector){</p>
-<pre><code>throw new Error(&apos;Do not invoke without new&apos;);
-</code></pre><p>  }<br>  this.links=links;<br>  DetectorBase.aply(this,arguments);<br>}<br>function ContainerDetector(containers){<br>  if(!this instanceof ContainerDetector){</p>
-<pre><code>throw new Error(&apos;Do not invoke without new&apos;)
-</code></pre><p>  }<br>  this.containers=containers;<br>  DetectorBase.apply(this,arguments);<br>}<br>//inherit first<br>inherit(LinkDetector,DetectorBase);<br>inherit(ContainerDetector,DetectorBase);<br>//</p>
-</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;JS深入浅出学习分析总结&quot;&gt;&lt;a href=&quot;#JS深入浅出学习分析总结&quot; class=&quot;headerlink&quot; title=&quot;JS深入浅出学习分析总结&quot;&gt;&lt;/a&gt;JS深入浅出学习分析总结&lt;/h1&gt;&lt;h2 id=&quot;六种数据类型&quot;&gt;&lt;a href=&quot;#六种数据类型&quot;
-    
-    </summary>
-    
-      <category term="技术译文" scheme="https://yanlee26.github.io/categories/%E6%8A%80%E6%9C%AF%E8%AF%91%E6%96%87/"/>
-    
-    
-      <category term="Hexo" scheme="https://yanlee26.github.io/tags/Hexo/"/>
-    
-      <category term="Next" scheme="https://yanlee26.github.io/tags/Next/"/>
+      <category term="clean_blog" scheme="https://yanlee26.github.io/tags/clean-blog/"/>
     
   </entry>
   
