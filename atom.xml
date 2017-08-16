@@ -3486,17 +3486,18 @@ color: #006699;
     <link href="https://yanlee26.github.io/2016/06/08/prefessional%20JS/"/>
     <id>https://yanlee26.github.io/2016/06/08/prefessional JS/</id>
     <published>2016-06-08T13:28:24.000Z</published>
-    <updated>2017-07-31T14:25:10.000Z</updated>
+    <updated>2017-08-16T14:01:18.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="JS高级教程总结"><a href="#JS高级教程总结" class="headerlink" title="JS高级教程总结"></a>JS高级教程总结</h1><h3 id="Chapter3-基本概念"><a href="#Chapter3-基本概念" class="headerlink" title="Chapter3 基本概念"></a>Chapter3 基本概念</h3><ul>
 <li>3.4数据类型</li>
 </ul>
 <ol>
-<li>五种简单类型（基本数据类型）：<br>Null,Undefined,String,Number,Boolean，symbol（ES6）<blockquote>
+<li>五种简单类型（基本数据类型）：</li>
+</ol>
+<p>Null,Undefined,String,Number,Boolean，symbol（ES6）</p>
+<blockquote>
 <p>判断：<code>typeof</code></p>
 </blockquote>
-</li>
-</ol>
 <p>1.1 Undefined:undefined</p>
 <blockquote>
 <p>变量声明而未初始化（显式初始化变量是好习惯）</p>
