@@ -17,7 +17,7 @@
 - [Python get started](https://yanlee26.github.io/2016/10/04/python/)
 - [SCSS](https://yanlee26.github.io/2016/09/24/scss/)
 - [FLEX布局](https://yanlee26.github.io/2016/08/24/flex/)
-- [Prefesional JS](https://yanlee26.github.io/2016/06/08/prefessional%20JS/)
+- [PrefesionalJS](https://yanlee26.github.io/2016/06/08/prefessionalJS/)
 - [Framework resharpe](https://yanlee26.github.io/2016/06/04/framework/)
 - [道德经：人生之向导，智慧之源泉](https://yanlee26.github.io/2016/06/04/bibleInLife/)
 - [Events](https://yanlee26.github.io/2016/03/03/events/)
