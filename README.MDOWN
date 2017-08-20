@@ -5,7 +5,7 @@
 ## 目录
 
 - [职业规划](https://yanlee26.github.io/2017/07/29/2017-07-27/)
-- [react学习及原理分析](https://yanlee26.github.io/2017/01/24/react/)
+- [react学习---Learning React.js is easier than you think](https://yanlee26.github.io/2017/01/24/react/)
 - [Becoming a Great Web Front-end Developer](https://yanlee26.github.io/2017/01/04/front-end-career/)
 - [three学习总结](https://yanlee26.github.io/2016/12/24/three/)
 - [vue(2.0)全家桶 总结及源码分析](https://yanlee26.github.io/2017/07/29/2017-07-27/)
@@ -13,7 +13,7 @@
 - [Node7.7.2--explore](https://yanlee26.github.io/2016/11/01/node/)
 - [CommonJS规范](https://yanlee26.github.io/2016/11/01/commonJS/)
 - [webpack 初探](https://yanlee26.github.io/2016/10/24/webpack/)
-- [ES6/ES7总结分析](hhttps://yanlee26.github.io/2016/10/04/es6/)
+- [ES6/ES7总结分析](https://yanlee26.github.io/2016/10/04/es6/)
 - [Python get started](https://yanlee26.github.io/2016/10/04/python/)
 - [SCSS](https://yanlee26.github.io/2016/09/24/scss/)
 - [FLEX布局](https://yanlee26.github.io/2016/08/24/flex/)
