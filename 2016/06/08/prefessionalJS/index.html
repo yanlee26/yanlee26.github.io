@@ -203,38 +203,50 @@
 <blockquote>
 <p>判断：<code>typeof</code></p>
 </blockquote>
-<p>1.1 Undefined:undefined</p>
+<ol>
+<li>1 Undefined:undefined</li>
+</ol>
 <blockquote>
 <p>变量声明而未初始化（显式初始化变量是好习惯）</p>
 </blockquote>
-<p>1.2 Null:null</p>
+<ol>
+<li>2 Null:null</li>
+</ol>
 <blockquote>
 <p>空指针，此即typeof（null）===undefined的根本原因</p>
+</blockquote>
 <ul>
 <li>由于ES数据类型具有动态性，故没必要定义其它类型 </li>
 </ul>
 <ol>
-<li>一种对象类型：Object（一组数据和功能的集合）<br>判断:<code>instanceof</code><br>ES 中Object类型是所有其它实例的基础，Object类型所<br>具有的所有属性和方法同样存在于具体对象中</li>
+<li>一种对象类型：Object（一组数据和功能的集合）</li>
 </ol>
+<p>判断:<code>instanceof</code></p>
+<blockquote>
+<p>ES 中Object类型是所有其它实例的基础，Object类型所<br>具有的所有属性和方法同样存在于具体对象中</p>
 </blockquote>
-<p><code>constructor:保存用于创建当前对象的函数（构造函数即Object）
-hasOwnProperty():检查给定的属性是否在当前对象实例中
-isPrototypeOf():检查传入的对象是否是传入对象的原型
-propertyIsEnumerable():是否可通过for-in枚举
-toLocalString():返回对象字符串表示（与本区对应）
-toString():返回对象字符串表示
-valueOf():返回对象的字符串，数值或者布尔值表示。同toString</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">constructor:保存用于创建当前对象的函数（构造函数即Object）</div><div class="line">hasOwnProperty():检查给定的属性是否在当前对象实例中</div><div class="line">isPrototypeOf():检查传入的对象是否是传入对象的原型</div><div class="line">propertyIsEnumerable():是否可通过for-in枚举</div><div class="line">toLocalString():返回对象字符串表示（与本区对应）</div><div class="line">toString():返回对象字符串表示</div><div class="line">valueOf():返回对象的字符串，数值或者布尔值表示。同toString</div></pre></td></tr></table></figure>
 <ul>
 <li>3.5操作符</li>
 </ul>
 <ol>
-<li>一元操作符<blockquote>
-<p>1.递增递减：++a,a++: 前/后置操作时决定变量值在执行操作前/后改变<br>2.加减：a+=n,a-=n<br>3.位操作符：NOT(~),OR(|),AND(&amp;),XOR(^),(&lt;&lt;),(&gt;&gt;),(&gt;&gt;&gt;)<br>4.布尔操作符：!,&amp;&amp;,||<br>5.算术性操作符：+-<em>/<br>6.关系操作符：&gt;,&lt;<br>7.相等操作符 ：<br> a.相等与否（操作数成立则true）：==,!=<br> b.全等与否（比较之前不转换操作数）：===,!==<br>8.条件操作符：variable=boolean_expression?true_value:false_value<br>9.赋值操作符：+=，-=，</em>=，/=，%=，&lt;&lt;=,&gt;&gt;=,&gt;&gt;&gt;=<br>10.逗号操作符：var a,b,c</p>
-</blockquote>
+<li><p>一元操作符</p>
 </li>
+<li><p>递增递减：++a,a++: 前/后置操作时决定变量值在执行操作前/后改变</p>
+</li>
+<li>加减：a+=n,a-=n</li>
+<li>位操作符：NOT(~),OR(|),AND(&amp;),XOR(^),(&lt;&lt;),(&gt;&gt;),(&gt;&gt;&gt;)</li>
+<li>布尔操作符：!,&amp;&amp;,||</li>
+<li>算术性操作符：+-*/</li>
+<li>关系操作符：&gt;,&lt;</li>
+<li>相等操作符 ：<br> a. 相等与否（操作数成立则true）：==,!=<br> b. 全等与否（比较之前不转换操作数）：===,!==</li>
+<li>条件操作符：variable=boolean_expression?true_value:false_value</li>
+<li>赋值操作符：+=，-=，*=，/=，%=，&lt;&lt;=,&gt;&gt;=,&gt;&gt;&gt;=</li>
+<li>逗号操作符：var a,b,c</li>
 </ol>
 <ul>
-<li><p>语句</p>
+<li>语句</li>
+</ul>
 <blockquote>
 <ol>
 <li>if(condition) statement1 else statement2</li>
@@ -248,35 +260,50 @@ valueOf():返回对象的字符串，数值或者布尔值表示。同toString</
 <li>switch(expression){<br>case value:statement1<br>break;<br>case value:statement2<br>break;<br>…<br>case default<br>break;<br>}</li>
 </ol>
 </blockquote>
+<ul>
+<li><ol>
+<li>7 函数-可以封装任意条语句，在任何地方任何时候执行</li>
+</ol>
 </li>
-<li><p>3.7 函数-可以封装任意条语句，在任何地方任何时候执行</p>
+</ul>
 <blockquote>
 <p>没有重载：可以为一函数编写两个定义，只要定义的签名（接受的参数类型和数量）不同即可<br>ES中函数没有签名，真正重载不可能做到只能模拟<br>function add(n){<br>return n+100<br>}<br>function add(n){<br>return n+200<br>}//覆盖掉上一个<br>var result=add(100);//300</p>
 </blockquote>
-</li>
-</ul>
 <h3 id="Chapter4-变量作用域及内存"><a href="#Chapter4-变量作用域及内存" class="headerlink" title="Chapter4 变量作用域及内存"></a>Chapter4 变量作用域及内存</h3><blockquote>
 <p>JS 变量松散的本质决定了它只是在特定时间用于保存特定值的一个名字而已</p>
 </blockquote>
-<p>4.1 基本类型（简单的数据段）和引用类型（可能有多个值构成的对象）</p>
+<ol>
+<li>1 基本类型（简单的数据段）和引用类型（可能有多个值构成的对象）</li>
+</ol>
 <blockquote>
-<p>因可以操作保存在变量中的实际值，基本数据类型按值访问；<br>引用类型值保存在内存中，不同于其它语言，JS不允许直接访问内存中的位置（操作实际对象）。<br>当复制保存着某个变量时，操作的是对象的引用；但在为对象添加属性时，操作的是实际的对象<br>访问变量的方式有按值和按引用两种，而参数只能按值传递。ES中所有函数的参数都是按值传递的！<br><a href="https://q.cnblogs.com/q/39352/" target="_blank" rel="external">JS函数参数按值传递的</a><br><code>function setName(obj){obj.name=&#39;yl&#39;;obj={};obj.name=&#39;hello&#39;} 
-var p={};setName(p);p.name;//&#39;yl&#39;
-//即使在内部修改了参数的值，但原始的引用仍然不变。实际上，当函数内部重写obj时，该变量引用的就是
-一个在函数执行完立即销毁的局部变量了。完全可以把ES函数的参数想象成局部变量</code><br>执行环境和作用域（execution context&amp; scope）<br>EC:决定了变量或函数有权访问的其它数据，决定了它们各自的行为；每个EC都有一个与之关联的变量对象（vo）<br>,环境中定义的所有变量和函数都保存在这个对象中。虽然无法访问该对象，但解析器在处理数据时会在后台使用它。<br>某个执行环境中的所有代码执行完毕后，该环境被销毁，其中的所有变量和函数定义也随之而去。<br>每个函数都有自己的执行环境，当执行流进入一个函数时，函数环境就会被推入一个环境栈中；函数执行之后，栈将其<br>弹出，把控制权返回给之前的执行环境。<br>Scope:当代码在一个环境中执行时，会创建变量对象的一个作用域链（scope chain）,以保证对执行环境有权访问的<br>所有变量和函数的有序访问。其前端始终是当前执行的代码所在环境的变量对象。全局执行环境的变量对象始终都是作用<br>域链中的最后一个对象。<br>这些环境之间的联系是线性的有次序的，每个环境都可以向上搜索sc，以查询变量和函数名；但反之不行。<br>那sc可以延长吗？ 可以。。。<br>利用try-catch,with语句</p>
+<p>因可以操作保存在变量中的实际值，基本数据类型按值访问；<br>引用类型值保存在内存中，不同于其它语言，JS不允许直接访问内存中的位置（操作实际对象）。<br>当复制保存着某个变量时，操作的是对象的引用；但在为对象添加属性时，操作的是实际的对象<br>访问变量的方式有按值和按引用两种，而参数只能按值传递。ES中所有函数的参数都是按值传递的！</p>
 </blockquote>
-<p>4.2 无块级作用域</p>
+<p><a href="https://q.cnblogs.com/q/39352/" target="_blank" rel="external">JS函数参数按值传递的</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">function setName(obj)&#123;obj.name=&apos;yl&apos;;obj=&#123;&#125;;obj.name=&apos;hello&apos;&#125; </div><div class="line">var p=&#123;&#125;;setName(p);p.name;//&apos;yl&apos;</div><div class="line">//即使在内部修改了参数的值，但原始的引用仍然不变。实际上，当函数内部重写obj时，该变量引用的就是</div><div class="line">一个在函数执行完立即销毁的局部变量了。完全可以把ES函数的参数想象成局部变量</div></pre></td></tr></table></figure>
 <blockquote>
-<p>1.声明变量：使用var声明的变量会自动被添加到最近的执行环境中（在函数内部是局部环境，with语句中是<br>函数环境，如果忘记var则被添加到全局环境）2.查询标识符：当在某个环境中为了读取或写入而引用一个标识符<br> 时，必须通过搜索来确定标识符实际代表什么。</p>
+<p>执行环境和作用域（execution context&amp; scope）<br>EC:决定了变量或函数有权访问的其它数据，决定了它们各自的行为；每个EC都有一个与之关联的变量对象（vo）<br>,环境中定义的所有变量和函数都保存在这个对象中。虽然无法访问该对象，但解析器在处理数据时会在后台使用它。<br>某个执行环境中的所有代码执行完毕后，该环境被销毁，其中的所有变量和函数定义也随之而去。<br>每个函数都有自己的执行环境，当执行流进入一个函数时，函数环境就会被推入一个环境栈中；函数执行之后，栈将其<br>弹出，把控制权返回给之前的执行环境。<br>Scope:当代码在一个环境中执行时，会创建变量对象的一个作用域链（scope chain）,以保证对执行环境有权访问的<br>所有变量和函数的有序访问。其前端始终是当前执行的代码所在环境的变量对象。全局执行环境的变量对象始终都是作用<br>域链中的最后一个对象。<br>这些环境之间的联系是线性的有次序的，每个环境都可以向上搜索sc，以查询变量和函数名；但反之不行。<br>那sc可以延长吗？ 可以。。。<br>利用try-catch,with语句</p>
 </blockquote>
-<p>4.3 垃圾回收GC</p>
+<ol>
+<li>2 无块级作用域</li>
+</ol>
+<blockquote>
+<ol>
+<li>声明变量：使用var声明的变量会自动被添加到最近的执行环境中（在函数内部是局部环境，with语句中是<br>函数环境，如果忘记var则被添加到全局环境）2.查询标识符：当在某个环境中为了读取或写入而引用一个标识符<br>时，必须通过搜索来确定标识符实际代表什么。</li>
+</ol>
+</blockquote>
+<ol>
+<li>3 垃圾回收GC</li>
+</ol>
 <blockquote>
 <p>标记清除(mark-sweep)和引用计数(reference-counting)<br>mark-sweep:变量进入环境即将变量标记为‘进入环境’，逻辑上永远无法释放进入环境变量所占用的内存；当变量<br>离开时，记‘离开环境’</p>
 </blockquote>
 <h3 id="Chapter-5-引用类型"><a href="#Chapter-5-引用类型" class="headerlink" title="Chapter 5 引用类型"></a>Chapter 5 引用类型</h3><blockquote>
 <p>引用类型的值（对象）是引用类型的一个实例，ES中引用类型是用于将数据和功能组织在一起的一种数据结构。<br>常被不妥当地称为类，有时候也称对象定义。</p>
 </blockquote>
-<p>5.1 Object<br>5.2 Array</p>
+<ol>
+<li>1 Object</li>
+<li>2 Array</li>
+</ol>
 <ul>
 <li>检测：Array.isArray();instanceof Array</li>
 <li>转换：toString(),join()方法</li>
@@ -286,903 +313,374 @@ var p={};setName(p);p.name;//&#39;yl&#39;
 <li>操作方法：concat(),splice()<br>  a. delete:splice(0,2);b:insert:splice(0,2,’red’,’blue’);c:replace:splice(2,1,’a’,’b’)</li>
 <li>位置方法：indexOf(),lastIndexOf()</li>
 <li>迭代方法：every(),filter(),map(),forEach(),some()</li>
-<li>归并：reduce(),reduceRight()<br>5.3 Date:<br>Date.parse():接收一个表示日期字符串的参数，然后尝试解析成毫秒数<br>Date.UTC()：同样返回时间戳，在构建时与parse使用不同的信息。<blockquote>
+<li>归并：reduce(),reduceRight()</li>
+</ul>
+<ol>
+<li><p>3 Date:<br>Date.parse():接收一个表示日期字符串的参数，然后尝试解析成毫秒数<br>Date.UTC()：同样返回时间戳，在构建时与parse使用不同的信息。</p>
+<blockquote>
 <p>日期和时间都是基于本地时区而非GMT来创建</p>
 </blockquote>
 </li>
-</ul>
-<p>5.4 RegExp<br>5.5 Function</p>
+<li><p>4 RegExp</p>
+</li>
+<li>5 Function</li>
+</ol>
 <blockquote>
 <p>ES中函数即对象，每个函数都是Function的一个实例，函数名是指向函数对象的一个指针，与其它引用类型一样有属性和方法</p>
+</blockquote>
 <ul>
-<li>5.5.1 没有重载<br>上述重载案例与下边等价：<br><code>var add=function(n){return n+100};
-add=function(n){return n+200}//覆盖上个</code></li>
-<li>5.5.2函数声明与函数表达式<br>js引擎（解析器）会率先读取函数声明，并使其在执行任何代码之前可用；而对<br>函数表达式则同解析普通语句一样，等到解析器执行到其所在代码行，才被解释执行。</li>
-<li>5.5.3 作为值的函数（ES中函数也是变量，所以可作为值使用）<br>`<br>function createComparisonFunction(propertyName) {<pre><code>return function(object1, object2){
-    var value1 = object1[propertyName];
-    var value2 = object2[propertyName];
-</code></pre></li>
+<li><ol>
+<li>5.1 没有重载<br>上述重载案例与下边等价：</li>
+</ol>
+</li>
 </ul>
-</blockquote>
-<pre><code>        if (value1 &lt; value2){
-            return -1;
-        } else if (value1 &gt; value2){
-            return 1;
-        } else {
-            return 0;
-        }
-    };
-}
-var data = [{name: &quot;Zachary&quot;, age: 28}, {name: &quot;Nicholas&quot;, age: 29}];
-data.sort(createComparisonFunction(&quot;name&quot;));
-alert(data[0].name);  //Nicholas
-data.sort(createComparisonFunction(&quot;age&quot;));
-alert(data[0].name);  //Zachary     
-</code></pre><p>`</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var add=function(n)&#123;return n+100&#125;;</div><div class="line">add=function(n)&#123;return n+200&#125;//覆盖上个</div></pre></td></tr></table></figure>
 <ul>
-<li>5.5.4 函数内部属性：arguments，this</li>
-<li>5.5.5 函数属性和方法<blockquote>
-<p>每个函数都包含两个属性：length（函数希望接收的参数个数）和prototype（对ES中引用类型而言，prototype保存了<br>其所有实例的属性和方法，即toString(),valueOf()等方法实际上保存在prototype名下，只不过通过各自对象的实例访问）</p>
+<li>5.5.2函数声明与函数表达式</li>
+</ul>
+<blockquote>
+<p>js引擎（解析器）会率先读取函数声明，并使其在执行任何代码之前可用；而对<br>函数表达式则同解析普通语句一样，等到解析器执行到其所在代码行，才被解释执行。</p>
 </blockquote>
+<ul>
+<li><p>5.5.3 作为值的函数（ES中函数也是变量，所以可作为值使用）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">function createComparisonFunction(propertyName) &#123;</div><div class="line">           return function(object1, object2)&#123;</div><div class="line">               var value1 = object1[propertyName];</div><div class="line">               var value2 = object2[propertyName];</div><div class="line">       </div><div class="line">               if (value1 &lt; value2)&#123;</div><div class="line">                   return -1;</div><div class="line">               &#125; else if (value1 &gt; value2)&#123;</div><div class="line">                   return 1;</div><div class="line">               &#125; else &#123;</div><div class="line">                   return 0;</div><div class="line">               &#125;</div><div class="line">           &#125;;</div><div class="line">       &#125;</div><div class="line">       var data = [&#123;name: &quot;Zachary&quot;, age: 28&#125;, &#123;name: &quot;Nicholas&quot;, age: 29&#125;];</div><div class="line">       data.sort(createComparisonFunction(&quot;name&quot;));</div><div class="line">       alert(data[0].name);  //Nicholas</div><div class="line">       data.sort(createComparisonFunction(&quot;age&quot;));</div><div class="line">       alert(data[0].name);  //Zachary</div></pre></td></tr></table></figure>
+</li>
+<li><ol>
+<li>5.4 函数内部属性：arguments，this</li>
+</ol>
+</li>
+<li><ol>
+<li>5.5 函数属性和方法</li>
+</ol>
 </li>
 </ul>
 <blockquote>
+<p>每个函数都包含两个属性：length（函数希望接收的参数个数）和prototype（对ES中引用类型而言，prototype保存了<br>其所有实例的属性和方法，即toString(),valueOf()等方法实际上保存在prototype名下，只不过通过各自对象的实例访问）</p>
 <p>每个函数都包含两个非继承而来的方法：call(),apply():用途是在特定作用域中调用函数，实际上是设置函数体内this指向。<br>ES5中还有一个bind方法，用于创建一个函数实例，其this值会被绑定到<br>传给bind函数的值。</p>
-<p>另外每个函数继承的toString(),toLocalString()，valueOf()始终返回函数代码</p>
+<p>另外每个函数继承的toString(),toLocalString()，valueOf()始终返回函数代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">function sayColor=function()&#123;alert(this.color)&#125;</div><div class="line">window.color=&apos;red&apos;;</div><div class="line">var o=&#123;color:&apos;blue&apos;&#125;;</div><div class="line">var objSayColor=sayColor.bind(o);</div><div class="line">objSayColor();//&apos;blue&apos;</div></pre></td></tr></table></figure></p>
 </blockquote>
-<p><code>function sayColor=function(){alert(this.color)}
-window.color=&#39;red&#39;;
-var o={color:&#39;blue&#39;};
-var objSayColor=sayColor.bind(o);
-objSayColor();//&#39;blue&#39;</code></p>
 <ul>
-<li>5.5.6 基本包装对象<blockquote>
+<li>5.5.6 基本包装对象</li>
+</ul>
+<blockquote>
 <p>ES提供了三个特殊的引用类型（Boolean,Number,String），与其它引用类型类似但也具有各自基本类型相应的行为<br>注意：引用类型和基本类型主要区别就是对象生命周期：使用new操作符创建的引用类型实例，在执行流离开当前作用域之前<br>一直保存在内存中。而自动创建的基本包装对象，只存在于一行代码执行的瞬间，然后立即销毁。即我们不能给基本类型添加<br>属性和方法。<br>Object构造函数如工厂方法一样，根据传入值的类型返回基本包装对象实例</p>
 </blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var obj=new Object(&apos;hello&apos;);obj instanceOf String;//true</div></pre></td></tr></table></figure>
+<ul>
+<li><ol>
+<li>6.1 Boolean </li>
+</ol>
 </li>
 </ul>
-<p><code>var obj=new Object(&#39;hello&#39;);obj instanceOf String;//true</code></p>
-<ul>
-<li>5.6.1 Boolean <blockquote>
-<p>Boolean实例重写了valueOf()方法并返回true/false；重写了toString()方法，返回’true’/‘false’<br>注意：布尔表达式中所有对象都会被转换为true<br>`</p>
+<blockquote>
+<p>Boolean实例重写了valueOf()方法并返回true/false；重写了toString()方法，返回’true’/‘false’<br>注意：布尔表达式中所有对象都会被转换为true</p>
 </blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">var a=new Boolean(true)</div><div class="line">undefined</div><div class="line">a</div><div class="line">Boolean &#123;[[PrimitiveValue]]: true&#125;</div><div class="line">a.toString()</div><div class="line">&quot;true&quot;</div><div class="line">a.valueOf()</div><div class="line">true</div></pre></td></tr></table></figure>
+<ul>
+<li><ol>
+<li>6.2 Number</li>
+</ol>
 </li>
 </ul>
-<p>var a=new Boolean(true)<br>undefined<br>a<br>Boolean {[[PrimitiveValue]]: true}<br>a.toString()<br>“true”<br>a.valueOf()<br>true<br>`</p>
-<ul>
-<li>5.6.2 Number<blockquote>
+<blockquote>
 <p>方法：toFixed(),toExponential(),toPrecision()</p>
 </blockquote>
+<ul>
+<li><ol>
+<li>6.3 String</li>
+</ol>
 </li>
-<li>5.6.3 String</li>
 </ul>
 <ol>
-<li>字符方法<blockquote>
+<li>字符方法</li>
+</ol>
+<blockquote>
 <p>charAt(),charCodeAt()</p>
 </blockquote>
-</li>
-<li>字符操作方法<blockquote>
+<ol>
+<li>字符操作方法</li>
+</ol>
+<blockquote>
 <p>concat(),slice(),subString(),substr(),</p>
 </blockquote>
-</li>
-<li>字符串位置方法<blockquote>
+<ol>
+<li>字符串位置方法</li>
+</ol>
+<blockquote>
 <p>indexOf(),lastIndexOf()</p>
 </blockquote>
+<ol>
+<li><p>trim(),trimLeft(),trimRight()方法</p>
 </li>
-<li>trim(),trimLeft(),trimRight()方法</li>
-<li>大小写转换方法<blockquote>
+<li><p>大小写转换方法</p>
+</li>
+</ol>
+<blockquote>
 <p>toLocalUpperCase(),toUpperCase(),toLowerCase()</p>
 </blockquote>
-</li>
-<li>模式匹配方法<blockquote>
+<ol>
+<li>模式匹配方法</li>
+</ol>
+<blockquote>
 <p>search(),replace(),match(),split()</p>
 </blockquote>
-</li>
+<ol>
 <li>localeCompare()方法，fromCharCode()方法</li>
 </ol>
 <ul>
-<li>5.7 单体内置对象<blockquote>
-<p>定义：由ES实现提供的不依赖于宿主环境的对象，即在ES程序执行之前既存在了</p>
-</blockquote>
+<li><ol>
+<li>7 单体内置对象</li>
+</ol>
 </li>
 </ul>
+<blockquote>
+<p>定义：由ES实现提供的不依赖于宿主环境的对象，即在ES程序执行之前既存在了</p>
+</blockquote>
 <ol>
-<li>Global对象（兜底对象，任何不属于其它对象的属性和方法都是它的属性和方法）<blockquote>
+<li>Global对象（兜底对象，任何不属于其它对象的属性和方法都是它的属性和方法）</li>
+</ol>
+<blockquote>
 <p>如isNaN()，isFinite(),parseInt(),parseFloat(),encodeURI(),encodeURIComponent()<br>eval(),window对象，Math对象（min(),max(),ceil(),floor(),random()）</p>
 </blockquote>
-</li>
-</ol>
 <h3 id="Chapter-6-面向对象-Object-Oriented-Programing"><a href="#Chapter-6-面向对象-Object-Oriented-Programing" class="headerlink" title="Chapter 6 面向对象 Object Oriented Programing"></a>Chapter 6 面向对象 Object Oriented Programing</h3><blockquote>
 <p>ES对象：包含基本值，对象或函数的无序属性的集合。</p>
 </blockquote>
-<p>6.1.1 属性类型（数据属性+访问器属性）</p>
 <ol>
-<li>数据属性：</li>
+<li><p>1.1 属性类型（数据属性+访问器属性）</p>
+</li>
+<li><p>数据属性：</p>
+</li>
 </ol>
 <ul>
 <li>[[Configurable]]:是否可配置，delete(true)</li>
 <li>[[Enumerable]]: 是否可枚举，for-in(true)</li>
 <li>[[Writable]]:是否可写(true)</li>
-<li>[[Writable]]:包含这个属性的数据值（undefined）<blockquote>
+<li>[[Writable]]:包含这个属性的数据值（undefined）</li>
+</ul>
+<blockquote>
 <p>ES5中Object.defineProperty(object,propertyName,descriptor)方法，包含属性所在对象，属性名，描述符对象三个参数，可以修改对象的默认特性。<br>注意：一旦把属性定义为不可配置的就再也甭能把它设置成可配置的了。</p>
 </blockquote>
-</li>
-</ul>
 <ol>
-<li>访问器特性，对象的属性：<blockquote>
-<p>不包含数据值，包含一对getter，setter函数（非必须），有以下四个特性。访问器属性不能直接定义，必须用<br>Object.defineProperty()定义，Object.defineProperties()可以定义多个属性</p>
-</blockquote>
-</li>
+<li>访问器特性，对象的属性：</li>
 </ol>
+<blockquote>
+<p>不包含数据值，包含一对getter，setter函数（非必须），有以下四个特性。访问器属性不能直接定义，必须用<br>Object.defineProperty()定义，Object.defineProperties()可以定义多个属性</p>
 <ul>
 <li>[[Configurable]]:同上(true)</li>
 <li>[[Enumerable]]:同上(true)</li>
 <li>[[Get]]:读取属性时调用的函数（undefined）</li>
-<li><p>[[Set]]:写入属性时调用的函数（undefined）<br>`<br>var book = {</p>
-<pre><code>    _year: 2004,
-    edition: 1
-};
-Object.defineProperty(book, &quot;year&quot;, {
-    get: function(){
-        return this._year;
-    },
-    set: function(newValue){
-
-        if (newValue &gt; 2004) {
-            this._year = newValue;
-            this.edition += newValue - 2004;
-
-        }
-    }
-});
-
-book.year = 2005;
-alert(book.edition);   //2
-</code></pre><p>`<br>6.1.3 读取属性特性</p>
-<blockquote>
-<p>Object.getOwnPropertyDescriptor()方法，两个参数属性所在的对象+读取其描述符的属性名，返回一对象.<br>JS中可以针对任何对象（BOM，DOM），使用该方法。<br>`<br>var descriptor = Object.getOwnPropertyDescriptor(book, “_year”);</p>
-<pre><code>alert(descriptor.value);          //2004
-alert(descriptor.configurable);   //false
-alert(typeof descriptor.get);     //&quot;undefined&quot;
-var descriptor = Object.getOwnPropertyDescriptor(book, &quot;year&quot;);
-alert(descriptor.value);          //undefined
-alert(descriptor.enumerable);     //false
-alert(typeof descriptor.get);     //&quot;function&quot;`
-</code></pre></blockquote>
+<li>[[Set]]:写入属性时调用的函数（undefined）<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">var book = &#123;</div><div class="line">    _year: 2004,</div><div class="line">    edition: 1</div><div class="line">&#125;;</div><div class="line">Object.defineProperty(book, &quot;year&quot;, &#123;</div><div class="line">    get: function()&#123;</div><div class="line">        return this._year;</div><div class="line">    &#125;,</div><div class="line">    set: function(newValue)&#123;</div><div class="line">    </div><div class="line">        if (newValue &gt; 2004) &#123;</div><div class="line">            this._year = newValue;</div><div class="line">            this.edition += newValue - 2004;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">    </div><div class="line">book.year = 2005;</div><div class="line">alert(book.edition);   //2</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>6.2 创建对象<br>6.2.1 工厂模式—用函数来封装以特定接口创建对象的细节</p>
-<blockquote>
-<p>特点：虽然解决了创建多个相似对象的问题，但却没有解决对象识别问题(怎样知道对象类型)。<br><code>function createPerson(name, age, job){
-            var o = new Object();
-            o.name = name;
-            o.age = age;
-            o.job = job;
-            o.sayName = function(){
-                alert(this.name);
-            };    
-            return o;
-        }
-        var person1 = createPerson(&quot;Nicholas&quot;, 29, &quot;Software Engineer&quot;);
-        var person2 = createPerson(&quot;Greg&quot;, 27, &quot;Doctor&quot;);
-        person1.sayName();   //&quot;Nicholas&quot;
-        person2.sayName();   //&quot;Greg&quot;</code></p>
 </blockquote>
-<p>6.2.2 构造函数模式—如Object，Array这样的原生构造函数，运行时会自动出现在EC中，也可创建自定义的。<br><code>function Person(name, age, job){
-            this.name = name;
-            this.age = age;
-            this.job = job;
-            this.sayName = function(){
-                alert(this.name);
-            };    
-        }
-        var person1 = new Person(&quot;Nicholas&quot;, 29, &quot;Software Engineer&quot;);
-        var person2 = new Person(&quot;Greg&quot;, 27, &quot;Doctor&quot;);
-        person1.sayName();   //&quot;Nicholas&quot;
-        person2.sayName();   //&quot;Greg&quot;
-        alert(person1 instanceof Object);  //true
-        alert(person1 instanceof Person);  //true
-        alert(person2 instanceof Object);  //true
-        alert(person2 instanceof Person);  //true
-        alert(person1.constructor == Person);  //true
-        alert(person2.constructor == Person);  //true
-        alert(person1.sayName == person2.sayName);  //false</code></p>
+<ol>
+<li>1.3 读取属性特性</li>
+</ol>
 <blockquote>
-<p>特点：没有显式创建对象，没有return语句，直接将属性和方法赋给this，首字母大写，必须使用new构建实例。<br>优点：可以将构造函数的实例标识为一种特定的类型；<br>缺点：每个方法都要在每个实例上创建一遍，不同实例上同名函数是不同的。<br><code>this.sayName=new Function(&#39;alert(this.name)&#39;);//与声明函数逻辑上等价
-person1.sayName===person2.sayName;//false
-//优化，但此时全局函数有些名不副实
-this.sayName=sayName;
-function sayName(){}</code></p>
+<p>Object.getOwnPropertyDescriptor()方法，两个参数属性所在的对象+读取其描述符的属性名，返回一对象.<br>JS中可以针对任何对象（BOM，DOM），使用该方法。</p>
 </blockquote>
-<p>6.2.3 原型模式</p>
-<blockquote>
-<p>我们创建的每个函数，都有一个指向一个对象的且是一个指针的prototype属性，其作用是包含可以有特定<br>类型所有实例共享的属性和方法。即prototype通过调用构造函数而创建的那个实例的原型对象。此时可以将所有实例共享其所包含的属性和方法。<br>优点：让任意实例共享其原型对象所包含的所有属性和方法。<br>缺点：省略了为构造函数传递初始化参数这一环节，导致所有实例默认获得相同属性，对于包含引用类型的属性而言，问题不可忽视</p>
-</blockquote>
-<p>`<br>//原型模式案例<br>function Person(){<br>        }<br>        Person.prototype.name = “Nicholas”;<br>        Person.prototype.age = 29;<br>        Person.prototype.job = “Software Engineer”;<br>        Person.prototype.sayName = function(){<br>            alert(this.name);<br>        };</p>
-<pre><code>var person1 = new Person();
-person1.sayName();   //&quot;Nicholas&quot;
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">var descriptor = Object.getOwnPropertyDescriptor(book, &quot;_year&quot;);</div><div class="line">alert(descriptor.value);          //2004</div><div class="line">alert(descriptor.configurable);   //false</div><div class="line">alert(typeof descriptor.get);     //&quot;undefined&quot;</div><div class="line">var descriptor = Object.getOwnPropertyDescriptor(book, &quot;year&quot;);</div><div class="line">alert(descriptor.value);          //undefined</div><div class="line">alert(descriptor.enumerable);     //false</div><div class="line">alert(typeof descriptor.get);     //&quot;function&quot;</div><div class="line">```        </div><div class="line"></div><div class="line">6. 2 创建对象</div><div class="line"></div><div class="line">6. 2.1 工厂模式---用函数来封装以特定接口创建对象的细节</div><div class="line"></div><div class="line">&gt; 特点：虽然解决了创建多个相似对象的问题，但却没有解决对象识别问题(怎样知道对象类型)。</div></pre></td></tr></table></figure>
+<p>function createPerson(name, age, job){<br>    var o = new Object();<br>    o.name = name;<br>    o.age = age;<br>    o.job = job;<br>    o.sayName = function(){<br>        alert(this.name);<br>    };<br>    return o;<br>}<br>var person1 = createPerson(“Nicholas”, 29, “Software Engineer”);<br>var person2 = createPerson(“Greg”, 27, “Doctor”);<br>person1.sayName();   //“Nicholas”<br>person2.sayName();   //“Greg”<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">6. 2.2 构造函数模式---如Object，Array这样的原生构造函数，运行时会自动出现在EC中，也可创建自定义的。</div></pre></td></tr></table></figure></p>
+<p>function Person(name, age, job){<br>    this.name = name;<br>    this.age = age;<br>    this.job = job;<br>    this.sayName = function(){<br>        alert(this.name);<br>    };<br>}<br>var person1 = new Person(“Nicholas”, 29, “Software Engineer”);<br>var person2 = new Person(“Greg”, 27, “Doctor”);<br>person1.sayName();   //“Nicholas”<br>person2.sayName();   //“Greg”<br>alert(person1 instanceof Object);  //true<br>alert(person1 instanceof Person);  //true<br>alert(person2 instanceof Object);  //true<br>alert(person2 instanceof Person);  //true<br>alert(person1.constructor == Person);  //true<br>alert(person2.constructor == Person);  //true<br>alert(person1.sayName == person2.sayName);  //false<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt; 特点：没有显式创建对象，没有return语句，直接将属性和方法赋给this，首字母大写，必须使用new构建实例。</div><div class="line">优点：可以将构造函数的实例标识为一种特定的类型；</div><div class="line">缺点：每个方法都要在每个实例上创建一遍，不同实例上同名函数是不同的。</div></pre></td></tr></table></figure></p>
+<p>this.sayName=new Function(‘alert(this.name)’);//与声明函数逻辑上等价<br>person1.sayName===person2.sayName;//false<br>//优化，但此时全局函数有些名不副实<br>this.sayName=sayName;<br>function sayName(){}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">6. 2.3 原型模式</div><div class="line"></div><div class="line">&gt; 我们创建的每个函数，都有一个指向一个对象的且是一个指针的prototype属性，其作用是包含可以有特定</div><div class="line">类型所有实例共享的属性和方法。即prototype通过调用构造函数而创建的那个实例的原型对象。此时可以将所有实例共享其所包含的属性和方法。</div><div class="line">优点：让任意实例共享其原型对象所包含的所有属性和方法。</div><div class="line">缺点：省略了为构造函数传递初始化参数这一环节，导致所有实例默认获得相同属性，对于包含引用类型的属性而言，问题不可忽视</div></pre></td></tr></table></figure></p>
+<p>//原型模式案例<br>function Person(){}<br>Person.prototype.name = “Nicholas”;<br>Person.prototype.age = 29;<br>Person.prototype.job = “Software Engineer”;<br>Person.prototype.sayName = function(){<br>    alert(this.name);<br>};</p>
+<p>var person1 = new Person();<br>person1.sayName();   //“Nicholas”</p>
+<p>var person2 = new Person();<br>person2.sayName();   //“Nicholas”</p>
+<p>alert(person1.sayName == person2.sayName);  //true</p>
+<p>alert(Person.prototype.isPrototypeOf(person1));  //true<br>alert(Person.prototype.isPrototypeOf(person2));  //true</p>
+<p>//only works if Object.getPrototypeOf() is available<br>if (Object.getPrototypeOf){<br>    alert(Object.getPrototypeOf(person1) == Person.prototype);  //true<br>    alert(Object.getPrototypeOf(person1).name);  //“Nicholas”<br>}<br>//虽然可以通过实例访问原型中的值，但不能通过对象实例重写原型中的值。只是‘屏蔽’<br>person1.name = “Greg”;<br>alert(person1.name);   //“Greg” – from instance<br>alert(person2.name);   //“Nicholas” – from prototype<br>//使用delete操作符完全可以删除该属性<br>delete person1.name;<br>alert(person1.name);   //“Nicholas” - from the prototype<br>//hasOwnProperty（）,in操作符结合<br>function hasPrototypeProperty(object,name){return !object.hasOwnProperty(name)&amp;&amp;(name in object)}<br>//ES5中的Object.keys()方法用于取得对象上所有可枚举的对象属性，接收一个对象为参数返回一个包含所有可枚举属性的字符串数组<br>var keys=Object.keys(Person.prototype)<br>//简化的原型语法,对象字面量形式创建的对象，但此时constructor不再指向Person了<br>//此种写法本质上重写了默认的prototype对象，因此constructor属性也就变成了新对象的constructor属性（指向Object）<br>Person.prototype={<br>constructor:Person,//加上此句话重设constructor，此举导致constructor的[[Enumerable]]被设置为true，默认false<br>    name:’Tom’,<br>    age:’18’,<br>    say:function(){}<br>}<br>//要消除此bug还需要再加这句话<br>Object.defineProperty(Person.prptotype,’constructor’,{<br>enumerable:false,<br>value:Person<br>})<br>//原生对象的原型<br>Array.prototype===[].<strong>proto</strong><br>String.prototype===’’.<strong>proto</strong><br>Object.prototype==={}.<strong>proto</strong><br>//此方法困境<br>Person.prototype = {<br>        constructor: Person,<br>        name : “Nicholas”,<br>        age : 29,<br>        job : “Software Engineer”,<br>        friends : [“Shelby”, “Court”],<br>        sayName : function () {<br>            alert(this.name);<br>        }<br>    };<br>var person1 = new Person();<br>var person2 = new Person();<br>person1.friends.push(“Van”);<br>alert(person1.friends);    //“Shelby,Court,Van”<br>alert(person2.friends);    //“Shelby,Court,Van”<br>alert(person1.friends === person2.friends);  //true</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">6. 2.4 组合使用构造函数和原型模式---用途广泛，认可度最高，首选</div></pre></td></tr></table></figure>
+<p>function Person(name, age, job){<br>    this.name = name;<br>    this.age = age;<br>    this.job = job;<br>    this.friends = [“Shelby”, “Court”];<br>}<br>Person.prototype = {<br>    constructor: Person,<br>    sayName : function () {<br>        alert(this.name);<br>    }<br>};<br>var person1 = new Person(“Nicholas”, 29, “Software Engineer”);<br>var person2 = new Person(“Greg”, 27, “Doctor”);<br>person1.friends.push(“Van”);<br>alert(person1.friends);    //“Shelby,Court,Van”<br>alert(person2.friends);    //“Shelby,Court”<br>alert(person1.friends === person2.friends);  //false<br>alert(person1.sayName === person2.sayName);  //true<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">6. 2.5 动态原型模式</div><div class="line"></div><div class="line">&gt; 把所有信息封装在构造函数中，通过构造函数初始化原型，保持了同时使用构造函数和原型的优点。即</div><div class="line">可以通过检查某个应该存在的方法是否有效来决定是否需要初始化原型.</div><div class="line">谨记：此时不能使用对象字面量重写原型，否则会切断实例与新原型之间的联系</div></pre></td></tr></table></figure></p>
+<p>function Person(name, age, job){<br>    //properties<br>    this.name = name;<br>    this.age = age;<br>    this.job = job;</p>
+<pre><code>//methods
+if (typeof this.sayName != &quot;function&quot;){
 
-var person2 = new Person();
-person2.sayName();   //&quot;Nicholas&quot;
-
-alert(person1.sayName == person2.sayName);  //true
-
-alert(Person.prototype.isPrototypeOf(person1));  //true
-alert(Person.prototype.isPrototypeOf(person2));  //true
-
-//only works if Object.getPrototypeOf() is available
-if (Object.getPrototypeOf){
-    alert(Object.getPrototypeOf(person1) == Person.prototype);  //true
-    alert(Object.getPrototypeOf(person1).name);  //&quot;Nicholas&quot;
-}
-//虽然可以通过实例访问原型中的值，但不能通过对象实例重写原型中的值。只是‘屏蔽’
-person1.name = &quot;Greg&quot;;
-alert(person1.name);   //&quot;Greg&quot; – from instance
-alert(person2.name);   //&quot;Nicholas&quot; – from prototype
-//使用delete操作符完全可以删除该属性
-delete person1.name;
-alert(person1.name);   //&quot;Nicholas&quot; - from the prototype
-//hasOwnProperty（）,in操作符结合
-function hasPrototypeProperty(object,name){return !object.hasOwnProperty(name)&amp;&amp;(name in object)}
-//ES5中的Object.keys()方法用于取得对象上所有可枚举的对象属性，接收一个对象为参数返回一个包含所有可枚举属性的字符串数组
-var keys=Object.keys(Person.prototype)
-//简化的原型语法,对象字面量形式创建的对象，但此时constructor不再指向Person了
-//此种写法本质上重写了默认的prototype对象，因此constructor属性也就变成了新对象的constructor属性（指向Object）
-Person.prototype={
-constructor:Person,//加上此句话重设constructor，此举导致constructor的[[Enumerable]]被设置为true，默认false
- name:&apos;Tom&apos;,
- age:&apos;18&apos;,
- say:function(){}
-}
-//要消除此bug还需要再加这句话
-Object.defineProperty(Person.prptotype,&apos;constructor&apos;,{
-enumerable:false,
-value:Person
-})
-//原生对象的原型
-Array.prototype===[].__proto__
-String.prototype===&apos;&apos;.__proto__
-Object.prototype==={}.__proto__
-//此方法困境
- Person.prototype = {
-            constructor: Person,
-            name : &quot;Nicholas&quot;,
-            age : 29,
-            job : &quot;Software Engineer&quot;,
-            friends : [&quot;Shelby&quot;, &quot;Court&quot;],
-            sayName : function () {
-                alert(this.name);
-            }
-        };
-        var person1 = new Person();
-        var person2 = new Person();
-        person1.friends.push(&quot;Van&quot;);
-        alert(person1.friends);    //&quot;Shelby,Court,Van&quot;
-        alert(person2.friends);    //&quot;Shelby,Court,Van&quot;
-        alert(person1.friends === person2.friends);  //true
-</code></pre><p>`<br>6.2.4 组合使用构造函数和原型模式—用途广泛，认可度最高，首选</p>
-<p><code>function Person(name, age, job){
-            this.name = name;
-            this.age = age;
-            this.job = job;
-            this.friends = [&quot;Shelby&quot;, &quot;Court&quot;];
-        }
-        Person.prototype = {
-            constructor: Person,
-            sayName : function () {
-                alert(this.name);
-            }
-        };
-        var person1 = new Person(&quot;Nicholas&quot;, 29, &quot;Software Engineer&quot;);
-        var person2 = new Person(&quot;Greg&quot;, 27, &quot;Doctor&quot;);
-        person1.friends.push(&quot;Van&quot;);
-        alert(person1.friends);    //&quot;Shelby,Court,Van&quot;
-        alert(person2.friends);    //&quot;Shelby,Court&quot;
-        alert(person1.friends === person2.friends);  //false
-        alert(person1.sayName === person2.sayName);  //true</code><br>6.2.5 动态原型模式</p>
-<blockquote>
-<p>把所有信息封装在构造函数中，通过构造函数初始化原型，保持了同时使用构造函数和原型的优点。即<br>可以通过检查某个应该存在的方法是否有效来决定是否需要初始化原型.<br>谨记：此时不能使用对象字面量重写原型，否则会切断实例与新原型之间的联系</p>
-</blockquote>
-<p>`<br>function Person(name, age, job){</p>
-<pre><code>    //properties
-    this.name = name;
-    this.age = age;
-    this.job = job;
-
-    //methods
-    if (typeof this.sayName != &quot;function&quot;){
-
-        Person.prototype.sayName = function(){
-            alert(this.name);
-        };
-
-    }
-}
-var friend = new Person(&quot;Nicholas&quot;, 29, &quot;Software Engineer&quot;);
-friend.sayName();
-</code></pre><p>`<br>6.2.6 寄生构造函数模式</p>
-<blockquote>
-<p>返回的对象与构造函数或者构造函数与原型属性之间没关系。</p>
-</blockquote>
-<p>`<br>function SpecialArray(){       </p>
-<pre><code>    //create the array
-    var values = new Array();
-
-    //add the values
-    values.push.apply(values, arguments);
-
-    //assign the method
-    values.toPipedString = function(){
-        return this.join(&quot;|&quot;);
+    Person.prototype.sayName = function(){
+        alert(this.name);
     };
 
-    //return it
-    return values;        
 }
+</code></pre><p>}<br>var friend = new Person(“Nicholas”, 29, “Software Engineer”);<br>friend.sayName();<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">6. 2.6 寄生构造函数模式</div><div class="line"></div><div class="line">&gt; 返回的对象与构造函数或者构造函数与原型属性之间没关系。</div></pre></td></tr></table></figure></p>
+<p>function SpecialArray(){<br>    //create the array<br>    var values = new Array();</p>
+<pre><code>//add the values
+values.push.apply(values, arguments);
 
-var colors = new SpecialArray(&quot;red&quot;, &quot;blue&quot;, &quot;green&quot;);
-alert(colors.toPipedString()); //&quot;red|blue|green&quot;
-alert(colors instanceof SpecialArray);
-</code></pre><p>`<br>6.2.7 稳妥构造函数模式</p>
-<p><code>function Person(name,age,job){
-var o=new Object;
-o.sayName=function(){alert(name)}
-return o
-}
-var p1=new Person(&#39;yl&#39;,26,&#39;software engineer&#39;);
-p1.sayName();//&#39;yl&#39;</code><br>6.3 继承（接口继承和实现继承（ES仅支持此继承））—依赖原型链继承<br>6.3.1 原型链</p>
-<blockquote>
-<p>基本思想：利用原型让一个引用类型继承另一个引用类型的属性和方法。</p>
-</blockquote>
-<p>`<br> function SuperType(){<br>            this.property = true;<br>        }</p>
-<pre><code>SuperType.prototype.getSuperValue = function(){
-    return this.property;
+//assign the method
+values.toPipedString = function(){
+    return this.join(&quot;|&quot;);
 };
 
-function SubType(){
-    this.subproperty = false;
+//return it
+return values;        
+</code></pre><p>}</p>
+<p>var colors = new SpecialArray(“red”, “blue”, “green”);<br>alert(colors.toPipedString()); //“red|blue|green”<br>alert(colors instanceof SpecialArray);<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">6. 2.7 稳妥构造函数模式</div></pre></td></tr></table></figure></p>
+<p>function Person(name,age,job){<br>var o=new Object;<br>o.sayName=function(){alert(name)}<br>return o<br>}<br>var p1=new Person(‘yl’,26,’software engineer’);<br>p1.sayName();//‘yl’<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">6. 3 继承（接口继承和实现继承（ES仅支持此继承））---依赖原型链继承</div><div class="line">6. 3.1 原型链</div><div class="line"></div><div class="line">&gt; 基本思想：利用原型让一个引用类型继承另一个引用类型的属性和方法。</div></pre></td></tr></table></figure></p>
+<p>function SuperType(){<br>    this.property = true;<br>}</p>
+<p>SuperType.prototype.getSuperValue = function(){<br>    return this.property;<br>};</p>
+<p>function SubType(){<br>    this.subproperty = false;<br>}</p>
+<p>//inherit from SuperType<br>SubType.prototype = new SuperType();</p>
+<p>SubType.prototype.getSubValue = function (){<br>    return this.subproperty;<br>};</p>
+<p>var instance = new SubType();<br>alert(instance.getSuperValue());   //true</p>
+<p>alert(instance instanceof Object);      //true<br>alert(instance instanceof SuperType);   //true<br>alert(instance instanceof SubType);     //true</p>
+<p>alert(Object.prototype.isPrototypeOf(instance));    //true<br>alert(SuperType.prototype.isPrototypeOf(instance)); //true<br>alert(SubType.prototype.isPrototypeOf(instance));   //true<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">6. 3.2 借用构造函数</div></pre></td></tr></table></figure></p>
+<p>function SuperType(){<br>    this.colors = [“red”, “blue”, “green”];<br>}</p>
+<p>function SubType(){<br>    //inherit from SuperType<br>    SuperType.call(this);<br>}<br>//传递参数<br>    function SubType(){<br>            //inherit from SuperType passing in an argument<br>            SuperType.call(this, “Nicholas”);</p>
+<pre><code>    //instance property
+    this.age = 29;
 }
+</code></pre><p>var instance1 = new SubType();<br>instance1.colors.push(“black”);<br>alert(instance1.colors);    //“red,blue,green,black”</p>
+<p>var instance2 = new SubType();<br>alert(instance2.colors);    //“red,blue,green”<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">6. 3.3 组合继承</div><div class="line"></div><div class="line">&gt; 使用原型链实现对原型属性和方法的继承，通过借用构造函数实现对实例属性的继承</div></pre></td></tr></table></figure></p>
+<p>function SuperType(name){<br>    this.name = name;<br>    this.colors = [“red”, “blue”, “green”];<br>}</p>
+<p>SuperType.prototype.sayName = function(){<br>    alert(this.name);<br>};</p>
+<p>function SubType(name, age){<br>    SuperType.call(this, name);</p>
+<pre><code>this.age = age;
+</code></pre><p>}</p>
+<p>SubType.prototype = new SuperType();</p>
+<p>SubType.prototype.sayAge = function(){<br>    alert(this.age);<br>};</p>
+<p>var instance1 = new SubType(“Nicholas”, 29);<br>instance1.colors.push(“black”);<br>alert(instance1.colors);  //“red,blue,green,black”<br>instance1.sayName();      //“Nicholas”;<br>instance1.sayAge();       //29</p>
+<p>var instance2 = new SubType(“Greg”, 27);<br>alert(instance2.colors);  //“red,blue,green”<br>instance2.sayName();      //“Greg”;<br>instance2.sayAge();       //27<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">6. 3.4 原型式继承</div></pre></td></tr></table></figure></p>
+<p>var person = {<br>    name: “Nicholas”,<br>    friends: [“Shelby”, “Court”, “Van”]<br>};</p>
+<p>var anotherPerson = Object.create(person);<br>anotherPerson.name = “Greg”;<br>anotherPerson.friends.push(“Rob”);</p>
+<p>var yetAnotherPerson = Object.create(person);<br>yetAnotherPerson.name = “Linda”;<br>yetAnotherPerson.friends.push(“Barbie”);</p>
+<p>alert(person.friends);   //“Shelby,Court,Van,Rob,Barbie”<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">6. 3.5 寄生式继承</div><div class="line"></div><div class="line">6. 3.6 寄生组合式继承</div></pre></td></tr></table></figure></p>
+<p>function object(o){<br>    function F(){}<br>    F.prototype = o;<br>    return new F();<br>}</p>
+<p>function inheritPrototype(subType, superType){<br>    var prototype = object(superType.prototype);   //create object<br>    prototype.constructor = subType;               //augment object<br>    subType.prototype = prototype;                 //assign object<br>}</p>
+<p>function SuperType(name){<br>    this.name = name;<br>    this.colors = [“red”, “blue”, “green”];<br>}</p>
+<p>SuperType.prototype.sayName = function(){<br>    alert(this.name);<br>};</p>
+<p>function SubType(name, age){<br>    SuperType.call(this, name);</p>
+<pre><code>this.age = age;
+</code></pre><p>}</p>
+<p>inheritPrototype(SubType, SuperType);</p>
+<p>SubType.prototype.sayAge = function(){<br>    alert(this.age);<br>};</p>
+<p>var instance1 = new SubType(“Nicholas”, 29);<br>instance1.colors.push(“black”);<br>alert(instance1.colors);  //“red,blue,green,black”<br>instance1.sayName();      //“Nicholas”;<br>instance1.sayAge();       //29<br>var instance2 = new SubType(“Greg”, 27);<br>alert(instance2.colors);  //“red,blue,green”<br>instance2.sayName();      //“Greg”;<br>instance2.sayAge();       //27<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">###  Chapter 7 函数表达式(与函数声明的区别)</div><div class="line"></div><div class="line">7. 1 递归</div><div class="line"></div><div class="line">arguments.callee是一个指向正在执行函数的指针，实现递归</div></pre></td></tr></table></figure></p>
+<p>function factorial(num){<br>    if (num &lt;= 1){<br>        return 1;<br>    } else {<br>        //return num<em>factorial(num-1)<br>        return num </em> arguments.callee(num-1);<br>    }<br>}<br>var anotherFactorial = factorial;<br>factorial = null;<br>//alert(anotherFactorial(4));  //error<br>alert(anotherFactorial(4));  //24<br>// //严格模式下debug—使用命名函数表达式<br>var factorial=(function f(num){<br>if(num&lt;-1){return 1}<br>else{return num*f(num-1)}<br>})<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">7. 2 闭包closure</div><div class="line"></div><div class="line">&gt; 匿名函数与闭包：前者-创建一个函数并赋值给变量；后者-有权访问另一个函数作用域中变量的函数（在一个函数内创建另一函数）。</div><div class="line">原理：明白作用域链的概念，当某函数被调用时，会创建一个EC及相应的作用域链；</div><div class="line">然后使用arguments和其它命名参数的值来初始化函数的活动对象（activation object）</div><div class="line">此时，外部函数作用域链处于第二位，再外的第三位，。。。，最外到全局执行环境。</div><div class="line">其实，作用域链包含两级变量对象--本地活动对象和全局变量对象，其本质是一个指向</div><div class="line">变量对象的指针列表，仅仅引用并不包含变量对象。</div><div class="line"></div><div class="line">7. 2.1 闭包与变量</div><div class="line"></div><div class="line">&gt; 闭包的副作用：只能取得包含函数中任何变量的最后一个值。</div></pre></td></tr></table></figure></p>
+<p>function createFunctions(){<br>        var result = new Array();<br>        for (var i=0; i &lt; 10; i++){<br>            result[i] = function(){<br>                return i;<br>            };<br>        }<br>        return result;<br>    }<br>var funcs = createFunctions();<br>    //every function outputs 10<br>    //原因：每个函数作用域链中都保存着createFunctions()函数的活动对象，它们引用的是<br>    同一个变量i。当createFunction（）函数返回后，i都是10.<br>    for (var i=0; i &lt; funcs.length; i++){<br>        document.write(funcs<a href="">i</a> + “<br>“);<br>    }<br>//解决方案如下：创建一个匿名函数强制让闭包行为符合预期（函数参数是按值传递的）<br>for (var i=0; i &lt; 10; i++){<br>                    result[i] = function(num){<br>                        return function(){<br>                            return num;<br>                        };<br>                    }(i);<br>                }<br>//或者用ES6语法变var i为let i<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">7.2.2 关于this对象</div><div class="line"></div><div class="line">&gt; this对象是在运行时基于函数的执行环境绑定的：在全局下this===window；当函数被作为某个对象的方法</div><div class="line">调用时，this===调用其的对象。但匿名函数的作用域具有全局性，其this对象通常指向window；除非通过call（）</div><div class="line">apply()改变。</div></pre></td></tr></table></figure></p>
+<p>var name = “The Window”;<br>var object = {<br>    name : “My Object”,<br>    getNameFunc : function(){<br>        //var that=this;<br>        return function(){<br>            return this.name;<br>            //return that.name;<br>        };<br>    }<br>};<br>alert(object.getNameFunc()());  //“The Window”<br>//细微变化可能改变this<br>var name=’window’;<br>var obj={name:’obj’,getName:function(){return this.name}}<br>obj.getName();//‘obj’<br>(obj.getName)();//‘obj’<br>(obj.getName=obj.getName)();//‘window’,this得不到维持</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&gt; 原因分析：每个函数在调用时都会自动取得两个特殊变量this和arguments；内部函数在搜索</div><div class="line">此二变量时只会搜索到其活动对象为之，故永不可能直接访问外部函数中此二变量。一种解决方式是把外部作用</div><div class="line">域中this对象保存在闭包中。如上注释部分。</div><div class="line"></div><div class="line">7. 2.3 内存泄漏</div><div class="line"></div><div class="line">&gt; 闭包会引用包含函数的整个活动对象！即使闭包不直接引用ele，包含函数的活动对象也仍然</div><div class="line">会保存一个引用。</div></pre></td></tr></table></figure>
+<p>function assignHandler(){<br>    var ele=document.getElementById(‘xx’);<br>    var id=ele.id;//抽出闭包中循环引用的变量<br>    ele.onclick=function(){}<br>    ele=null;//清除对dom对象的引用<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">7. 2.4 模仿块级作用域</div><div class="line"></div><div class="line">&gt; JS 从不会告诉你是否声明了同一个变量；只会无视后续声明（会执行声明的初始化），匿名函数可以</div><div class="line">模仿块级作用域并避免此问题。并且只要做到闭包中没有指向匿名函数的引用，就可以减少闭包占用内存的问题。</div></pre></td></tr></table></figure></p>
+<p>(function(){//block scope})();<br>var someFunction=function(){//block scope}<br>function(){//block scope}();//error ,函数声明不能跟（），js将function当作函数声明的开始<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">7. 2.5 private variables私有变量</div><div class="line"></div><div class="line">&gt; 事实上，JS中没有私有成员的概念；所有对象的属性都是公有的。但有个私有变量的概念---任何在函数</div><div class="line">中定义的变量。</div><div class="line">特权方法（privileged method）: 有权访问私有变量和私有函数的公有方法。有以下两种</div><div class="line">但在函数中定义特权有个缺点：必须使用构造函数模式实现，其缺点是每个实例都会创建一组新方法，使用静态私有变量</div><div class="line">可以避免此问题（私有变量和函数是由实例共享的，作为一个闭包总是保存着对包含作用域的引用）。</div></pre></td></tr></table></figure></p>
+<p>//模式一：在构造函数中定义特权方法，将特权方法作为闭包（有权访问在构造函数中的所有属性和方法）<br>function MyObject(){<br>    //私有变量和私有函数<br>    var privateVariable=10;<br>    function privateFunction(){<br>        return false;<br>    }<br>    //特权方法<br>    this.publicMethod=functionn(){<br>        privateVariable++;<br>        return privateFunciton();<br>    }<br>}<br>// 使用静态私有变量<br>(function(){<br>    var name = “”;<br>    Person = function(value){<br>        name = value;<br>    };<br>    Person.prototype.getName = function(){<br>        return name;<br>    };<br>    Person.prototype.setName = function (value){<br>        name = value;<br>    };<br>})();<br>var person1 = new Person(“Nicholas”);<br>alert(person1.getName());   //“Nicholas”<br>person1.setName(“Greg”);<br>alert(person1.getName());   //“Greg”<br>var person2 = new Person(“Michael”);<br>alert(person1.getName());   //“Michael”<br>alert(person2.getName());   //“Michael”</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">7. 4.2 模块模式</div><div class="line"></div><div class="line">&gt; 上述模式用于为自定义类型创建私有变量和特权方法，而模块模式则是为单例创建私有变量和特权的方法。</div></pre></td></tr></table></figure>
+<p>function BaseComponent(){<br>}</p>
+<p>function OtherComponent(){<br>}</p>
+<p>var application = function(){</p>
+<p>//private variables and functions<br>var components = new Array();</p>
+<p>//initialization<br>components.push(new BaseComponent());</p>
+<p>//public interface<br>return {<br>getComponentCount : function(){<br>return components.length;<br>},</p>
+<p>registerComponent : function(component){<br>if (typeof component == “object”){<br>    components.push(component);<br>}<br>}<br>};<br>}();</p>
+<p>application.registerComponent(new OtherComponent());<br>//增强的模块模式<br>function BaseComponent(){<br>}</p>
+<p>function OtherComponent(){<br>}</p>
+<p>var application = function(){</p>
+<pre><code>//private variables and functions
+var components = new Array();
 
-//inherit from SuperType
-SubType.prototype = new SuperType();
+//initialization
+components.push(new BaseComponent());
 
-SubType.prototype.getSubValue = function (){
-    return this.subproperty;
+//create a local copy of application
+var app = new BaseComponent();
+
+//public interface
+app.getComponentCount = function(){
+    return components.length;
 };
 
-var instance = new SubType();
-alert(instance.getSuperValue());   //true
-
-alert(instance instanceof Object);      //true
-alert(instance instanceof SuperType);   //true
-alert(instance instanceof SubType);     //true
-
-alert(Object.prototype.isPrototypeOf(instance));    //true
-alert(SuperType.prototype.isPrototypeOf(instance)); //true
-alert(SubType.prototype.isPrototypeOf(instance));   //true
-</code></pre><p>`<br>6.3.2 借用构造函数</p>
-<p>`<br> function SuperType(){<br>            this.colors = [“red”, “blue”, “green”];<br>        }</p>
-<pre><code>function SubType(){  
-    //inherit from SuperType
-    SuperType.call(this);
-}
-//传递参数
- function SubType(){  
-            //inherit from SuperType passing in an argument
-            SuperType.call(this, &quot;Nicholas&quot;);
-
-            //instance property
-            this.age = 29;
-        }
-
-var instance1 = new SubType();
-instance1.colors.push(&quot;black&quot;);
-alert(instance1.colors);    //&quot;red,blue,green,black&quot;
-
-var instance2 = new SubType();
-alert(instance2.colors);    //&quot;red,blue,green&quot;
-</code></pre><p>`<br>6.3.3 组合继承</p>
-<blockquote>
-<p>使用原型链实现对原型属性和方法的继承，通过借用构造函数实现对实例属性的继承<br>`<br>function SuperType(name){<br>            this.name = name;<br>            this.colors = [“red”, “blue”, “green”];<br>        }</p>
-</blockquote>
-<pre><code>SuperType.prototype.sayName = function(){
-    alert(this.name);
-};
-
-function SubType(name, age){  
-    SuperType.call(this, name);
-
-    this.age = age;
-}
-
-SubType.prototype = new SuperType();
-
-SubType.prototype.sayAge = function(){
-    alert(this.age);
-};
-
-var instance1 = new SubType(&quot;Nicholas&quot;, 29);
-instance1.colors.push(&quot;black&quot;);
-alert(instance1.colors);  //&quot;red,blue,green,black&quot;
-instance1.sayName();      //&quot;Nicholas&quot;;
-instance1.sayAge();       //29
-
-var instance2 = new SubType(&quot;Greg&quot;, 27);
-alert(instance2.colors);  //&quot;red,blue,green&quot;
-instance2.sayName();      //&quot;Greg&quot;;
-instance2.sayAge();       //27
-</code></pre><p>`<br>6.3.4 原型式继承</p>
-<p>`<br>var person = {<br>            name: “Nicholas”,<br>            friends: [“Shelby”, “Court”, “Van”]<br>        };</p>
-<pre><code>var anotherPerson = Object.create(person);
-anotherPerson.name = &quot;Greg&quot;;
-anotherPerson.friends.push(&quot;Rob&quot;);
-
-var yetAnotherPerson = Object.create(person);
-yetAnotherPerson.name = &quot;Linda&quot;;
-yetAnotherPerson.friends.push(&quot;Barbie&quot;);
-
-alert(person.friends);   //&quot;Shelby,Court,Van,Rob,Barbie&quot;
-</code></pre><p>`<br>6.3.5 寄生式继承</p>
-<p>`</p>
-<p>`<br>6.3.6 寄生组合式继承</p>
-<p>`<br>function object(o){<br>            function F(){}<br>            F.prototype = o;<br>            return new F();<br>        }</p>
-<pre><code>function inheritPrototype(subType, superType){
-    var prototype = object(superType.prototype);   //create object
-    prototype.constructor = subType;               //augment object
-    subType.prototype = prototype;                 //assign object
-}
-
-function SuperType(name){
-    this.name = name;
-    this.colors = [&quot;red&quot;, &quot;blue&quot;, &quot;green&quot;];
-}
-
-SuperType.prototype.sayName = function(){
-    alert(this.name);
-};
-
-function SubType(name, age){  
-    SuperType.call(this, name);
-
-    this.age = age;
-}
-
-inheritPrototype(SubType, SuperType);
-
-SubType.prototype.sayAge = function(){
-    alert(this.age);
-};
-
-var instance1 = new SubType(&quot;Nicholas&quot;, 29);
-instance1.colors.push(&quot;black&quot;);
-alert(instance1.colors);  //&quot;red,blue,green,black&quot;
-instance1.sayName();      //&quot;Nicholas&quot;;
-instance1.sayAge();       //29
-var instance2 = new SubType(&quot;Greg&quot;, 27);
-alert(instance2.colors);  //&quot;red,blue,green&quot;
-instance2.sayName();      //&quot;Greg&quot;;
-instance2.sayAge();       //27
-</code></pre><p>`</p>
-<h3 id="Chapter-7-函数表达式-与函数声明的区别"><a href="#Chapter-7-函数表达式-与函数声明的区别" class="headerlink" title="Chapter 7 函数表达式(与函数声明的区别)"></a>Chapter 7 函数表达式(与函数声明的区别)</h3><p>7.1 递归<br> arguments.callee是一个指向正在执行函数的指针，实现递归<br>`</p>
-<p>function factorial(num){<br>                if (num &lt;= 1){<br>                    return 1;<br>                } else {<br>                    //return num<em>factorial(num-1)<br>                    return num </em> arguments.callee(num-1);<br>                }<br>            }<br>            var anotherFactorial = factorial;<br>            factorial = null;<br>            //alert(anotherFactorial(4));  //error<br>            alert(anotherFactorial(4));  //24<br>            // //严格模式下debug—使用命名函数表达式<br>            var factorial=(function f(num){<br>            if(num&lt;-1){return 1}<br>            else{return num*f(num-1)}<br>            })<br>`<br>7.2 闭包closure</p>
-<blockquote>
-<p>匿名函数与闭包：前者-创建一个函数并赋值给变量；后者-有权访问另一个函数作用域中变量的函数（在一个函数内创建另一函数）。<br>原理：明白作用域链的概念，当某函数被调用时，会创建一个EC及相应的作用域链；<br>然后使用arguments和其它命名参数的值来初始化函数的活动对象（activation object）<br>此时，外部函数作用域链处于第二位，再外的第三位，。。。，最外到全局执行环境。<br>其实，作用域链包含两级变量对象–本地活动对象和全局变量对象，其本质是一个指向<br>变量对象的指针列表，仅仅引用并不包含变量对象。</p>
-</blockquote>
-<p>7.2.1 闭包与变量</p>
-<blockquote>
-<p>闭包的副作用：只能取得包含函数中任何变量的最后一个值。</p>
-</blockquote>
-<p><code>function createFunctions(){
-                var result = new Array();
-                for (var i=0; i &lt; 10; i++){
-                    result[i] = function(){
-                        return i;
-                    };
-                }
-                return result;
-            }
-        var funcs = createFunctions();
-            //every function outputs 10
-            //原因：每个函数作用域链中都保存着createFunctions()函数的活动对象，它们引用的是
-            同一个变量i。当createFunction（）函数返回后，i都是10.
-            for (var i=0; i &lt; funcs.length; i++){
-                document.write(funcs[i]() + &quot;&lt;br /&gt;&quot;);
-            }
-        //解决方案如下：创建一个匿名函数强制让闭包行为符合预期（函数参数是按值传递的）
-        for (var i=0; i &lt; 10; i++){
-                            result[i] = function(num){
-                                return function(){
-                                    return num;
-                                };
-                            }(i);
-                        }
-        //或者用ES6语法变var i为let i</code><br>7.2.2 关于this对象</p>
-<blockquote>
-<p>this对象是在运行时基于函数的执行环境绑定的：在全局下this===window；当函数被作为某个对象的方法<br>调用时，this===调用其的对象。但匿名函数的作用域具有全局性，其this对象通常指向window；除非通过call（）<br>apply()改变。</p>
-</blockquote>
-<p>`<br>var name = “The Window”;<br>    var object = {<br>        name : “My Object”,<br>        getNameFunc : function(){<br>            //var that=this;<br>            return function(){<br>                return this.name;<br>                //return that.name;<br>            };<br>        }<br>    };<br>alert(object.getNameFunc()());  //“The Window”<br>//细微变化可能改变this<br>var name=’window’;<br>var obj={name:’obj’,getName:function(){return this.name}}<br>obj.getName();//‘obj’<br>(obj.getName)();//‘obj’<br>(obj.getName=obj.getName)();//‘window’,this得不到维持</p>
-<p>`</p>
-<blockquote>
-<p>原因分析：每个函数在调用时都会自动取得两个特殊变量this和arguments；内部函数在搜索<br>此二变量时只会搜索到其活动对象为之，故永不可能直接访问外部函数中此二变量。一种解决方式是把外部作用<br>域中this对象保存在闭包中。如上注释部分。</p>
-</blockquote>
-<p>7.2.3 内存泄漏</p>
-<blockquote>
-<p>闭包会引用包含函数的整个活动对象！即使闭包不直接引用ele，包含函数的活动对象也仍然<br>会保存一个引用。<br><code>function assignHandler(){
-    var ele=document.getElementById(&#39;xx&#39;);
-    var id=ele.id;//抽出闭包中循环引用的变量
-    ele.onclick=function(){}
-    ele=null;//清除对dom对象的引用
-}</code></p>
-</blockquote>
-<p>7.2.4 模仿块级作用域</p>
-<blockquote>
-<p>JS 从不会告诉你是否声明了同一个变量；只会无视后续声明（会执行声明的初始化），匿名函数可以<br>模仿块级作用域并避免此问题。并且只要做到闭包中没有指向匿名函数的引用，就可以减少闭包占用内存的问题。<br><code>(function(){//block scope})();
-var someFunction=function(){//block scope}
-function(){//block scope}();//error ,函数声明不能跟（），js将function当作函数声明的开始</code></p>
-</blockquote>
-<p>7.2.5 private variables私有变量</p>
-<blockquote>
-<p>事实上，JS中没有私有成员的概念；所有对象的属性都是公有的。但有个私有变量的概念—任何在函数<br>中定义的变量。<br>特权方法（privileged method）: 有权访问私有变量和私有函数的公有方法。有以下两种<br>但在函数中定义特权有个缺点：必须使用构造函数模式实现，其缺点是每个实例都会创建一组新方法，使用静态私有变量<br>可以避免此问题（私有变量和函数是由实例共享的，作为一个闭包总是保存着对包含作用域的引用）。</p>
-</blockquote>
-<p>`<br>//模式一：在构造函数中定义特权方法，将特权方法作为闭包（有权访问在构造函数中的所有属性和方法）<br>function MyObject(){<br>    //私有变量和私有函数<br>    var privateVariable=10;<br>    function privateFunction(){<br>        return false;<br>    }<br>    //特权方法<br>    this.publicMethod=functionn(){<br>        privateVariable++;<br>        return privateFunciton();<br>    }<br>}<br>// 使用静态私有变量<br>(function(){<br>    var name = “”;<br>    Person = function(value){<br>        name = value;<br>    };<br>    Person.prototype.getName = function(){<br>        return name;<br>    };<br>    Person.prototype.setName = function (value){<br>        name = value;<br>    };<br>})();<br>var person1 = new Person(“Nicholas”);<br>alert(person1.getName());   //“Nicholas”<br>person1.setName(“Greg”);<br>alert(person1.getName());   //“Greg”<br>var person2 = new Person(“Michael”);<br>alert(person1.getName());   //“Michael”<br>alert(person2.getName());   //“Michael”</p>
-<p>`</p>
-<ol>
-<li><p>4.2 模块模式</p>
-<blockquote>
-<p>上述模式用于为自定义类型创建私有变量和特权方法，而模块模式则是为单例创建私有变量和特权的方法。<br>`</p>
-<pre><code>function BaseComponent(){
-}
-</code></pre></blockquote>
-<pre><code>function OtherComponent(){
-}
-
-var application = function(){
-
-    //private variables and functions
-    var components = new Array();
-
-    //initialization
-    components.push(new BaseComponent());
-
-    //public interface
-    return {
-        getComponentCount : function(){
-            return components.length;
-        },
-
-        registerComponent : function(component){
-            if (typeof component == &quot;object&quot;){
-                components.push(component);
-            }
-        }
-    };
-}();
-
-application.registerComponent(new OtherComponent());
-//增强的模块模式
-function BaseComponent(){
-            }
-
-            function OtherComponent(){
-            }
-
-            var application = function(){
-
-                //private variables and functions
-                var components = new Array();
-
-                //initialization
-                components.push(new BaseComponent());
-
-                //create a local copy of application
-                var app = new BaseComponent();
-
-                //public interface
-                app.getComponentCount = function(){
-                    return components.length;
-                };
-
-                app.registerComponent = function(component){
-                    if (typeof component == &quot;object&quot;){
-                        components.push(component);
-                    }
-                };
-
-                //return it
-                return app;
-            }();
-            alert(application instanceof BaseComponent);
-            application.registerComponent(new OtherComponent());
-            alert(application.getComponentCount());  //2
-</code></pre><p>`</p>
-<h3 id="Chapter-8-BOM"><a href="#Chapter-8-BOM" class="headerlink" title="Chapter 8 BOM"></a>Chapter 8 BOM</h3></li>
-<li>1 window对象</li>
-<li><p>1.1 global scope</p>
-<blockquote>
-<p>定义的全局变量和在window上直接定义的变量细微差别就是前者不可以用delete操作符删除<br>var a=’hello’;window.b=’world’;delete window.a;//false;delete window.b;//true<br>因var 添加的window属性的[[Configurable]]===false</p>
-</blockquote>
-</li>
-<li><p>1.2 窗口关系及框架</p>
-</li>
-<li>1.3 窗口位置<br>`<br>//使用下边代码可以跨浏览器取得窗口左边和上边位置。<br>var leftPos = (typeof window.screenLeft == “number”) ? <pre><code>                  window.screenLeft : window.screenX;
-var topPos = (typeof window.screenTop == &quot;number&quot;) ? 
-                  window.screenTop : window.screenY;
-alert(&quot;Left: &quot; + leftPos);
-alert(&quot;Top: &quot; + topPos);
-</code></pre><code>8.1.4 窗口大小</code><br>var pageWidth = window.innerWidth,<pre><code>    pageHeight = window.innerHeight;
-if (typeof pageWidth != &quot;number&quot;){
-    if (document.compatMode == &quot;CSS1Compat&quot;){
-        pageWidth = document.documentElement.clientWidth;
-        pageHeight = document.documentElement.clientHeight;
-    } else {
-        pageWidth = document.body.clientWidth;
-        pageHeight = document.body.clientHeight;
+app.registerComponent = function(component){
+    if (typeof component == &quot;object&quot;){
+        components.push(component);
     }
-}
-alert(&quot;Width: &quot; + pageWidth);
-alert(&quot;Height: &quot; + pageHeight);
-</code></pre>`</li>
-<li>1.5 导航和打开<br><code>window.open();
-// 接收四个参数：URL，窗口目标，一个特性字符串，布尔值</code><br>8.1.6 setInterval()和setTimeOut()<br>8.1.7 系统对话框：alert(),confirm(),prompt()<br>8.2 location 对象<br><code>window.location===document.location</code></li>
-<li>3 navigator对象</li>
-<li>4 screen对象</li>
-<li><p>5 history对象</p>
-<h3 id="Chapter-9-客户端检查"><a href="#Chapter-9-客户端检查" class="headerlink" title="Chapter 9 客户端检查"></a>Chapter 9 客户端检查</h3><h3 id="Chapter-10-DOM"><a href="#Chapter-10-DOM" class="headerlink" title="Chapter 10 DOM"></a>Chapter 10 DOM</h3><blockquote>
-<p>DOM是针对HTML和XML文档的一个API，描绘了一个层次化的节点树，允许开发人员增删改<br>查页面的一部分。注意IE中的DOM对象都是以COM对象的形式实现的。</p>
-</blockquote>
-</li>
-<li><p>1 节点层次</p>
-<blockquote>
-<p>DOM树：DOM可以将HTML，XML文档描述成一个由多层次节点构成的结构。节点分几种不同的类型，<br>每种类型分别表示文档中不同的信息及标记。每个节点都有自己的特点数据和方法且与其它节点存在<br>关系，由此构成了层次，所有页面标记则表现为一个以特定节点为根节点的树形结构。每一段标记<br>都可以通过树中一个节点来表示（html元素由元素节点表示，attribute由属性节点表示，documentType由文档<br>类型节点表示，commit由注释节点表示）。</p>
-</blockquote>
-</li>
-<li><p>1.1 Node类型（12种）</p>
+};
+
+//return it
+return app;
+</code></pre><p>}();<br>alert(application instanceof BaseComponent);<br>application.registerComponent(new OtherComponent());<br>alert(application.getComponentCount());  //2<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">###  Chapter 8 BOM</div><div class="line"></div><div class="line">8. 1 window对象</div><div class="line"></div><div class="line">8. 1.1 global scope</div><div class="line"></div><div class="line">&gt; 定义的全局变量和在window上直接定义的变量细微差别就是前者不可以用delete操作符删除</div><div class="line">var a=&apos;hello&apos;;window.b=&apos;world&apos;;delete window.a;//false;delete window.b;//true</div><div class="line">因var 添加的window属性的[[Configurable]]===false</div><div class="line"></div><div class="line">8. 1.2 窗口关系及框架</div><div class="line">8. 1.3 窗口位置</div></pre></td></tr></table></figure></p>
+<p>//使用下边代码可以跨浏览器取得窗口左边和上边位置。<br>var leftPos = (typeof window.screenLeft == “number”) ?<br>                          window.screenLeft : window.screenX;<br>var topPos = (typeof window.screenTop == “number”) ?<br>                    window.screenTop : window.screenY;<br>alert(“Left: “ + leftPos);<br>alert(“Top: “ + topPos);<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">8.1.4 窗口大小</div></pre></td></tr></table></figure></p>
+<p>var pageWidth = window.innerWidth,<br>    pageHeight = window.innerHeight;<br>    if (typeof pageWidth != “number”){<br>        if (document.compatMode == “CSS1Compat”){<br>            pageWidth = document.documentElement.clientWidth;<br>            pageHeight = document.documentElement.clientHeight;<br>        } else {<br>            pageWidth = document.body.clientWidth;<br>            pageHeight = document.body.clientHeight;<br>        }<br>    }<br>    alert(“Width: “ + pageWidth);<br>    alert(“Height: “ + pageHeight);<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">8. 1.5 导航和打开</div></pre></td></tr></table></figure></p>
+<p>window.open();<br>// 接收四个参数：URL，窗口目标，一个特性字符串，布尔值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">8. 1.6 setInterval()和setTimeOut()</div><div class="line">8. 1.7 系统对话框：alert(),confirm(),prompt()</div><div class="line">8. 2 location 对象</div></pre></td></tr></table></figure></p>
+<p>window.location===document.location<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div></pre></td><td class="code"><pre><div class="line">8. 3 navigator对象</div><div class="line">8. 4 screen对象</div><div class="line">8. 5 history对象</div><div class="line"></div><div class="line">###  Chapter 9 客户端检查</div><div class="line"></div><div class="line">###  Chapter 10 DOM</div><div class="line"></div><div class="line">&gt; DOM是针对HTML和XML文档的一个API，描绘了一个层次化的节点树，允许开发人员增删改</div><div class="line">查页面的一部分。注意IE中的DOM对象都是以COM对象的形式实现的。</div><div class="line"></div><div class="line">10. 1 节点层次</div><div class="line"></div><div class="line">&gt; DOM树：DOM可以将HTML，XML文档描述成一个由多层次节点构成的结构。节点分几种不同的类型，</div><div class="line">每种类型分别表示文档中不同的信息及标记。每个节点都有自己的特点数据和方法且与其它节点存在</div><div class="line">关系，由此构成了层次，所有页面标记则表现为一个以特定节点为根节点的树形结构。每一段标记</div><div class="line">都可以通过树中一个节点来表示（html元素由元素节点表示，attribute由属性节点表示，documentType由文档</div><div class="line">类型节点表示，commit由注释节点表示）。</div><div class="line"></div><div class="line">10. 1.1 Node类型（12种）</div><div class="line">    1. **Node.ELEMENT_NODE(1)**;</div><div class="line">    2. **Node.ATTRIBUTE_NODE(2)**;</div><div class="line">    3. **Node.TEXT_NODE(3);**</div><div class="line">    4. Node.ENTITY_REFERENCE_NODE(5);</div><div class="line">    6. Node.ENTITY_NODE(6);</div><div class="line">    7. Node.PROCESSING_INSTRUCTION_NODE(7);</div><div class="line">    8. **Node.COMMIT_NODE(8);**</div><div class="line">    9. **Node.DOCUMENT_NODE(9);**</div><div class="line">    10. **Node.DOCUMENT_TYPE_NODE(10);**</div><div class="line">    11. Node.DOCUMENT_FRAGMENT_NODE(11);</div><div class="line">    12. Node.NOTATION_NODE(12);</div><div class="line"></div><div class="line">###  Chapter11 DOM扩展</div><div class="line"></div><div class="line">&gt; DOM扩展主要是selectorsAPI和H5</div><div class="line"></div><div class="line">- querySelector()</div><div class="line">- querySelectorAll()</div><div class="line">- matchesSelector()</div><div class="line">- 元素遍历</div><div class="line">    1. childElementCount:返回子元素（不含文本节点和注释）个数；</div><div class="line">    2. firstElementChild:指向首子元素；</div><div class="line">    3. lastElementChild:指向首尾元素；</div><div class="line">    4. previousElementSibling:指向前一个同辈元素；</div><div class="line">    5. nextElementSibling:指向后一个同辈元素；</div><div class="line"></div><div class="line">11. 3HTML5</div><div class="line"></div><div class="line">&gt; H5规范围绕如何使用新增标记定义了大量的JS API。其中一些与DOM重叠，定义了浏览器应该支持的DOM扩展</div><div class="line"></div><div class="line">11. 3.1与类相关的扩充</div><div class="line"></div><div class="line">- getElementByClassName():返回带有指定类的所有元素的NodeList；</div><div class="line">- classList():</div><div class="line">    1. div.classList.remove(&apos;user&apos;):删除类集中某类</div><div class="line">    2. div.classList.add(&apos;user&apos;):添加类集中某类</div><div class="line">    3. div.classList.toggle(&apos;user&apos;):切换类集中某类</div><div class="line">    4. div.classList.contains(&apos;user&apos;):查询类集中某类</div><div class="line">11. 3.2焦点管理</div></pre></td></tr></table></figure></p>
+<p>var btn=document.getElementById(‘my-button’);<br>btn.focus();<br>document.hasFocus();//true<br>//通过检查文档是否活得了焦点来判断用户是否在与页面交互<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">11. 3.3 HTMLDocument的变化</div><div class="line"></div><div class="line">- readyState属性：loading（加载中）,complete(已完成)</div><div class="line">- compatMode兼容模式</div></pre></td></tr></table></figure></p>
+<p>alert(document.compatMode==’CSS1Compat’?’Standards Mode’:’Quicks Mode’)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">- head 属性</div><div class="line"></div><div class="line">```var head=document.head||document.getElementsByTagName(&apos;head&apos;[0])</div></pre></td></tr></table></figure></p>
 <ol>
-<li><strong>Node.ELEMENT_NODE(1)</strong>;</li>
-<li><strong>Node.ATTRIBUTE_NODE(2)</strong>;</li>
-<li><strong>Node.TEXT_NODE(3);</strong></li>
-<li>Node.ENTITY_REFERENCE_NODE(5);</li>
-<li>Node.ENTITY_NODE(6);</li>
-<li>Node.PROCESSING_INSTRUCTION_NODE(7);</li>
-<li><strong>Node.COMMIT_NODE(8);</strong></li>
-<li><strong>Node.DOCUMENT_NODE(9);</strong></li>
-<li><strong>Node.DOCUMENT_TYPE_NODE(10);</strong></li>
-<li>Node.DOCUMENT_FRAGMENT_NODE(11);</li>
-<li>Node.NOTATION_NODE(12);<h3 id="Chapter11-DOM扩展"><a href="#Chapter11-DOM扩展" class="headerlink" title="Chapter11 DOM扩展"></a>Chapter11 DOM扩展</h3><blockquote>
-<p>DOM扩展主要是selectorsAPI和H5</p>
-</blockquote>
-</li>
+<li>3.4 字符集属性</li>
 </ol>
-</li>
-</ol>
-<ul>
-<li>querySelector()</li>
-<li>querySelectorAll()</li>
-<li>matchesSelector()</li>
-<li>元素遍历<ol>
-<li>childElementCount:返回子元素（不含文本节点和注释）个数；</li>
-<li>firstElementChild:指向首子元素；</li>
-<li>lastElementChild:指向首尾元素；</li>
-<li>previousElementSibling:指向前一个同辈元素；</li>
-<li>nextElementSibling:指向后一个同辈元素；</li>
-</ol>
-</li>
-</ul>
-<ol>
-<li><p>3HTML5</p>
-<blockquote>
-<p>H5规范围绕如何使用新增标记定义了大量的JS API。其中一些与DOM重叠，定义了浏览器应该支持的DOM扩展</p>
-</blockquote>
-</li>
-<li><p>3.1与类相关的扩充</p>
-</li>
-</ol>
-<ul>
-<li>getElementByClassName():返回带有指定类的所有元素的NodeList；</li>
-<li>classList():<ol>
-<li>div.classList.remove(‘user’):删除类集中某类</li>
-<li>div.classList.add(‘user’):添加类集中某类</li>
-<li>div.classList.toggle(‘user’):切换类集中某类</li>
-<li>div.classList.contains(‘user’):查询类集中某类</li>
-</ol>
-</li>
-</ul>
-<ol>
-<li>3.2焦点管理<br><code>var btn=document.getElementById(&#39;my-button&#39;);
-btn.focus();
-document.hasFocus();//true
-//通过检查文档是否活得了焦点来判断用户是否在与页面交互</code></li>
-<li>3.3 HTMLDocument的变化</li>
-</ol>
-<ul>
-<li>readyState属性：loading（加载中）,complete(已完成)</li>
-<li>compatMode兼容模式<br><code>alert(document.compatMode==&#39;CSS1Compat&#39;?&#39;Standards Mode&#39;:&#39;Quicks Mode&#39;)</code></li>
-<li>head 属性<br><code>var head=document.head||document.getElementsByTagName(&#39;head&#39;[0])</code></li>
-</ul>
-<ol>
-<li>3.4 字符集属性<br><code>document.charset;//UTF-8</code></li>
-<li>3.5自定义数据属性data-<blockquote>
-<p>目的是为元素提供与渲染无关的信息，或者提供语义信息，可以任意添加随便命名，但要以data-开头。</p>
-</blockquote>
-</li>
-</ol>
-<p>11 .3.6插入标记</p>
-<blockquote>
-<p>DOM操作的福音：虽然DOM操作可以实现细致入微的控制，但非常繁琐，使用插入标记<br>技术直接插入html字符串不仅简单而且高效。但多说浏览器中插入的script脚本并不会<br>执行（除非指定defer属性且位于（微软所谓的）作用域之后）</p>
-</blockquote>
-<ul>
-<li>innerHTML<br><code>document.querySelector(&#39;div&#39;).innerHTML=&#39;&lt;script defer&gt;alert(&quot;hi&quot;)&lt;/script&gt;&#39;</code></li>
-<li>outerHTML</li>
-<li>insertAdjacentHTML()<h3 id="Chapter12-DOM2和DOM3"><a href="#Chapter12-DOM2和DOM3" class="headerlink" title="Chapter12 DOM2和DOM3"></a>Chapter12 DOM2和DOM3</h3><h3 id="Chapter13-事件处理程序"><a href="#Chapter13-事件处理程序" class="headerlink" title="Chapter13 事件处理程序"></a>Chapter13 事件处理程序</h3></li>
-</ul>
-<ol>
-<li>2.2 DOM0级事件处理程序<blockquote>
-<p>介绍：传统方式，将一个函数赋值给一个事件处理程序属性。特点：简单，跨<br>浏览器。首先要取得要操作对象的引用。<br>DOM0级事件处理程序被称为元素的方法，因此时事件处理程序是在元素作用域中执行的。</p>
-</blockquote>
-</li>
-</ol>
-<p><code>var btn=document.getElementById(&#39;xx&#39;);
-btn.onclick=functin(){}；
-btn.onclick=null;//删除事件处理程序</code></p>
-<ol>
-<li>2.3 DOM2级事件处理程序<blockquote>
-<p>DOM2定义了两个方法用于指定和删除处理程序的操作：addEventListener()和removeEventListener()<br>所有DOM节点都包含这两个方法且接受三个参数：事件名，函数，布尔值（true:捕获，false冒泡）<br>多数情况下将事件处理程序添加到事件流的冒泡阶段，可以最大限度地兼容各种浏览器。<br><code>btn.addEventListener(&#39;click&#39;,function(){
-},false);
-btn.removeEventListener(&#39;click&#39;,function(){
-},false);</code></p>
-</blockquote>
-</li>
-<li>2.4IE事件处理程序<br><code>btn.attach(&#39;onclick&#39;,function(){});
-btn.detach(&#39;onclick&#39;,function(){});</code></li>
-<li>2.5跨浏览器事件处理程序</li>
-<li>3事件对象<blockquote>
-<p>触发DOM上某事件时会产生一个包含与事件相关信息的事件对象。<br>只有在事件处理程序执行期间，event对象才会存在，否则立即销毁。</p>
-</blockquote>
-</li>
-</ol>
-<p>`<br>btn.onclick=function(event){alert(event.type)}<br>btn.addEventListener(‘click’,function(event){alert(event.type)}<br>//stopPropagation用于阻止事件在DOM上传播（捕获或冒泡）<br>var btn = document.getElementById(“myBtn”);<br>        btn.onclick = function(event){<br>            alert(“Clicked”);<br>            event.stopPropagation();<br>        };</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">11. 3.5自定义数据属性data-</div><div class="line"></div><div class="line">&gt; 目的是为元素提供与渲染无关的信息，或者提供语义信息，可以任意添加随便命名，但要以data-开头。</div><div class="line"></div><div class="line">11 .3.6插入标记</div><div class="line"></div><div class="line">&gt; DOM操作的福音：虽然DOM操作可以实现细致入微的控制，但非常繁琐，使用插入标记</div><div class="line">技术直接插入html字符串不仅简单而且高效。但多说浏览器中插入的script脚本并不会</div><div class="line">执行（除非指定defer属性且位于（微软所谓的）作用域之后）</div><div class="line"></div><div class="line">- innerHTML</div></pre></td></tr></table></figure>
+<p>document.querySelector(‘div’).innerHTML=’<script defer>alert(“hi”)</script>‘<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">- outerHTML</div><div class="line">- insertAdjacentHTML()</div><div class="line"></div><div class="line">###  Chapter12 DOM2和DOM3</div><div class="line"></div><div class="line">###  Chapter13 事件处理程序</div><div class="line"></div><div class="line">13. 2.2 DOM0级事件处理程序</div><div class="line"></div><div class="line">&gt; 介绍：传统方式，将一个函数赋值给一个事件处理程序属性。特点：简单，跨</div><div class="line">浏览器。首先要取得要操作对象的引用。</div><div class="line">DOM0级事件处理程序被称为元素的方法，因此时事件处理程序是在元素作用域中执行的。</div></pre></td></tr></table></figure></p>
+<p>var btn=document.getElementById(‘xx’);<br>btn.onclick=functin(){}；<br>btn.onclick=null;//删除事件处理程序<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">13. 2.3 DOM2级事件处理程序</div><div class="line"></div><div class="line">&gt; DOM2定义了两个方法用于指定和删除处理程序的操作：addEventListener()和removeEventListener()</div><div class="line">所有DOM节点都包含这两个方法且接受三个参数：事件名，函数，布尔值（true:捕获，false冒泡）</div><div class="line">多数情况下将事件处理程序添加到事件流的冒泡阶段，可以最大限度地兼容各种浏览器。</div></pre></td></tr></table></figure></p>
+<p>btn.addEventListener(‘click’,function(){<br>},false);<br>btn.removeEventListener(‘click’,function(){<br>},false);<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">13. 2.4IE事件处理程序</div></pre></td></tr></table></figure></p>
+<p>btn.attach(‘onclick’,function(){});<br>btn.detach(‘onclick’,function(){});<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">13. 2.5跨浏览器事件处理程序</div><div class="line"></div><div class="line">13. 3事件对象</div><div class="line"></div><div class="line">&gt; 触发DOM上某事件时会产生一个包含与事件相关信息的事件对象。</div><div class="line">只有在事件处理程序执行期间，event对象才会存在，否则立即销毁。</div></pre></td></tr></table></figure></p>
+<p>btn.onclick=function(event){alert(event.type)}<br>btn.addEventListener(‘click’,function(event){alert(event.type)}<br>//stopPropagation用于阻止事件在DOM上传播（捕获或冒泡）<br>var btn = document.getElementById(“myBtn”);<br>        btn.onclick = function(event){<br>            alert(“Clicked”);<br>            event.stopPropagation();<br>        };</p>
 <pre><code>document.body.onclick = function(event){
     alert(&quot;Body clicked&quot;);
 };
-</code></pre><p>`</p>
-<ol>
-<li>4事件类型</li>
-<li>4.1 UI事件：不一定与用户操作有关的事件。包括DOMActive(非html事件),load,unload,abort<br>error,select,resize,scroll事件。<br><code>var isSurpported=document.implementation.hasFeature(&#39;HTMLEventts&#39;,&#39;2.0&#39;);
-var isSurpported=document.implementation.hasFeature(&#39;UIEvent&#39;,&#39;3.0&#39;);</code></li>
-<li>4.2 焦点事件：blur,focusIn,focusOut,focus</li>
-<li>4.3 鼠标与滚轮事件：click,dbclick,mousedown,mouseenter,mouseleave,mousemove,<br>mouseout,mouseover,mouseup</li>
-<li>4.4键盘与文本事件：keydowm,keyup,keypress</li>
-<li>4.5 复合事件</li>
-<li>4.6 变动事件</li>
-<li>4.7 HTML5事件：contextmenu,beforeunload,DOMContentloaded,readystatechange<br>pageshow,pagehide,haschange</li>
-<li>4.8 设备事件</li>
-<li>4.9 触摸与手势事件touchEvents</li>
-</ol>
-<ul>
-<li>触摸事件<ol>
-<li>touchstart</li>
-<li>touchmove</li>
-<li>touchend</li>
-<li>touchcancel</li>
-</ol>
-</li>
-<li>手势事件<ol>
-<li>gesturestart</li>
-<li>gesturechange</li>
-<li>gestureend</li>
-</ol>
-</li>
-</ul>
-<ol>
-<li>5 内存和性能<blockquote>
-<p>每个函数都是对象，会占用内存，内存中对象越多性能越差；必须事先指定所有事件<br>处理程序而导致的DOM访问次数，会延迟整个页面的交互就绪时间。解决之道是使用事件委托或<br>移除事件处理程序。</p>
-</blockquote>
-</li>
-</ol>
-<ul>
-<li><p>事件委托：只需在DOM树中尽量最高的层次上添加一个事件处理程序<br>`<br>(function(){<br>var list = document.getElementById(“myLinks”);</p>
-<pre><code>EventUtil.addHandler(list, &quot;click&quot;, function(event){
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">13. 4事件类型</div><div class="line">13. 4.1 UI事件：不一定与用户操作有关的事件。包括DOMActive(非html事件),load,unload,abort</div><div class="line">error,select,resize,scroll事件。</div></pre></td></tr></table></figure>
+<p>var isSurpported=document.implementation.hasFeature(‘HTMLEventts’,’2.0’);<br>var isSurpported=document.implementation.hasFeature(‘UIEvent’,’3.0’);<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">13. 4.2 焦点事件：blur,focusIn,focusOut,focus</div><div class="line"></div><div class="line">13. 4.3 鼠标与滚轮事件：click,dbclick,mousedown,mouseenter,mouseleave,mousemove,</div><div class="line">mouseout,mouseover,mouseup</div><div class="line"></div><div class="line">13. 4.4键盘与文本事件：keydowm,keyup,keypress</div><div class="line"></div><div class="line">13. 4.5 复合事件</div><div class="line"></div><div class="line">13. 4.6 变动事件</div><div class="line"></div><div class="line">13. 4.7 HTML5事件：contextmenu,beforeunload,DOMContentloaded,readystatechange</div><div class="line">pageshow,pagehide,haschange</div><div class="line"></div><div class="line">13. 4.8 设备事件</div><div class="line"></div><div class="line">13. 4.9 触摸与手势事件touchEvents</div><div class="line"></div><div class="line">- 触摸事件</div><div class="line">    1. touchstart</div><div class="line">    2. touchmove</div><div class="line">    3. touchend</div><div class="line">    4. touchcancel</div><div class="line">- 手势事件</div><div class="line">    1. gesturestart</div><div class="line">    2. gesturechange</div><div class="line">    3. gestureend</div><div class="line"></div><div class="line">13. 5 内存和性能</div><div class="line"></div><div class="line">&gt;每个函数都是对象，会占用内存，内存中对象越多性能越差；必须事先指定所有事件</div><div class="line">处理程序而导致的DOM访问次数，会延迟整个页面的交互就绪时间。解决之道是使用事件委托或</div><div class="line">移除事件处理程序。</div><div class="line"></div><div class="line">- 事件委托：只需在DOM树中尽量最高的层次上添加一个事件处理程序</div></pre></td></tr></table></figure></p>
+<p>(function(){<br>var list = document.getElementById(“myLinks”);<br>        EventUtil.addHandler(list, “click”, function(event){<br>            event = EventUtil.getEvent(event);<br>            var target = EventUtil.getTarget(event);<br>            switch(target.id){<br>                case “doSomething”:<br>                    document.title = “I changed the document’s title”;<br>                    break;</p>
+<pre><code>            case &quot;goSomewhere&quot;:
+                location.href = &quot;http://www.wrox.com&quot;;
+                break;
+
+            case &quot;sayHi&quot;:
+                alert(&quot;hi&quot;);
+                break;
+        }
+    });
+})();
+btn.onclick=function(){
+    //过河
+    btn.onclick=null;//拆桥
+    //...
+}
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">13. 6模拟事件</div><div class="line"></div><div class="line">- DOM中的事件模拟：document.createEvent()方法创建对象。</div></pre></td></tr></table></figure>
+<p>(function(){<br>        var btn = document.getElementById(“myBtn”);<br>        var btn2 = document.getElementById(“myBtn2”);</p>
+<pre><code>    EventUtil.addHandler(btn, &quot;click&quot;, function(event){
+        alert(&quot;Clicked!&quot;);
+        alert(event.screenX);   //100
+    });
+
+    EventUtil.addHandler(btn2, &quot;click&quot;, function(event){
+        //create event object
+        var event = document.createEvent(&quot;MouseEvents&quot;);
+        //initialize the event object
+        event.initMouseEvent(&quot;click&quot;, true, true, document.defaultView, 0, 100, 0, 0, 0, false, 
+                             false, false, false, 0, btn2);
+        //fire the event
+        btn.dispatchEvent(event);
+    });
+})();
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">###  Chapter 14 表单脚本</div><div class="line"></div><div class="line">- 自动切换焦点</div></pre></td></tr></table></figure>
+<p><body></body></p>
+<p><form method="post" action="http://www.nczonline.net"><br>    <p>Enter your telephone number:</p><br>    <input type="text" name="tel1" id="txtTel1" size="3" maxlength="3"><br>    <input type="text" name="tel2" id="txtTel2" size="3" maxlength="3"><br>    <input type="text" name="tel3" id="txtTel3" size="4" maxlength="4"></form></p>
+<pre><code>&lt;input type=&quot;submit&quot; value=&quot;Submit&quot;&gt;
+</code></pre><p></p>
+<p><script type="text/javascript"><br>(function(){</p>
+<pre><code>function tabForward(event){            
     event = EventUtil.getEvent(event);
     var target = EventUtil.getTarget(event);
-    switch(target.id){
-        case &quot;doSomething&quot;:
-            document.title = &quot;I changed the document&apos;s title&quot;;
-            break;
 
-        case &quot;goSomewhere&quot;:
-            location.href = &quot;http://www.wrox.com&quot;;
-            break;
+    if (target.value.length == target.maxLength){
+        var form = target.form;
 
-        case &quot;sayHi&quot;:
-            alert(&quot;hi&quot;);
-            break;
-    }
-});
-</code></pre><p>  })();<br>  btn.onclick=function(){</p>
-<pre><code>//过河
-btn.onclick=null;//拆桥
-//...
-</code></pre><p>  }<br>`</p>
-</li>
-</ul>
-<ol>
-<li>6模拟事件</li>
-</ol>
-<ul>
-<li><p>DOM中的事件模拟：document.createEvent()方法创建对象。<br>`<br>(function(){</p>
-<pre><code>var btn = document.getElementById(&quot;myBtn&quot;);
-var btn2 = document.getElementById(&quot;myBtn2&quot;);
-
-EventUtil.addHandler(btn, &quot;click&quot;, function(event){
-    alert(&quot;Clicked!&quot;);
-    alert(event.screenX);   //100
-});
-
-EventUtil.addHandler(btn2, &quot;click&quot;, function(event){
-    //create event object
-    var event = document.createEvent(&quot;MouseEvents&quot;);
-    //initialize the event object
-    event.initMouseEvent(&quot;click&quot;, true, true, document.defaultView, 0, 100, 0, 0, 0, false, 
-                         false, false, false, 0, btn2);
-    //fire the event
-    btn.dispatchEvent(event);
-});
-</code></pre><p>  })();<br>`</p>
-<h3 id="Chapter-14-表单脚本"><a href="#Chapter-14-表单脚本" class="headerlink" title="Chapter 14 表单脚本"></a>Chapter 14 表单脚本</h3></li>
-<li><p>自动切换焦点<br>`<br>  <body></body></p>
-<pre><code>&lt;form method=&quot;post&quot; action=&quot;http://www.nczonline.net&quot;&gt;
-    &lt;p&gt;Enter your telephone number:&lt;/p&gt;
-    &lt;input type=&quot;text&quot; name=&quot;tel1&quot; id=&quot;txtTel1&quot; size=&quot;3&quot; maxlength=&quot;3&quot; &gt;
-    &lt;input type=&quot;text&quot; name=&quot;tel2&quot; id=&quot;txtTel2&quot; size=&quot;3&quot; maxlength=&quot;3&quot; &gt;
-    &lt;input type=&quot;text&quot; name=&quot;tel3&quot; id=&quot;txtTel3&quot; size=&quot;4&quot; maxlength=&quot;4&quot; &gt;
-
-    &lt;input type=&quot;submit&quot; value=&quot;Submit&quot;&gt;
-&lt;/form&gt;
-&lt;script type=&quot;text/javascript&quot;&gt;
-(function(){
-
-    function tabForward(event){            
-        event = EventUtil.getEvent(event);
-        var target = EventUtil.getTarget(event);
-
-        if (target.value.length == target.maxLength){
-            var form = target.form;
-
-            for (var i=0, len=form.elements.length; i &lt; len; i++) {
-                if (form.elements[i] == target) {
-                    if (form.elements[i+1]){
-                        form.elements[i+1].focus();
-                    }
-                    return;
+        for (var i=0, len=form.elements.length; i &lt; len; i++) {
+            if (form.elements[i] == target) {
+                if (form.elements[i+1]){
+                    form.elements[i+1].focus();
                 }
+                return;
             }
         }
     }
+}
 
-    var textbox1 = document.getElementById(&quot;txtTel1&quot;),
-        textbox2 = document.getElementById(&quot;txtTel2&quot;),
-        textbox3 = document.getElementById(&quot;txtTel3&quot;);
+var textbox1 = document.getElementById(&quot;txtTel1&quot;),
+    textbox2 = document.getElementById(&quot;txtTel2&quot;),
+    textbox3 = document.getElementById(&quot;txtTel3&quot;);
 
-    EventUtil.addHandler(textbox1, &quot;keyup&quot;, tabForward);        
-    EventUtil.addHandler(textbox2, &quot;keyup&quot;, tabForward);        
-    EventUtil.addHandler(textbox3, &quot;keyup&quot;, tabForward);        
-
-})();
-&lt;/script&gt;
-</code></pre><p>`</p>
-</li>
-<li><ol>
-<li><p>4 表单序列化<br>`<br>function serialize(form){        </p>
-<pre><code>var parts = [],
-    field = null,
-    i,
-    len,
-    j,
-    optLen,
-    option,
-    optValue;
-
-for (i=0, len=form.elements.length; i &lt; len; i++){
+EventUtil.addHandler(textbox1, &quot;keyup&quot;, tabForward);        
+EventUtil.addHandler(textbox2, &quot;keyup&quot;, tabForward);        
+EventUtil.addHandler(textbox3, &quot;keyup&quot;, tabForward);        
+</code></pre><p>})();<br></script><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">- 14. 4 表单序列化</div></pre></td></tr></table></figure></p>
+<p> function serialize(form){<br>    var parts = [],<br>        field = null,<br>        i,<br>        len,<br>        j,<br>        optLen,<br>        option,<br>        optValue;</p>
+<pre><code>for (i=0, len=form.elements.length; i &lt; len; i++){
     field = form.elements[i];
 
     switch(field.type){
@@ -1227,375 +725,73 @@ for (i=0, len=form.elements.length; i &lt; len; i++){
     }
 }        
 return parts.join(&quot;&amp;&quot;);
-</code></pre><p>  }</p>
-<p>  var btn = document.getElementById(“serialize-btn”);<br>  EventUtil.addHandler(btn, “click”, function(event){</p>
-<pre><code>var form = document.forms[0];
-alert(serialize(form));
-</code></pre><p>  });<br>`</p>
-<h3 id="Chapter-15-Canvas"><a href="#Chapter-15-Canvas" class="headerlink" title="Chapter 15 Canvas"></a>Chapter 15 Canvas</h3><h3 id="Chapter-16-HTML5脚本编程"><a href="#Chapter-16-HTML5脚本编程" class="headerlink" title="Chapter 16 HTML5脚本编程"></a>Chapter 16 HTML5脚本编程</h3></li>
-</ol>
-</li>
-<li><ol>
-<li>1 cross-document messaging XDM: 在来自不同域的页面间传递消息。</li>
-</ol>
-</li>
-<li><ol>
-<li>2 原生拖放(事件)<ol>
-<li>dragestart；</li>
-<li>drag;</li>
-<li>dragend;</li>
-</ol>
-</li>
-</ol>
-</li>
-<li><ol>
-<li>3 媒体元素</li>
-</ol>
-</li>
-<li><ol>
-<li>4 历史状态管理<h3 id="Chapter17-错误与调试"><a href="#Chapter17-错误与调试" class="headerlink" title="Chapter17 错误与调试"></a>Chapter17 错误与调试</h3></li>
-</ol>
-</li>
-<li>17.2 错误处理<br>  错误类型：<ol>
-<li>Error：基类型，供开发人员抛出自定义错误</li>
-<li>EvalError：错误会使用eval()函数抛出<br><code>new eval();eval=foo;</code></li>
-<li>RangeError：错误超出相应范围时触发<br><code>var items1=new Array(-20);var items2=new Array(Number.MAX_VALUE);</code></li>
-<li>ReferenceError：找不到对象时抛出<br><code>var obj=x;</code></li>
-<li>SyntaxError：语法错误<br><code>eval(&quot;a++b&quot;)</code></li>
-<li>TypeError：类型错误，变量中保存意外类型或者访问不存在的方法时。<br><code>var o=new 12;alert(&#39;love&#39; in true);Function.prototype.toString.call(&#39;name&#39;)</code></li>
-<li>URIError：使用encodeURI()或者decodeURI()格式错误时抛出。<br><code>//想知道错误类型可以如此利用try-catch语句
-try{
-someFunction();
-}catch(error){
-if(error instanceof TypeError){}
-else if(error instanceof SyntaxError){}
-else{...}
-}</code><h3 id="Chapter-18-JS与XML"><a href="#Chapter-18-JS与XML" class="headerlink" title="Chapter 18 JS与XML"></a>Chapter 18 JS与XML</h3><h3 id="Chapter-19-E4X"><a href="#Chapter-19-E4X" class="headerlink" title="Chapter 19 E4X"></a>Chapter 19 E4X</h3><h3 id="Chapter-20-JSON"><a href="#Chapter-20-JSON" class="headerlink" title="Chapter 20 JSON"></a>Chapter 20 JSON</h3><blockquote>
-<p>JSON:Javascript Object Notation,JS对象表示法，JS的利用了JS中的一些<br>模式来表示结构化数据的一个严格的子集。仅是一种数据格式不是一种语言。</p>
-</blockquote>
-</li>
-</ol>
-</li>
-<li>JSON语法：三种类型<ol>
-<li>简单值：与JS相同的语法，可在JSON中表示字符串，布尔值，数值和null（不支持undefined）</li>
-<li>对象：一种无序的键值对的复杂数据结构类型，值可以是简单值也可以是对象。</li>
-<li>数组：一种有序的值的列表的复杂的数据结构类型，通过索引访问元素。<br>JSON不支持变量，函数或者对象实例，仅仅是一种表示结构化数据的格式，虽与JS中表示数据的<br>某些语法相同，但并不局限于JS范畴。</li>
-</ol>
-</li>
-<li><ol>
-<li><p>2解析与序列化<br>`<br>JSON.parse();<br>JSON.stringify();<br>toJSON();<br>var book = {<br>title: “Professional JavaScript”,<br>authors: [<br>  “Nicholas C. Zakas”<br>],<br>edition: 3,<br>year: 2011,<br>toJSON: function(){<br>  return this.title;<br>}<br>};<br>var jsonText = JSON.stringify(book, [“title”, “edition”]);</p>
-<pre><code>var jsonText = JSON.stringify(book, function(key, value){
-    switch(key){
-        case &quot;authors&quot;:
-            return value.join(&quot;,&quot;)
+</code></pre><p>}</p>
+<p>var btn = document.getElementById(“serialize-btn”);<br>EventUtil.addHandler(btn, “click”, function(event){<br>    var form = document.forms[0];<br>    alert(serialize(form));<br>});<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">###  Chapter 15 Canvas</div><div class="line"></div><div class="line">###  Chapter 16 HTML5脚本编程</div><div class="line"></div><div class="line">- 16. 1 cross-document messaging XDM: 在来自不同域的页面间传递消息。</div><div class="line">- 16. 2 原生拖放(事件)</div><div class="line">    1. dragestart；</div><div class="line">    2. drag;</div><div class="line">    3. dragend;</div><div class="line">- 16. 3 媒体元素</div><div class="line">- 16. 4 历史状态管理</div><div class="line"></div><div class="line">###  Chapter17 错误与调试</div><div class="line"></div><div class="line">- 17.2 错误处理</div><div class="line">错误类型：</div><div class="line">1. Error：基类型，供开发人员抛出自定义错误</div><div class="line">2. EvalError：错误会使用eval()函数抛出</div><div class="line"></div><div class="line">` new eval();eval=foo;`</div><div class="line"></div><div class="line">3. RangeError：错误超出相应范围时触发</div><div class="line"></div><div class="line">`var items1=new Array(-20);var items2=new Array(Number.MAX_VALUE);`</div><div class="line"></div><div class="line">4. ReferenceError：找不到对象时抛出</div><div class="line"></div><div class="line">`var obj=x;`</div><div class="line"></div><div class="line">5. SyntaxError：语法错误</div><div class="line"></div><div class="line">`eval(&quot;a++b&quot;)`</div><div class="line"></div><div class="line">6. TypeError：类型错误，变量中保存意外类型或者访问不存在的方法时。</div><div class="line"></div><div class="line">`var o=new 12;alert(&apos;love&apos; in true);Function.prototype.toString.call(&apos;name&apos;)`</div><div class="line">7. URIError：使用encodeURI()或者decodeURI()格式错误时抛出。</div></pre></td></tr></table></figure></p>
+<p>//想知道错误类型可以如此利用try-catch语句<br>try{<br>    someFunction();<br>}catch(error){<br>    if(error instanceof TypeError){}<br>    else if(error instanceof SyntaxError){}<br>    else{…}<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">###  Chapter 18 JS与XML</div><div class="line">###  Chapter 19 E4X</div><div class="line">###  Chapter 20 JSON</div><div class="line"></div><div class="line">&gt; JSON:Javascript Object Notation,JS对象表示法，JS的利用了JS中的一些</div><div class="line">模式来表示结构化数据的一个严格的子集。仅是一种数据格式不是一种语言。</div><div class="line">- JSON语法：三种类型</div><div class="line">    1. 简单值：与JS相同的语法，可在JSON中表示字符串，布尔值，数值和null（不支持undefined）</div><div class="line">    2. 对象：一种无序的键值对的复杂数据结构类型，值可以是简单值也可以是对象。</div><div class="line">    3. 数组：一种有序的值的列表的复杂的数据结构类型，通过索引访问元素。</div><div class="line">JSON不支持变量，函数或者对象实例，仅仅是一种表示结构化数据的格式，虽与JS中表示数据的</div><div class="line">某些语法相同，但并不局限于JS范畴。</div><div class="line">- 20. 2解析与序列化</div></pre></td></tr></table></figure></p>
+<p>JSON.parse();<br>JSON.stringify();<br>toJSON();<br>var book = {<br>    title: “Professional JavaScript”,<br>    authors: [<br>        “Nicholas C. Zakas”<br>    ],<br>    edition: 3,<br>    year: 2011,<br>    toJSON: function(){<br>        return this.title;<br>    }<br>   };<br>    var jsonText = JSON.stringify(book, [“title”, “edition”]);<br>            var jsonText = JSON.stringify(book, function(key, value){<br>                switch(key){<br>                    case “authors”:<br>                        return value.join(“,”)</p>
+<pre><code>                case &quot;year&quot;:
+                    return 5000;
 
-        case &quot;year&quot;:
-            return 5000;
+                case &quot;edition&quot;:
+                    return undefined;
 
-        case &quot;edition&quot;:
-            return undefined;
-
-        default:
-            return value;
-    }
-});
-</code></pre><p>var jsonText=JSON.stringify(book,null,4);<br>//toJSON()作为函数过滤器的补充，把一个对象传给JSON.stringify()，序列化顺序如下：<br>//1. (存在toJSON)?调用该方法:返回对象本身；<br>// 2.若提供了第二个参数则应用该函数过滤器（传入步骤1的值）<br>//3.对上一步返回的每一个值序列化<br>//4. 若传入了第三个参数则执行相应格式化<br>var book = {</p>
-<pre><code>            &quot;title&quot;: &quot;Professional JavaScript&quot;,
-             &quot;authors&quot;: [
-                 &quot;Nicholas C. Zakas&quot;
-             ],
-             edition: 3,
-             year: 2011,
-             releaseDate: new Date(2011, 11, 1)
-        };
-var jsonText = JSON.stringify(book);
-</code></pre><p>  //{“title”:”Professional JavaScript”,”authors”:[“Nicholas C. Zakas”],”edition”:3,”year”:2011,”releaseDate”:”2011-11-30T16:00:00.000Z”}<br>var bookCopy = JSON.parse(jsonText, function(key, value){<br> if (key == “releaseDate”){</p>
-<pre><code>//return undefined;
-return new Date(value);
-</code></pre><p> } else {</p>
-<pre><code>return value;
-</code></pre><p> }<br>});<br>console.log(“releaseDate” in bookCopy);<br>console.log(bookCopy.releaseDate.getFullYear());//2011<br>`</p>
-<h3 id="Chapter-21-Ajax与Comet"><a href="#Chapter-21-Ajax与Comet" class="headerlink" title="Chapter 21 Ajax与Comet"></a>Chapter 21 Ajax与Comet</h3><blockquote>
-<p>Ajax:Asynchronous JS + XML:能够向服务器请求额外的数据而无须刷新页面，带来更好的用户体验。<br>其核心是XMLHttpRequest(XHR)对象,其为向服务器发送请求和解析服务器响应提供了流畅的接口。能够<br>以异步方式从服务器取得更多的信息。虽然名字中包含XML，但Ajax通信与数据格式无关；无须刷新整个<br>页面即可从服务器取得数据，不局限于XML。</p>
-</blockquote>
-</li>
-</ol>
-</li>
-</ul>
-<p>`<br>function createXHR(){<br>            if (typeof XMLHttpRequest != “undefined”){<br>                return new XMLHttpRequest();<br>            } else if (typeof ActiveXObject != “undefined”){<br>                if (typeof arguments.callee.activeXString != “string”){<br>                    var versions = [“MSXML2.XMLHttp.6.0”, “MSXML2.XMLHttp.3.0”,<br>                                    “MSXML2.XMLHttp”],<br>                        i, len;</p>
-<pre><code>            for (i=0,len=versions.length; i &lt; len; i++){
-                try {
-                    new ActiveXObject(versions[i]);
-                    arguments.callee.activeXString = versions[i];
-                    break;
-                } catch (ex){
-                    //skip
-                }
+                default:
+                    return value;
+            }
+        });
+var jsonText=JSON.stringify(book,null,4);
+</code></pre><p>//toJSON()作为函数过滤器的补充，把一个对象传给JSON.stringify()，序列化顺序如下：<br>//1. (存在toJSON)?调用该方法:返回对象本身；<br>// 2.若提供了第二个参数则应用该函数过滤器（传入步骤1的值）<br>//3.对上一步返回的每一个值序列化<br>//4. 若传入了第三个参数则执行相应格式化<br> var book = {<br>                       “title”: “Professional JavaScript”,<br>                        “authors”: [<br>                            “Nicholas C. Zakas”<br>                        ],<br>                        edition: 3,<br>                        year: 2011,<br>                        releaseDate: new Date(2011, 11, 1)<br>                   };<br>           var jsonText = JSON.stringify(book);<br>        //{“title”:”Professional JavaScript”,”authors”:[“Nicholas C. Zakas”],”edition”:3,”year”:2011,”releaseDate”:”2011-11-30T16:00:00.000Z”}<br>   var bookCopy = JSON.parse(jsonText, function(key, value){<br>       if (key == “releaseDate”){<br>           //return undefined;<br>           return new Date(value);<br>       } else {<br>           return value;<br>       }<br>   });<br>   console.log(“releaseDate” in bookCopy);<br>   console.log(bookCopy.releaseDate.getFullYear());//2011<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">###  Chapter 21 Ajax与Comet</div><div class="line"></div><div class="line">&gt; Ajax:Asynchronous JS + XML:能够向服务器请求额外的数据而无须刷新页面，带来更好的用户体验。</div><div class="line">其核心是XMLHttpRequest(XHR)对象,其为向服务器发送请求和解析服务器响应提供了流畅的接口。能够</div><div class="line">以异步方式从服务器取得更多的信息。虽然名字中包含XML，但Ajax通信与数据格式无关；无须刷新整个</div><div class="line">页面即可从服务器取得数据，不局限于XML。</div></pre></td></tr></table></figure></p>
+<p>function createXHR(){<br>    if (typeof XMLHttpRequest != “undefined”){<br>        return new XMLHttpRequest();<br>    } else if (typeof ActiveXObject != “undefined”){<br>        if (typeof arguments.callee.activeXString != “string”){<br>            var versions = [“MSXML2.XMLHttp.6.0”, “MSXML2.XMLHttp.3.0”,<br>                            “MSXML2.XMLHttp”],<br>                i, len;</p>
+<pre><code>        for (i=0,len=versions.length; i &lt; len; i++){
+            try {
+                new ActiveXObject(versions[i]);
+                arguments.callee.activeXString = versions[i];
+                break;
+            } catch (ex){
+                //skip
             }
         }
-
-        return new ActiveXObject(arguments.callee.activeXString);
-    } else {
-        throw new Error(&quot;No XHR object available.&quot;);
     }
-}
-//如果XHR对象存在就可以写下边代码了
-var xhr = createXHR();
-//URL是相对执行代码的当前页面，open方法并非真正发送请求而是启动一个备发送的请求
-xhr.open(&quot;get&quot;, &quot;example.txt&quot;, false);
-//send()接收一个参数作为请求主题发送数据，颥不需要发送则必须传入null
-//responseText:作为响应主题被返回的文本
-//responseXML:如响应内容类型是&apos;text/xml&apos;或&apos;application/xml&apos;该属性将保存包含着相应数据
-的XML DOM文档
-//status:响应的http状态
-//statusText：http状态说明
-xhr.send(null);
-if ((xhr.status &gt;= 200 &amp;&amp; xhr.status &lt; 300) || xhr.status == 304){
-    alert(xhr.statusText);
-    alert(xhr.responseText);
+
+    return new ActiveXObject(arguments.callee.activeXString);
 } else {
-    alert(&quot;Request was unsuccessful: &quot; + xhr.status);
+    throw new Error(&quot;No XHR object available.&quot;);
 }
-</code></pre><p>`</p>
-<h3 id="Chapter22-高级技巧"><a href="#Chapter22-高级技巧" class="headerlink" title="Chapter22 高级技巧"></a>Chapter22 高级技巧</h3><ul>
-<li><ol>
-<li>1.4函数绑定bind()</li>
-</ol>
-</li>
-<li><ol>
-<li>1.5函数柯里化（function curring）</li>
-</ol>
-</li>
-<li><ol>
-<li>2防篡改对象<ol>
-<li>2.1 不可扩展对象<ol>
-<li>Object.preventExtensions();</li>
-<li>Object.extensible()</li>
-</ol>
-</li>
-<li>2.2密封对象：Object.seal()</li>
-<li>2.3冻结对象:Object.freeze() <h3 id="Chapter-23-离线存储与客户端存储"><a href="#Chapter-23-离线存储与客户端存储" class="headerlink" title="Chapter 23 离线存储与客户端存储"></a>Chapter 23 离线存储与客户端存储</h3><blockquote>
-<p>开发离线web应用步骤：</p>
-</blockquote>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-</ul>
-<ol>
-<li>确保应用知道设备能否上网；</li>
-<li>应用必须能够访问一定的资源；</li>
-<li>必须有一块本地空间用于保存数据，能否上网都不妨碍读写。<br>`<br>EventUtil.addHandler(window, “online”, function(){<pre><code>    document.getElementById(&quot;status&quot;).innerHTML = &quot;Online&quot;;
-});
-EventUtil.addHandler(window, &quot;offline&quot;, function(){
-    document.getElementById(&quot;status&quot;).innerHTML = &quot;Offline&quot;;
-});
-</code></pre>`</li>
-<li>3数据存储<h3 id="Good-Practise"><a href="#Good-Practise" class="headerlink" title="Good Practise"></a>Good Practise</h3></li>
-</ol>
-<ul>
-<li>可维护性<ol>
-<li>可理解性：其他人可以接手代码并理解它的意图和一般途径，无须作者的完整解释</li>
-<li>直观性：一目了然，不管其操作过程多么复杂</li>
-<li>可适应性：以一种数据上的变化不要求完全重写的方法撰写</li>
-<li>可扩展性：架构上已考虑未来允许对核心功能的扩展</li>
-<li>可调试性：当有地方出错时，提供足够信息来尽可能直接反馈问题所在</li>
-</ol>
-</li>
-<li>代码约定<ol>
-<li>可读性：<ol>
-<li>函数和方法：每个要有注释，描述其目的和用于完成任务所可能使用的算法</li>
-<li>大段代码：描述下任务的注释</li>
-<li>复杂算法： </li>
-<li>hack：处理兼容性等问题</li>
-</ol>
-</li>
-<li>变量和命名<ol>
-<li>变量名为名词（car，person）；</li>
-<li>函数名以动词开始（getName）,返回布尔值的以is开头</li>
-<li>使用合乎逻辑的名字</li>
-</ol>
-</li>
-<li>变量类型透明<ol>
-<li>初始化：var found=false,count=-1,name=’’</li>
-<li>匈牙利标记法指定变量类型： var bFound,iCount,sName,pPerson</li>
-<li>使用注释</li>
-</ol>
-</li>
-</ol>
-</li>
-<li><p>松散耦合</p>
-<ol>
-<li>解耦html/JS</li>
-<li>解耦css/JS</li>
-<li><p>解耦应用逻辑/事件处理程序:分离原则</p>
-<ol>
-<li>勿将event对象传给其它方法，只传给来自event对象中所需的数据；</li>
-<li>任何可以在应用层面的动作都应该可以在不执行任何事件处理程序的情况下进行；</li>
-<li>任何事件处理程序都应该处理事件，然后将处理转交给应用逻辑。</li>
-</ol>
-<p>`<br>function validateValue(value){<br> value=5*parseInt(value);<br> if(value&gt;10){</p>
-<pre><code>//
-</code></pre><p> }<br>}<br>function handleKeyPress(){<br> event=EventUtil.getEvent(event);<br> if(event.keyCode==13){</p>
-<pre><code>//
-</code></pre><p> }<br>}<br>`</p>
-</li>
-</ol>
-</li>
-<li>编程事件<ol>
-<li>尊重对象所有权<ol>
-<li>不要为实例或原型添加属性，方法</li>
-<li>不要重定义已存在的方法</li>
-</ol>
-</li>
-<li>避免全局变量<ol>
-<li>单一的全局量的延伸便是命名空间的概念<br>YAHOO.util.DOM,YAHOO.util.Event,YAHOO.lang</li>
-</ol>
-</li>
-<li>避免与null比较</li>
-<li>使用常量：将数据和使用逻辑分离<ol>
-<li>重复值：任何在多处用到的值都应是常量；</li>
-<li>用户界面字符串</li>
-<li>URLs</li>
-<li>任何可能会改变的值</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>性能<ol>
-<li>注意作用域<ol>
-<li>避免全局查找</li>
-<li>避免with</li>
-</ol>
-</li>
-<li>选择正确的方法<ol>
-<li>避免没必要的查找</li>
-<li>优化循环</li>
-<li>展开循环</li>
-<li>避免双重解释</li>
-<li>其它注意事项<ol>
-<li>原生方法较快：</li>
-<li>switch语句较快</li>
-<li>位运算符较快</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>最小化语句树<ol>
-<li>多个变量声明</li>
-<li>插入迭代值</li>
-<li>使用数组和对象字面量</li>
-</ol>
-</li>
-<li>优化DOM交互<ol>
-<li>最小化现场更新</li>
-<li>使用innerHTML</li>
-<li>使用事件代理</li>
-<li>注意HTMLCollection</li>
-</ol>
-</li>
-<li>部署<ol>
-<li>构建过程<ol>
-<li>知识产权问题</li>
-<li>文件大小</li>
-<li>代码组织</li>
-</ol>
-</li>
-<li>验证</li>
-<li>压缩<ol>
-<li>文件压缩<ol>
-<li>删除所有空白</li>
-<li>删除所有注释</li>
-<li>缩短变量名<br>2.HTTP 压缩<h3 id="Chapter25-新兴API"><a href="#Chapter25-新兴API" class="headerlink" title="Chapter25 新兴API"></a>Chapter25 新兴API</h3><h3 id="ES-Harmony"><a href="#ES-Harmony" class="headerlink" title="ES Harmony"></a>ES Harmony</h3></li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>一般性变化<ol>
-<li>常量：const</li>
-<li>块级作用域及其它作用域<br> let关键字：使用let定义的变量在定义它的代码之外没有定义。</li>
-</ol>
-</li>
-<li>函数<ol>
-<li>剩余参数与分布函数<br>`<br>function sum(n1,n2,…ns){<br> var result=n1+n2;<br> for(let i=0,len=ns.length;i&lt;len;i++){<pre><code>result+=n[i]
-</code></pre> }<br> return result;<br>}<br>var result=sum(…[1,2,3,4,4]);<br>var result=sum.apply(this,[1,3,4,4,5])<br>`</li>
-<li>默认参数值<br><code>function sum(n1,n2=0){
- return n1+n2;
-}</code></li>
-<li>生成器<br>`<br>function myNumbers(){<br> for(var i=0;i&lt;10;i++){<pre><code>yield i*2;
-</code></pre> }<br>}<br>var generator=myNumbers()<br>`</li>
-</ol>
-</li>
-<li>数组及其它<ol>
-<li>迭代器<br><code>var colors=[&#39;yellow&#39;,&#39;blue&#39;,&#39;red&#39;];
-var iterator=new Iterator(colors)</code></li>
-<li>数组领悟<br><code>var numbers=[1,3,4,4,5];
-var duplicate=[i for each (i in numbers) if(i%2==0)]</code></li>
-<li>解构赋值<br><code>var value1=5,value2=10;
-[value1,value2]=[value2,value1]</code></li>
-</ol>
-</li>
-<li>新对象类型<ol>
-<li>代理对象<br><code>var proxy=Proxy.create(handler);
-var proxy=Proxy.create(handler,myObject);</code><br>捕捉器7种：<ol>
-<li>getOwnPropertyDescriptor</li>
-<li>getPropertyDescriptor</li>
-<li>getOwnPropertyNames</li>
-<li>getPropertyName</li>
-<li>defineProperty</li>
-<li>delete</li>
-<li>fix<br>派生捕捉器6种</li>
-<li>has</li>
-<li>hasOwn</li>
-<li>get</li>
-<li>set</li>
-<li>enumerate</li>
-<li>keys</li>
-</ol>
-</li>
-<li>代理函数<br><code>var proxy=Proxy.createFunction(handler,function(){}.function(){})</code></li>
-<li>映射map与集合set<br><code>var map=new Map();
-map.set(&#39;name&#39;,&#39;Yl&#39;);
-map.has(&#39;name&#39;);//true
+</code></pre><p>}<br>//如果XHR对象存在就可以写下边代码了<br>var xhr = createXHR();<br>//URL是相对执行代码的当前页面，open方法并非真正发送请求而是启动一个备发送的请求<br>xhr.open(“get”, “example.txt”, false);<br>//send()接收一个参数作为请求主题发送数据，颥不需要发送则必须传入null<br>//responseText:作为响应主题被返回的文本<br>//responseXML:如响应内容类型是’text/xml’或’application/xml’该属性将保存包含着相应数据<br>的XML DOM文档<br>//status:响应的http状态<br>//statusText：http状态说明<br>xhr.send(null);<br>if ((xhr.status &gt;= 200 &amp;&amp; xhr.status &lt; 300) || xhr.status == 304){<br>    alert(xhr.statusText);<br>    alert(xhr.responseText);<br>} else {<br>    alert(“Request was unsuccessful: “ + xhr.status);<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">###  Chapter22 高级技巧</div><div class="line"></div><div class="line">- 22. 1.4函数绑定bind()</div><div class="line">- 22. 1.5函数柯里化（function curring）</div><div class="line">- 22. 2防篡改对象</div><div class="line">    22. 2.1 不可扩展对象</div><div class="line">        1. Object.preventExtensions();</div><div class="line">        2. Object.extensible()</div><div class="line">    22. 2.2密封对象：Object.seal()</div><div class="line">    22. 2.3冻结对象:Object.freeze() </div><div class="line"></div><div class="line">###  Chapter 23 离线存储与客户端存储</div><div class="line"></div><div class="line">&gt; 开发离线web应用步骤：</div><div class="line">1. 确保应用知道设备能否上网；</div><div class="line">2. 应用必须能够访问一定的资源；</div><div class="line">3. 必须有一块本地空间用于保存数据，能否上网都不妨碍读写。</div></pre></td></tr></table></figure></p>
+<p> EventUtil.addHandler(window, “online”, function(){<br>            document.getElementById(“status”).innerHTML = “Online”;<br>        });<br>        EventUtil.addHandler(window, “offline”, function(){<br>            document.getElementById(“status”).innerHTML = “Offline”;<br>        });<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">23. 3数据存储</div><div class="line"></div><div class="line">###  Good Practise</div><div class="line"></div><div class="line">- 可维护性</div><div class="line">    1. 可理解性：其他人可以接手代码并理解它的意图和一般途径，无须作者的完整解释</div><div class="line">    2. 直观性：一目了然，不管其操作过程多么复杂</div><div class="line">    3. 可适应性：以一种数据上的变化不要求完全重写的方法撰写</div><div class="line">    4. 可扩展性：架构上已考虑未来允许对核心功能的扩展</div><div class="line">    5. 可调试性：当有地方出错时，提供足够信息来尽可能直接反馈问题所在</div><div class="line">- 代码约定</div><div class="line">    1. 可读性：</div><div class="line">        1. 函数和方法：每个要有注释，描述其目的和用于完成任务所可能使用的算法</div><div class="line">        2. 大段代码：描述下任务的注释</div><div class="line">        3. 复杂算法： </div><div class="line">        4. hack：处理兼容性等问题</div><div class="line">    2. 变量和命名</div><div class="line">        1. 变量名为名词（car，person）；</div><div class="line">        2. 函数名以动词开始（getName）,返回布尔值的以is开头</div><div class="line">        3. 使用合乎逻辑的名字</div><div class="line">    3. 变量类型透明</div><div class="line">        1. 初始化：var found=false,count=-1,name=&apos;&apos;</div><div class="line">        2. 匈牙利标记法指定变量类型： var bFound,iCount,sName,pPerson</div><div class="line">        3. 使用注释</div><div class="line">- 松散耦合</div><div class="line">    1. 解耦html/JS</div><div class="line">    2. 解耦css/JS</div><div class="line">    3. 解耦应用逻辑/事件处理程序:分离原则</div><div class="line">        1. 勿将event对象传给其它方法，只传给来自event对象中所需的数据；</div><div class="line">        2. 任何可以在应用层面的动作都应该可以在不执行任何事件处理程序的情况下进行；</div><div class="line">        3. 任何事件处理程序都应该处理事件，然后将处理转交给应用逻辑。</div></pre></td></tr></table></figure></p>
+<p>function validateValue(value){<br>    value=5*parseInt(value);<br>    if(value&gt;10){<br>        //<br>    }<br>}<br>function handleKeyPress(){<br>    event=EventUtil.getEvent(event);<br>    if(event.keyCode==13){<br>        //<br>    }<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div></pre></td><td class="code"><pre><div class="line">- 编程事件</div><div class="line">    1. 尊重对象所有权</div><div class="line">        1. 不要为实例或原型添加属性，方法</div><div class="line">        2. 不要重定义已存在的方法</div><div class="line">    2.  避免全局变量</div><div class="line">        1. 单一的全局量的延伸便是命名空间的概念</div><div class="line">           YAHOO.util.DOM,YAHOO.util.Event,YAHOO.lang</div><div class="line">    3. 避免与null比较</div><div class="line">    4. 使用常量：将数据和使用逻辑分离</div><div class="line">        1. 重复值：任何在多处用到的值都应是常量；</div><div class="line">        2. 用户界面字符串</div><div class="line">        3. URLs</div><div class="line">        4. 任何可能会改变的值</div><div class="line">- 性能</div><div class="line">    1. 注意作用域</div><div class="line">        1. 避免全局查找</div><div class="line">        2. 避免with</div><div class="line">    2. 选择正确的方法</div><div class="line">        1. 避免没必要的查找</div><div class="line">        2. 优化循环</div><div class="line">        3. 展开循环</div><div class="line">        4. 避免双重解释</div><div class="line">        5. 其它注意事项</div><div class="line">            1. 原生方法较快：</div><div class="line">            2. switch语句较快</div><div class="line">            3. 位运算符较快</div><div class="line">- 最小化语句树</div><div class="line">    1. 多个变量声明</div><div class="line">    2. 插入迭代值</div><div class="line">    3. 使用数组和对象字面量</div><div class="line">- 优化DOM交互</div><div class="line">    1. 最小化现场更新</div><div class="line">    2. 使用innerHTML</div><div class="line">    3. 使用事件代理</div><div class="line">    4. 注意HTMLCollection</div><div class="line">- 部署</div><div class="line">    1. 构建过程</div><div class="line">        1. 知识产权问题</div><div class="line">        2. 文件大小</div><div class="line">        3. 代码组织</div><div class="line">    2. 验证</div><div class="line">    3. 压缩</div><div class="line">        1. 文件压缩</div><div class="line">            1. 删除所有空白</div><div class="line">            2. 删除所有注释</div><div class="line">            3. 缩短变量名</div><div class="line">        2.HTTP 压缩</div><div class="line">###  Chapter25 新兴API</div><div class="line">###  ES Harmony</div><div class="line"></div><div class="line">- 一般性变化</div><div class="line">    1. 常量：const</div><div class="line">    2. 块级作用域及其它作用域</div><div class="line">        let关键字：使用let定义的变量在定义它的代码之外没有定义。</div><div class="line">- 函数</div><div class="line"></div><div class="line">1. 剩余参数与分布函数</div></pre></td></tr></table></figure></p>
+<p>function sum(n1,n2,…ns){<br>    var result=n1+n2;<br>    for(let i=0,len=ns.length;i<len;i++){ result+="n[i]" }="" return="" result;="" var="" result="sum(...[1,2,3,4,4]);" <figure="" class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">2. 默认参数值</div></pre></td></tr></table></len;i++){></p>
+<p>function sum(n1,n2=0){<br>    return n1+n2;<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">3. 生成器</div></pre></td></tr></table></figure></p>
+<p>function myNumbers(){<br>    for(var i=0;i<10;i++){ yield="" i*2;="" }="" var="" generator="myNumbers()" <figure="" class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">- 数组及其它</div><div class="line">1. 迭代器</div></pre></td></tr></table></10;i++){></p>
+<p>var colors=[‘yellow’,’blue’,’red’];<br>var iterator=new Iterator(colors)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">2. 数组领悟</div></pre></td></tr></table></figure></p>
+<p>var numbers=[1,3,4,4,5];<br>var duplicate=[i for each (i in numbers) if(i%2==0)]<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">3. 解构赋值</div></pre></td></tr></table></figure></p>
+<p>var value1=5,value2=10;<br>[value1,value2]=[value2,value1]<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">- 新对象类型</div><div class="line">    1. 代理对象</div></pre></td></tr></table></figure></p>
+<pre><code>var proxy=Proxy.create(handler);
+var proxy=Proxy.create(handler,myObject);
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">捕捉器7种：</div><div class="line">    1. getOwnPropertyDescriptor</div><div class="line">    2. getPropertyDescriptor</div><div class="line">    3. getOwnPropertyNames</div><div class="line">    4. getPropertyName</div><div class="line">    5. defineProperty</div><div class="line">    6. delete</div><div class="line">    7. fix</div><div class="line">派生捕捉器6种</div><div class="line">    1. has</div><div class="line">    2. hasOwn</div><div class="line">    3. get</div><div class="line">    4. set</div><div class="line">    5. enumerate</div><div class="line">    6. keys</div><div class="line">2. 代理函数</div></pre></td></tr></table></figure>
+
+var proxy=Proxy.createFunction(handler,function(){}.function(){})
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">3. 映射map与集合set</div></pre></td></tr></table></figure>
+
+var map=new Map();
+map.set(&apos;name&apos;,&apos;Yl&apos;);
+map.has(&apos;name&apos;);//true
 var set=new Set();
-set.add(&#39;name&#39;);
-set.has(&#39;name&#39;);//true
-set.delete(&#39;name&#39;)</code></li>
-<li>weakMap<br><code>var key={},map=new WeakMap();
-map.set(key,&#39;hello&#39;);
+set.add(&apos;name&apos;);
+set.has(&apos;name&apos;);//true
+set.delete(&apos;name&apos;)
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">4. weakMap</div></pre></td></tr></table></figure>
+
+var key={},map=new WeakMap();
+map.set(key,&apos;hello&apos;);
 //解除对键的引用而删除该值
-key=null</code></li>
-<li>StructType</li>
-<li>ArrayType</li>
-</ol>
-</li>
-<li>类<br>`<br>class Person {<br>  constructor(name,age){<pre><code>public name=name;
-//public age=age;
-private age=age;
-get title(){
-    return innerTitle=&apos;&apos;
-}
-set title(value){
-    innerTitle=value;
-}
-</code></pre>  }<br>  sayName(){<pre><code>alert(this.name)
-</code></pre>  }<br>  getOlder(years){<pre><code>alert(this.age+=years)
-</code></pre>  }<br>}<br>`<ol>
-<li>私有成员</li>
-<li>getter,setter</li>
-<li>继承<br><code>class Employee extends Person
-class Employee prototype basePerson</code></li>
-</ol>
-</li>
-<li>模块<br>  `<br>  module MyModule={<pre><code>export let myobject={};
-export function hello(){};
-function goodbye(){}
-</code></pre>  }<br>  import myobject from MyModule<br>  import * from MyModule<br>  //直接使用<br>  console.log(MyModule.hello)<br>  <code>外部模块</code><br>  module MyModule from ‘a.js’<br>  import myobject from MyModule<br>  `<h3 id="严格模式"><a href="#严格模式" class="headerlink" title="严格模式"></a>严格模式</h3><code>use strit</code></li>
+key=null
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">    5. StructType</div><div class="line">    6. ArrayType</div><div class="line">- 类</div></pre></td></tr></table></figure>
+</code></pre><p>class Person {<br>    constructor(name,age){<br>        public name=name;<br>        //public age=age;<br>        private age=age;<br>        get title(){<br>            return innerTitle=’’<br>        }<br>        set title(value){<br>            innerTitle=value;<br>        }<br>    }<br>    sayName(){<br>        alert(this.name)<br>    }<br>    getOlder(years){<br>        alert(this.age+=years)<br>    }<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">1. 私有成员</div><div class="line">2. getter,setter</div><div class="line">3. 继承</div></pre></td></tr></table></figure></p>
+<p>class Employee extends Person<br>class Employee prototype basePerson<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">- 模块</div></pre></td></tr></table></figure></p>
+<p>module MyModule={<br>    export let myobject={};<br>    export function hello(){};<br>    function goodbye(){}<br>}<br>import myobject from MyModule<br>import * from MyModule<br>//直接使用<br>console.log(MyModule.hello)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">外部模块</div></pre></td></tr></table></figure></p>
+<p>module MyModule from ‘a.js’<br>import myobject from MyModule<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">###  严格模式</div><div class="line"></div><div class="line">```use strit</div></pre></td></tr></table></figure></p>
+<ul>
 <li>变量：禁止意外创建全局变量</li>
 <li>对象：<ol>
 <li>为只读属性赋值==&gt;TypeError</li>
