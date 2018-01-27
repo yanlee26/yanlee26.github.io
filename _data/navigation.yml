@@ -1,0 +1,19 @@
+# main links links
+main:
+  - title: "Posts"
+    url: /posts
+
+  - title: "Categories"
+    url: /categories
+
+  - title: "Tags"
+    url: /tags
+
+  - title: "Portfolio"
+    url: /portfolio
+
+  - title: "Guestbook"
+    url: /guestbook
+
+  - title: "About"
+    url: /about
