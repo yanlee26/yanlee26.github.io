@@ -1,13 +1,12 @@
 ---
 date: 2016-06-08
 layout: post
-title: Prefesional JS
+title: JS高级教程总结
 thread: 9
 categories: JS
 tags: [BIT]
 excerpt: Prefesional JS In Summary
 ---
-# JS高级教程总结
 
 ###  Chapter3 基本概念
 

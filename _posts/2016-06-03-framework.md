@@ -1,13 +1,12 @@
 ---
 date: 2016-06-03
 layout: post
-title: Framework resharpe
+title: js 常用封装总结
 thread: 9
 categories: JS
 tags: [BIT]
 excerpt: Framework resharpe
 ---
-# js 常用封装总结
 
 ```
 //自制框架

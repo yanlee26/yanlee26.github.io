@@ -7,9 +7,6 @@ categories: JS
 tags: [BIT]
 excerpt: JS深入浅出学习分析总结.
 ---
-
-# JS深入浅出学习分析总结
-
 ## 六种数据类型
 
     弱类型：

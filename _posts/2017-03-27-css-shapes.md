@@ -7,11 +7,6 @@ categories: Translate
 tags: [BIT]
 excerpt: CSS Shapes
 ---
-
-# 起步 CSS Shapes
-
-
-
 很长一段时间，网页设计师被迫在矩形的约束范围内创建。 网络上的大多数内容仍然被困在简单的盒子里，因为大多数创意冒险进入非矩形布局，结果令人沮丧。 即将从Chrome 37开始引入的CSS Shapes即将改变。
 
 

@@ -1,13 +1,12 @@
 ---
 date: 2017-01-03
 layout: post
-title: Becoming a Great Web Front-end Developer
+title: 成就一名卓越的前端开发者
 thread: 9
 categories: Career
 tags: [BIT]
-excerpt: Becoming a Great Web Front-end Developer
+excerpt: 成就一名卓越的前端开发者
 ---
-# <center>成就一名卓越的前端开发者
 
 > 本文记录了两位工程师为web开发者们所提出的多条建议，其中一位推荐了多种实用的工具与技术，而另一位则对于如何克服浏览器开发时所面临的挑战提出了诸多建议。
 Rebecca Murphey是来自于Bazaarvoice的一位软件工程师。今年早些时候，她发布了一篇博客文章[“前端（JS）开发者的基本素质之2015版”](http://rmurphey.com/blog/2015/03/23/a-baseline-for-front-end-developers-2015)，为JavaScript开发者在进行客户端web开发时使用的工具与开发方式提出了一些建议。她在文章的总结中写道：

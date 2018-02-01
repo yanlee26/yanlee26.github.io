@@ -11,19 +11,13 @@ excerpt: service worker
 
 ## 什么是service worker
 
-
-
 > service worker是一个浏览器背后运行的脚步，独立于web页面，为无需一个页面或用户交互的功能打开了大门。今日，它包含了推送通知和背景异步（push notifications and background sync）的功能。将来，service worker将支持包括periodic sync or geofencing的功能。 本教程中讨论的核心功能是拦截和处理网络请求的能力，包括以编程方式管理响应缓存。
 
 这是一个令人兴奋的API的原因是它允许您支持离线体验，让开发人员完全控制体验。
 
 此前，还有一个API为用户提供了一个名为AppCache的离线体验。 AppCache API有许多问题需要service worker来避免。
 
-
-
 ## 关于service worker:
-
-
 
 它是一个JavaScript Worker，故不可以直接访问DOM。相反，service worker可以通过响应通过postMessage接口发送的消息来与其控制的页面进行通信，并且如果需要，那些页面可以操纵DOM。service worker是一个可编程的网络代理，允许你控制你处理页面的网络请求的方式
 
