@@ -4,7 +4,7 @@ layout: post
 title: 成就一名卓越的前端开发者
 thread: 9
 categories: Career
-tags: [BIT]
+tags: [前端,职业,理想]
 excerpt: 成就一名卓越的前端开发者
 ---
 

@@ -4,12 +4,14 @@ layout: post
 title: JS深入浅出学习分析总结
 thread: 9
 categories: JS
-tags: [BIT]
+tags: [JS, Javascript, 慕课网]
 excerpt: JS深入浅出学习分析总结.
 ---
+
+> 慕课网入门Javascript 学习笔记总结
 ## 六种数据类型
 
-    弱类型：
+弱类型：
 
 ```
 var num=32;num='str';32+32;//64

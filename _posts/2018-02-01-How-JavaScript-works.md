@@ -4,7 +4,7 @@ layout: post
 title: How JavaScript works
 thread: 9
 categories: Translate
-tags: [BIT]
+tags: [JS,GC,垃圾回收机制]
 excerpt: How JavaScript works
 ---
 

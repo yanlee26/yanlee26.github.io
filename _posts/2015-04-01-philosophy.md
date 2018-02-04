@@ -4,7 +4,7 @@ layout: post
 title: 认知世界：唯物主义辩证法
 thread: 9
 categories: Classic
-tags: [BIT]
+tags: [哲学, 辩证法, 唯物论]
 excerpt: 唯物主义辩证法
 ---
 > 抽象与具体，收敛与发散性的思维明灯;封装继承与多态的理论依据

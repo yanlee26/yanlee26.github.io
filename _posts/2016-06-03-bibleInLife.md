@@ -4,7 +4,7 @@ layout: post
 title: 道德经：人生之向导，智慧之源泉
 thread: 1
 categories: Classic
-tags: [BIT]
+tags: [道德经 ,老子, 智慧,人生]
 excerpt: Babel in Life.
 ---
 

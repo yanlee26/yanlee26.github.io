@@ -4,7 +4,7 @@ layout: post
 title: 数学与编程(王垠) 
 thread: 9
 categories: Classic
-tags: [BIT]
+tags: [Math, Program, Science]
 excerpt: 数学与编程(王垠) 
 ---
 

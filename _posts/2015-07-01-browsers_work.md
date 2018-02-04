@@ -4,7 +4,7 @@ layout: post
 title: How browsers work?
 thread: 9
 categories: Translate
-tags: [BIT]
+tags: [浏览器, Web,前端]
 excerpt: How browsers work?
 ---
 # 标准浏览器的幕后

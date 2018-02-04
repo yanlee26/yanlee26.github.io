@@ -4,7 +4,7 @@ layout: post
 title: Script Loading
 thread: 9
 categories: Translate
-tags: [BIT]
+tags: [JS, 加载,性能]
 excerpt: script loading
 ---
 

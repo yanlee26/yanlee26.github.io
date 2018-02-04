@@ -4,7 +4,7 @@ layout: post
 title: html5 FileReader API
 thread: 9
 categories: Translate
-tags: [BIT]
+tags: [html5, FileReader]
 excerpt: html5 FileReader API
 ---
 

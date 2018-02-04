@@ -4,7 +4,7 @@ layout: post
 title: js 常用封装总结
 thread: 9
 categories: JS
-tags: [BIT]
+tags: [JS, 封装]
 excerpt: Framework resharpe
 ---
 

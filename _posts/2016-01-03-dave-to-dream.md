@@ -1,11 +1,11 @@
 ---
-date: 2016-01-03
+date: 2015-09-01
 layout: post
-title: 放飞希望：勇敢地再次梦想
+title: Dave to dream again
 thread: 9
-categories: Classic
-tags: [BIT]
-excerpt: 放飞希望：勇敢地再次梦想.
+categories: Life
+tags: [Dream , Life]
+excerpt: Dave to dream again.
 ---
 
 > 最早接触此篇文章在高中，当时花了两块钱买了本喜欢看的《英语沙龙》，当读第一遍的时候
@@ -58,5 +58,4 @@ Weeks later,the passion will grow cold and months later,that passion may be gone
 Five birds are resting on the fence and minutes later;three birds decide to fly off to search for food.
 How many birds are left on the fence?
 Two?Wrong!There should still be five birds on the fence because deciding to fly off is not the same as the actual 
-act of flying off.The birds would not be able to find food until they start to take action and fly
-out of their comfort zone.
+act of flying off.The birds would not be able to find food until they start to take action and fly out of their comfort zone.

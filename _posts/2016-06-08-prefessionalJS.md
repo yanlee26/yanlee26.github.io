@@ -4,7 +4,7 @@ layout: post
 title: JS高级教程总结
 thread: 9
 categories: JS
-tags: [BIT]
+tags: [JS高级教程 ,学习笔记, 原理]
 excerpt: Prefesional JS In Summary
 ---
 

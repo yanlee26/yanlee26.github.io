@@ -4,7 +4,7 @@ layout: post
 title: Design Pattern
 thread: 9
 categories: JS
-tags: [BIT]
+tags: [编程 ,设计模式]
 excerpt: Design Pattern.
 ---
 

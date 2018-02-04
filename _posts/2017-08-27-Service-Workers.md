@@ -4,7 +4,7 @@ layout: post
 title: service worker
 thread: 9
 categories: Translate
-tags: [BIT]
+tags: [JS,多线程,高并发,性能,service worker]
 excerpt: service worker
 ---
 
