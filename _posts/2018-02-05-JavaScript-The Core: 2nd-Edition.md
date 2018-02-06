@@ -14,7 +14,7 @@ excerpt: JavaScript 核心（第二版）
 >
 > 译者 - [yanlee](https://github.com/yanlee26)
 >
-> 译文地址 - <https://yanlee26.github.io/2018/02/05/JavaScript-The Core: 2nd-Edition/>
+> 译文地址 - <https://yanlee26.github.io/2018/02/05/JavaScript-The-Core-2nd-Edition/>
 
 这是第二版中的[JavaScript的。Core](http://dmitrysoshnikov.com/ecmascript/javascript-the-core/)概述讲座，致力于ECMAScript编程语言及其运行时系统的核心组件。
 
