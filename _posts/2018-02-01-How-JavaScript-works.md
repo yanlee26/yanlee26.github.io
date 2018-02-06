@@ -21,8 +21,8 @@ excerpt: How JavaScript works
 > 译文地址 - <https://yanlee26.github.io/2018/02/01/How-JavaScript-works/>
 >
 > 知乎专栏 - <https://zhuanlan.zhihu.com/p/33483627>
-> 掘金专栏 - 
-<https://juejin.im/post/5a725c6ff265da3e2e62d0d1>
+> 
+> 掘金专栏 - <https://juejin.im/post/5a725c6ff265da3e2e62d0d1>
 
 几个星期前，我们开始了一系列旨在深入研究JavaScript及其实际工作原理的系列文章：我们认为通过了解JavaScript的构建块以及它们如何一起玩，您将能够编写更好的代码和应用程​​序。
 
