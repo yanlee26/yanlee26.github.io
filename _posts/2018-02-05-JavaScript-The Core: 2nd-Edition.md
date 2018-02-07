@@ -433,9 +433,9 @@ function bar(funArg) {
 // Pass `foo` as an argument to `bar`.
 bar(foo);
 ```
-对于函数来说foo变量x是空闲的。当foo功能激活（通过funArg参数） - 它应该在哪里解决x绑定？从外部范围其中函数被创建，或者从呼叫者范围，从那里的功能被称为？正如我们所看到的，调用者，也就是bar函数，也为x值提供了绑定20。
+对于函数来说foo变量x是空闲的。当foo激活（通过funArg参数） - 它应该在哪里解决x绑定？从外部范围其中函数被创建，或者从caller范围，从那里的function被称为？正如我们所看到的，caller，也就是bar函数，也为x值提供了绑定20。
 
-上面所描述的用例被称为向下的funarg问题，即在确定绑定的正确环境时的模糊性：它应该是创建时间的环境，还是呼叫时间的环境？
+上面所描述的用例被称为向下的funarg问题，即在确定绑定的正确环境时的模糊性：它应该是创建时的环境，还是call时的环境？
 
 这是通过使用静态范围的协议来解决的，也就是创建时间的范围。
 
@@ -650,12 +650,12 @@ console.log(
   foo.qux(), // 20, from `foo` and arrow
 );
 ```
-就像我们所说的，在global context内，this值是全局对象（全球环境记录的绑定对象）。 以前只有一个全局对象。 在当前版本的规范中，可能有多个全局对象是代码领域(realm)的一部分。 我们来讨论一下这个结构。
+就像我们所说的，在global context内，this值是全局对象（全局环境记录的绑定对象）。 以前只有一个全局对象。 在当前版本的规范中，可能有多个全局对象是代码领域(realm)的一部分。 我们来讨论一下这个结构。
 
 <a name="realm"></a>
 # Realm
 
-在被评估之前，所有ECMAScript代码都必须与一个领域realm相关联。从技术上来说，一个领域只是提供一个环境的全局环境。
+在被评估之前，所有ECMAScript代码都必须与一个领域realm相关联。从技术上来说，一个realm只是提供一个环境的全局环境。
 
 >**16：Realm：**代码realm是一个对象，它封装了单独的全局环境。
 
@@ -696,7 +696,7 @@ vm.runInContext(code, realm2); // 20
 
 作业排队在作业队列中，在当前的spec版本中有两个作业队列：**ScriptJobs**和**PromiseJobs**。
 
-和最初工作的ScriptJobs队列为主要切入点，以我们的节目-这是装载并计算初始脚本：一种境界创建，全球范围内创建并与该领域相关的，它是压入堆栈，以及全局代码被执行。
+和最初工作的ScriptJobs队列为主要切入点，以我们的节目-这是装载并计算初始脚本：一种境界创建，全局范围内创建并与该scope相关的，它是压入堆栈，以及全局代码被执行。
 
 注意，ScriptJobs队列管理着脚本和模块。
 
@@ -718,7 +718,7 @@ console.log(20);
  
 // Output: 20, 10
 ```
-**注意：**您可以在本文档中阅读有关承诺的更多信息。
+**注意：**您可以在[本文档](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)中阅读有关promise的更多信息。
 
 该async function可以awaitpromise，所以他们也排队promise的工作：
 
