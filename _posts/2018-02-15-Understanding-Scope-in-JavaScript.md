@@ -8,14 +8,15 @@ tags: [JS,scope, ES6, ES2017]
 excerpt: Understanding-Scope-in-JavaScript
 ---
 
-> 原文 - []()
+> 原文 - <https://scotch.io/tutorials/understanding-scope-in-javascript>
 >
 > 原文作者 - [Hammad Ahmed (@shammadahmed)](https://scotch.io/@shammadahmed) February 15, 2017
 >
 > 译者 - [yanlee](https://github.com/yanlee26)
 >
-> 译文地址 - <>
+> 译文地址 - <https://yanlee26.github.io/2018/02/15/Understanding-Scope-in-JavaScript/>
 
+![https://cdn.scotch.io/2526/ZHb3nTeORoCOFOiwXfk1_javascript-uderstanding-scope.png.jpg](https://cdn.scotch.io/2526/ZHb3nTeORoCOFOiwXfk1_javascript-uderstanding-scope.png.jpg)
 ## Table of Contents
 
 1.  [Introduction](#introduction)
@@ -400,8 +401,8 @@ hello.apply(context); // here you can pass the context(value of this) as the fir
 ```
 call和apply的区别在于其参数：
 ```
-function introduce(name, interest) {
     console.log('Hi! I\'m '+ name +' and I like '+ interest +'.');
+function introduce(name, interest) {
     console.log('The value of this is '+ this +'.')
 }
 
@@ -480,7 +481,6 @@ Object可以有methonds，如function的object也可以有方法。事实上，J
 // The value of this is [object Window].
 ```
 Bind如call function， 允许你传递其余arguments，一个接一个，通过逗号分隔，不像apply。
-
 
 <a name="conslusion"></a>
 
