@@ -100,7 +100,8 @@ title: "About"
 
 ## RFQ---------------(2017/02 -- 至今,PC)
 
-## 项目简介：为收集sales工作数据（VVR，velocity voice record）构建，供花旗内部人员使用的公共平台。
+## 简介: 公司内部sales做trade时使用的App内部H5页面
+
 
 ## 工作内容：
 
