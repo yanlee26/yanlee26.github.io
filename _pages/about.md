@@ -6,10 +6,8 @@ title: "About"
 
 {% include base_path %}
 
-Li, Yan : Computer Science fancy, like programming and IT technolog.
+- [在线简历](http://frankyl.deercv.com/?preview=1)
 
-Address: Pudong Shanghai
-
-> 这世间唯有梦想与好姑娘不可辜负！
+> 志不朽者虽难必易，行不止者虽远必臻 ！
 
 

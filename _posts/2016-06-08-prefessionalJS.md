@@ -14,7 +14,7 @@ excerpt: Prefesional JS In Summary
 
 1. 五种简单类型（基本数据类型）：
 
-Null,Undefined,String,Number,Boolean，symbol（ES6）
+`Null,Undefined,String,Number,Boolean，symbol（ES6`
 
 > 判断：`typeof`
 
@@ -48,44 +48,46 @@ valueOf():返回对象的字符串，数值或者布尔值表示。同toString
 
 1. 一元操作符
 
-1. 递增递减：++a,a++: 前/后置操作时决定变量值在执行操作前/后改变
-2. 加减：a+=n,a-=n
-3. 位操作符：NOT(~),OR(|),AND(&),XOR(^),(<<),(>>),(>>>)
-4. 布尔操作符：!,&&,||
-5. 算术性操作符：+-*/
-6. 关系操作符：>,<
+1. 递增递减：`++a,a++`: 前/后置操作时决定变量值在执行操作前/后改变
+2. 加减：`a+=n,a-=n`
+3. 位操作符：`NOT(~),OR(|),AND(&),XOR(^),(<<),(>>),(>>>)`
+4. 布尔操作符：`!,&&,||`
+5. 算术性操作符：`+-*/`
+6. 关系操作符：`>,<`
 7. 相等操作符 ：
-    a. 相等与否（操作数成立则true）：==,!=
-    b. 全等与否（比较之前不转换操作数）：===,!==
-8. 条件操作符：variable=boolean_expression?true_value:false_value
-9. 赋值操作符：+=，-=，*=，/=，%=，<<=,>>=,>>>=
-10. 逗号操作符：var a,b,c
+    a. 相等与否（操作数成立则true）：`==,!=`
+    b. 全等与否（比较之前不转换操作数）：`===,!==`
+8. 条件操作符：`variable=boolean_expression?true_value:false_value`
+9. 赋值操作符：`+=，-=，*=，/=，%=，<<=,>>=,>>>=`
+10. 逗号操作符：`var a,b,c`
 
 - 语句
 
-> 1. if(condition) statement1 else statement2
-> 2. do{statement}while(expression)
-> 3. while(expression) statement
-> 4. for(initialization;expression;post-loop-expression) statement
-> 5. for(property in expression) statement
-> 6. label:statement
-> 7. break/continue:break 立即跳出循环（强制继续执行循环后语句），continue立即退出
-循环（当前循环），但从循环顶部继续执行
-> 8. with(expression) statement
-> 9. switch(expression){
-case value:statement1
-break;
-case value:statement2
-break;
-...
-case default
-break;
+1. ` if(condition) statement1 else statement2`
+2. ` do{statement}while(expression)`
+3. ` while(expression) statement`
+4. ` for(initialization;expression;post-loop-expression) statement`
+5. ` for(property in expression) statement`
+6. ` label:statement`
+7. ` break/continue:break 立即跳出循环（强制继续执行循环后语句），continue立即退出循环（当前循环），但从循环顶部继续执行`
+8. ` with(expression) statement`
+9. 
+``` 
+switch(expression){
+    case value:statement1
+    break;
+    case value:statement2
+    break;
+    //...
+    case default
+    break;
 }
+```
 
-- 3. 7 函数-可以封装任意条语句，在任何地方任何时候执行
+- 3.7 函数-可以封装任意条语句，在任何地方任何时候执行
 
-> 没有重载：可以为一函数编写两个定义，只要定义的签名（接受的参数类型和数量）不同即可
-ES中函数没有签名，真正重载不可能做到只能模拟
+> 没有重载：可以为一函数编写两个定义，只要定义的签名（接受的参数类型和数量）不同即可ES中函数没有签名，真正重载不可能做到只能模拟
+```
 function add(n){
 return n+100
 }
@@ -93,12 +95,12 @@ function add(n){
 return n+200
 }//覆盖掉上一个
 var result=add(100);//300
-
+```
 ###  Chapter4 变量作用域及内存
 
 > JS 变量松散的本质决定了它只是在特定时间用于保存特定值的一个名字而已
 
-4. 1 基本类型（简单的数据段）和引用类型（可能有多个值构成的对象）
+- 4. 1 基本类型（简单的数据段）和引用类型（可能有多个值构成的对象）
 
 > 因可以操作保存在变量中的实际值，基本数据类型按值访问；
 引用类型值保存在内存中，不同于其它语言，JS不允许直接访问内存中的位置（操作实际对象）。
@@ -108,11 +110,20 @@ var result=add(100);//300
 [JS函数参数按值传递的](https://q.cnblogs.com/q/39352/)
 
 ```
-function setName(obj){obj.name='yl';obj={};obj.name='hello'} 
-var p={};setName(p);p.name;//'yl'
-//即使在内部修改了参数的值，但原始的引用仍然不变。实际上，当函数内部重写obj时，该变量引用的就是
-一个在函数执行完立即销毁的局部变量了。完全可以把ES函数的参数想象成局部变量
+function setName(obj){
+    obj.name='yl';
+    obj={};
+    obj.name='hello'
+} 
+var p={};
+setName(p);
+p.name;
+//'yl'
 ```
+
+即使在内部修改了参数的值，但原始的引用仍然不变。实际上，当函数内部重写obj时，该变量引用的就是
+一个在函数执行完立即销毁的局部变量了。完全可以把ES函数的参数想象成局部变量
+
 > 执行环境和作用域（execution context& scope）
 EC:决定了变量或函数有权访问的其它数据，决定了它们各自的行为；每个EC都有一个与之关联的变量对象（vo）
 ,环境中定义的所有变量和函数都保存在这个对象中。虽然无法访问该对象，但解析器在处理数据时会在后台使用它。
@@ -123,16 +134,13 @@ Scope:当代码在一个环境中执行时，会创建变量对象的一个作�
 所有变量和函数的有序访问。其前端始终是当前执行的代码所在环境的变量对象。全局执行环境的变量对象始终都是作用
 域链中的最后一个对象。
 这些环境之间的联系是线性的有次序的，每个环境都可以向上搜索sc，以查询变量和函数名；但反之不行。
-那sc可以延长吗？ 可以。。。
-利用try-catch,with语句
+那sc可以延长吗？ 可以。。。利用try-catch,with语句
 
-4. 2 无块级作用域
+- 4. 2 无块级作用域
 
-> 1. 声明变量：使用var声明的变量会自动被添加到最近的执行环境中（在函数内部是局部环境，with语句中是
-函数环境，如果忘记var则被添加到全局环境）2.查询标识符：当在某个环境中为了读取或写入而引用一个标识符
- 时，必须通过搜索来确定标识符实际代表什么。
+    1. 声明变量：使用var声明的变量会自动被添加到最近的执行环境中（在函数内部是局部环境，with语句中是函数环境，如果忘记var则被添加到全局环境）2.查询标识符：当在某个环境中为了读取或写入而引用一个标识符时，必须通过搜索来确定标识符实际代表什么。
  
-4. 3 垃圾回收GC
+- 4. 3 垃圾回收GC
 
 > 标记清除(mark-sweep)和引用计数(reference-counting)
 mark-sweep:变量进入环境即将变量标记为‘进入环境’，逻辑上永远无法释放进入环境变量所占用的内存；当变量
@@ -143,27 +151,29 @@ mark-sweep:变量进入环境即将变量标记为‘进入环境’，逻辑上
 > 引用类型的值（对象）是引用类型的一个实例，ES中引用类型是用于将数据和功能组织在一起的一种数据结构。
 常被不妥当地称为类，有时候也称对象定义。
 
-5. 1 Object
-5. 2 Array
+- 5. 1 Object
+- 5. 2 Array
 
-- 检测：Array.isArray();instanceof Array
-- 转换：toString(),join()方法
-- 栈方法：push,pop
-- 队列方法：shift,unshift
-- 排序sort(),reverse()
-- 操作方法：concat(),splice()
-    a. delete:splice(0,2);b:insert:splice(0,2,'red','blue');c:replace:splice(2,1,'a','b')
-- 位置方法：indexOf(),lastIndexOf()
-- 迭代方法：every(),filter(),map(),forEach(),some()
-- 归并：reduce(),reduceRight()
+- 检测：`Array.isArray();instanceof Array`
+- 转换：`toString(),join()`方法
+- 栈方法：`push,pop`
+- 队列方法：`shift,unshift`
+- 排序`sort(),reverse()`
+- 操作方法：`concat(),splice()`
+    - a. delete:splice(0,2);
+    - b:insert:splice(0,2,'red','blue');
+    -  c:replace:splice(2,1,'a','b')
+- 位置方法：`indexOf(),lastIndexOf()`
+- 迭代方法：`every(),filter(),map(),forEach(),some()`
+- 归并：`reduce(),reduceRight()`
 
-5. 3 Date:
-Date.parse():接收一个表示日期字符串的参数，然后尝试解析成毫秒数
-Date.UTC()：同样返回时间戳，在构建时与parse使用不同的信息。
+- 5. 3 Date:
+`Date.parse()`:接收一个表示日期字符串的参数，然后尝试解析成毫秒数
+`Date.UTC()`：同样返回时间戳，在构建时与parse使用不同的信息。
 > 日期和时间都是基于本地时区而非GMT来创建
 
-5. 4 RegExp
-5. 5 Function
+- 5. 4 `RegExp`
+- 5. 5 `Function`
 
 > ES中函数即对象，每个函数都是Function的一个实例，函数名是指向函数对象的一个指针，与其它引用类型一样有属性和方法
 
@@ -171,8 +181,14 @@ Date.UTC()：同样返回时间戳，在构建时与parse使用不同的信息�
 上述重载案例与下边等价：
 
 ```
-var add=function(n){return n+100};
-add=function(n){return n+200}//覆盖上个
+var add = function (n) {
+    return n+100
+};
+
+add = function(n){
+    return n+200
+}
+//覆盖上个
 ```
 - 5.5.2函数声明与函数表达式
 
@@ -181,43 +197,45 @@ add=function(n){return n+200}//覆盖上个
 
 - 5.5.3 作为值的函数（ES中函数也是变量，所以可作为值使用）
 ```
- function createComparisonFunction(propertyName) {
-            return function(object1, object2){
-                var value1 = object1[propertyName];
-                var value2 = object2[propertyName];
-        
-                if (value1 < value2){
-                    return -1;
-                } else if (value1 > value2){
-                    return 1;
-                } else {
-                    return 0;
-                }
-            };
+function createComparisonFunction(propertyName) {
+    return function(object1, object2){
+        var value1 = object1[propertyName];
+        var value2 = object2[propertyName];
+
+        if (value1 < value2){
+            return -1;
+        } else if (value1 > value2){
+            return 1;
+        } else {
+            return 0;
         }
-        var data = [{name: "Zachary", age: 28}, {name: "Nicholas", age: 29}];
-        data.sort(createComparisonFunction("name"));
-        alert(data[0].name);  //Nicholas
-        data.sort(createComparisonFunction("age"));
-        alert(data[0].name);  //Zachary     
+    };
+}
+var data = [{name: "Zachary", age: 28}, {name: "Nicholas", age: 29}];
+data.sort(createComparisonFunction("name"));
+alert(data[0].name);  //Nicholas
+data.sort(createComparisonFunction("age"));
+alert(data[0].name);  //Zachary     
 ```
 
 - 5. 5.4 函数内部属性：arguments，this
 - 5. 5.5 函数属性和方法
 
-> 每个函数都包含两个属性：length（函数希望接收的参数个数）和prototype（对ES中引用类型而言，prototype保存了
-其所有实例的属性和方法，即toString(),valueOf()等方法实际上保存在prototype名下，只不过通过各自对象的实例访问）
+> 每个函数都包含两个属性：`length`（函数希望接收的参数个数）和`prototype`（对ES中引用类型而言，prototype保存了
+其所有实例的属性和方法，即`toString(),valueOf()`等方法实际上保存在prototype名下，只不过通过各自对象的实例访问）
 
-> 每个函数都包含两个非继承而来的方法：call(),apply():用途是在特定作用域中调用函数，实际上是设置函数体内this指向。
+> 每个函数都包含两个非继承而来的方法：`call(),apply()`:用途是在特定作用域中调用函数，实际上是设置函数体内this指向。
 ES5中还有一个bind方法，用于创建一个函数实例，其this值会被绑定到
 传给bind函数的值。
 
-> 另外每个函数继承的toString(),toLocalString()，valueOf()始终返回函数代码
+> 另外每个函数继承的`toString(),toLocalString()，valueOf()`始终返回函数代码
 ```
-function sayColor=function(){alert(this.color)}
+function sayColor=function(){
+    alert(this.color)
+}
 window.color='red';
 var o={color:'blue'};
-var objSayColor=sayColor.bind(o);
+var objSayColor = sayColor.bind(o);
 objSayColor();//'blue'
 ```
 - 5.5.6 基本包装对象
@@ -229,7 +247,9 @@ objSayColor();//'blue'
 Object构造函数如工厂方法一样，根据传入值的类型返回基本包装对象实例
 
 ```
-var obj=new Object('hello');obj instanceOf String;//true
+var obj=new Object('hello');
+obj instanceOf String;
+//true
 ```
 
 - 5. 6.1 Boolean 
@@ -254,25 +274,25 @@ true
 - 5. 6.3 String
 1. 字符方法
 
-> charAt(),charCodeAt()
+`charAt(),charCodeAt()`
 
 2. 字符操作方法
 
-> concat(),slice(),subString(),substr(),
+`concat(),slice(),subString(),substr(),`
 
 3. 字符串位置方法
 
-> indexOf(),lastIndexOf()
+`indexOf(),lastIndexOf()`
 
-4. trim(),trimLeft(),trimRight()方法
+4. `trim(),trimLeft(),trimRight()`方法
 
 5. 大小写转换方法
 
-> toLocalUpperCase(),toUpperCase(),toLowerCase()
+`toLocalUpperCase(),toUpperCase(),toLowerCase()`
 
 6. 模式匹配方法
 
-> search(),replace(),match(),split()
+`search(),replace(),match(),split()`
 
 7. localeCompare()方法，fromCharCode()方法
 
@@ -282,33 +302,46 @@ true
 
 1. Global对象（兜底对象，任何不属于其它对象的属性和方法都是它的属性和方法）
 
-> 如isNaN()，isFinite(),parseInt(),parseFloat(),encodeURI(),encodeURIComponent()
-eval(),window对象，Math对象（min(),max(),ceil(),floor(),random()）
+> 如
+
+```
+isNaN()
+isFinite()
+parseInt()
+parseFloat()
+encodeURI()
+encodeURIComponent()
+eval()
+window
+Math（min(),max(),ceil(),floor(),random()）
+```
 
 ###  Chapter 6 面向对象 Object Oriented Programing
 
 > ES对象：包含基本值，对象或函数的无序属性的集合。
 
-6. 1.1 属性类型（数据属性+访问器属性）
+* 6. 1.1 属性类型（数据属性+访问器属性）
 
-1. 数据属性：
+* 1. 数据属性：
 
-- [[Configurable]]:是否可配置，delete(true)
-- [[Enumerable]]: 是否可枚举，for-in(true)
-- [[Writable]]:是否可写(true)
-- [[Writable]]:包含这个属性的数据值（undefined）
+- `[[Configurable]]`:是否可配置，`delete(true)`
+- `[[Enumerable]]`: 是否可枚举，`for-in(true)`
+- `[[Writable]]`:是否可写(true)
+- `[[Writable]]`:包含这个属性的数据值（undefined）
 
-> ES5中Object.defineProperty(object,propertyName,descriptor)方法，包含属性所在对象，属性名，描述符对象三个参数，可以修改对象的默认特性。
+> ES5中`Object.defineProperty(object,propertyName,descriptor)`方法，包含属性所在对象，属性名，描述符对象三个参数，可以修改对象的默认特性。
 注意：一旦把属性定义为不可配置的就再也甭能把它设置成可配置的了。
 
-2. 访问器特性，对象的属性：
+* 2. 访问器特性，对象的属性：
 
 > 不包含数据值，包含一对getter，setter函数（非必须），有以下四个特性。访问器属性不能直接定义，必须用
-Object.defineProperty()定义，Object.defineProperties()可以定义多个属性
+`Object.defineProperty()定义，Object.defineProperties()`可以定义多个属性
+
 - [[Configurable]]:同上(true)
 - [[Enumerable]]:同上(true)
 - [[Get]]:读取属性时调用的函数（undefined）
 - [[Set]]:写入属性时调用的函数（undefined）
+
 ```
 var book = {
     _year: 2004,
@@ -319,22 +352,21 @@ Object.defineProperty(book, "year", {
         return this._year;
     },
     set: function(newValue){
-    
         if (newValue > 2004) {
             this._year = newValue;
             this.edition += newValue - 2004;
-            }
         }
-    });
+    }
+});
     
 book.year = 2005;
 alert(book.edition);   //2
 ```
 
-6. 1.3 读取属性特性
+* 6. 1.3 读取属性特性
 
->Object.getOwnPropertyDescriptor()方法，两个参数属性所在的对象+读取其描述符的属性名，返回一对象.
-JS中可以针对任何对象（BOM，DOM），使用该方法。
+> `Object.getOwnPropertyDescriptor()`方法，两个参数属性所在的对象+读取其描述符的属性名，返回一对象.
+JS中可以针对任何对象（`BOM，DOM`），使用该方法。
 
 ```
 var descriptor = Object.getOwnPropertyDescriptor(book, "_year");
@@ -347,9 +379,9 @@ alert(descriptor.enumerable);     //false
 alert(typeof descriptor.get);     //"function"
 ```        
 
-6. 2 创建对象
+* 6. 2 创建对象
 
-6. 2.1 工厂模式---用函数来封装以特定接口创建对象的细节
+* 6. 2.1 工厂模式---用函数来封装以特定接口创建对象的细节
 
 > 特点：虽然解决了创建多个相似对象的问题，但却没有解决对象识别问题(怎样知道对象类型)。
 
@@ -370,7 +402,7 @@ person1.sayName();   //"Nicholas"
 person2.sayName();   //"Greg"
 ```
 
-6. 2.2 构造函数模式---如Object，Array这样的原生构造函数，运行时会自动出现在EC中，也可创建自定义的。
+* 6. 2.2 构造函数模式---如Object，Array这样的原生构造函数，运行时会自动出现在EC中，也可创建自定义的。
 
 ```
 function Person(name, age, job){
@@ -405,7 +437,7 @@ this.sayName=sayName;
 function sayName(){}
 ```
 
-6. 2.3 原型模式
+* 6. 2.3 原型模式
 
 > 我们创建的每个函数，都有一个指向一个对象的且是一个指针的prototype属性，其作用是包含可以有特定
 类型所有实例共享的属性和方法。即prototype通过调用构造函数而创建的那个实例的原型对象。此时可以将所有实例共享其所包含的属性和方法。
@@ -485,7 +517,7 @@ alert(person2.friends);    //"Shelby,Court,Van"
 alert(person1.friends === person2.friends);  //true
 
 ```
-6. 2.4 组合使用构造函数和原型模式---用途广泛，认可度最高，首选
+* 6. 2.4 组合使用构造函数和原型模式---用途广泛，认可度最高，首选
 
 ```
 function Person(name, age, job){
@@ -508,7 +540,7 @@ alert(person2.friends);    //"Shelby,Court"
 alert(person1.friends === person2.friends);  //false
 alert(person1.sayName === person2.sayName);  //true
 ```
-6. 2.5 动态原型模式
+* 6. 2.5 动态原型模式
 
 > 把所有信息封装在构造函数中，通过构造函数初始化原型，保持了同时使用构造函数和原型的优点。即
 可以通过检查某个应该存在的方法是否有效来决定是否需要初始化原型.
@@ -534,7 +566,7 @@ var friend = new Person("Nicholas", 29, "Software Engineer");
 friend.sayName();
 ```
 
-6. 2.6 寄生构造函数模式
+* 6. 2.6 寄生构造函数模式
 
 > 返回的对象与构造函数或者构造函数与原型属性之间没关系。
 
@@ -560,7 +592,7 @@ alert(colors.toPipedString()); //"red|blue|green"
 alert(colors instanceof SpecialArray);
 ```
 
-6. 2.7 稳妥构造函数模式
+* 6. 2.7 稳妥构造函数模式
 
 ```
 function Person(name,age,job){
@@ -571,8 +603,8 @@ return o
 var p1=new Person('yl',26,'software engineer');
 p1.sayName();//'yl'
 ```
-6. 3 继承（接口继承和实现继承（ES仅支持此继承））---依赖原型链继承
-6. 3.1 原型链
+* 6. 3 继承（接口继承和实现继承（ES仅支持此继承））---依赖原型链继承
+* 6. 3.1 原型链
 
 > 基本思想：利用原型让一个引用类型继承另一个引用类型的属性和方法。
 
@@ -608,7 +640,7 @@ alert(SuperType.prototype.isPrototypeOf(instance)); //true
 alert(SubType.prototype.isPrototypeOf(instance));   //true
 ```
 
-6. 3.2 借用构造函数
+* 6. 3.2 借用构造函数
 
 ```
 function SuperType(){
@@ -636,7 +668,7 @@ var instance2 = new SubType();
 alert(instance2.colors);    //"red,blue,green"
 ```
 
-6. 3.3 组合继承
+* 6. 3.3 组合继承
 
 > 使用原型链实现对原型属性和方法的继承，通过借用构造函数实现对实例属性的继承
 
@@ -673,7 +705,7 @@ alert(instance2.colors);  //"red,blue,green"
 instance2.sayName();      //"Greg";
 instance2.sayAge();       //27
 ```
-6. 3.4 原型式继承
+* 6. 3.4 原型式继承
 
 ```
 var person = {
@@ -691,9 +723,9 @@ yetAnotherPerson.friends.push("Barbie");
 
 alert(person.friends);   //"Shelby,Court,Van,Rob,Barbie"
 ```
-6. 3.5 寄生式继承
+* 6. 3.5 寄生式继承
 
-6. 3.6 寄生组合式继承
+* 6. 3.6 寄生组合式继承
 
 ```
 function object(o){
@@ -742,9 +774,9 @@ instance2.sayAge();       //27
 
 ###  Chapter 7 函数表达式(与函数声明的区别)
 
-7. 1 递归
+* 7. 1 递归
 
-arguments.callee是一个指向正在执行函数的指针，实现递归
+`arguments.callee`是一个指向正在执行函数的指针，实现递归
 ```
 function factorial(num){
     if (num <= 1){
@@ -765,7 +797,7 @@ else{return num*f(num-1)}
 })
 ```
 
-7. 2 闭包closure
+* 7. 2 闭包closure
 
 > 匿名函数与闭包：前者-创建一个函数并赋值给变量；后者-有权访问另一个函数作用域中变量的函数（在一个函数内创建另一函数）。
 原理：明白作用域链的概念，当某函数被调用时，会创建一个EC及相应的作用域链；
@@ -774,7 +806,7 @@ else{return num*f(num-1)}
 其实，作用域链包含两级变量对象--本地活动对象和全局变量对象，其本质是一个指向
 变量对象的指针列表，仅仅引用并不包含变量对象。
 
-7. 2.1 闭包与变量
+* 7. 2.1 闭包与变量
 
 > 闭包的副作用：只能取得包含函数中任何变量的最后一个值。
 
@@ -806,11 +838,10 @@ for (var i=0; i < 10; i++){
 //或者用ES6语法变var i为let i
 ```
 
-7.2.2 关于this对象
+* 7.2.2 关于this对象
 
 > this对象是在运行时基于函数的执行环境绑定的：在全局下this===window；当函数被作为某个对象的方法
-调用时，this===调用其的对象。但匿名函数的作用域具有全局性，其this对象通常指向window；除非通过call（）
-apply()改变。
+调用时，this===调用其的对象。但匿名函数的作用域具有全局性，其this对象通常指向`window`；除非通过`call（）apply()`改变。
 
 ```
 var name = "The Window";
@@ -838,7 +869,7 @@ obj.getName();//'obj'
 此二变量时只会搜索到其活动对象为之，故永不可能直接访问外部函数中此二变量。一种解决方式是把外部作用
 域中this对象保存在闭包中。如上注释部分。
 
-7. 2.3 内存泄漏
+* 7. 2.3 内存泄漏
 
 > 闭包会引用包含函数的整个活动对象！即使闭包不直接引用ele，包含函数的活动对象也仍然
 会保存一个引用。
@@ -852,7 +883,7 @@ function assignHandler(){
 }
 ```
 
-7. 2.4 模仿块级作用域
+* 7. 2.4 模仿块级作用域
 
 > JS 从不会告诉你是否声明了同一个变量；只会无视后续声明（会执行声明的初始化），匿名函数可以
 模仿块级作用域并避免此问题。并且只要做到闭包中没有指向匿名函数的引用，就可以减少闭包占用内存的问题。
@@ -863,7 +894,7 @@ var someFunction=function(){//block scope}
 function(){//block scope}();//error ,函数声明不能跟（），js将function当作函数声明的开始
 ```
 
-7. 2.5 private variables私有变量
+* 7. 2.5 private variables私有变量
 
 > 事实上，JS中没有私有成员的概念；所有对象的属性都是公有的。但有个私有变量的概念---任何在函数
 中定义的变量。
@@ -908,7 +939,7 @@ alert(person2.getName());   //"Michael"
 
 ```
 
-7. 4.2 模块模式
+* 7. 4.2 模块模式
 
 > 上述模式用于为自定义类型创建私有变量和特权方法，而模块模式则是为单例创建私有变量和特权的方法。
 
@@ -981,16 +1012,16 @@ alert(application.getComponentCount());  //2
 
 ###  Chapter 8 BOM
 
-8. 1 window对象
+* 8. 1 window对象
 
-8. 1.1 global scope
+* 8. 1.1 global scope
 
 > 定义的全局变量和在window上直接定义的变量细微差别就是前者不可以用delete操作符删除
 var a='hello';window.b='world';delete window.a;//false;delete window.b;//true
 因var 添加的window属性的[[Configurable]]===false
 
-8. 1.2 窗口关系及框架
-8. 1.3 窗口位置
+* 8. 1.2 窗口关系及框架
+* 8. 1.3 窗口位置
 ```
 //使用下边代码可以跨浏览器取得窗口左边和上边位置。
 var leftPos = (typeof window.screenLeft == "number") ? 
@@ -1000,7 +1031,7 @@ var topPos = (typeof window.screenTop == "number") ?
 alert("Left: " + leftPos);
 alert("Top: " + topPos);
 ```
-8.1.4 窗口大小
+* 8.1.4 窗口大小
 ```
 var pageWidth = window.innerWidth,
     pageHeight = window.innerHeight;
@@ -1016,23 +1047,23 @@ var pageWidth = window.innerWidth,
     alert("Width: " + pageWidth);
     alert("Height: " + pageHeight);
 ```
-8. 1.5 导航和打开
+* 8. 1.5 导航和打开
 
 ```
 window.open();
 // 接收四个参数：URL，窗口目标，一个特性字符串，布尔值
 ```
 
-8. 1.6 setInterval()和setTimeOut()
-8. 1.7 系统对话框：alert(),confirm(),prompt()
-8. 2 location 对象
+* 8. 1.6 setInterval()和setTimeOut()
+* 8. 1.7 系统对话框：alert(),confirm(),prompt()
+* 8. 2 location 对象
 
 ```
 window.location===document.location
 ```
-8. 3 navigator对象
-8. 4 screen对象
-8. 5 history对象
+* 8. 3 navigator对象
+* 8. 4 screen对象
+* 8. 5 history对象
 
 ###  Chapter 9 客户端检查
 
@@ -1041,7 +1072,7 @@ window.location===document.location
 > DOM是针对HTML和XML文档的一个API，描绘了一个层次化的节点树，允许开发人员增删改
 查页面的一部分。注意IE中的DOM对象都是以COM对象的形式实现的。
 
-10. 1 节点层次
+* 10. 1 节点层次
 
 > DOM树：DOM可以将HTML，XML文档描述成一个由多层次节点构成的结构。节点分几种不同的类型，
 每种类型分别表示文档中不同的信息及标记。每个节点都有自己的特点数据和方法且与其它节点存在
@@ -1049,18 +1080,19 @@ window.location===document.location
 都可以通过树中一个节点来表示（html元素由元素节点表示，attribute由属性节点表示，documentType由文档
 类型节点表示，commit由注释节点表示）。
 
-10. 1.1 Node类型（12种）
-    1. **Node.ELEMENT_NODE(1)**;
-    2. **Node.ATTRIBUTE_NODE(2)**;
-    3. **Node.TEXT_NODE(3);**
-    4. Node.ENTITY_REFERENCE_NODE(5);
-    6. Node.ENTITY_NODE(6);
-    7. Node.PROCESSING_INSTRUCTION_NODE(7);
-    8. **Node.COMMIT_NODE(8);**
-    9. **Node.DOCUMENT_NODE(9);**
-    10. **Node.DOCUMENT_TYPE_NODE(10);**
-    11. Node.DOCUMENT_FRAGMENT_NODE(11);
-    12. Node.NOTATION_NODE(12);
+* 10. 1.1 Node类型（12种）
+
+1. **Node.ELEMENT_NODE(1)**;
+2. **Node.ATTRIBUTE_NODE(2)**;
+3. **Node.TEXT_NODE(3);**
+4. Node.ENTITY_REFERENCE_NODE(5);
+6. Node.ENTITY_NODE(6);
+7. Node.PROCESSING_INSTRUCTION_NODE(7);
+8. **Node.COMMIT_NODE(8);**
+9. **Node.DOCUMENT_NODE(9);**
+10. **Node.DOCUMENT_TYPE_NODE(10);**
+11. Node.DOCUMENT_FRAGMENT_NODE(11);
+12. Node.NOTATION_NODE(12);
 
 ###  Chapter11 DOM扩展
 
@@ -1076,11 +1108,11 @@ window.location===document.location
     4. previousElementSibling:指向前一个同辈元素；
     5. nextElementSibling:指向后一个同辈元素；
 
-11. 3HTML5
+* 11. 3HTML5
 
 > H5规范围绕如何使用新增标记定义了大量的JS API。其中一些与DOM重叠，定义了浏览器应该支持的DOM扩展
 
-11. 3.1与类相关的扩充
+* 11. 3.1与类相关的扩充
 
 - getElementByClassName():返回带有指定类的所有元素的NodeList；
 - classList():
@@ -1088,7 +1120,7 @@ window.location===document.location
     2. div.classList.add('user'):添加类集中某类
     3. div.classList.toggle('user'):切换类集中某类
     4. div.classList.contains('user'):查询类集中某类
-11. 3.2焦点管理
+* 11. 3.2焦点管理
 
 ```
 var btn=document.getElementById('my-button');
@@ -1096,7 +1128,7 @@ btn.focus();
 document.hasFocus();//true
 //通过检查文档是否活得了焦点来判断用户是否在与页面交互
 ```
-11. 3.3 HTMLDocument的变化
+* 11. 3.3 `HTMLDocument`的变化
 
 - readyState属性：loading（加载中）,complete(已完成)
 - compatMode兼容模式
@@ -1106,25 +1138,30 @@ alert(document.compatMode=='CSS1Compat'?'Standards Mode':'Quicks Mode')
 ```
 - head 属性
 
-```var head=document.head||document.getElementsByTagName('head'[0])```
+```
+var head=document.head||document.getElementsByTagName('head'[0])
+```
 
-11. 3.4 字符集属性
+* 11. 3.4 字符集属性
 
-```document.charset;//UTF-8```
+```
+document.charset;//UTF-8
+```
 
-11. 3.5自定义数据属性data-
+* 11. 3.5自定义数据属性`data-`
 
 > 目的是为元素提供与渲染无关的信息，或者提供语义信息，可以任意添加随便命名，但要以data-开头。
 
-11 .3.6插入标记
+* 11 .3.6插入标记
 
 > DOM操作的福音：虽然DOM操作可以实现细致入微的控制，但非常繁琐，使用插入标记
 技术直接插入html字符串不仅简单而且高效。但多说浏览器中插入的script脚本并不会
 执行（除非指定defer属性且位于（微软所谓的）作用域之后）
 
 - innerHTML
+
 ```
-document.querySelector('div').innerHTML='<script defer>alert("hi")</script>'
+document.querySelector('div').innerHTML='<script defer>console.log("hi")</script>'
 ```
 - outerHTML
 - insertAdjacentHTML()
@@ -1133,7 +1170,7 @@ document.querySelector('div').innerHTML='<script defer>alert("hi")</script>'
 
 ###  Chapter13 事件处理程序
 
-13. 2.2 DOM0级事件处理程序
+* 13. 2.2 DOM0级事件处理程序
 
 > 介绍：传统方式，将一个函数赋值给一个事件处理程序属性。特点：简单，跨
 浏览器。首先要取得要操作对象的引用。
@@ -1144,25 +1181,29 @@ var btn=document.getElementById('xx');
 btn.onclick=functin(){}；
 btn.onclick=null;//删除事件处理程序
 ```
-13. 2.3 DOM2级事件处理程序
+* 13. 2.3 DOM2级事件处理程序
 
 > DOM2定义了两个方法用于指定和删除处理程序的操作：addEventListener()和removeEventListener()
 所有DOM节点都包含这两个方法且接受三个参数：事件名，函数，布尔值（true:捕获，false冒泡）
 多数情况下将事件处理程序添加到事件流的冒泡阶段，可以最大限度地兼容各种浏览器。
+
 ```
 btn.addEventListener('click',function(){
 },false);
+
 btn.removeEventListener('click',function(){
 },false);
 ```
-13. 2.4IE事件处理程序
+
+* 13. 2.4IE事件处理程序
+
 ```
 btn.attach('onclick',function(){});
 btn.detach('onclick',function(){});
 ```
-13. 2.5跨浏览器事件处理程序
+* 13. 2.5跨浏览器事件处理程序
 
-13. 3事件对象
+* 13. 3事件对象
 
 > 触发DOM上某事件时会产生一个包含与事件相关信息的事件对象。
 只有在事件处理程序执行期间，event对象才会存在，否则立即销毁。
@@ -1181,31 +1222,31 @@ var btn = document.getElementById("myBtn");
             alert("Body clicked");
         };
 ```
-13. 4事件类型
-13. 4.1 UI事件：不一定与用户操作有关的事件。包括DOMActive(非html事件),load,unload,abort
+* 13. 4事件类型
+* 13. 4.1 UI事件：不一定与用户操作有关的事件。包括DOMActive(非html事件),load,unload,abort
 error,select,resize,scroll事件。
 ```
 var isSurpported=document.implementation.hasFeature('HTMLEventts','2.0');
 var isSurpported=document.implementation.hasFeature('UIEvent','3.0');
 ```
 
-13. 4.2 焦点事件：blur,focusIn,focusOut,focus
+* 13. 4.2 焦点事件：`blur,focusIn,focusOut,focus`
 
-13. 4.3 鼠标与滚轮事件：click,dbclick,mousedown,mouseenter,mouseleave,mousemove,
-mouseout,mouseover,mouseup
+* 13. 4.3 鼠标与滚轮事件：`click,dbclick,mousedown,mouseenter,mouseleave,mousemove,
+mouseout,mouseover,mouseup`
 
-13. 4.4键盘与文本事件：keydowm,keyup,keypress
+* 13. 4.4键盘与文本事件：`keydowm,keyup,keypress`
 
-13. 4.5 复合事件
+* 13. 4.5 复合事件
 
-13. 4.6 变动事件
+* 13. 4.6 变动事件
 
-13. 4.7 HTML5事件：contextmenu,beforeunload,DOMContentloaded,readystatechange
-pageshow,pagehide,haschange
+* 13. 4.7 HTML5事件：`contextmenu,beforeunload,DOMContentloaded,readystatechange
+pageshow,pagehide,haschange`
 
-13. 4.8 设备事件
+* 13. 4.8 设备事件
 
-13. 4.9 触摸与手势事件touchEvents
+* 13. 4.9 触摸与手势事件`touchEvents`
 
 - 触摸事件
     1. touchstart
@@ -1217,7 +1258,7 @@ pageshow,pagehide,haschange
     2. gesturechange
     3. gestureend
 
-13. 5 内存和性能
+* 13. 5 内存和性能
 
 >每个函数都是对象，会占用内存，内存中对象越多性能越差；必须事先指定所有事件
 处理程序而导致的DOM访问次数，会延迟整个页面的交互就绪时间。解决之道是使用事件委托或
@@ -1227,56 +1268,56 @@ pageshow,pagehide,haschange
 
 ```
 (function(){
-var list = document.getElementById("myLinks");
-        EventUtil.addHandler(list, "click", function(event){
-            event = EventUtil.getEvent(event);
-            var target = EventUtil.getTarget(event);
-            switch(target.id){
-                case "doSomething":
-                    document.title = "I changed the document's title";
-                    break;
-        
-                case "goSomewhere":
-                    location.href = "http://www.wrox.com";
-                    break;
-        
-                case "sayHi":
-                    alert("hi");
-                    break;
-            }
-        });
-    })();
-    btn.onclick=function(){
-        //过河
-        btn.onclick=null;//拆桥
-        //...
-    }
+    var list = document.getElementById("myLinks");
+    EventUtil.addHandler(list, "click", function(event){
+        event = EventUtil.getEvent(event);
+        var target = EventUtil.getTarget(event);
+        switch(target.id){
+            case "doSomething":
+                document.title = "I changed the document's title";
+                break;
+    
+            case "goSomewhere":
+                location.href = "http://www.wrox.com";
+                break;
+    
+            case "sayHi":
+                alert("hi");
+                break;
+        }
+    });
+})();
+btn.onclick=function(){
+    //过河
+    btn.onclick=null;//拆桥
+    //...
+}
 ```
 
-13. 6模拟事件
+* 13. 6模拟事件
 
 - DOM中的事件模拟：document.createEvent()方法创建对象。
 
 ```
 (function(){
-        var btn = document.getElementById("myBtn");
-        var btn2 = document.getElementById("myBtn2");
-        
-        EventUtil.addHandler(btn, "click", function(event){
-            alert("Clicked!");
-            alert(event.screenX);   //100
-        });
+    var btn = document.getElementById("myBtn");
+    var btn2 = document.getElementById("myBtn2");
+    
+    EventUtil.addHandler(btn, "click", function(event){
+        alert("Clicked!");
+        alert(event.screenX);   //100
+    });
 
-        EventUtil.addHandler(btn2, "click", function(event){
-            //create event object
-            var event = document.createEvent("MouseEvents");
-            //initialize the event object
-            event.initMouseEvent("click", true, true, document.defaultView, 0, 100, 0, 0, 0, false, 
-                                 false, false, false, 0, btn2);
-            //fire the event
-            btn.dispatchEvent(event);
-        });
-    })();
+    EventUtil.addHandler(btn2, "click", function(event){
+        //create event object
+        var event = document.createEvent("MouseEvents");
+        //initialize the event object
+        event.initMouseEvent("click", true, true, document.defaultView, 0, 100, 0, 0, 0, false, 
+                                false, false, false, 0, btn2);
+        //fire the event
+        btn.dispatchEvent(event);
+    });
+})();
 ```
 
 ###  Chapter 14 表单脚本
@@ -1296,39 +1337,40 @@ var list = document.getElementById("myLinks");
 <script type="text/javascript">
 (function(){
 
-    function tabForward(event){            
-        event = EventUtil.getEvent(event);
-        var target = EventUtil.getTarget(event);
+function tabForward(event){            
+    event = EventUtil.getEvent(event);
+    var target = EventUtil.getTarget(event);
+    
+    if (target.value.length == target.maxLength){
+        var form = target.form;
         
-        if (target.value.length == target.maxLength){
-            var form = target.form;
-            
-            for (var i=0, len=form.elements.length; i < len; i++) {
-                if (form.elements[i] == target) {
-                    if (form.elements[i+1]){
-                        form.elements[i+1].focus();
-                    }
-                    return;
+        for (var i=0, len=form.elements.length; i < len; i++) {
+            if (form.elements[i] == target) {
+                if (form.elements[i+1]){
+                    form.elements[i+1].focus();
                 }
+                return;
             }
         }
     }
+}
                 
-    var textbox1 = document.getElementById("txtTel1"),
-        textbox2 = document.getElementById("txtTel2"),
-        textbox3 = document.getElementById("txtTel3");
-    
-    EventUtil.addHandler(textbox1, "keyup", tabForward);        
-    EventUtil.addHandler(textbox2, "keyup", tabForward);        
-    EventUtil.addHandler(textbox3, "keyup", tabForward);        
+var textbox1 = document.getElementById("txtTel1"),
+    textbox2 = document.getElementById("txtTel2"),
+    textbox3 = document.getElementById("txtTel3");
+
+EventUtil.addHandler(textbox1, "keyup", tabForward);        
+EventUtil.addHandler(textbox2, "keyup", tabForward);        
+EventUtil.addHandler(textbox3, "keyup", tabForward);        
         
 })();
 </script>
 ```
 
 - 14. 4 表单序列化
+
 ```
- function serialize(form){        
+function serialize(form){        
     var parts = [],
         field = null,
         i,
@@ -1390,6 +1432,7 @@ EventUtil.addHandler(btn, "click", function(event){
     var form = document.forms[0];
     alert(serialize(form));
 });
+
 ```
 
 ###  Chapter 15 Canvas
@@ -1453,6 +1496,7 @@ try{
 JSON不支持变量，函数或者对象实例，仅仅是一种表示结构化数据的格式，虽与JS中表示数据的
 某些语法相同，但并不局限于JS范畴。
 - 20. 2解析与序列化
+
 ```
 JSON.parse();
 JSON.stringify();
@@ -1491,26 +1535,27 @@ var book = {
 //3.对上一步返回的每一个值序列化
 //4. 若传入了第三个参数则执行相应格式化
  var book = {
-                       "title": "Professional JavaScript",
-                        "authors": [
-                            "Nicholas C. Zakas"
-                        ],
-                        edition: 3,
-                        year: 2011,
-                        releaseDate: new Date(2011, 11, 1)
-                   };
-           var jsonText = JSON.stringify(book);
-        //{"title":"Professional JavaScript","authors":["Nicholas C. Zakas"],"edition":3,"year":2011,"releaseDate":"2011-11-30T16:00:00.000Z"}
-   var bookCopy = JSON.parse(jsonText, function(key, value){
-       if (key == "releaseDate"){
-           //return undefined;
-           return new Date(value);
-       } else {
-           return value;
-       }
-   });
-   console.log("releaseDate" in bookCopy);
-   console.log(bookCopy.releaseDate.getFullYear());//2011
+        "title": "Professional JavaScript",
+        "authors": [
+            "Nicholas C. Zakas"
+        ],
+        edition: 3,
+        year: 2011,
+        releaseDate: new Date(2011, 11, 1)
+    };
+var jsonText = JSON.stringify(book);
+//{"title":"Professional JavaScript","authors":["Nicholas C. Zakas"],"edition":3,"year":2011,"releaseDate":"2011-11-30T16:00:00.000Z"}
+var bookCopy = JSON.parse(jsonText, function(key, value){
+    if (key == "releaseDate"){
+        //return undefined;
+        return new Date(value);
+    } else {
+        return value;
+    }
+});
+console.log("releaseDate" in bookCopy);
+console.log(bookCopy.releaseDate.getFullYear());//2011
+
 ```
 ###  Chapter 21 Ajax与Comet
 
@@ -1582,12 +1627,12 @@ if ((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304){
 2. 应用必须能够访问一定的资源；
 3. 必须有一块本地空间用于保存数据，能否上网都不妨碍读写。
 ```
- EventUtil.addHandler(window, "online", function(){
-            document.getElementById("status").innerHTML = "Online";
-        });
-        EventUtil.addHandler(window, "offline", function(){
-            document.getElementById("status").innerHTML = "Offline";
-        });
+EventUtil.addHandler(window, "online", function(){
+    document.getElementById("status").innerHTML = "Online";
+});
+EventUtil.addHandler(window, "offline", function(){
+    document.getElementById("status").innerHTML = "Offline";
+});
 ```
 23. 3数据存储
 
