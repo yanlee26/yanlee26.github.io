@@ -2,13 +2,20 @@
 layout: archive
 permalink: /posts
 title: "Posts"
+header:
+  overlay_color: "#000"
+  overlay_filter: "0.5"
+  overlay_image: DL.jpg
+  cta_url: "https://github.com/yanlee26/yanlee26.github.io/"
+  caption: "Photo credit: [**yanlee26**](https://yanlee26.github.io/)"
 ---
 
 {% include base_path %}
 {% capture written_year %}'None'{% endcapture %}
 {% for post in site.posts %}
-  {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
-  {% if year != written_year %}
+{% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
+{% if year != written_year %}
+
   <h2 id="{{ year | slugify }}" class="archive__subtitle">{{ year }}</h2>
   {% capture written_year %}{{ year }}{% endcapture %}
   {% endif %}
