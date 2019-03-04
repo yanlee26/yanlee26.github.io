@@ -3,8 +3,6 @@ layout: single
 permalink: /about
 title: "About"
 ---
-
-{% include base_path %}
 # 闫立-前端开发-五年经验
 
 ---
