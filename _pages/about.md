@@ -1,9 +1,8 @@
 ---
 layout: single
 permalink: /about
-title: "About"
+title: "闫立-前端开发-五年经验"
 ---
-# 闫立-前端开发-五年经验
 
 ---
 
@@ -38,14 +37,14 @@ title: "About"
 # 技能清单
 
 - 前端开发：HTML(HTML5)/CSS(CSS3)/JS(ES6)
-- 前端框架/库：bootstrap/jQuery/zepto/mui/Vue+Vuex/React/AngularJS／three/Echarts/Polymer/小程序/mobx
+- 前端框架/库：~~bootstrap/jQuery/zepto/mui~~/Vue+Vuex/React/AngularJS／three/Echarts/~~Polymer~~/小程序/mobx
 - CSS 预处理：scss/less/stylus
 - 单元及自动化测试：Mocha/Istanbul/nightmare
 - 后端语言：node/php/python／go（了解）
 - 数据库：MySQL/MongoDB（了解）
 - 网络： TCP/HTTP（熟悉）/RESTFUL（了解）
 - 开发工具：webpack/gulp/npm/yarn/VScode
-- 版本管理/托管：git/svn/bitbucket／SourceTree
+- 版本管理/托管：git/~~svn~~/bitbucket／SourceTree
 
 ---
 
@@ -206,7 +205,7 @@ title: "About"
 
 ---
 
-# 教育经历
+# 教育背景
 
 中原工学院/本科 / 建筑环境与设备工程 --------------(2009.09-2013.07)
 
