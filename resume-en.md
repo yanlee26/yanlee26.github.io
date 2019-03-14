@@ -70,7 +70,7 @@
 3. Participate in the development of team development specifications, framework selection, and participate in the company's front-end architecture design and implementation;
 4. Create a corporate unit test ([wct](https://github.com/Polymer/web-component-tester)/Mocha) environment configuration from start to finish, [node-sonar](https://www.sonarqube.Org/) plug-in development; assist QA to complete the project integration test (nightmare) prototype, complete the development of some test scenarios.
 
-## 上海辅昊实业(九筹分公司)有限公司(Intelligent IOT and Big Data, 2016.07-2017.02)
+## 上海辅昊实业有限公司(Intelligent IOT and Big Data, 2013.07-2017.02)
 
 **Front-end development engineer**
 
@@ -80,17 +80,6 @@
  - Maintain and refactor the company's internal business code;
  - Participate in company technology sharing and exchange, sum up good code habits and elegant code packaging;
  - Go deep into the bottom layer and familiar with mainstream third-party frameworks and combine the company's business needs, and gradually introduce to project development.
-
-## 上海九筹投资有限公司(Medical and Power Business, 2013.07 - 2016.07)
-
-**Front-end development engineer**
-
-### Work Content(jQuery + bootstrap | Angular1)
-
- - Refactoring and maintaining the business front-end business code;
- - Packaging companies commonly used utils to introduce third-party frameworks suitable for the company's business needs;
- - Encapsulate front-end components of the company, participate in company code specification development and internal technology sharing and exchange;
- - Work with background engineers and client engineers to develop technical implementation plans, interface specifications, etc.
 
 ---
 
@@ -155,9 +144,9 @@ During the half-month period, the project prototype will be constructed to ensur
 The quality of the code and the level of work are recognized by the team; and the small partners go hand in hand and continue to grow and develop.
 
 ---
-## 5. Auxiliary Power System (Shanghai Fushun Industrial Co., Ltd.) -------------(2016.07-2017.02)
+## 5. Auxiliary Power System  -------------(2016.07-2017.02)
 
-###Introduction: native embedded H5 page development
+### Introduction: native embedded H5 page development
 
 ### Work Content:
 
@@ -175,7 +164,7 @@ The quality of the code and the level of work are recognized by the team; and th
 Privately explore and timely introduce VUE (1.x) technology stack
 
 ---
-## 6. Weihai Power Supply Company Management System (Shanghai Jiufu Investment Co., Ltd.)--------------(2016.01-2016.04)
+## 6. Weihai Power Supply Company Management System --------------(2016.01-2016.04)
 
 ### Introduction: PC side
 
@@ -191,7 +180,7 @@ Privately explore and timely introduce VUE (1.x) technology stack
 Explore Baidu Echarts and successfully introduce it into the project
 
 ---
-## 7. Ningbo Second People's Hospital Intelligent Guidance System (Shanghai Jiufu Investment Co., Ltd.) --------------(2015.05-2015.12)
+## 7. Ningbo Second People's Hospital Intelligent Guidance System  --------------(2015.05-2015.12)
 
 ### Work Content:
 
