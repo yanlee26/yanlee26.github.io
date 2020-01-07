@@ -10,7 +10,7 @@ title: "闫立-前端开发-五年经验"
 
 - Tel: [17612183190]() (上海)
 - Email: elliot27@qq.com
-- 微信: [yan24185109]()
+- 微信: [同手机号]()
 - 掘金: https://juejin.im/user/5812c906d203090055b0ec00
 - 博客: https://github.com/yanlee26
 
@@ -27,39 +27,57 @@ title: "闫立-前端开发-五年经验"
 
 # 个人简介
 
-- 秉性：爱思考，爱折腾
-- 爱好及特长：有较强的技术能力与视野，对技术有强烈的好奇心和求知欲，喜欢英语及数学
-- 个人技术栈：node + vue/react + MySQL/MongoDB
-- 职业目标： 全栈(偏前端)工程师, 技术性管理岗
+- 秉性：爱思考，爱总结；终生学习践行者
+- 爱好及特长：有较强的技术能力与视野，对技术有强烈的好奇心和求知欲，喜欢总结分享
+- 个人技术栈：node/go + react/vue + MySQL/MongoDB
+- 职业目标：全栈工程师
 
 ---
 
 # 技能清单
 
 - 前端开发：HTML(HTML5)/CSS(CSS3)/JS(ES6)
-- 前端框架/库：~~bootstrap/jQuery/zepto/mui~~/Vue+Vuex/React/AngularJS／three/Echarts/~~Polymer~~/小程序/mobx
+- 前端框架/库：React+Mobx+styled-components/Vue+Vuex/AngularJS/Three/Echarts/小程序
 - CSS 预处理：scss/less/stylus
-- 单元及自动化测试：Mocha/Istanbul/nightmare
-- 后端语言：node/php/python／go（了解）
+- 单元及自动化测试：Mocha/Jest/Istanbul/nightmare
+- 后端语言：node/python／go（在学）
 - 数据库：MySQL/MongoDB（了解）
-- 网络： TCP/HTTP（熟悉）/RESTFUL（了解）
-- 开发工具：webpack/gulp/npm/yarn/VScode
-- 版本管理/托管：git/~~svn~~/bitbucket／SourceTree
+- 网络：TCP/HTTP（熟悉）
+- 构建及打包工具：webpack/gulp/npm/yarn
+- 版本管理/托管：git/bitbucket／SourceTree
+- 软件架构风格：RESTful
 
 ---
 
 # 工作经历
 
-## vip陪练／研发部（微课）（婴幼儿在线教育方向，2018.03 — 至今）
+## 上海流利说信息技术有限公司（Laix， 2019.03 — 至今）
 
-**高级前端工程师（PC端+小程序+公众号）**
+**高级前端工程师（P6，Platform）**
+
+### 工作内容（React + Mobx/Hooks + TS + antd）
+
+1. LLSPAY 系统： 流利说支付后台管理系统。独立负责 LLAPY 及其重构项目 LAIXPAY 的前端开发，封装 antd 一些常用组件，引入 hooks 新实践并在小组推广，重构 js 及梳理旧逻辑；
+2. KFS 系统：流利说客服系统。独立负责整个客服系统的搭建及扩展维护，全项目应用 ts，配置单测及参与后端接口的制定及统一；
+3. 公司内部前端 Unit Test，Code Review 的引入及推广实践；
+4. 微信端 SDK(授权/支付)：独立维护及拓展公司内支付授权 SDK 项目，包含项目单测及集成测试页面的搭建，支持 web/iframe/inner-SDK 的三种使用方式，支持 普通支付/签约支付/站外支付。
+
+
+## vip陪练（妙克信息，2018.03 — 2019.02）
+
+**高级前端工程师（研发部）**
 
 ### 工作内容（Vue+Vuex+MobX）
 
 1. 负责小组前端项目的框架选型（目前vue）及架构设计；
 2. 负责团队代码review，参与公司代码风格[good practise](https://www.cnblogs.com/frank26/p/7413979.html)及开发流程的[规范制定](https://zhuanlan.zhihu.com/p/30995292)；
 3. 负责招募新人，培养新人等工作；
-4. 参与公司内部技术总结及分享([a.浏览器工作原理及web 性能优化](https://juejin.im/post/5b721656f265da28140e53ba),[b.深入理解 MobX](http://note.youdao.com/noteshare?id=7c9afdd9852946e46652761b7cfc1bb9),[c.mobx在小程序中的实践](http://note.youdao.com/noteshare?id=46e762e0263e95764c759055a3e4c97c),[d.webpack基础-webpack4.x](http://note.youdao.com/noteshare?id=867201838dd63e89ce1adc1018d1637a))，接口参数约定，[前后端分工](http://note.youdao.com/noteshare?id=ce2bf878f99c5e1bd2476dc50076836a)；
+4. 参与公司内部技术总结及分享
+   - [浏览器工作原理及web 性能优化](https://juejin.im/post/5b721656f265da28140e53ba)
+   - [深入理解 MobX](http://note.youdao.com/noteshare?id=7c9afdd9852946e46652761b7cfc1bb9)
+   - [mobx在小程序中的实践](http://note.youdao.com/noteshare?id=46e762e0263e95764c759055a3e4c97c)
+   - [webpack基础-webpack4.x](http://note.youdao.com/noteshare?id=867201838dd63e89ce1adc1018d1637a)
+   - [前后端分工](http://note.youdao.com/noteshare?id=ce2bf878f99c5e1bd2476dc50076836a)
 5. 参与公司内部组件，内部工具库的研发工作，第三方库的调研选型，项目结构搭建,关键代码片段的撰写（如[优化小程序开发体验](https://github.com/Damo-web/vuerify-miniApp), [lazy-load](https://codesandbox.io/s/1r1pm7yp37)）等；
 
 
@@ -74,7 +92,7 @@ title: "闫立-前端开发-五年经验"
 3.  参与制定团队开发规范，框架选型，参与公司前端架构设计与实现；
 4.  从头至尾打造公司单元测试([wct](https://github.com/Polymer/web-component-tester)/Mocha)环境配置，[node-sonar](https://www.sonarqube.org/)插件开发等；协助QA完成项目集成测试(nightmare)雏形,完成部分test scenario的开发等。
 
-## 上海辅昊实业有限公司(智能物联及大数据，2013.07-2017.02)
+## 上海辅昊实业有限公司(智能物联及大数据，2016.03-2017.02)
 
 **前端开发工程师**
 
@@ -89,7 +107,30 @@ title: "闫立-前端开发-五年经验"
 
 # 项目经验
 
-## 1. 公司内部小程序系列（vip陪练）---------------(2018.07-至今)
+## 0. LLSPAY 系统（Laix）---------------(2019.03-至今)
+
+### 简介: 流利说支付全链路平台，包含订单，退款返费，兑换码，商品管理，短信模板及特殊交易订单和订单对账等模块。
+
+### 工作内容：
+
+1. 对接各业务方需求及后端接口；
+2. 基础组件抽离及拆分；
+3. 项目开发实践引入，如单测 Jest 及code-review等；
+4. 旧项目重构及新技术尝试，如 typesccript 及 hooks 等。
+
+## 1. KFS 系统（Laix）---------------(2019.03-2019.05)
+
+### 简介: 流利说客服高效工具，包含用户信息查询，用户权限管理，用户账户处理，用户课程处理等。
+
+### 工作内容：
+
+1. 从 0 到 1 创建项目；
+2. 全面应用 typescript 及 hooks 开发；
+3. 全面引入单测，并参与公司内部分享；
+4. 推动团队内 code review 的最佳实践等。
+
+
+## 2. 公司内部小程序系列（vip陪练）---------------(2018.07-2019.02)
 
 ### 简介:  公司内部涉及小程序业务的两个小组相关项目基础环境搭建，制定开发约定等
 
@@ -101,19 +142,7 @@ title: "闫立-前端开发-五年经验"
 4. 培养新人等。
 
 ### 项目成就：
-从未碰过小程序，一周内对比之前所用框架（vue+polymer+angular）系统性地摸索完小程序思想及API使用；以身作则，打造干净整洁的coding风格，形成团队共识，提高代码健壮性，提高可维护性，提升web性能，使团队成员更加高效地投入到开发；扩展了小程序一些新功能（mixin），改造并引入第三方库mobx（精简代码，提升开发体验，克服了小程序状态管理上的不足），百忙之余用py写一些常用小工具等。
-
----
-## 2. VIP微课（公众号）（vip陪练）--------------(2018.06-2018.07)
-
-### 简介: 公司内部微信公众号各分散项目维护+开发
-
-### 工作内容：
-
-1. 维护及重构老公众号项目
-2. 参与开发二期赛事功能；
-3. 调整及优化项目架构等；
-4. 培养新人维护该项目；
+以身作则，打造干净整洁的coding风格，形成团队共识，提高代码健壮性，提高可维护性，提升web性能，使团队成员更加高效地投入到开发；扩展了小程序一些新功能（mixin），改造并引入第三方库mobx（精简代码，提升开发体验，克服了小程序状态管理上的不足），百忙之余用py写一些常用小工具等。
 
 ---
 ## 3. 微课OPT系统（vip陪练）--------------(2018.05-2018.06)
@@ -166,33 +195,6 @@ title: "闫立-前端开发-五年经验"
 
 ### 项目成就：
 私下探索并及时顺利引入vue（1.x）技术栈
-
----
-## 6. 威海供电公司管理系统--------------（2016.01-2016.04）
-
-### 简介: PC端
-
-### 工作内容：
-
-1. 引入百度地图接口，利用canvas结合百度地图实现整个电力系统的信息时时查阅及反馈；
-2. 封装用户在地图上交互的js代码，克服了绘图边框纹理无法绘制及绘制多边形时this指向混乱的问题；
-3. 利用自己的线性代数知识，克服了谷歌地图与百度地图之间的转换问题，抽象三级导航页面各种情况的数学模型等；
-4. 由于该项目目录树的数据结构未定，本着前后端分离的初衷，与后台约定合理的数据结构并写好接口文档；
-5. 封装canvasAPI，实现地图上绘制各种简单图形极其面积计算等。
-
-### 项目成就：
-探索百度Echarts并顺利引入到项目中
-
----
-## 7. 宁波第二人民医院智能导诊系统--------------(2015.05-2015.12)
-
-### 工作内容：
-
-1. 利用原生js+mui库为公司原生App提供智能导诊区块的H5页面，及整个PC端页面；
-2. 封装公司前端部分UI层及业务层代码，利用scss实现css方面更好的复用性；
-3. 人体热点图的绘制引入map标签，获得理想的用户体验等。
-
----
 
 # 教育背景
 
