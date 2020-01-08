@@ -34,12 +34,12 @@ title: "闫立-前端开发-五年经验"
 - 前端开发：HTML(HTML5)/CSS(CSS3)/JS(ES6)
 - 前端框架/库：React+Mobx+TypeScript/Vue+Vuex/AngularJS/Three/Echarts/小程序
 - 构建及打包工具：webpack/poi/gulp/npm/yarn
-- CSS 预处理：scss/less/stylus
+- CSS 预处理：Scss/Less/Stylus
 - 单元及自动化测试：Mocha/Jest/Istanbul/nightmare
 - 网络：TCP/HTTP（熟悉）
 - 数据库：MySQL/MongoDB（了解）
-- 后端语言：node/python/go（在学）
-- 版本管理/托管：git/Bitbucket/SourceTree
+- 后端语言：Node/Python/Go（在学）
+- 版本管理/托管：Git/Bitbucket/SourceTree
 - 软件架构风格：RESTful
 
 ---
