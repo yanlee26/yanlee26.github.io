@@ -1,7 +1,5 @@
 _site
 .sass-cache
 .jekyll-metadata
-resume-ce.md 
-resume-cn.md 
-resume-en.md 
 _pages/about.md
+personal/*.md
